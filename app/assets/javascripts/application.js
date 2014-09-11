@@ -17,4 +17,7 @@
 
 $(document).ready(function(){
   $('.navbar #menu ul').addClass('nav navbar-nav');
+  $('ul.navbar-nav').after($('#locale').html());
+  $('#left_side_body, #right_side_body').addClass('col-md-3');
+  //$('#body').addClass('col-md-8');
 });

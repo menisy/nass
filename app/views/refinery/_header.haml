@@ -1,7 +1,33 @@
-%h1#logo= link_to Refinery::Core.site_name, refinery.root_path
+#top-container
+  #logo
+    = link_to refinery.root_path do
+      = image_tag 'logo.png'
+
+  #locale.pull-right.hide
+    %ul.nav.nav-bar.pull-right
+      %li
+        = locale_switcher
+
+  #forms.pull-right
+    - unless student_signed_in?
+      %label Sign in
+      = form_tag session_path(:student), method: :post do
+        = text_field_tag 'student[email]', nil, placeholder: 'email'
+        %br
+        = password_field_tag 'student[password]', nil, placeholder: 'password'
+        %br
+        %button.btn Sign in
+        = check_box_tag 'student[remember_me]'
+        = label_tag 'student[remember_me]', 'Remember me', class: 'remember'
+        %br
+        = link_to "Forgot your password?", new_password_path(:student)
+    -else
+      %p
+        Logged in as
+        = current_student.email
+        = link_to 'Logout', main_app.destroy_student_session_path, method: :delete
 
 %nav.navbar.navbar-default{ role: 'navigation'}
   .container-fluid
     = navigation_menu.to_html
 
-= locale_switcher

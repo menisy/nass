@@ -13,9 +13,9 @@ module ApplicationHelper
 
   def locale_switcher
     if I18n.locale.to_s == 'en'
-      link_to 'ar'.upcase, refinery.url_for(params.merge(:locale => 'ar'))
+      link_to 'عربي'.upcase, refinery.url_for(params.merge(:locale => 'ar')), class: 'lcl'
     else
-      link_to 'en'.upcase, refinery.url_for(params.merge(:locale => 'en'))
+      link_to 'English'.upcase, refinery.url_for(params.merge(:locale => 'en')), class: 'lcl'
     end
   end
 

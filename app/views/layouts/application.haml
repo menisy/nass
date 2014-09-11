@@ -4,9 +4,13 @@
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tag
+    %title NASS Academy
 
 %body
-  .container
-    - unless devise_controller? && resource_name == :user && action_name == 'new'
+  .container#main-container
+    - unless devise_controller?
       = render 'refinery/header'
-    = yield
+    #main-content
+      .row
+        = yield
+    = render 'refinery/footer'
