@@ -9,6 +9,7 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+gem 'mysql2'
 gem 'devise'
 gem 'fog'
 gem 'haml-rails'
@@ -21,10 +22,14 @@ git 'git://github.com/refinery/refinerycms.git', :branch => '2-1-stable' do
   gem 'refinerycms-resources'
 end
 
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+
+  gem 'sass-rails'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

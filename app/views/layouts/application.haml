@@ -6,4 +6,7 @@
     = csrf_meta_tag
 
 %body
-  = yield
+  .container
+    - unless devise_controller? && resource_name == :user && action_name == 'new'
+      = render 'refinery/header'
+    = yield

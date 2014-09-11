@@ -1,0 +1,87 @@
+        new_employer_session GET    /employers/sign_in(.:format)       devise/sessions#new
+            employer_session POST   /employers/sign_in(.:format)       devise/sessions#create
+    destroy_employer_session DELETE /employers/sign_out(.:format)      devise/sessions#destroy
+           employer_password POST   /employers/password(.:format)      devise/passwords#create
+       new_employer_password GET    /employers/password/new(.:format)  devise/passwords#new
+      edit_employer_password GET    /employers/password/edit(.:format) devise/passwords#edit
+                             PUT    /employers/password(.:format)      devise/passwords#update
+cancel_employer_registration GET    /employers/cancel(.:format)        devise/registrations#cancel
+       employer_registration POST   /employers(.:format)               devise/registrations#create
+   new_employer_registration GET    /employers/sign_up(.:format)       devise/registrations#new
+  edit_employer_registration GET    /employers/edit(.:format)          devise/registrations#edit
+                             PUT    /employers(.:format)               devise/registrations#update
+                             DELETE /employers(.:format)               devise/registrations#destroy
+         new_student_session GET    /students/sign_in(.:format)        devise/sessions#new
+             student_session POST   /students/sign_in(.:format)        devise/sessions#create
+     destroy_student_session DELETE /students/sign_out(.:format)       devise/sessions#destroy
+            student_password POST   /students/password(.:format)       devise/passwords#create
+        new_student_password GET    /students/password/new(.:format)   devise/passwords#new
+       edit_student_password GET    /students/password/edit(.:format)  devise/passwords#edit
+                             PUT    /students/password(.:format)       devise/passwords#update
+ cancel_student_registration GET    /students/cancel(.:format)         devise/registrations#cancel
+        student_registration POST   /students(.:format)                devise/registrations#create
+    new_student_registration GET    /students/sign_up(.:format)        devise/registrations#new
+   edit_student_registration GET    /students/edit(.:format)           devise/registrations#edit
+                             PUT    /students(.:format)                devise/registrations#update
+                             DELETE /students(.:format)                devise/registrations#destroy
+            new_user_session GET    /users/sign_in(.:format)           devise/sessions#new
+                user_session POST   /users/sign_in(.:format)           devise/sessions#create
+        destroy_user_session DELETE /users/sign_out(.:format)          devise/sessions#destroy
+               user_password POST   /users/password(.:format)          devise/passwords#create
+           new_user_password GET    /users/password/new(.:format)      devise/passwords#new
+          edit_user_password GET    /users/password/edit(.:format)     devise/passwords#edit
+                             PUT    /users/password(.:format)          devise/passwords#update
+    cancel_user_registration GET    /users/cancel(.:format)            devise/registrations#cancel
+           user_registration POST   /users(.:format)                   devise/registrations#create
+       new_user_registration GET    /users/sign_up(.:format)           devise/registrations#new
+      edit_user_registration GET    /users/edit(.:format)              devise/registrations#edit
+                             PUT    /users(.:format)                   devise/registrations#update
+                             DELETE /users(.:format)                   devise/registrations#destroy
+                    refinery        /                                  Refinery::Core::Engine
+
+Routes for Refinery::Core::Engine:
+                               GET    /system/resources/*dragonfly(.:format)     <Dragonfly::App name=:refinery_resources >
+        insert_admin_resources GET    /refinery/resources/insert(.:format)       refinery/admin/resources#insert
+               admin_resources GET    /refinery/resources(.:format)              refinery/admin/resources#index
+                               POST   /refinery/resources(.:format)              refinery/admin/resources#create
+            new_admin_resource GET    /refinery/resources/new(.:format)          refinery/admin/resources#new
+           edit_admin_resource GET    /refinery/resources/:id/edit(.:format)     refinery/admin/resources#edit
+                admin_resource PUT    /refinery/resources/:id(.:format)          refinery/admin/resources#update
+                               DELETE /refinery/resources/:id(.:format)          refinery/admin/resources#destroy
+                          root GET    /                                          refinery/pages#home
+                          page GET    /pages/:id(.:format)                       refinery/pages#show
+     pages_admin_preview_pages POST   /refinery/pages/preview(.:format)          refinery/pages/admin/preview#show
+      pages_admin_preview_page PUT    /refinery/pages/preview/*path(.:format)    refinery/pages/admin/preview#show
+                         admin GET    /refinery/pages/*path/edit(.:format)       refinery/admin/pages#edit
+          admin_children_pages GET    /refinery/pages/*path/children(.:format)   refinery/admin/pages#children
+                               PUT    /refinery/pages/*path(.:format)            refinery/admin/pages#update
+                               DELETE /refinery/pages/*path(.:format)            refinery/admin/pages#destroy
+  update_positions_admin_pages POST   /refinery/pages/update_positions(.:format) refinery/admin/pages#update_positions
+                   admin_pages GET    /refinery/pages(.:format)                  refinery/admin/pages#index
+                               POST   /refinery/pages(.:format)                  refinery/admin/pages#create
+                new_admin_page GET    /refinery/pages/new(.:format)              refinery/admin/pages#new
+               edit_admin_page GET    /refinery/pages/:id/edit(.:format)         refinery/admin/pages#edit
+                    admin_page PUT    /refinery/pages/:id(.:format)              refinery/admin/pages#update
+                               DELETE /refinery/pages/:id(.:format)              refinery/admin/pages#destroy
+   link_to_admin_pages_dialogs GET    /refinery/pages_dialogs/link_to(.:format)  refinery/admin/pages_dialogs#link_to
+              admin_page_parts POST   /refinery/page_parts(.:format)             refinery/admin/page_parts#create
+           new_admin_page_part GET    /refinery/page_parts/new(.:format)         refinery/admin/page_parts#new
+               admin_page_part DELETE /refinery/page_parts/:id(.:format)         refinery/admin/page_parts#destroy
+                               GET    /system/images/*dragonfly(.:format)        <Dragonfly::App name=:refinery_images >
+           insert_admin_images GET    /refinery/images/insert(.:format)          refinery/admin/images#insert
+                  admin_images GET    /refinery/images(.:format)                 refinery/admin/images#index
+                               POST   /refinery/images(.:format)                 refinery/admin/images#create
+               new_admin_image GET    /refinery/images/new(.:format)             refinery/admin/images#new
+              edit_admin_image GET    /refinery/images/:id/edit(.:format)        refinery/admin/images#edit
+                   admin_image PUT    /refinery/images/:id(.:format)             refinery/admin/images#update
+                               DELETE /refinery/images/:id(.:format)             refinery/admin/images#destroy
+               admin_dashboard GET    /refinery/dashboard(.:format)              refinery/admin/dashboard#index
+                     wymiframe GET    /wymiframe(/:id)(.:format)                 refinery/fast#wymiframe
+                       message GET    /refinery/message(.:format)                refinery/fast#message
+                    admin_root        /refinery(.:format)                        refinery/admin/dashboard#index
+                 admin_dialogs GET    /refinery/dialogs(.:format)                refinery/admin/dialogs#index
+                  admin_dialog GET    /refinery/dialogs/:id(.:format)            refinery/admin/dialogs#show
+refinery_update_menu_positions POST   /refinery/update_menu_positions(.:format)  refinery/admin/core#update_plugin_positions
+                               GET    /sitemap.xml(.:format)                     refinery/sitemap#index {:format=>"xml"}
+                               GET    /refinery/*path(.:format)                  refinery/admin#error_404
+               marketable_page GET    /*path(.:format)                           refinery/pages#show

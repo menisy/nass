@@ -1,0 +1,7 @@
+%h1#logo= link_to Refinery::Core.site_name, refinery.root_path
+
+%nav.navbar.navbar-default{ role: 'navigation'}
+  .container-fluid
+    = navigation_menu.to_html
+
+= locale_switcher
