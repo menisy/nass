@@ -9,7 +9,7 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'mysql2'
+gem 'mysql'
 gem 'devise'
 gem 'fog'
 gem 'haml-rails'
