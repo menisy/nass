@@ -20,6 +20,15 @@ BlogArticle::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  config.assets.precompile += ['refinery/refinery.css', 
+    'admin.js', 
+    'wymeditor/lang/en.js', 
+    'refinery/wymeditor.js', 
+    'refinery/refinery.js', 
+    'wymeditor/skins/refinery/skin.js',
+    'refinery/formatting.css',
+    'refinery/theme.css']
+
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 

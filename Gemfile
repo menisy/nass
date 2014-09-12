@@ -9,12 +9,12 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'mysql'
+gem 'mysql2'
 gem 'devise'
 gem 'fog'
 gem 'haml-rails'
 gem 'awesome_print'
-
+gem 'unicorn'
 git 'git://github.com/refinery/refinerycms.git', :branch => '2-1-stable' do
   gem 'refinerycms-dashboard'
   gem 'refinerycms-images'
