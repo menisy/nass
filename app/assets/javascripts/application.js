@@ -20,4 +20,19 @@ $(document).ready(function(){
   $('ul.navbar-nav').after($('#locale').html());
   $('#left_side_body, #right_side_body').addClass('col-md-2');
   //$('#body').addClass('col-md-8');
+
+  ul = $('#left_side_body ul');
+  var theLoc = ul.offset().top;
+  console.log(theLoc)
+  $(window).scroll(function() {
+    if(theLoc >= $(window).scrollTop()) {
+      if(ul.hasClass('fixed')) {
+        ul.removeClass('fixed');
+      }
+    } else { 
+      if(!ul.hasClass('fixed')) {
+        ul.addClass('fixed');
+      }
+    }
+  });
 });
