@@ -6,20 +6,31 @@ $(document).ready ->
   #$('#body').addClass('col-md-8');
   ul = $("#left_side_body ul")
   theLoc = 275 #ul.offset().top - 20;
-  left = ul.offset().left
-  console.log theLoc
+
   $(window).scroll ->
     if theLoc >= $(window).scrollTop()
       ul.removeClass "fixed"  if ul.hasClass("fixed")
     else
       unless ul.hasClass("fixed")
+        left = ul.offset().left
+        wd = $('body').width()
+        left_p = left/wd * 100
         ul.addClass "fixed"
-        ul.css "left", left
+        ul.css "left", left_p+'%'
+  #ul.sticky topSpacing: 20
 
 
   $("#left_side_body ul li").html (i, h) ->
     h.replace /&nbsp;/g, ""
 
   $("#left_side_body ul li br").remove()
+
+# resize = ->
+#   window.scrollTo 0, 0
+# window.onresize = resize
+# window.onzoom = resize
+
+$(window).resize ->
+  window.scrollTo 0, 0
 
 
