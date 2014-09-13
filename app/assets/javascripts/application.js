@@ -35,4 +35,9 @@ $(document).ready(function(){
       }
     }
   });
+
+  $('#left_side_body ul li').html(function(i,h){
+    return h.replace(/&nbsp;/g,'');
+  });
+  $('#left_side_body ul li br').remove();
 });
