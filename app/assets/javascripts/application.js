@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 
-
+/*
 $(document).ready(function(){
   $('.navbar #menu ul').addClass('nav navbar-nav');
   $('ul.navbar-nav').after($('#locale').html());
@@ -43,3 +43,5 @@ $(document).ready(function(){
   });
   $('#left_side_body ul li br').remove();
 });
+
+*/
