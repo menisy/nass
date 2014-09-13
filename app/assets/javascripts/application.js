@@ -22,7 +22,8 @@ $(document).ready(function(){
   //$('#body').addClass('col-md-8');
 
   ul = $('#left_side_body ul');
-  var theLoc = ul.offset().top;
+  var theLoc = 275;//ul.offset().top - 20;
+  var left = ul.offset().left;
   console.log(theLoc)
   $(window).scroll(function() {
     if(theLoc >= $(window).scrollTop()) {
@@ -32,6 +33,7 @@ $(document).ready(function(){
     } else { 
       if(!ul.hasClass('fixed')) {
         ul.addClass('fixed');
+        ul.css('left', left);
       }
     }
   });
