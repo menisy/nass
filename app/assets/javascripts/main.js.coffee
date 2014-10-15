@@ -3,6 +3,11 @@ $(document).ready ->
   $("ul.navbar-nav").after $("#locale").html()
   $("#left_side_body, #right_side_body").addClass "col-md-2"
 
+  nav_li = $("ul.navbar-nav li")
+  colors = ["yello", "orange", "red", "blue", "lime", "purple"]
+  nav_li.each (i, j) ->
+    $(j).addClass(colors[i])
+
   #$('#body').addClass('col-md-8');
   ul = $("#left_side_body ul")
   theLoc = 275 #ul.offset().top - 20;
@@ -32,5 +37,3 @@ $(document).ready ->
 
 $(window).resize ->
   window.scrollTo 0, 0
-
-

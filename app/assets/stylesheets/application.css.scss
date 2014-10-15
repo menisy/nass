@@ -11,11 +11,26 @@ $navbar-border-radius: 0px;
 
 @import "bootstrap";
 
+#header-container{
+  width: 890px;
+  position: fixed;
+  height: 160px;
+  background-color: #fff;
+}
+
+.navbar-default{
+  height: 50px;
+}
+.navbar-nav{
+  margin-left: -16px;
+}
+
 #main-content{
+  margin-top: 175px;
   .row{
     width: 920px;
   }
-  
+
 }
 
 #main-container{
@@ -34,13 +49,18 @@ $navbar-border-radius: 0px;
 #logo{
 
   display: inline-block;
-  width: 320px;
+  height: 100px;
 
   img{
-    width: 320px;
+    height: 100px;
   }
 
 }
+
+ul.navbar-nav{
+  margin-top: -5px;
+}
+
 .lcl{
   color: #fff !important;
 
@@ -51,7 +71,7 @@ $navbar-border-radius: 0px;
 }
 
 #forms{
-  margin: 25px 0px 5px 0px;
+  margin: 5px 0px 5px 0px;
   background-color: #f5f5f5;
   padding: 10px;
 
@@ -70,6 +90,7 @@ $navbar-border-radius: 0px;
 
 #top-container{
   margin-bottom: 10px;
+  height: 100px;
 }
 
 #footer{
@@ -90,31 +111,40 @@ $navbar-border-radius: 0px;
       display: inline-block;
     }
     .green{
-      background-color: #1c7a48;
       width: 340px;
     }
     .yello{
-      background-color: #f6ee1d;
       width: 64px;
     }
     .orange{
-      background-color: #f58220;
       width: 57px;
     }
-    .red{
-      background-color: #c92127;
-    }
-    .blue{
-      background-color: #0f82b7;
-    }
     .lime{
-      background-color: #bed62f;
       width: 58px;
     }
-    .purple{
-      background-color: #4b124d;
-    }
   }
+}
+
+.green{
+  background-color: #1c7a48;
+}
+.yello{
+  background-color: #f6ee1d;
+}
+.orange{
+  background-color: #f58220;
+}
+.red{
+  background-color: #c92127;
+}
+.blue{
+  background-color: #0f82b7;
+}
+.lime{
+  background-color: #bed62f;
+}
+.purple{
+  background-color: #4b124d;
 }
 
 #left_side_body{
