@@ -187,6 +187,12 @@ GEM
     refinerycms-i18n (2.1.0)
       rails-i18n (~> 0.7.3)
       routing-filter (~> 0.3.0)
+    refinerycms-news (2.1.2)
+      friendly_id (~> 4.0.9)
+      refinerycms-core (~> 2.1.1)
+      refinerycms-settings (~> 2.1.0)
+    refinerycms-settings (2.1.1)
+      refinerycms-core (~> 2.1.1)
     routing-filter (0.3.1)
       actionpack
     sass (3.2.19)
@@ -239,6 +245,7 @@ DEPENDENCIES
   rails (~> 3.2)
   refinerycms-dashboard!
   refinerycms-images!
+  refinerycms-news (~> 2.1.0)
   refinerycms-pages!
   refinerycms-resources!
   sass-rails

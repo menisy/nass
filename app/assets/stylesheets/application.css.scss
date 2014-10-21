@@ -3,11 +3,15 @@
 @import "bootstrap-sprockets";
 
 $navbar-default-bg: #1d8653;
+$navbar-default-height: 45px;
 
 $navbar-default-color: #fff;
 $navbar-default-link-color: #fff;
-$navbar-default-link-active-color: #fff;
+$navbar-default-link-active-color: #000;
 $navbar-border-radius: 0px;
+
+$dark-green: #1c7a48;
+$grey: #f7f7f7;
 
 @import "bootstrap";
 
@@ -23,6 +27,20 @@ $navbar-border-radius: 0px;
 }
 .navbar-nav{
   margin-left: -16px;
+  li{
+    min-width: 60px;
+    padding-right: 30px;
+    height: 50px;
+  }
+  li>a{
+    padding: 3px 0px 3px 7px;
+    max-width: 100px;
+  }
+}
+
+.padd{
+  padding-top: 13px !important;
+  padding-bottom: 10px !important;
 }
 
 #main-content{
@@ -35,6 +53,48 @@ $navbar-border-radius: 0px;
 
 #main-container{
   width: 920px;
+}
+
+#main-content{
+  .row{
+    margin-left: 20px;
+    width: 865px;
+  }
+}
+.form-wrapper{
+  width: 205px;
+  .form-title{
+    background-color: $dark-green;
+    padding: 3px;
+    padding-left: 10px;
+    color: #fff;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+
+  }
+}
+
+#side_body{
+  display: none;
+}
+
+.side-form{
+  background-color: $grey;
+  padding: 10px;
+  color: $dark-green;
+  input[type="submit"]{
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+  }
+  label{
+    font-weight: 300;
+    font-size: 15px;
+  }
+}
+
+section{
+  z-index: -1;
 }
 
 #body_content_title{

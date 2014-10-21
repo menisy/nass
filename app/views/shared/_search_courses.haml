@@ -1,0 +1,11 @@
+.hide#search-form
+  .form-wrapper
+    .form-title
+      Find Courses
+    = form_tag '/rotas', class: 'side-form' do
+      = field_set_tag do
+        = label_tag :title, '1. Choose Type of course'
+        %br
+        = select_tag :title, options_for_select([['one', 'two'], ['one', 'two']])
+        %br
+        = submit_tag 'Find Courses'

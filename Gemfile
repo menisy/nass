@@ -22,6 +22,8 @@ git 'git://github.com/refinery/refinerycms.git', :branch => '2-1-stable' do
   gem 'refinerycms-resources'
 end
 
+gem "refinerycms-news", '~> 2.1.0'
+
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
