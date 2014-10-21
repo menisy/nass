@@ -20,6 +20,7 @@ $grey: #f7f7f7;
   position: fixed;
   height: 160px;
   background-color: #fff;
+  z-index: 100;
 }
 
 .navbar-default{
@@ -91,10 +92,6 @@ $grey: #f7f7f7;
     font-weight: 300;
     font-size: 15px;
   }
-}
-
-section{
-  z-index: -1;
 }
 
 #body_content_title{
