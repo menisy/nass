@@ -26,6 +26,7 @@ $grey: #f7f7f7;
 .navbar-default{
   height: 50px;
 }
+
 .navbar-nav{
   margin-left: -16px;
   li{
@@ -62,7 +63,11 @@ $grey: #f7f7f7;
     width: 865px;
   }
 }
+#search-form{
+  position: relative;
+}
 .form-wrapper{
+  position: fixed;
   width: 205px;
   .form-title{
     background-color: $dark-green;
