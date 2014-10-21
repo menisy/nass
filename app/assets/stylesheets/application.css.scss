@@ -66,6 +66,11 @@ $grey: #f7f7f7;
 #search-form{
   position: relative;
 }
+#body{
+  .inner{
+    margin-left: -28px;
+  }
+}
 .form-wrapper{
   position: fixed;
   width: 205px;
