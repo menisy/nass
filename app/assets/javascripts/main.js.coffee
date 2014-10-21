@@ -6,6 +6,7 @@ $(document).ready ->
   $("#body").addClass "col-md-9"
 
   #$('#right_side_body').prepend($('#search-form').html())
+  $('#body_content').append($('#search-form').remove())
 
   $('#right_side_body').append($('#side_body').html())
   nav_li = $("ul.navbar-nav li")
