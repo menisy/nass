@@ -1,0 +1,29 @@
+fr:
+  refinery:
+    plugins:
+      home_photos:
+        title: Home Photos
+    home_photos:
+      admin:
+        home_photos:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Home Photo
+            reorder: Réordonner les Home Photos
+            reorder_done: Fin de réordonnancement des Home Photos
+          records:
+            title: Home Photos
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Home Photo. Cliquer sur "Créer un(e) nouve(au/l/lle) Home Photo" pour créer votre premi(er/ère) home photo.'
+          home_photo:
+            view_live_html: Voir ce(t/tte) home photo <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) home photo
+            delete: Supprimer définitivement ce(t/tte) home photo
+      home_photos:
+        show:
+          other: Autres Home Photos
+  activerecord:
+    attributes:
+      'refinery/home_photos/home_photo':
+        description: Description
+        photo: Photo
+        link: Link

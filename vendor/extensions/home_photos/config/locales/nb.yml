@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      home_photos:
+        title: Home Photos
+    home_photos:
+      admin:
+        home_photos:
+          actions:
+            create_new: Lag en ny Home Photo
+            reorder: Endre rekkefølgen på Home Photos
+            reorder_done: Ferdig å endre rekkefølgen Home Photos
+          records:
+            title: Home Photos
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Home Photos enda. Klikk på "Lag en ny Home Photo" for å legge til din første home photo.
+          home_photo:
+            view_live_html: Vis hvordan denne home photo ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne home photo
+            delete: Fjern denne home photo permanent
+      home_photos:
+        show:
+          other: Andre Home Photos
+  activerecord:
+    attributes:
+      'refinery/home_photos/home_photo':
+        description: Description
+        photo: Photo
+        link: Link

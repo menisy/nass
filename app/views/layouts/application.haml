@@ -11,7 +11,5 @@
     - unless devise_controller?
       = render 'refinery/header'
     #main-content
-      .row
-        = yield
-        = render 'shared/search_courses'
+      = yield
     = render 'refinery/footer'

@@ -1,1 +1,33 @@
-<%= render '/refinery/content_page' %>
+
+<div class="row no-mrg">
+  <div class="col-sm-9">
+    <div class="carousel-wrapper">
+      <div class="owl-carousel">
+        <% @home_photos.each do |photo| %>
+          <div> <%= image_tag photo.photo.url %> </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="row no-mrg">
+      <div class="col-xs-8 col-sm-6">
+        <div class="section-header">
+          <h3>About NASS</h3>
+        </div>
+        <%= raw(@page.content_for(:about)) %>
+      </div>
+      <div class="col-xs-4 col-sm-6">
+        <div class="section-header">
+          <h3>News</h3>
+        </div>
+        <%= raw(@page.content_for(:about)) %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <span class="green-title">Contact Us</span>
+    <div class="horz-divider">
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::HomePhotos::Admin::HomePhotosController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.home_photos_admin_home_photos_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_home_photos_admin_home_photo_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::HomePhotos::Admin::HomePhotosController.sortable? && ::Refinery::HomePhotos::HomePhoto.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Home Photos"),
+                 refinery.home_photos_admin_home_photos_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Home Photos"),
+                 refinery.home_photos_admin_home_photos_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

@@ -26,6 +26,7 @@ gem "refinerycms-news", '~> 2.1.0'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem 'owlcarousel-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -54,3 +55,5 @@ end
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem 'refinerycms-home_photos', :path => 'vendor/extensions'

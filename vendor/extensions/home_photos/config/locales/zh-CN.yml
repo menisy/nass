@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      home_photos:
+        title: Home Photos
+    home_photos:
+      admin:
+        home_photos:
+          actions:
+            create_new: 建立新的 Home Photo
+            reorder: 对 Home Photos 重新排序
+            reorder_done: 对 Home Photos 的重新排序结束
+          records:
+            title: Home Photos
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Home Photos yet. Click "Add New Home Photo" to add your first home photo.
+            no_items_yet: 目前没有 Home Photos . 点击 "Add New Home Photo" 创建一个home photo.
+          home_photo:
+            view_live_html: 查看 home photo 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 home photo
+            delete: 永久删除 home photo
+      home_photos:
+        show:
+          other: 其他 Home Photos
+  activerecord:
+    attributes:
+      'refinery/home_photos/home_photo':
+        description: Description
+        photo: Photo
+        link: Link

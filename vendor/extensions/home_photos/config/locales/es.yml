@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      home_photos:
+        title: Home Photos
+#        article: masculino/femenino
+    home_photos:
+      admin:
+        home_photos:
+          actions:
+            create_new: Crear nuevo home photo
+            reorder: Reordenar home photos
+            reorder_done: Reordenación de home photos completada
+          records:
+            title: Home Photos
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay home photos todavía. Pulsa en "Crear nuevo Home Photo" para crear tu primer home photo.
+          home_photo:
+            view_live_html: Ver este home photo como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este home photo
+            delete: Borrar este home photo para siempre
+      home_photos:
+        show:
+          other: Otros home photos
+  activerecord:
+    attributes:
+      'refinery/home_photos/home_photo':
+        description: Description
+        photo: Photo
+        link: Link

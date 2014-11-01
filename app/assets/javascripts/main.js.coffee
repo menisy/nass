@@ -19,6 +19,8 @@ $(document).ready ->
   ul = $("#left_side_body ul")
   theLoc = 275 #ul.offset().top - 20;
 
+  $(".owl-carousel").owlCarousel({items: 1, slideSpeed: 200, autoPlay: false});
+
   # $(window).scroll ->
   #   if theLoc >= $(window).scrollTop()
   #     ul.removeClass "fixed"  if ul.hasClass("fixed")

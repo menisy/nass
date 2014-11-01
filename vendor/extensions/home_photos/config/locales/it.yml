@@ -1,0 +1,29 @@
+it:
+  refinery:
+    plugins:
+      home_photos:
+        title: Home Photos
+    home_photos:
+      admin:
+        home_photos:
+          actions:
+            create_new: Aggiungi Nuovo Home Photo
+            reorder: Riordina Home Photos
+            reorder_done: Termina il Riordino di Home Photos
+          records:
+            title: Home Photos
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Home Photos. Clicca "Aggiungi Nuovo Home Photo" per aggiungere il tuo primo home photo.
+          home_photo:
+            view_live_html: Guarda live questo home photo <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo home photo
+            delete: Rimuovi per sempre questo home photo
+      home_photos:
+        show:
+          other: Altri Home Photos
+  activerecord:
+    attributes:
+      'refinery/home_photos/home_photo':
+        description: Description
+        photo: Photo
+        link: Link

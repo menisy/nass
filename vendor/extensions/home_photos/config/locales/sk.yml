@@ -1,0 +1,29 @@
+sk:
+  refinery:
+    plugins:
+      home_photos:
+        title: Home Photos
+    home_photos:
+      admin:
+        home_photos:
+          actions:
+            create_new: Pridať Home Photo
+            reorder: Preusporiadať Home Photos
+            reorder_done: Koniec radenia Home Photos
+          records:
+            title: Home Photos
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Home Photos. Kliknite na "Pridať Home Photo" pre pridanie prvého home photo.
+          home_photo:
+            view_live_html: Zobraziť náhľad home photo<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť home photo
+            delete: Zmazať home photo
+      home_photos:
+        show:
+          other: Daľšie Home Photos
+  activerecord:
+    attributes:
+      'refinery/home_photos/home_photo':
+        description: Description
+        photo: Photo
+        link: Link

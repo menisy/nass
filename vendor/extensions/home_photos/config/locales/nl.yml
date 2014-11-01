@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      home_photos:
+        title: Home Photos
+    home_photos:
+      admin:
+        home_photos:
+          actions:
+            create_new: Nieuwe Home Photo toevoegen
+            reorder: De volgorde van de Home Photos wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Home Photo-volgorde
+          records:
+            title: Home Photos
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Home Photos. Druk op 'Nieuwe Home Photo toevoegen' om de eerste toe te voegen.
+          home_photo:
+            view_live_html: Deze home photo op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze home photo
+            delete: Deze home photo definitief verwijderen
+      home_photos:
+        show:
+          other: Andere Home Photos
+  activerecord:
+    attributes:
+      'refinery/home_photos/home_photo':
+        description: Description
+        photo: Photo
+        link: Link

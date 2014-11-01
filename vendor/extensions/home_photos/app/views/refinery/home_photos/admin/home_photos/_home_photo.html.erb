@@ -1,0 +1,32 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(home_photo) -%>">
+  <span class='title'>
+    <%= home_photo.link %>
+
+    <% if Refinery::I18n.frontend_locales.many? %>
+      <span class='preview'>
+        <% home_photo.translations.each do |translation| %>
+          <% if translation.link.present? %>
+            <%= link_to refinery_icon_tag("flags/#{translation.locale}.png", :size => '16x11'),
+                         refinery.edit_home_photos_admin_home_photo_path(home_photo, :switch_locale => translation.locale),
+                         :class => 'locale' %>
+          <% end %>
+        <% end %>
+      </span>
+    <% end %>
+
+  </span>
+  <span class='actions'>
+    
+    <%= link_to refinery_icon_tag("application_go.png"), refinery.home_photos_home_photo_path(home_photo),
+        :title => t('.view_live_html'),
+        :target => "_blank" %>
+    
+    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_home_photos_admin_home_photo_path(home_photo),
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), refinery.home_photos_admin_home_photo_path(home_photo),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :confirm => t('message', :scope => 'refinery.admin.delete', :title => home_photo.link),
+        :method => :delete %>
+  </span>
+</li>

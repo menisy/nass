@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require owl.carousel
 
 /*
 $(document).ready(function(){
@@ -30,7 +31,7 @@ $(document).ready(function(){
       if(ul.hasClass('fixed')) {
         ul.removeClass('fixed');
       }
-    } else { 
+    } else {
       if(!ul.hasClass('fixed')) {
         ul.addClass('fixed');
         ul.css('left', left);

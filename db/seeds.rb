@@ -11,3 +11,18 @@ Refinery::Pages::Engine.load_seed
 
 # Added by Refinery CMS News engine
 Refinery::News::Engine.load_seed
+
+# Added by Refinery CMS HomePhotos extension
+Refinery::HomePhotos::Engine.load_seed
+
+User.create email: 'mo@mo.com',
+                    password: '12345678',
+                    password_confirmation: '12345678'
+Role.create title: 'refinery'
+Role.create title: 'superuser'
+
+us = User.first
+
+us.roles += Role.all
+
+us.save

@@ -1,0 +1,29 @@
+tr:
+  refinery:
+    plugins:
+      home_photos:
+        title: Home Photos
+    home_photos:
+      admin:
+        home_photos:
+          actions:
+            create_new: Yeni Ekle Home Photo
+            reorder: Tekrar sirala Home Photos
+            reorder_done: Tekrar siralama tamamlandiHome Photos
+          records:
+            title: Home Photos
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Home Photos yok henuz.  Tikla "Yeni Ekle Home Photo" eklemek senin ilk home photo.
+          home_photo:
+            view_live_html: Bunu canlu home photo goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle home photo
+            delete: Bunu Sil home photo sonsuza dek
+      home_photos:
+        show:
+          other: Diger Home Photos
+  activerecord:
+    attributes:
+      'refinery/home_photos/home_photo':
+        description: Description
+        photo: Photo
+        link: Link

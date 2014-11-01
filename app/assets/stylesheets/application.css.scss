@@ -1,6 +1,8 @@
 @import "refinery/formatting";
 @import "refinery/theme";
 @import "bootstrap-sprockets";
+@import "owl.carousel.css";
+@import "owl.theme.css";
 
 $navbar-default-bg: #1d8653;
 $navbar-default-height: 45px;
@@ -47,22 +49,12 @@ $grey: #f7f7f7;
 
 #main-content{
   margin-top: 175px;
-  .row{
-    width: 920px;
-  }
-
 }
 
 #main-container{
   width: 920px;
 }
 
-#main-content{
-  .row{
-    margin-left: 20px;
-    width: 865px;
-  }
-}
 #search-form{
   position: relative;
 }
@@ -237,4 +229,70 @@ ul.navbar-nav{
 .fixed{
   position: fixed;
   top: 20px;
+}
+#carousel-wrapper{
+  width: 500px;
+  height: 400px;
+  overflow: hidden;
+}
+.no-mrg{
+  margin-left: 0px !important;
+  margin-top: 5px;
+  div{
+    padding-left: 0px;
+  }
+}
+.section-header{
+  background-color: $dark-green;
+  color: #fff;
+  padding: 5px 7px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+
+  h3{
+    font-weight: 200;
+    margin: 0px;
+    padding-left: 10px;
+    font-size: 18px;
+  }
+}
+.owl-controls{
+  position: relative;
+  top: -40px;
+  left: -45%;
+}
+.carousel-wrapper{
+  max-height: 305px;
+  margin-bottom: 20px;
+  img{
+    width: 710px;
+  }
+}
+.green-title{
+  color: $dark-green;
+  font-size: 18px;
+}
+.horz-divider{
+  border-top: 1px solid #bbb;
+}
+.test{
+  border: 1px solid #000;
+  div{
+    border: 1px solid #000;
+  }
+}
+
+.big-box,
+.mini-box {
+    background-color: #10BCFF;
+    color: white;
+    text-align: center;
+    margin: 2px;
+    font-size: 1.5em;
+}
+.big-box {
+    height: 65px
+}
+.mini-box {
+    height: 30px
 }
