@@ -23,10 +23,12 @@ git 'git://github.com/refinery/refinerycms.git', :branch => '2-1-stable' do
 end
 
 gem "refinerycms-news", '~> 2.1.0'
+gem 'refinerycms-page-images'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'owlcarousel-rails'
+gem 'truncate_html'
 
 # Gems used only for assets and not required
 # in production environments by default.

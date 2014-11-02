@@ -199,6 +199,8 @@ GEM
       friendly_id (~> 4.0.9)
       refinerycms-core (~> 2.1.1)
       refinerycms-settings (~> 2.1.0)
+    refinerycms-page-images (2.1.1)
+      refinerycms-pages (~> 2.1.0)
     refinerycms-settings (2.1.1)
       refinerycms-core (~> 2.1.1)
     routing-filter (0.3.1)
@@ -256,10 +258,12 @@ DEPENDENCIES
   refinerycms-home_photos!
   refinerycms-images!
   refinerycms-news (~> 2.1.0)
+  refinerycms-page-images
   refinerycms-pages!
   refinerycms-resources!
   sass-rails
   sqlite3
   therubyracer (= 0.11.3)
+  truncate_html
   uglifier (>= 1.0.3)
   unicorn

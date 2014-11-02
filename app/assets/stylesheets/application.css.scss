@@ -296,3 +296,44 @@ ul.navbar-nav{
 .mini-box {
     height: 30px
 }
+.img-prev{
+  border: 1px solid #eee;
+  margin: 7px 5px;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  img{
+    height: 100px;
+  }
+}
+.news-item-prev{
+  color: #000;
+  border-bottom: 1px solid #ddd;
+}
+.media-links{
+  span{
+    margin: 10px 2px 5px 2px;
+    display: inline-block;
+    img{
+      width: 35px;
+    }
+  }
+}
+.video-small{
+  margin-top: 10px;
+}
+.partners-prev{
+  ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    li{
+      display: inline-block;
+      margin: 5px 10px;
+    }
+  }
+  img{
+    height: 100px;
+    width: auto;
+  }
+}

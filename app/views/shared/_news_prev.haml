@@ -1,0 +1,6 @@
+- @news.each do |news|
+  = link_to news_item_path(news) do
+    .news-item-prev
+      %span.pull-left.img-prev= image_tag news.image.url if news.image
+      %span.green-title= news.title
+      = raw(truncate_html(news.body, length: 150))

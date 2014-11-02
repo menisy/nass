@@ -40,48 +40,74 @@ cancel_employer_registration GET    /employers/cancel(.:format)        devise/re
                     refinery        /                                  Refinery::Core::Engine
 
 Routes for Refinery::Core::Engine:
-                               GET    /system/resources/*dragonfly(.:format)     <Dragonfly::App name=:refinery_resources >
-        insert_admin_resources GET    /refinery/resources/insert(.:format)       refinery/admin/resources#insert
-               admin_resources GET    /refinery/resources(.:format)              refinery/admin/resources#index
-                               POST   /refinery/resources(.:format)              refinery/admin/resources#create
-            new_admin_resource GET    /refinery/resources/new(.:format)          refinery/admin/resources#new
-           edit_admin_resource GET    /refinery/resources/:id/edit(.:format)     refinery/admin/resources#edit
-                admin_resource PUT    /refinery/resources/:id(.:format)          refinery/admin/resources#update
-                               DELETE /refinery/resources/:id(.:format)          refinery/admin/resources#destroy
-                          root GET    /                                          refinery/pages#home
-                          page GET    /pages/:id(.:format)                       refinery/pages#show
-     pages_admin_preview_pages POST   /refinery/pages/preview(.:format)          refinery/pages/admin/preview#show
-      pages_admin_preview_page PUT    /refinery/pages/preview/*path(.:format)    refinery/pages/admin/preview#show
-                         admin GET    /refinery/pages/*path/edit(.:format)       refinery/admin/pages#edit
-          admin_children_pages GET    /refinery/pages/*path/children(.:format)   refinery/admin/pages#children
-                               PUT    /refinery/pages/*path(.:format)            refinery/admin/pages#update
-                               DELETE /refinery/pages/*path(.:format)            refinery/admin/pages#destroy
-  update_positions_admin_pages POST   /refinery/pages/update_positions(.:format) refinery/admin/pages#update_positions
-                   admin_pages GET    /refinery/pages(.:format)                  refinery/admin/pages#index
-                               POST   /refinery/pages(.:format)                  refinery/admin/pages#create
-                new_admin_page GET    /refinery/pages/new(.:format)              refinery/admin/pages#new
-               edit_admin_page GET    /refinery/pages/:id/edit(.:format)         refinery/admin/pages#edit
-                    admin_page PUT    /refinery/pages/:id(.:format)              refinery/admin/pages#update
-                               DELETE /refinery/pages/:id(.:format)              refinery/admin/pages#destroy
-   link_to_admin_pages_dialogs GET    /refinery/pages_dialogs/link_to(.:format)  refinery/admin/pages_dialogs#link_to
-              admin_page_parts POST   /refinery/page_parts(.:format)             refinery/admin/page_parts#create
-           new_admin_page_part GET    /refinery/page_parts/new(.:format)         refinery/admin/page_parts#new
-               admin_page_part DELETE /refinery/page_parts/:id(.:format)         refinery/admin/page_parts#destroy
-                               GET    /system/images/*dragonfly(.:format)        <Dragonfly::App name=:refinery_images >
-           insert_admin_images GET    /refinery/images/insert(.:format)          refinery/admin/images#insert
-                  admin_images GET    /refinery/images(.:format)                 refinery/admin/images#index
-                               POST   /refinery/images(.:format)                 refinery/admin/images#create
-               new_admin_image GET    /refinery/images/new(.:format)             refinery/admin/images#new
-              edit_admin_image GET    /refinery/images/:id/edit(.:format)        refinery/admin/images#edit
-                   admin_image PUT    /refinery/images/:id(.:format)             refinery/admin/images#update
-                               DELETE /refinery/images/:id(.:format)             refinery/admin/images#destroy
-               admin_dashboard GET    /refinery/dashboard(.:format)              refinery/admin/dashboard#index
-                     wymiframe GET    /wymiframe(/:id)(.:format)                 refinery/fast#wymiframe
-                       message GET    /refinery/message(.:format)                refinery/fast#message
-                    admin_root        /refinery(.:format)                        refinery/admin/dashboard#index
-                 admin_dialogs GET    /refinery/dialogs(.:format)                refinery/admin/dialogs#index
-                  admin_dialog GET    /refinery/dialogs/:id(.:format)            refinery/admin/dialogs#show
-refinery_update_menu_positions POST   /refinery/update_menu_positions(.:format)  refinery/admin/core#update_plugin_positions
-                               GET    /sitemap.xml(.:format)                     refinery/sitemap#index {:format=>"xml"}
-                               GET    /refinery/*path(.:format)                  refinery/admin#error_404
-               marketable_page GET    /*path(.:format)                           refinery/pages#show
+                       home_photos_home_photos GET    /home_photos(.:format)                           refinery/home_photos/home_photos#index
+                        home_photos_home_photo GET    /home_photos/:id(.:format)                       refinery/home_photos/home_photos#show
+update_positions_home_photos_admin_home_photos POST   /refinery/home_photos/update_positions(.:format) refinery/home_photos/admin/home_photos#update_positions
+                 home_photos_admin_home_photos GET    /refinery/home_photos(.:format)                  refinery/home_photos/admin/home_photos#index
+                                               POST   /refinery/home_photos(.:format)                  refinery/home_photos/admin/home_photos#create
+              new_home_photos_admin_home_photo GET    /refinery/home_photos/new(.:format)              refinery/home_photos/admin/home_photos#new
+             edit_home_photos_admin_home_photo GET    /refinery/home_photos/:id/edit(.:format)         refinery/home_photos/admin/home_photos#edit
+                  home_photos_admin_home_photo PUT    /refinery/home_photos/:id(.:format)              refinery/home_photos/admin/home_photos#update
+                                               DELETE /refinery/home_photos/:id(.:format)              refinery/home_photos/admin/home_photos#destroy
+                                     news_root        /news(.:format)                                  refinery/news/items#index
+                            news_items_archive GET    /news/archive/:year(/:month)(.:format)           refinery/news/items#archive {:year=>/\d{4}/, :month=>/\d{1,2}/}
+                                    news_items GET    /news(.:format)                                  refinery/news/items#index
+                                     news_item GET    /news/:id(.:format)                              refinery/news/items#show
+                               news_admin_root        /refinery/news(.:format)                         refinery/news/admin/items#index
+                              news_admin_items GET    /refinery/news/items(.:format)                   refinery/news/admin/items#index
+                                               POST   /refinery/news/items(.:format)                   refinery/news/admin/items#create
+                           new_news_admin_item GET    /refinery/news/items/new(.:format)               refinery/news/admin/items#new
+                          edit_news_admin_item GET    /refinery/news/items/:id/edit(.:format)          refinery/news/admin/items#edit
+                               news_admin_item PUT    /refinery/news/items/:id(.:format)               refinery/news/admin/items#update
+                                               DELETE /refinery/news/items/:id(.:format)               refinery/news/admin/items#destroy
+                                admin_settings GET    /refinery/settings(.:format)                     refinery/admin/settings#index
+                                               POST   /refinery/settings(.:format)                     refinery/admin/settings#create
+                             new_admin_setting GET    /refinery/settings/new(.:format)                 refinery/admin/settings#new
+                            edit_admin_setting GET    /refinery/settings/:id/edit(.:format)            refinery/admin/settings#edit
+                                 admin_setting PUT    /refinery/settings/:id(.:format)                 refinery/admin/settings#update
+                                               DELETE /refinery/settings/:id(.:format)                 refinery/admin/settings#destroy
+                                               GET    /system/resources/*dragonfly(.:format)           <Dragonfly::App name=:refinery_resources >
+                        insert_admin_resources GET    /refinery/resources/insert(.:format)             refinery/admin/resources#insert
+                               admin_resources GET    /refinery/resources(.:format)                    refinery/admin/resources#index
+                                               POST   /refinery/resources(.:format)                    refinery/admin/resources#create
+                            new_admin_resource GET    /refinery/resources/new(.:format)                refinery/admin/resources#new
+                           edit_admin_resource GET    /refinery/resources/:id/edit(.:format)           refinery/admin/resources#edit
+                                admin_resource PUT    /refinery/resources/:id(.:format)                refinery/admin/resources#update
+                                               DELETE /refinery/resources/:id(.:format)                refinery/admin/resources#destroy
+                                          root GET    /                                                refinery/pages#home
+                                          page GET    /pages/:id(.:format)                             refinery/pages#show
+                     pages_admin_preview_pages POST   /refinery/pages/preview(.:format)                refinery/pages/admin/preview#show
+                      pages_admin_preview_page PUT    /refinery/pages/preview/*path(.:format)          refinery/pages/admin/preview#show
+                                         admin GET    /refinery/pages/*path/edit(.:format)             refinery/admin/pages#edit
+                          admin_children_pages GET    /refinery/pages/*path/children(.:format)         refinery/admin/pages#children
+                                               PUT    /refinery/pages/*path(.:format)                  refinery/admin/pages#update
+                                               DELETE /refinery/pages/*path(.:format)                  refinery/admin/pages#destroy
+                  update_positions_admin_pages POST   /refinery/pages/update_positions(.:format)       refinery/admin/pages#update_positions
+                                   admin_pages GET    /refinery/pages(.:format)                        refinery/admin/pages#index
+                                               POST   /refinery/pages(.:format)                        refinery/admin/pages#create
+                                new_admin_page GET    /refinery/pages/new(.:format)                    refinery/admin/pages#new
+                               edit_admin_page GET    /refinery/pages/:id/edit(.:format)               refinery/admin/pages#edit
+                                    admin_page PUT    /refinery/pages/:id(.:format)                    refinery/admin/pages#update
+                                               DELETE /refinery/pages/:id(.:format)                    refinery/admin/pages#destroy
+                   link_to_admin_pages_dialogs GET    /refinery/pages_dialogs/link_to(.:format)        refinery/admin/pages_dialogs#link_to
+                              admin_page_parts POST   /refinery/page_parts(.:format)                   refinery/admin/page_parts#create
+                           new_admin_page_part GET    /refinery/page_parts/new(.:format)               refinery/admin/page_parts#new
+                               admin_page_part DELETE /refinery/page_parts/:id(.:format)               refinery/admin/page_parts#destroy
+                                               GET    /system/images/*dragonfly(.:format)              <Dragonfly::App name=:refinery_images >
+                           insert_admin_images GET    /refinery/images/insert(.:format)                refinery/admin/images#insert
+                                  admin_images GET    /refinery/images(.:format)                       refinery/admin/images#index
+                                               POST   /refinery/images(.:format)                       refinery/admin/images#create
+                               new_admin_image GET    /refinery/images/new(.:format)                   refinery/admin/images#new
+                              edit_admin_image GET    /refinery/images/:id/edit(.:format)              refinery/admin/images#edit
+                                   admin_image PUT    /refinery/images/:id(.:format)                   refinery/admin/images#update
+                                               DELETE /refinery/images/:id(.:format)                   refinery/admin/images#destroy
+                               admin_dashboard GET    /refinery/dashboard(.:format)                    refinery/admin/dashboard#index
+                                     wymiframe GET    /wymiframe(/:id)(.:format)                       refinery/fast#wymiframe
+                                       message GET    /refinery/message(.:format)                      refinery/fast#message
+                                    admin_root        /refinery(.:format)                              refinery/admin/dashboard#index
+                                 admin_dialogs GET    /refinery/dialogs(.:format)                      refinery/admin/dialogs#index
+                                  admin_dialog GET    /refinery/dialogs/:id(.:format)                  refinery/admin/dialogs#show
+                refinery_update_menu_positions POST   /refinery/update_menu_positions(.:format)        refinery/admin/core#update_plugin_positions
+                                               GET    /sitemap.xml(.:format)                           refinery/sitemap#index {:format=>"xml"}
+                                               GET    /refinery/*path(.:format)                        refinery/admin#error_404
+                               marketable_page GET    /*path(.:format)                                 refinery/pages#show
