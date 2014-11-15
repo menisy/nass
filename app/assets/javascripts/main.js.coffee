@@ -19,7 +19,7 @@ $(document).ready ->
   ul = $("#left_side_body ul")
   theLoc = 275 #ul.offset().top - 20;
 
-  $(".owl-carousel").owlCarousel({items: 1, slideSpeed: 200, autoPlay: false});
+  $(".owl-carousel").owlCarousel({items: 1, slideSpeed: 200, autoPlay: true});
 
   # $(window).scroll ->
   #   if theLoc >= $(window).scrollTop()
