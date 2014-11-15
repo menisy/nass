@@ -1,0 +1,19 @@
+
+<div class="row no-mrg">
+  <div class="col-sm-9 courses">
+
+    <%= raw(@page.content_for(:services)) %>
+
+  </div>
+  <div class="col-sm-3">
+    <span class="green-title">Contact Us</span>
+    <div class="horz-divider">
+    </div>
+    <%= raw(@contact.content) %>
+    <div class="horz-divider">
+    </div>
+    <%= render partial: 'shared/media_links' %>
+    <%= render partial: 'shared/video' %>
+  </div>
+
+</div>
