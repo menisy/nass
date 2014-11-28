@@ -1,4 +1,8 @@
 $(document).ready ->
+
+  #gef left and right in place
+  $('.right, .left').addClass('col-md-6')
+
   $('.navbar .active > a').css('background-color', 'inherit')
   $(".navbar #menu ul").addClass "nav navbar-nav"
   $("ul.navbar-nav").after $("#locale").html()

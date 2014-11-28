@@ -32,8 +32,7 @@ $grey: #f7f7f7;
 .navbar-nav{
   margin-left: -16px;
   li{
-    min-width: 60px;
-    padding-right: 30px;
+    padding: 0px 20px 0px 5px;
     height: 50px;
   }
   li>a{
@@ -338,4 +337,26 @@ ul.navbar-nav{
 
 img{
   max-width: 665px;
+}
+
+.calendar{
+  p{
+    max-width: 300px;
+    display: inline-block;
+  }
+}
+.nomrg{
+  h3{
+    margin: 0px 0px 5px 0px;
+  }
+}
+h2{
+  margin-top: 0px;
+}
+p{
+  font-size: 13px;
+}
+.schools ul{
+  position: fixed;
+  margin-top: -15px;
 }

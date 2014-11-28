@@ -1,0 +1,19 @@
+<div class="row no-mrg">
+  <div class="col-sm-9">
+
+    <%= raw(@page.content_for(:top)) %>
+    <div class="row no-mrg">
+      <br>
+      <div class="col-md-6"><%= raw(@page.content_for(:midleft)) %></div>
+      <div class="col-md-6"><%= raw(@page.content_for(:midright)) %></div>
+    </div>
+    <%= raw(@page.content_for(:bottom)) %>
+
+  </div>
+  <div class="col-sm-3">
+    <%= render partial: 'shared/contact_us' %>
+    <%= render partial: 'shared/media_links' %>
+    <%= render partial: 'shared/video' %>
+  </div>
+
+</div>
