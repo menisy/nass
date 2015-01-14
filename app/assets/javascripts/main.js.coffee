@@ -5,7 +5,7 @@ $(document).ready ->
 
   $('.navbar .active > a').css('background-color', 'inherit')
   $(".navbar #menu ul").addClass "nav navbar-nav"
-  $("ul.navbar-nav").after $("#locale").html()
+  #$("ul.navbar-nav").after $("#locale").html()
   $("#left_side_body, #right_side_body").addClass "col-md-2"
   $("#body").addClass "col-md-9"
 
@@ -16,7 +16,7 @@ $(document).ready ->
   nav_li = $("ul.navbar-nav li")
   colors = ["yello", "orange", "red", "blue", "lime", "purple"]
   nav_li.each (i, j) ->
-    $(j).addClass('padd') unless i == 2 || i == 3
+    #$(j).addClass('padd') unless i == 2 || i == 3
     $(j).addClass(colors[i%colors.length])
 
   #$('#body').addClass('col-md-8');
@@ -42,6 +42,16 @@ $(document).ready ->
     h.replace /&nbsp;/g, ""
 
   $("#left_side_body ul li br").remove()
+
+# menu drop down listner
+  $('li').click ->
+  $(".navbar-nav>li").hover (->
+    $(this).find(".dropdown-menu").show()
+    return
+  ), ->
+    $(this).find(".dropdown-menu").fadeOut(100)
+    return
+
 
 # resize = ->
 #   window.scrollTo 0, 0

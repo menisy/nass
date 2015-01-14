@@ -1,0 +1,59 @@
+<div id="header-container">
+  <div id="top-container">
+    <div id="logo">
+      <%= link_to refinery.root_path do %>
+        <%= image_tag 'logo.png' %>
+      <% end %>
+    </div>
+    <div class="pull-right hide" id="locale">
+      <ul class="nav nav-bar pull-right">
+        <li>
+          <%= locale_switcher %>
+        </li>
+      </ul>
+    </div>
+    <div class="pull-right" id="forms">
+      <% unless student_signed_in? %>
+        <label>Sign in</label>
+        <%= form_tag session_path(:student), method: :post do %>
+          <%= text_field_tag 'student[email]', nil, placeholder: 'email' %>
+          <%= password_field_tag 'student[password]', nil, placeholder: 'password' %>
+          <button class="btn">Sign in</button>
+          <%= check_box_tag 'student[remember_me]' %>
+          <%= label_tag 'student[remember_me]', 'Remember me', class: 'remember' %>
+          <br/>
+          <%= link_to "Forgot your password?", new_password_path(:student) %>
+        <% end %>
+      <% else %>
+        <p>
+          Logged in as
+          <%= current_student.email %>
+          <%= link_to 'Logout', main_app.destroy_student_session_path, method: :delete %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+
+
+  <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse no-padd" id="bs-example-navbar-collapse-1">
+              <%= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html %>
+          </div>
+      </div>
+  </nav>
+
+</div>

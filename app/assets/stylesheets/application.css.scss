@@ -26,19 +26,25 @@ $grey: #f7f7f7;
 }
 
 .navbar-default{
-  height: 50px;
+  height: 30px;
+  min-height: 30px;
 }
 
 .navbar-nav{
   margin-left: -16px;
   li{
-    padding: 0px 20px 0px 5px;
-    height: 50px;
+    padding: 3px 20px 0px 5px;
+    height: 30px;
   }
   li>a{
     padding: 3px 0px 3px 7px;
     max-width: 100px;
   }
+}
+
+.dropdown-menu{
+  padding: 0px;
+  min-width: 100px;
 }
 
 .padd{
@@ -107,10 +113,10 @@ $grey: #f7f7f7;
 #logo{
 
   display: inline-block;
-  height: 130px;
+  height: 150px;
 
   img{
-    height: 130px;
+    height: 150px;
   }
 
 }
@@ -148,7 +154,7 @@ ul.navbar-nav{
 
 #top-container{
   margin-bottom: 10px;
-  height: 130px;
+  height: 140px;
 }
 
 #footer{
@@ -359,4 +365,8 @@ p{
 .schools ul{
   position: fixed;
   width: 220px;
+}
+
+.no-padd{
+  padding: 0px !important;
 }
