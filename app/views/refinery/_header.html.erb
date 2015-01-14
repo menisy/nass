@@ -5,13 +5,6 @@
         <%= image_tag 'logo.png' %>
       <% end %>
     </div>
-    <div class="pull-right hide" id="locale">
-      <ul class="nav nav-bar pull-right">
-        <li>
-          <%= locale_switcher %>
-        </li>
-      </ul>
-    </div>
     <div class="pull-right" id="forms">
       <% unless student_signed_in? %>
         <label>Sign in</label>
@@ -31,6 +24,14 @@
           <%= link_to 'Logout', main_app.destroy_student_session_path, method: :delete %>
         </p>
       <% end %>
+    </div>
+
+    <div class="pull-right " id="locale">
+      <ul class="nav nav-bar pull-right">
+        <li>
+          <%= locale_switcher %>
+        </li>
+      </ul>
     </div>
   </div>
 
