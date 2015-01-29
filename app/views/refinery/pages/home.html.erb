@@ -11,13 +11,13 @@
     <div class="row no-mrg">
       <div class="col-xs-8 col-sm-6">
         <div class="section-header">
-          <h3>About NASS</h3>
+          <h3><%= t :about_nass %></h3>
         </div>
         <%= raw(@page.content_for(:about)) %>
       </div>
       <div class="col-xs-4 col-sm-6">
         <div class="section-header">
-          <h3>News</h3>
+          <h3><%= t :news %></h3>
         </div>
         <%= render partial: 'shared/news_prev' %>
       </div>
@@ -27,7 +27,7 @@
     <div class="row no-mrg">
       <div class="col-xs-8 col-sm-6">
         <div class="section-header">
-          <h3>Partners</h3>
+          <h3><%= t :partners %></h3>
         </div>
         <div class="partners-prev">
           <%= raw(@page.content_for(:partners)) %>
@@ -35,7 +35,7 @@
       </div>
       <div class="col-xs-4 col-sm-6">
         <div class="section-header">
-          <h3>Departments</h3>
+          <h3><%= t :departments %></h3>
         </div>
         <%= render partial: 'shared/news_prev' %>
       </div>

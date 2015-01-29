@@ -48,6 +48,10 @@ $grey: #f7f7f7;
   padding: 0px;
   min-width: 100px;
 }
+.dropdown-menu > li > a:hover,.dropdown-menu > li > a:focus{
+  background-color: inherit;
+  background-image: none;
+}
 
 .padd{
   padding-top: 13px !important;
