@@ -26,3 +26,6 @@ us = User.first
 us.roles += Role.all
 
 us.save
+
+# Added by Refinery CMS Dynamicfields extension
+Refinery::Dynamicfields::Engine.load_seed

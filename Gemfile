@@ -9,6 +9,8 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+gem 'refinerycms-dynamicfields', :git => 'https://github.com/jfalameda/refinerycms-dynamicfields.git'
+
 gem 'mysql2'
 gem 'devise'
 gem 'fog'
