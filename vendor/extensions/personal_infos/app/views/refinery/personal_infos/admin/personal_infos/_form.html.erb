@@ -1,0 +1,60 @@
+<%= form_for [refinery, :personal_infos_admin, @personal_info] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @personal_info,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :nationality -%>
+    <%= f.text_field :nationality -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :dob -%>
+    <%= f.date_select :dob -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :pob -%>
+    <%= f.text_field :pob -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :gender -%>
+    <%= f.number_field :gender -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :maritual_status -%>
+    <%= f.number_field :maritual_status -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:languages, :address, :degrees, :skills, :skilled_jobs],
+                :object => "personal_infos/personal_info" -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :email -%>
+    <%= f.text_field :email -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.personal_infos.admin.personal_infos.personal_info'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @personal_info.name) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

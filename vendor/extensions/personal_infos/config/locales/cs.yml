@@ -1,0 +1,38 @@
+cs:
+  refinery:
+    plugins:
+      personal_infos:
+        title: Personal Infos
+    personal_infos:
+      admin:
+        personal_infos:
+          actions:
+            create_new: Přidat Personal Info
+            reorder: Řadit Personal Infos
+            reorder_done: Konec řazení Personal Infos
+          records:
+            title: Personal Infos
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Personal Infos. Zvolte "Přidat Personal Info" pro přidání prvního personal info.
+          personal_info:
+            view_live_html: Zobrazit náhled personal info<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit personal info
+            delete: Smazat personal info
+      personal_infos:
+        show:
+          other: Další Personal Infos
+  activerecord:
+    attributes:
+      'refinery/personal_infos/personal_info':
+        name: Name
+        nationality: Nationality
+        dob: Dob
+        pob: Pob
+        gender: Gender
+        maritual_status: Maritual Status
+        languages: Languages
+        address: Address
+        email: Email
+        degrees: Degrees
+        skills: Skills
+        skilled_jobs: Skilled Jobs

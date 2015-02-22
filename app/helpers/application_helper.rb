@@ -13,11 +13,29 @@ module ApplicationHelper
   end
 
   def locale_switcher
-    if I18n.locale.to_s == 'en'
-      link_to 'عربي', refinery.url_for(params.merge(:locale => 'ar')), class: 'lcl'
+    unless params[:controller] == 'registrations' && params[:action] == 'create'
+      if I18n.locale.to_s == 'en'
+        #Globalize.with_locale('ar') { link_to 'عربي', refinery.url_for( locale: 'ar'), class: 'lcl' }
+        link_to 'عربي', refinery.url_for(:locale => 'ar'), class: 'lcl'
+      else
+        #Globalize.with_locale('en') { link_to 'English', refinery.url_for(locale: 'en'), class: 'lcl' }
+        link_to 'English'.upcase, refinery.url_for(:locale => 'en'), class: 'lcl'
+      end
     else
-      link_to 'English'.upcase, refinery.url_for(params.merge(:locale => 'en')), class: 'lcl'
+      if I18n.locale.to_s == 'en'
+        link_to 'عربي', 'ar/registration', class: 'lcl'
+      else
+        link_to 'English', 'registration', class: 'lcl'
+      end
     end
   end
+
+  # def locale_switcher
+  #     if I18n.locale.to_s == 'en'
+  #       link_to 'عربي', refinery.url_for(params.merge(:locale => 'ar')), class: 'lcl'
+  #     else
+  #       link_to 'English'.upcase, refinery.url_for(params.merge(:locale => 'en')), class: 'lcl'
+  #     end
+  # end
 
 end

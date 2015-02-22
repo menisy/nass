@@ -61,3 +61,5 @@ end
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'refinerycms-home_photos', :path => 'vendor/extensions'
+
+gem 'refinerycms-personal_infos', :path => 'vendor/extensions'

@@ -1,0 +1,38 @@
+nl:
+  refinery:
+    plugins:
+      personal_infos:
+        title: Personal Infos
+    personal_infos:
+      admin:
+        personal_infos:
+          actions:
+            create_new: Nieuwe Personal Info toevoegen
+            reorder: De volgorde van de Personal Infos wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Personal Info-volgorde
+          records:
+            title: Personal Infos
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Personal Infos. Druk op 'Nieuwe Personal Info toevoegen' om de eerste toe te voegen.
+          personal_info:
+            view_live_html: Deze personal info op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze personal info
+            delete: Deze personal info definitief verwijderen
+      personal_infos:
+        show:
+          other: Andere Personal Infos
+  activerecord:
+    attributes:
+      'refinery/personal_infos/personal_info':
+        name: Name
+        nationality: Nationality
+        dob: Dob
+        pob: Pob
+        gender: Gender
+        maritual_status: Maritual Status
+        languages: Languages
+        address: Address
+        email: Email
+        degrees: Degrees
+        skills: Skills
+        skilled_jobs: Skilled Jobs

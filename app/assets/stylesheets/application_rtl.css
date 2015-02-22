@@ -5374,6 +5374,9 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 ul.navbar-nav a {
   color: #fff;
+}#locale{
+  position: absolute;
+  left: 0px;
 }#locale a {
   padding: 10px 15px 10px 0px;
 }.lcl {
@@ -5560,6 +5563,9 @@ ul.navbar-nav a {
 }.no-padd {
   padding: 0px !important;
 }
-.col-sm-3, p, h1, h2, h3, h4, h5, h6{
+.col-sm-3, p, h1, h2, h3, h4, h5, h6, form{
+  direction: rtl;
+}
+.sign-in-upper{
   direction: rtl;
 }

@@ -9,15 +9,26 @@ $(document).ready ->
   $("#left_side_body, #right_side_body").addClass "col-md-2"
   $("#body").addClass "col-md-9"
 
+  if($('.alert-success').length > 0)
+    $('.alert-success').delay(8000).fadeOut(800)
+
+  if($('.sii').text().trim() == 'true')
+    $("li:contains('Registration')").hide()
+    
+
   #$('#right_side_body').prepend($('#search-form').html())
   $('#body_content').append($('#search-form').remove())
 
   $('#right_side_body').append($('#side_body').html())
-  nav_li = $("ul.navbar-nav li")
-  colors = ["yello", "orange", "red", "blue", "lime", "purple"]
+
+  $('ul.nav.navbar-nav').children('li').addClass('nav-li')
+  nav_li = $("ul.navbar-nav li.nav-li")
+  colors = ["green", "yello", "orange", "red", "blue", "lime", "purple"]
   nav_li.each (i, j) ->
     #$(j).addClass('padd') unless i == 2 || i == 3
     $(j).addClass(colors[i%colors.length])
+    $(j).find('li').each (l, k) ->
+      $(k).addClass(colors.reverse()[l%colors.length])
 
   #$('#body').addClass('col-md-8');
   ul = $("#left_side_body ul")

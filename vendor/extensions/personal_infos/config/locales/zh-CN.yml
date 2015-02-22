@@ -1,0 +1,40 @@
+zh-CN:
+  refinery:
+    plugins:
+      personal_infos:
+        title: Personal Infos
+    personal_infos:
+      admin:
+        personal_infos:
+          actions:
+            create_new: 建立新的 Personal Info
+            reorder: 对 Personal Infos 重新排序
+            reorder_done: 对 Personal Infos 的重新排序结束
+          records:
+            title: Personal Infos
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Personal Infos yet. Click "Add New Personal Info" to add your first personal info.
+            no_items_yet: 目前没有 Personal Infos . 点击 "Add New Personal Info" 创建一个personal info.
+          personal_info:
+            view_live_html: 查看 personal info 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 personal info
+            delete: 永久删除 personal info
+      personal_infos:
+        show:
+          other: 其他 Personal Infos
+  activerecord:
+    attributes:
+      'refinery/personal_infos/personal_info':
+        name: Name
+        nationality: Nationality
+        dob: Dob
+        pob: Pob
+        gender: Gender
+        maritual_status: Maritual Status
+        languages: Languages
+        address: Address
+        email: Email
+        degrees: Degrees
+        skills: Skills
+        skilled_jobs: Skilled Jobs

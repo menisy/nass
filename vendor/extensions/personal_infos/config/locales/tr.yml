@@ -1,0 +1,38 @@
+tr:
+  refinery:
+    plugins:
+      personal_infos:
+        title: Personal Infos
+    personal_infos:
+      admin:
+        personal_infos:
+          actions:
+            create_new: Yeni Ekle Personal Info
+            reorder: Tekrar sirala Personal Infos
+            reorder_done: Tekrar siralama tamamlandiPersonal Infos
+          records:
+            title: Personal Infos
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Personal Infos yok henuz.  Tikla "Yeni Ekle Personal Info" eklemek senin ilk personal info.
+          personal_info:
+            view_live_html: Bunu canlu personal info goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle personal info
+            delete: Bunu Sil personal info sonsuza dek
+      personal_infos:
+        show:
+          other: Diger Personal Infos
+  activerecord:
+    attributes:
+      'refinery/personal_infos/personal_info':
+        name: Name
+        nationality: Nationality
+        dob: Dob
+        pob: Pob
+        gender: Gender
+        maritual_status: Maritual Status
+        languages: Languages
+        address: Address
+        email: Email
+        degrees: Degrees
+        skills: Skills
+        skilled_jobs: Skilled Jobs

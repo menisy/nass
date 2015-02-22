@@ -1,0 +1,38 @@
+en:
+  refinery:
+    plugins:
+      personal_infos:
+        title: Personal Infos
+    personal_infos:
+      admin:
+        personal_infos:
+          actions:
+            create_new: Add New Personal Info
+            reorder: Reorder Personal Infos
+            reorder_done: Done Reordering Personal Infos
+          records:
+            title: Personal Infos
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Personal Infos yet. Click "Add New Personal Info" to add your first personal info.
+          personal_info:
+            view_live_html: View this personal info live <br/><em>(opens in a new window)</em>
+            edit: Edit this personal info
+            delete: Remove this personal info forever
+      personal_infos:
+        show:
+          other: Other Personal Infos
+  activerecord:
+    attributes:
+      'refinery/personal_infos/personal_info':
+        name: Name
+        nationality: Nationality
+        dob: Dob
+        pob: Pob
+        gender: Gender
+        maritual_status: Maritual Status
+        languages: Languages
+        address: Address
+        email: Email
+        degrees: Degrees
+        skills: Skills
+        skilled_jobs: Skilled Jobs

@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles, :join_table => :roles_users
   has_many :plugins, :class_name => "UserPlugin", :order => "position ASC", :dependent => :destroy
 
+  has_one :personal_info, dependent: :destroy
+
+  accepts_nested_attributes_for :personal_info
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable

@@ -29,3 +29,6 @@ us.save
 
 # Added by Refinery CMS Dynamicfields extension
 Refinery::Dynamicfields::Engine.load_seed
+
+# Added by Refinery CMS PersonalInfos extension
+Refinery::PersonalInfos::Engine.load_seed

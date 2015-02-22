@@ -5,29 +5,29 @@
         <%= image_tag 'logo.png' %>
       <% end %>
     </div>
-    <div class="pull-right" id="forms">
+    <div class="pull-right sign-in-upper" id="forms">
       <% unless student_signed_in? %>
-        <label>Sign in</label>
+        <label><%= t(:sign_in) %></label>
         <%= form_tag session_path(:student), method: :post do %>
-          <%= text_field_tag 'student[email]', nil, placeholder: 'email' %>
-          <%= password_field_tag 'student[password]', nil, placeholder: 'password' %>
-          <button class="btn">Sign in</button>
+          <%= text_field_tag 'student[email]', nil, placeholder: t(:email) %>
+          <%= password_field_tag 'student[password]', nil, placeholder: t(:password) %>
+          <button class="btn"><%= t(:sign_in) %></button>
           <%= check_box_tag 'student[remember_me]' %>
-          <%= label_tag 'student[remember_me]', 'Remember me', class: 'remember' %>
+          <%= label_tag 'student[remember_me]', t(:remember_me), class: 'remember' %>
           <br/>
-          <%= link_to "Forgot your password?", new_password_path(:student) %>
+          <%= link_to t(:forgot_password), new_password_path(:student) %>
         <% end %>
       <% else %>
         <p>
-          Logged in as
-          <%= current_student.email %>
-          <%= link_to 'Logout', main_app.destroy_student_session_path, method: :delete %>
+          <%= t(:logged_in_as) %>
+          <span class="grayed"><%= current_student.name %></span>
+          <%= link_to (t :logout), main_app.destroy_student_session_path, method: :delete %>
         </p>
       <% end %>
     </div>
 
-    <div class="pull-right " id="locale">
-      <ul class="nav nav-bar pull-right">
+    <div class=" " id="locale">
+      <ul class="nav nav-bar">
         <li>
           <%= locale_switcher %>
         </li>

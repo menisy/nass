@@ -45,6 +45,8 @@ PATH
   specs:
     refinerycms-home_photos (1.0)
       refinerycms-core (~> 2.1.3)
+    refinerycms-personal_infos (1.0)
+      refinerycms-core (~> 2.1.3)
 
 GEM
   remote: https://rubygems.org/
@@ -271,6 +273,7 @@ DEPENDENCIES
   refinerycms-news (~> 2.1.0)
   refinerycms-page-images
   refinerycms-pages!
+  refinerycms-personal_infos!
   refinerycms-resources!
   sass-rails
   sqlite3

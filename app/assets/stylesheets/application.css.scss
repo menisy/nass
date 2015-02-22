@@ -134,8 +134,12 @@ ul.navbar-nav{
   }
 }
 
-#locale a{
+#locale{
+  position: absolute;
+  right: 0px;
+  a{
     padding: 10px 0px 10px 15px;
+  }
 }
 
 .lcl{

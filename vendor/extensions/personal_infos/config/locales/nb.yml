@@ -1,0 +1,38 @@
+nb:
+  refinery:
+    plugins:
+      personal_infos:
+        title: Personal Infos
+    personal_infos:
+      admin:
+        personal_infos:
+          actions:
+            create_new: Lag en ny Personal Info
+            reorder: Endre rekkefølgen på Personal Infos
+            reorder_done: Ferdig å endre rekkefølgen Personal Infos
+          records:
+            title: Personal Infos
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Personal Infos enda. Klikk på "Lag en ny Personal Info" for å legge til din første personal info.
+          personal_info:
+            view_live_html: Vis hvordan denne personal info ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne personal info
+            delete: Fjern denne personal info permanent
+      personal_infos:
+        show:
+          other: Andre Personal Infos
+  activerecord:
+    attributes:
+      'refinery/personal_infos/personal_info':
+        name: Name
+        nationality: Nationality
+        dob: Dob
+        pob: Pob
+        gender: Gender
+        maritual_status: Maritual Status
+        languages: Languages
+        address: Address
+        email: Email
+        degrees: Degrees
+        skills: Skills
+        skilled_jobs: Skilled Jobs

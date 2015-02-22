@@ -1,0 +1,74 @@
+<div class="row no-mrg">
+  <div class="col-sm-9">
+    <% if student_signed_in? %>
+      <h3><%= t :signed_in_already %></h3>
+    <% else %>    
+        <h2><%= t :sign_up %></h2>
+
+        <%= form_for(@student, :url => '/registration') do |f| %>
+
+          <% if flash[:error] %>
+            <div class='alert alert-danger error-msg'>
+              <%= flash[:error] %>
+            </div>
+          <% end %>
+
+          <div><%= f.label :email %><br />
+          <%= f.email_field :email %></div>
+
+          <div><%= f.label :password %><br />
+          <%= f.password_field :password %></div>
+
+          <div><%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation %></div>
+
+          <%= fields_for :personal_info, @student.personal_info do |personal_info_fields| %>
+            <%= personal_info_fields.label :name %> <br/>
+            <%= personal_info_fields.text_field :name %>
+            <br>
+            <%= personal_info_fields.label :nationality %> <br/>
+            <%= personal_info_fields.text_field :nationality %>
+            <br>
+            <%= personal_info_fields.label :dob %> <br/>
+            <%= personal_info_fields.date_select :dob, start_year: 1920 %>
+            <br>
+            <%= personal_info_fields.label :pob %> <br/>
+            <%= personal_info_fields.text_field :pob %>
+            <br>
+            <%= personal_info_fields.label :gender %> <br/>
+            <%= personal_info_fields.select :gender, [[(t :male), 1], [(t :female), 2]] %>
+            <br>
+            <%= personal_info_fields.label :maritual_status %> <br/>
+            <%= personal_info_fields.select :maritual_status, [[(t :single), 1], [(t :married), 2], [(t :divorced), 3], [(t :widowed), 4]]%>
+            <br>
+            <%= personal_info_fields.label :languages %> <br/>
+            <%= personal_info_fields.text_area :languages %>
+            <br>
+            <%= personal_info_fields.label :address %> <br/>
+            <%= personal_info_fields.text_area :address %>
+            <br>
+            <%= personal_info_fields.label :degrees %> <br/>
+            <%= personal_info_fields.text_area :degrees %>
+            <br>
+            <%= personal_info_fields.label :skills %> <br/>
+            <%= personal_info_fields.text_area :skills %>
+            <br>
+            <%= personal_info_fields.label :skilled_jobs %> <br/>
+            <%= personal_info_fields.text_area :skilled_jobs %>
+
+          <% end %>
+
+          <%= hidden_field_tag :lcl, I18n.locale %>
+          <div>
+          <br>
+            <%= f.submit (t :sign_up), class: 'btn btn-success' %></div>
+        <% end %>
+    <% end %>
+  </div>
+  <div class="col-sm-3">
+    <%= render partial: 'shared/contact_us' %>
+    <%= render partial: 'shared/media_links' %>
+    <%= render partial: 'shared/video' %>
+  </div>
+
+</div>

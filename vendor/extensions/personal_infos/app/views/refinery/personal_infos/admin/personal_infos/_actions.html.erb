@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::PersonalInfos::Admin::PersonalInfosController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.personal_infos_admin_personal_infos_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_personal_infos_admin_personal_info_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::PersonalInfos::Admin::PersonalInfosController.sortable? && ::Refinery::PersonalInfos::PersonalInfo.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Personal Infos"),
+                 refinery.personal_infos_admin_personal_infos_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Personal Infos"),
+                 refinery.personal_infos_admin_personal_infos_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>
