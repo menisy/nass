@@ -1,6 +1,7 @@
 # Encoding: UTF-8
 
 Gem::Specification.new do |s|
+  s.authors           = [ "Menisy"]
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-personal_infos'
   s.version           = '1.0'
