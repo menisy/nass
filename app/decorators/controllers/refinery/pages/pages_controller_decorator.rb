@@ -18,7 +18,7 @@ protected
   end
 
   def set_new_user
-    if params[:path] == 'registration'
+    if params[:path].index 'registration'
       @student = Student.new
       @info = @student.build_personal_info
     else
