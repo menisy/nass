@@ -8,9 +8,11 @@
       color: #fff !important;
     }
   }
-  a:hover{
-    font-weight: bold;
+  a:hover{  
     color: #fff !important;
+  }
+  &:hover{
+    top: -2px;
   }
 
 }
@@ -39,7 +41,7 @@
   text-align: center;
 }
 .alert-success{
-  position: absolute;
+  position: fixed;
   width: 60%;
   left: 20%;
   top: 5px;
@@ -53,4 +55,7 @@
 }
 .grayed{
   color: #66f;
+}
+.pull-right-nc{
+  float: right;
 }

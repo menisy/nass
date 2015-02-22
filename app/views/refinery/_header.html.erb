@@ -5,7 +5,7 @@
         <%= image_tag 'logo.png' %>
       <% end %>
     </div>
-    <div class="pull-right sign-in-upper" id="forms">
+    <div class="pull-right-nc sign-in-upper" id="forms">
       <% unless student_signed_in? %>
         <label><%= t(:sign_in) %></label>
         <%= form_tag session_path(:student), method: :post do %>

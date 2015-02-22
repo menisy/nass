@@ -5376,7 +5376,7 @@ ul.navbar-nav a {
   color: #fff;
 }#locale{
   position: absolute;
-  left: 0px;
+  right: 0px;
 }#locale a {
   padding: 10px 15px 10px 0px;
 }.lcl {
@@ -5569,3 +5569,4 @@ ul.navbar-nav a {
 .sign-in-upper{
   direction: rtl;
 }
+
