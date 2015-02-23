@@ -1,13 +1,15 @@
 
 <div class="row no-mrg">
   <div class="col-sm-9">
-    <div class="carousel-wrapper">
-      <div class="owl-carousel">
-        <% @home_photos.each do |photo| %>
-          <div> <%= image_tag photo.photo.url %> </div>
-        <% end %>
+    <% if @home_photos.any? %>
+      <div class="carousel-wrapper">
+        <div class="owl-carousel">
+          <% @home_photos.each do |photo| %>
+            <div> <%= image_tag photo.photo.url %> </div>
+          <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
     <div class="row no-mrg">
       <div class="col-xs-8 col-sm-6">
         <div class="section-header">
