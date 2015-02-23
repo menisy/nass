@@ -5,10 +5,18 @@ class Employer < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :company_attributes
   # attr_accessible :title, :body
 
   has_one :personal_info, dependent: :destroy
 
+  has_one :company, class_name: '::Refinery::Companies::Company', dependent: :destroy
+
   accepts_nested_attributes_for :personal_info
+
+  accepts_nested_attributes_for :company
+
+  def name
+    email.split('@')[0]
+  end
 end

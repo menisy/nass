@@ -1,0 +1,11 @@
+<div id="employer-form">
+  <%= form_tag session_path(:employer), method: :post do %>
+    <%= text_field_tag 'employer[email]', nil, placeholder: t(:email) %>
+    <%= password_field_tag 'employer[password]', nil, placeholder: t(:password) %>
+    <button class="btn"><%= t(:sign_in) %></button>
+    <%= check_box_tag 'employer[remember_me]' %>
+    <%= label_tag 'employer[remember_me]', t(:remember_me), class: 'remember' %>
+    <br/>
+    <%= link_to t(:forgot_password), new_password_path(:employer) %>
+  <% end %>
+</div>

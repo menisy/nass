@@ -1,0 +1,60 @@
+fr:
+  refinery:
+    plugins:
+      contact_people:
+        title: Contact People
+      companies:
+        title: Companies
+    companies:
+      admin:
+        contact_people:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Contact Person
+            reorder: Réordonner les Contact People
+            reorder_done: Fin de réordonnancement des Contact People
+          records:
+            title: Contact People
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Contact Person. Cliquer sur
+              "Créer un(e) nouve(au/l/lle) Contact Person" pour créer votre premi(er/ère)
+              contact person.
+          contact_person:
+            view_live_html: Voir ce(t/tte) contact person <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) contact person
+            delete: Supprimer définitivement ce(t/tte) contact person
+        companies:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Company
+            reorder: Réordonner les Companies
+            reorder_done: Fin de réordonnancement des Companies
+          records:
+            title: Companies
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Company. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Company" pour créer votre premi(er/ère) company.
+          company:
+            view_live_html: Voir ce(t/tte) company <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) company
+            delete: Supprimer définitivement ce(t/tte) company
+      contact_people:
+        show:
+          other: Autres Contact People
+      companies:
+        show:
+          other: Autres Companies
+  activerecord:
+    attributes:
+      refinery/companies/contact_person:
+        name: Name
+        email: Email
+        mobile: Mobile
+        land_line: Land Line
+        position: Position
+      refinery/companies/company:
+        company_name: Company Name
+        field: Field
+        main_address: Main Address
+        nob_egypt: Nob Egypt
+        nob_abroad: Nob Abroad
+        logo: Logo

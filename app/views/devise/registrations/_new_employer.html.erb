@@ -1,0 +1,83 @@
+<div class="row no-mrg">
+  <div class="col-sm-9">
+    <% if someone_signed_in? %>
+      <h3><%= t :signed_in_already %></h3>
+    <% else %>    
+        <h2><%= (t :sign_up) + " " + (t :for_companies)%></h2>
+
+        <%= form_for(@employer, :url => '/emp_registration') do |f| %>
+
+          <% if flash[:error] %>
+            <div class='alert alert-danger error-msg'>
+              <%= flash[:error] %>
+            </div>
+          <% end %>
+          
+          <h4>Login Details</h4>
+          <div><%= f.label :email %><br />
+          <%= f.email_field :email %></div>
+
+          <div><%= f.label :password %><br />
+          <%= f.password_field :password %></div>
+
+          <div><%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation %></div>
+
+          <%= f.fields_for :company, @company do |company_fields| %>
+            <h4>Company Details</h4>
+            <div><%= company_fields.label :company_name %><br />
+            <%= company_fields.text_field :company_name %></div>
+
+            <div><%= company_fields.label :field, I18n.translate('helpers.label.company.field')%><br />
+            <%= company_fields.text_field :field %></div>
+
+            <%= company_fields.label :logo -%>
+            <%= company_fields.file_field(:logo, accept: 'image/png,image/jpeg') %>
+            <br>
+
+            <div><%= company_fields.label :main_address %><br />
+            <%= company_fields.text_area :main_address %></div>
+
+            <div><%= company_fields.label :nob_egypt, I18n.translate('helpers.label.company.nob_egypt') %><br />
+            <%= company_fields.text_field :nob_egypt %></div>
+
+            <div><%= company_fields.label :nob_abroad, I18n.translate('helpers.label.company.nob_abroad') %><br />
+            <span class="small-font"><%= t(:please_specify) %></span><br><br>
+            <%= company_fields.text_area :nob_abroad %></div>
+
+            <% @company.contact_people.each_with_index do |contact_person, i| %>
+              <h4>Contact Person <%= i+1 %> Details</h4>
+              <%= company_fields.fields_for :contact_people, contact_person do |contact_person_fields| %>
+                <%= contact_person_fields.label :name %> <br/>
+                <%= contact_person_fields.text_field :name %>
+                <br>
+                <%= contact_person_fields.label :email %> <br/>
+                <%= contact_person_fields.email_field :email %>
+                <br>
+                <%= contact_person_fields.label :mobile %> <br/>
+                <%= contact_person_fields.text_field :mobile %>
+                <br>
+                <%= contact_person_fields.label :land_line %> <br/>
+                <%= contact_person_fields.text_field :land_line %>
+                <br>
+                <%= contact_person_fields.label :position %> <br/>
+                <%= contact_person_fields.text_field :position %>
+                <br>
+              <% end %>
+            <% end %>
+          <% end %>
+          
+
+          <%= hidden_field_tag :lcl, I18n.locale %>
+          <div>
+          <br>
+            <%= f.submit (t :register), class: 'btn btn-success' %></div>
+        <% end %>
+    <% end %>
+  </div>
+  <div class="col-sm-3">
+    <%= render partial: 'shared/contact_us' %>
+    <%= render partial: 'shared/media_links' %>
+    <%= render partial: 'shared/video' %>
+  </div>
+</div>

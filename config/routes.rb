@@ -6,9 +6,26 @@ BlogArticle::Application.routes.draw do
 
   devise_for :users
 
+  devise_scope :employers do
+    root to: "refinery/pages#home"
+  end
+
+  devise_scope :students do
+    root to: "refinery/pages#home"
+  end
+
+  devise_scope :users do
+    root to: "refinery/admin/dashboard#index"
+  end
+
 
   post 'registration/' => 'registrations#create'
   put 'registration/' => 'registrations#update'
+
+  post 'emp_registration/' => 'registrations#emp_create'
+  put 'emp_registration/' => 'registrations#emp_update'
+
+
 
 
   # This line mounts Refinery's routes at the root of your application.

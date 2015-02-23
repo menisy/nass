@@ -1,0 +1,59 @@
+cs:
+  refinery:
+    plugins:
+      contact_people:
+        title: Contact People
+      companies:
+        title: Companies
+    companies:
+      admin:
+        contact_people:
+          actions:
+            create_new: Přidat Contact Person
+            reorder: "Řadit Contact People"
+            reorder_done: Konec řazení Contact People
+          records:
+            title: Contact People
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Contact People. Zvolte "Přidat
+              Contact Person" pro přidání prvního contact person.
+          contact_person:
+            view_live_html: Zobrazit náhled contact person<br/><em>(otevře se v novém
+              okně)</em>
+            edit: Upravit contact person
+            delete: Smazat contact person
+        companies:
+          actions:
+            create_new: Přidat Company
+            reorder: "Řadit Companies"
+            reorder_done: Konec řazení Companies
+          records:
+            title: Companies
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Companies. Zvolte "Přidat Company"
+              pro přidání prvního company.
+          company:
+            view_live_html: Zobrazit náhled company<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit company
+            delete: Smazat company
+      contact_people:
+        show:
+          other: Další Contact People
+      companies:
+        show:
+          other: Další Companies
+  activerecord:
+    attributes:
+      refinery/companies/contact_person:
+        name: Name
+        email: Email
+        mobile: Mobile
+        land_line: Land Line
+        position: Position
+      refinery/companies/company:
+        company_name: Company Name
+        field: Field
+        main_address: Main Address
+        nob_egypt: Nob Egypt
+        nob_abroad: Nob Abroad
+        logo: Logo

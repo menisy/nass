@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="contact_people">
+    <% @contact_people.each do |contact_person| %>
+      <li>
+        <%= link_to contact_person.name, refinery.companies_contact_person_path(contact_person) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

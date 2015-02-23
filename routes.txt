@@ -37,177 +37,199 @@ cancel_employer_registration GET    /employers/cancel(.:format)        devise/re
       edit_user_registration GET    /users/edit(.:format)              devise/registrations#edit
                              PUT    /users(.:format)                   devise/registrations#update
                              DELETE /users(.:format)                   devise/registrations#destroy
-                registration GET    /registration(.:format)            registrations#new
-                             POST   /registration(.:format)            registrations#create
+                        root        /                                  refinery/pages#home
+                        root        /                                  refinery/pages#home
+                        root        /                                  refinery/admin/dashboard#index
+                registration POST   /registration(.:format)            registrations#create
                              PUT    /registration(.:format)            registrations#update
+            emp_registration POST   /emp_registration(.:format)        registrations#emp_create
+                             PUT    /emp_registration(.:format)        registrations#emp_update
                     refinery        /                                  Refinery::Core::Engine
 
 Routes for Refinery::Core::Engine:
-update_positions_personal_infos_admin_personal_infos POST   /refinery/personal_infos/update_positions(.:format) refinery/personal_infos/admin/personal_infos#update_positions
-                 personal_infos_admin_personal_infos GET    /refinery/personal_infos(.:format)                  refinery/personal_infos/admin/personal_infos#index
-                                                     POST   /refinery/personal_infos(.:format)                  refinery/personal_infos/admin/personal_infos#create
-              new_personal_infos_admin_personal_info GET    /refinery/personal_infos/new(.:format)              refinery/personal_infos/admin/personal_infos#new
-             edit_personal_infos_admin_personal_info GET    /refinery/personal_infos/:id/edit(.:format)         refinery/personal_infos/admin/personal_infos#edit
-                  personal_infos_admin_personal_info PUT    /refinery/personal_infos/:id(.:format)              refinery/personal_infos/admin/personal_infos#update
-                                                     DELETE /refinery/personal_infos/:id(.:format)              refinery/personal_infos/admin/personal_infos#destroy
-                             home_photos_home_photos GET    /home_photos(.:format)                              refinery/home_photos/home_photos#index
-                              home_photos_home_photo GET    /home_photos/:id(.:format)                          refinery/home_photos/home_photos#show
-      update_positions_home_photos_admin_home_photos POST   /refinery/home_photos/update_positions(.:format)    refinery/home_photos/admin/home_photos#update_positions
-                       home_photos_admin_home_photos GET    /refinery/home_photos(.:format)                     refinery/home_photos/admin/home_photos#index
-                                                     POST   /refinery/home_photos(.:format)                     refinery/home_photos/admin/home_photos#create
-                    new_home_photos_admin_home_photo GET    /refinery/home_photos/new(.:format)                 refinery/home_photos/admin/home_photos#new
-                   edit_home_photos_admin_home_photo GET    /refinery/home_photos/:id/edit(.:format)            refinery/home_photos/admin/home_photos#edit
-                        home_photos_admin_home_photo PUT    /refinery/home_photos/:id(.:format)                 refinery/home_photos/admin/home_photos#update
-                                                     DELETE /refinery/home_photos/:id(.:format)                 refinery/home_photos/admin/home_photos#destroy
-                                           news_root        /news(.:format)                                     refinery/news/items#index
-                                  news_items_archive GET    /news/archive/:year(/:month)(.:format)              refinery/news/items#archive {:year=>/\d{4}/, :month=>/\d{1,2}/}
-                                          news_items GET    /news(.:format)                                     refinery/news/items#index
-                                           news_item GET    /news/:id(.:format)                                 refinery/news/items#show
-                                     news_admin_root        /refinery/news(.:format)                            refinery/news/admin/items#index
-                                    news_admin_items GET    /refinery/news/items(.:format)                      refinery/news/admin/items#index
-                                                     POST   /refinery/news/items(.:format)                      refinery/news/admin/items#create
-                                 new_news_admin_item GET    /refinery/news/items/new(.:format)                  refinery/news/admin/items#new
-                                edit_news_admin_item GET    /refinery/news/items/:id/edit(.:format)             refinery/news/admin/items#edit
-                                     news_admin_item PUT    /refinery/news/items/:id(.:format)                  refinery/news/admin/items#update
-                                                     DELETE /refinery/news/items/:id(.:format)                  refinery/news/admin/items#destroy
-                                      admin_settings GET    /refinery/settings(.:format)                        refinery/admin/settings#index
-                                                     POST   /refinery/settings(.:format)                        refinery/admin/settings#create
-                                   new_admin_setting GET    /refinery/settings/new(.:format)                    refinery/admin/settings#new
-                                  edit_admin_setting GET    /refinery/settings/:id/edit(.:format)               refinery/admin/settings#edit
-                                       admin_setting PUT    /refinery/settings/:id(.:format)                    refinery/admin/settings#update
-                                                     DELETE /refinery/settings/:id(.:format)                    refinery/admin/settings#destroy
-                                                     GET    /system/resources/*dragonfly(.:format)              <Dragonfly::App name=:refinery_resources >
-                              insert_admin_resources GET    /refinery/resources/insert(.:format)                refinery/admin/resources#insert
-                                     admin_resources GET    /refinery/resources(.:format)                       refinery/admin/resources#index
-                                                     POST   /refinery/resources(.:format)                       refinery/admin/resources#create
-                                  new_admin_resource GET    /refinery/resources/new(.:format)                   refinery/admin/resources#new
-                                 edit_admin_resource GET    /refinery/resources/:id/edit(.:format)              refinery/admin/resources#edit
-                                      admin_resource PUT    /refinery/resources/:id(.:format)                   refinery/admin/resources#update
-                                                     DELETE /refinery/resources/:id(.:format)                   refinery/admin/resources#destroy
-                                                root GET    /                                                   refinery/pages#home
-                                                page GET    /pages/:id(.:format)                                refinery/pages#show
-                           pages_admin_preview_pages POST   /refinery/pages/preview(.:format)                   refinery/pages/admin/preview#show
-                            pages_admin_preview_page PUT    /refinery/pages/preview/*path(.:format)             refinery/pages/admin/preview#show
-                                               admin GET    /refinery/pages/*path/edit(.:format)                refinery/admin/pages#edit
-                                admin_children_pages GET    /refinery/pages/*path/children(.:format)            refinery/admin/pages#children
-                                                     PUT    /refinery/pages/*path(.:format)                     refinery/admin/pages#update
-                                                     DELETE /refinery/pages/*path(.:format)                     refinery/admin/pages#destroy
-                        update_positions_admin_pages POST   /refinery/pages/update_positions(.:format)          refinery/admin/pages#update_positions
-                                         admin_pages GET    /refinery/pages(.:format)                           refinery/admin/pages#index
-                                                     POST   /refinery/pages(.:format)                           refinery/admin/pages#create
-                                      new_admin_page GET    /refinery/pages/new(.:format)                       refinery/admin/pages#new
-                                     edit_admin_page GET    /refinery/pages/:id/edit(.:format)                  refinery/admin/pages#edit
-                                          admin_page PUT    /refinery/pages/:id(.:format)                       refinery/admin/pages#update
-                                                     DELETE /refinery/pages/:id(.:format)                       refinery/admin/pages#destroy
-                         link_to_admin_pages_dialogs GET    /refinery/pages_dialogs/link_to(.:format)           refinery/admin/pages_dialogs#link_to
-                                    admin_page_parts POST   /refinery/page_parts(.:format)                      refinery/admin/page_parts#create
-                                 new_admin_page_part GET    /refinery/page_parts/new(.:format)                  refinery/admin/page_parts#new
-                                     admin_page_part DELETE /refinery/page_parts/:id(.:format)                  refinery/admin/page_parts#destroy
-                                                     GET    /system/images/*dragonfly(.:format)                 <Dragonfly::App name=:refinery_images >
-                                 insert_admin_images GET    /refinery/images/insert(.:format)                   refinery/admin/images#insert
-                                        admin_images GET    /refinery/images(.:format)                          refinery/admin/images#index
-                                                     POST   /refinery/images(.:format)                          refinery/admin/images#create
-                                     new_admin_image GET    /refinery/images/new(.:format)                      refinery/admin/images#new
-                                    edit_admin_image GET    /refinery/images/:id/edit(.:format)                 refinery/admin/images#edit
-                                         admin_image PUT    /refinery/images/:id(.:format)                      refinery/admin/images#update
-                                                     DELETE /refinery/images/:id(.:format)                      refinery/admin/images#destroy
-                                     admin_dashboard GET    /refinery/dashboard(.:format)                       refinery/admin/dashboard#index
-                                           wymiframe GET    /wymiframe(/:id)(.:format)                          refinery/fast#wymiframe
-                                             message GET    /refinery/message(.:format)                         refinery/fast#message
-                                          admin_root        /refinery(.:format)                                 refinery/admin/dashboard#index
-                                       admin_dialogs GET    /refinery/dialogs(.:format)                         refinery/admin/dialogs#index
-                                        admin_dialog GET    /refinery/dialogs/:id(.:format)                     refinery/admin/dialogs#show
-                      refinery_update_menu_positions POST   /refinery/update_menu_positions(.:format)           refinery/admin/core#update_plugin_positions
-                                                     GET    /sitemap.xml(.:format)                              refinery/sitemap#index {:format=>"xml"}
-                         dynamicfields_dynamicfields GET    /dynamicfields(.:format)                            refinery/dynamicfields/dynamicfields#index
-                          dynamicfields_dynamicfield GET    /dynamicfields/:id(.:format)                        refinery/dynamicfields/dynamicfields#show
-                                  dynamicform_fields GET    /dynamicform_fields(.:format)                       refinery/dynamicform_fields#index
-                                                     POST   /dynamicform_fields(.:format)                       refinery/dynamicform_fields#create
-                               new_dynamicform_field GET    /dynamicform_fields/new(.:format)                   refinery/dynamicform_fields#new
-                              edit_dynamicform_field GET    /dynamicform_fields/:id/edit(.:format)              refinery/dynamicform_fields#edit
-                                   dynamicform_field GET    /dynamicform_fields/:id(.:format)                   refinery/dynamicform_fields#show
-                                                     PUT    /dynamicform_fields/:id(.:format)                   refinery/dynamicform_fields#update
-                                                     DELETE /dynamicform_fields/:id(.:format)                   refinery/dynamicform_fields#destroy
-                                  dynamicform_values GET    /dynamicform_values(.:format)                       refinery/dynamicform_values#index
-                                                     POST   /dynamicform_values(.:format)                       refinery/dynamicform_values#create
-                               new_dynamicform_value GET    /dynamicform_values/new(.:format)                   refinery/dynamicform_values#new
-                              edit_dynamicform_value GET    /dynamicform_values/:id/edit(.:format)              refinery/dynamicform_values#edit
-                                   dynamicform_value GET    /dynamicform_values/:id(.:format)                   refinery/dynamicform_values#show
-                                                     PUT    /dynamicform_values/:id(.:format)                   refinery/dynamicform_values#update
-                                                     DELETE /dynamicform_values/:id(.:format)                   refinery/dynamicform_values#destroy
-                            dynamicform_associations GET    /dynamicform_associations(.:format)                 refinery/dynamicform_associations#index
-                                                     POST   /dynamicform_associations(.:format)                 refinery/dynamicform_associations#create
-                         new_dynamicform_association GET    /dynamicform_associations/new(.:format)             refinery/dynamicform_associations#new
-                        edit_dynamicform_association GET    /dynamicform_associations/:id/edit(.:format)        refinery/dynamicform_associations#edit
-                             dynamicform_association GET    /dynamicform_associations/:id(.:format)             refinery/dynamicform_associations#show
-                                                     PUT    /dynamicform_associations/:id(.:format)             refinery/dynamicform_associations#update
-                                                     DELETE /dynamicform_associations/:id(.:format)             refinery/dynamicform_associations#destroy
-  update_positions_dynamicfields_admin_dynamicfields POST   /refinery/dynamicfields/update_positions(.:format)  refinery/dynamicfields/admin/dynamicfields#update_positions
-                   dynamicfields_admin_dynamicfields GET    /refinery/dynamicfields(.:format)                   refinery/dynamicfields/admin/dynamicfields#index
-                                                     POST   /refinery/dynamicfields(.:format)                   refinery/dynamicfields/admin/dynamicfields#create
-                new_dynamicfields_admin_dynamicfield GET    /refinery/dynamicfields/new(.:format)               refinery/dynamicfields/admin/dynamicfields#new
-               edit_dynamicfields_admin_dynamicfield GET    /refinery/dynamicfields/:id/edit(.:format)          refinery/dynamicfields/admin/dynamicfields#edit
-                    dynamicfields_admin_dynamicfield PUT    /refinery/dynamicfields/:id(.:format)               refinery/dynamicfields/admin/dynamicfields#update
-                                                     DELETE /refinery/dynamicfields/:id(.:format)               refinery/dynamicfields/admin/dynamicfields#destroy
-                                                     GET    /refinery/*path(.:format)                           refinery/admin#error_404
-                                     marketable_page GET    /*path(.:format)                                    refinery/pages#show
-                                                     GET    /dynamicfields(.:format)                            refinery/dynamicfields/dynamicfields#index
-                                                     GET    /dynamicfields/:id(.:format)                        refinery/dynamicfields/dynamicfields#show
-                                                     GET    /dynamicform_fields(.:format)                       refinery/dynamicform_fields#index
-                                                     POST   /dynamicform_fields(.:format)                       refinery/dynamicform_fields#create
-                                                     GET    /dynamicform_fields/new(.:format)                   refinery/dynamicform_fields#new
-                                                     GET    /dynamicform_fields/:id/edit(.:format)              refinery/dynamicform_fields#edit
-                                                     GET    /dynamicform_fields/:id(.:format)                   refinery/dynamicform_fields#show
-                                                     PUT    /dynamicform_fields/:id(.:format)                   refinery/dynamicform_fields#update
-                                                     DELETE /dynamicform_fields/:id(.:format)                   refinery/dynamicform_fields#destroy
-                                                     GET    /dynamicform_values(.:format)                       refinery/dynamicform_values#index
-                                                     POST   /dynamicform_values(.:format)                       refinery/dynamicform_values#create
-                                                     GET    /dynamicform_values/new(.:format)                   refinery/dynamicform_values#new
-                                                     GET    /dynamicform_values/:id/edit(.:format)              refinery/dynamicform_values#edit
-                                                     GET    /dynamicform_values/:id(.:format)                   refinery/dynamicform_values#show
-                                                     PUT    /dynamicform_values/:id(.:format)                   refinery/dynamicform_values#update
-                                                     DELETE /dynamicform_values/:id(.:format)                   refinery/dynamicform_values#destroy
-                                                     GET    /dynamicform_associations(.:format)                 refinery/dynamicform_associations#index
-                                                     POST   /dynamicform_associations(.:format)                 refinery/dynamicform_associations#create
-                                                     GET    /dynamicform_associations/new(.:format)             refinery/dynamicform_associations#new
-                                                     GET    /dynamicform_associations/:id/edit(.:format)        refinery/dynamicform_associations#edit
-                                                     GET    /dynamicform_associations/:id(.:format)             refinery/dynamicform_associations#show
-                                                     PUT    /dynamicform_associations/:id(.:format)             refinery/dynamicform_associations#update
-                                                     DELETE /dynamicform_associations/:id(.:format)             refinery/dynamicform_associations#destroy
-                                                     POST   /refinery/dynamicfields/update_positions(.:format)  refinery/dynamicfields/admin/dynamicfields#update_positions
-                                                     GET    /refinery/dynamicfields(.:format)                   refinery/dynamicfields/admin/dynamicfields#index
-                                                     POST   /refinery/dynamicfields(.:format)                   refinery/dynamicfields/admin/dynamicfields#create
-                                                     GET    /refinery/dynamicfields/new(.:format)               refinery/dynamicfields/admin/dynamicfields#new
-                                                     GET    /refinery/dynamicfields/:id/edit(.:format)          refinery/dynamicfields/admin/dynamicfields#edit
-                                                     PUT    /refinery/dynamicfields/:id(.:format)               refinery/dynamicfields/admin/dynamicfields#update
-                                                     DELETE /refinery/dynamicfields/:id(.:format)               refinery/dynamicfields/admin/dynamicfields#destroy
-                                                     GET    /dynamicfields(.:format)                            refinery/dynamicfields/dynamicfields#index
-                                                     GET    /dynamicfields/:id(.:format)                        refinery/dynamicfields/dynamicfields#show
-                                                     GET    /dynamicform_fields(.:format)                       refinery/dynamicform_fields#index
-                                                     POST   /dynamicform_fields(.:format)                       refinery/dynamicform_fields#create
-                                                     GET    /dynamicform_fields/new(.:format)                   refinery/dynamicform_fields#new
-                                                     GET    /dynamicform_fields/:id/edit(.:format)              refinery/dynamicform_fields#edit
-                                                     GET    /dynamicform_fields/:id(.:format)                   refinery/dynamicform_fields#show
-                                                     PUT    /dynamicform_fields/:id(.:format)                   refinery/dynamicform_fields#update
-                                                     DELETE /dynamicform_fields/:id(.:format)                   refinery/dynamicform_fields#destroy
-                                                     GET    /dynamicform_values(.:format)                       refinery/dynamicform_values#index
-                                                     POST   /dynamicform_values(.:format)                       refinery/dynamicform_values#create
-                                                     GET    /dynamicform_values/new(.:format)                   refinery/dynamicform_values#new
-                                                     GET    /dynamicform_values/:id/edit(.:format)              refinery/dynamicform_values#edit
-                                                     GET    /dynamicform_values/:id(.:format)                   refinery/dynamicform_values#show
-                                                     PUT    /dynamicform_values/:id(.:format)                   refinery/dynamicform_values#update
-                                                     DELETE /dynamicform_values/:id(.:format)                   refinery/dynamicform_values#destroy
-                                                     GET    /dynamicform_associations(.:format)                 refinery/dynamicform_associations#index
-                                                     POST   /dynamicform_associations(.:format)                 refinery/dynamicform_associations#create
-                                                     GET    /dynamicform_associations/new(.:format)             refinery/dynamicform_associations#new
-                                                     GET    /dynamicform_associations/:id/edit(.:format)        refinery/dynamicform_associations#edit
-                                                     GET    /dynamicform_associations/:id(.:format)             refinery/dynamicform_associations#show
-                                                     PUT    /dynamicform_associations/:id(.:format)             refinery/dynamicform_associations#update
-                                                     DELETE /dynamicform_associations/:id(.:format)             refinery/dynamicform_associations#destroy
-                                                     POST   /refinery/dynamicfields/update_positions(.:format)  refinery/dynamicfields/admin/dynamicfields#update_positions
-                                                     GET    /refinery/dynamicfields(.:format)                   refinery/dynamicfields/admin/dynamicfields#index
-                                                     POST   /refinery/dynamicfields(.:format)                   refinery/dynamicfields/admin/dynamicfields#create
-                                                     GET    /refinery/dynamicfields/new(.:format)               refinery/dynamicfields/admin/dynamicfields#new
-                                                     GET    /refinery/dynamicfields/:id/edit(.:format)          refinery/dynamicfields/admin/dynamicfields#edit
-                                                     PUT    /refinery/dynamicfields/:id(.:format)               refinery/dynamicfields/admin/dynamicfields#update
-                                                     DELETE /refinery/dynamicfields/:id(.:format)               refinery/dynamicfields/admin/dynamicfields#destroy
+                                 companies_companies GET    /companies(.:format)                                          refinery/companies/companies#index
+                                   companies_company GET    /companies/:id(.:format)                                      refinery/companies/companies#show
+          update_positions_companies_admin_companies POST   /refinery/companies/update_positions(.:format)                refinery/companies/admin/companies#update_positions
+                           companies_admin_companies GET    /refinery/companies(.:format)                                 refinery/companies/admin/companies#index
+                                                     POST   /refinery/companies(.:format)                                 refinery/companies/admin/companies#create
+                         new_companies_admin_company GET    /refinery/companies/new(.:format)                             refinery/companies/admin/companies#new
+                        edit_companies_admin_company GET    /refinery/companies/:id/edit(.:format)                        refinery/companies/admin/companies#edit
+                             companies_admin_company PUT    /refinery/companies/:id(.:format)                             refinery/companies/admin/companies#update
+                                                     DELETE /refinery/companies/:id(.:format)                             refinery/companies/admin/companies#destroy
+                            companies_contact_people GET    /companies/contact_people(.:format)                           refinery/companies/contact_people#index
+                            companies_contact_person GET    /companies/contact_people/:id(.:format)                       refinery/companies/contact_people#show
+     update_positions_companies_admin_contact_people POST   /refinery/companies/contact_people/update_positions(.:format) refinery/companies/admin/contact_people#update_positions
+                      companies_admin_contact_people GET    /refinery/companies/contact_people(.:format)                  refinery/companies/admin/contact_people#index
+                                                     POST   /refinery/companies/contact_people(.:format)                  refinery/companies/admin/contact_people#create
+                  new_companies_admin_contact_person GET    /refinery/companies/contact_people/new(.:format)              refinery/companies/admin/contact_people#new
+                 edit_companies_admin_contact_person GET    /refinery/companies/contact_people/:id/edit(.:format)         refinery/companies/admin/contact_people#edit
+                      companies_admin_contact_person PUT    /refinery/companies/contact_people/:id(.:format)              refinery/companies/admin/contact_people#update
+                                                     DELETE /refinery/companies/contact_people/:id(.:format)              refinery/companies/admin/contact_people#destroy
+update_positions_personal_infos_admin_personal_infos POST   /refinery/personal_infos/update_positions(.:format)           refinery/personal_infos/admin/personal_infos#update_positions
+                 personal_infos_admin_personal_infos GET    /refinery/personal_infos(.:format)                            refinery/personal_infos/admin/personal_infos#index
+                                                     POST   /refinery/personal_infos(.:format)                            refinery/personal_infos/admin/personal_infos#create
+              new_personal_infos_admin_personal_info GET    /refinery/personal_infos/new(.:format)                        refinery/personal_infos/admin/personal_infos#new
+             edit_personal_infos_admin_personal_info GET    /refinery/personal_infos/:id/edit(.:format)                   refinery/personal_infos/admin/personal_infos#edit
+                  personal_infos_admin_personal_info PUT    /refinery/personal_infos/:id(.:format)                        refinery/personal_infos/admin/personal_infos#update
+                                                     DELETE /refinery/personal_infos/:id(.:format)                        refinery/personal_infos/admin/personal_infos#destroy
+                             home_photos_home_photos GET    /home_photos(.:format)                                        refinery/home_photos/home_photos#index
+                              home_photos_home_photo GET    /home_photos/:id(.:format)                                    refinery/home_photos/home_photos#show
+      update_positions_home_photos_admin_home_photos POST   /refinery/home_photos/update_positions(.:format)              refinery/home_photos/admin/home_photos#update_positions
+                       home_photos_admin_home_photos GET    /refinery/home_photos(.:format)                               refinery/home_photos/admin/home_photos#index
+                                                     POST   /refinery/home_photos(.:format)                               refinery/home_photos/admin/home_photos#create
+                    new_home_photos_admin_home_photo GET    /refinery/home_photos/new(.:format)                           refinery/home_photos/admin/home_photos#new
+                   edit_home_photos_admin_home_photo GET    /refinery/home_photos/:id/edit(.:format)                      refinery/home_photos/admin/home_photos#edit
+                        home_photos_admin_home_photo PUT    /refinery/home_photos/:id(.:format)                           refinery/home_photos/admin/home_photos#update
+                                                     DELETE /refinery/home_photos/:id(.:format)                           refinery/home_photos/admin/home_photos#destroy
+                                           news_root        /news(.:format)                                               refinery/news/items#index
+                                  news_items_archive GET    /news/archive/:year(/:month)(.:format)                        refinery/news/items#archive {:year=>/\d{4}/, :month=>/\d{1,2}/}
+                                          news_items GET    /news(.:format)                                               refinery/news/items#index
+                                           news_item GET    /news/:id(.:format)                                           refinery/news/items#show
+                                     news_admin_root        /refinery/news(.:format)                                      refinery/news/admin/items#index
+                                    news_admin_items GET    /refinery/news/items(.:format)                                refinery/news/admin/items#index
+                                                     POST   /refinery/news/items(.:format)                                refinery/news/admin/items#create
+                                 new_news_admin_item GET    /refinery/news/items/new(.:format)                            refinery/news/admin/items#new
+                                edit_news_admin_item GET    /refinery/news/items/:id/edit(.:format)                       refinery/news/admin/items#edit
+                                     news_admin_item PUT    /refinery/news/items/:id(.:format)                            refinery/news/admin/items#update
+                                                     DELETE /refinery/news/items/:id(.:format)                            refinery/news/admin/items#destroy
+                                      admin_settings GET    /refinery/settings(.:format)                                  refinery/admin/settings#index
+                                                     POST   /refinery/settings(.:format)                                  refinery/admin/settings#create
+                                   new_admin_setting GET    /refinery/settings/new(.:format)                              refinery/admin/settings#new
+                                  edit_admin_setting GET    /refinery/settings/:id/edit(.:format)                         refinery/admin/settings#edit
+                                       admin_setting PUT    /refinery/settings/:id(.:format)                              refinery/admin/settings#update
+                                                     DELETE /refinery/settings/:id(.:format)                              refinery/admin/settings#destroy
+                                                     GET    /system/resources/*dragonfly(.:format)                        <Dragonfly::App name=:refinery_resources >
+                              insert_admin_resources GET    /refinery/resources/insert(.:format)                          refinery/admin/resources#insert
+                                     admin_resources GET    /refinery/resources(.:format)                                 refinery/admin/resources#index
+                                                     POST   /refinery/resources(.:format)                                 refinery/admin/resources#create
+                                  new_admin_resource GET    /refinery/resources/new(.:format)                             refinery/admin/resources#new
+                                 edit_admin_resource GET    /refinery/resources/:id/edit(.:format)                        refinery/admin/resources#edit
+                                      admin_resource PUT    /refinery/resources/:id(.:format)                             refinery/admin/resources#update
+                                                     DELETE /refinery/resources/:id(.:format)                             refinery/admin/resources#destroy
+                                                root GET    /                                                             refinery/pages#home
+                                                page GET    /pages/:id(.:format)                                          refinery/pages#show
+                           pages_admin_preview_pages POST   /refinery/pages/preview(.:format)                             refinery/pages/admin/preview#show
+                            pages_admin_preview_page PUT    /refinery/pages/preview/*path(.:format)                       refinery/pages/admin/preview#show
+                                               admin GET    /refinery/pages/*path/edit(.:format)                          refinery/admin/pages#edit
+                                admin_children_pages GET    /refinery/pages/*path/children(.:format)                      refinery/admin/pages#children
+                                                     PUT    /refinery/pages/*path(.:format)                               refinery/admin/pages#update
+                                                     DELETE /refinery/pages/*path(.:format)                               refinery/admin/pages#destroy
+                        update_positions_admin_pages POST   /refinery/pages/update_positions(.:format)                    refinery/admin/pages#update_positions
+                                         admin_pages GET    /refinery/pages(.:format)                                     refinery/admin/pages#index
+                                                     POST   /refinery/pages(.:format)                                     refinery/admin/pages#create
+                                      new_admin_page GET    /refinery/pages/new(.:format)                                 refinery/admin/pages#new
+                                     edit_admin_page GET    /refinery/pages/:id/edit(.:format)                            refinery/admin/pages#edit
+                                          admin_page PUT    /refinery/pages/:id(.:format)                                 refinery/admin/pages#update
+                                                     DELETE /refinery/pages/:id(.:format)                                 refinery/admin/pages#destroy
+                         link_to_admin_pages_dialogs GET    /refinery/pages_dialogs/link_to(.:format)                     refinery/admin/pages_dialogs#link_to
+                                    admin_page_parts POST   /refinery/page_parts(.:format)                                refinery/admin/page_parts#create
+                                 new_admin_page_part GET    /refinery/page_parts/new(.:format)                            refinery/admin/page_parts#new
+                                     admin_page_part DELETE /refinery/page_parts/:id(.:format)                            refinery/admin/page_parts#destroy
+                                                     GET    /system/images/*dragonfly(.:format)                           <Dragonfly::App name=:refinery_images >
+                                 insert_admin_images GET    /refinery/images/insert(.:format)                             refinery/admin/images#insert
+                                        admin_images GET    /refinery/images(.:format)                                    refinery/admin/images#index
+                                                     POST   /refinery/images(.:format)                                    refinery/admin/images#create
+                                     new_admin_image GET    /refinery/images/new(.:format)                                refinery/admin/images#new
+                                    edit_admin_image GET    /refinery/images/:id/edit(.:format)                           refinery/admin/images#edit
+                                         admin_image PUT    /refinery/images/:id(.:format)                                refinery/admin/images#update
+                                                     DELETE /refinery/images/:id(.:format)                                refinery/admin/images#destroy
+                                     admin_dashboard GET    /refinery/dashboard(.:format)                                 refinery/admin/dashboard#index
+                                           wymiframe GET    /wymiframe(/:id)(.:format)                                    refinery/fast#wymiframe
+                                             message GET    /refinery/message(.:format)                                   refinery/fast#message
+                                          admin_root        /refinery(.:format)                                           refinery/admin/dashboard#index
+                                       admin_dialogs GET    /refinery/dialogs(.:format)                                   refinery/admin/dialogs#index
+                                        admin_dialog GET    /refinery/dialogs/:id(.:format)                               refinery/admin/dialogs#show
+                      refinery_update_menu_positions POST   /refinery/update_menu_positions(.:format)                     refinery/admin/core#update_plugin_positions
+                                                     GET    /sitemap.xml(.:format)                                        refinery/sitemap#index {:format=>"xml"}
+                         dynamicfields_dynamicfields GET    /dynamicfields(.:format)                                      refinery/dynamicfields/dynamicfields#index
+                          dynamicfields_dynamicfield GET    /dynamicfields/:id(.:format)                                  refinery/dynamicfields/dynamicfields#show
+                                  dynamicform_fields GET    /dynamicform_fields(.:format)                                 refinery/dynamicform_fields#index
+                                                     POST   /dynamicform_fields(.:format)                                 refinery/dynamicform_fields#create
+                               new_dynamicform_field GET    /dynamicform_fields/new(.:format)                             refinery/dynamicform_fields#new
+                              edit_dynamicform_field GET    /dynamicform_fields/:id/edit(.:format)                        refinery/dynamicform_fields#edit
+                                   dynamicform_field GET    /dynamicform_fields/:id(.:format)                             refinery/dynamicform_fields#show
+                                                     PUT    /dynamicform_fields/:id(.:format)                             refinery/dynamicform_fields#update
+                                                     DELETE /dynamicform_fields/:id(.:format)                             refinery/dynamicform_fields#destroy
+                                  dynamicform_values GET    /dynamicform_values(.:format)                                 refinery/dynamicform_values#index
+                                                     POST   /dynamicform_values(.:format)                                 refinery/dynamicform_values#create
+                               new_dynamicform_value GET    /dynamicform_values/new(.:format)                             refinery/dynamicform_values#new
+                              edit_dynamicform_value GET    /dynamicform_values/:id/edit(.:format)                        refinery/dynamicform_values#edit
+                                   dynamicform_value GET    /dynamicform_values/:id(.:format)                             refinery/dynamicform_values#show
+                                                     PUT    /dynamicform_values/:id(.:format)                             refinery/dynamicform_values#update
+                                                     DELETE /dynamicform_values/:id(.:format)                             refinery/dynamicform_values#destroy
+                            dynamicform_associations GET    /dynamicform_associations(.:format)                           refinery/dynamicform_associations#index
+                                                     POST   /dynamicform_associations(.:format)                           refinery/dynamicform_associations#create
+                         new_dynamicform_association GET    /dynamicform_associations/new(.:format)                       refinery/dynamicform_associations#new
+                        edit_dynamicform_association GET    /dynamicform_associations/:id/edit(.:format)                  refinery/dynamicform_associations#edit
+                             dynamicform_association GET    /dynamicform_associations/:id(.:format)                       refinery/dynamicform_associations#show
+                                                     PUT    /dynamicform_associations/:id(.:format)                       refinery/dynamicform_associations#update
+                                                     DELETE /dynamicform_associations/:id(.:format)                       refinery/dynamicform_associations#destroy
+  update_positions_dynamicfields_admin_dynamicfields POST   /refinery/dynamicfields/update_positions(.:format)            refinery/dynamicfields/admin/dynamicfields#update_positions
+                   dynamicfields_admin_dynamicfields GET    /refinery/dynamicfields(.:format)                             refinery/dynamicfields/admin/dynamicfields#index
+                                                     POST   /refinery/dynamicfields(.:format)                             refinery/dynamicfields/admin/dynamicfields#create
+                new_dynamicfields_admin_dynamicfield GET    /refinery/dynamicfields/new(.:format)                         refinery/dynamicfields/admin/dynamicfields#new
+               edit_dynamicfields_admin_dynamicfield GET    /refinery/dynamicfields/:id/edit(.:format)                    refinery/dynamicfields/admin/dynamicfields#edit
+                    dynamicfields_admin_dynamicfield PUT    /refinery/dynamicfields/:id(.:format)                         refinery/dynamicfields/admin/dynamicfields#update
+                                                     DELETE /refinery/dynamicfields/:id(.:format)                         refinery/dynamicfields/admin/dynamicfields#destroy
+                                                     GET    /refinery/*path(.:format)                                     refinery/admin#error_404
+                                     marketable_page GET    /*path(.:format)                                              refinery/pages#show
+                                                     GET    /dynamicfields(.:format)                                      refinery/dynamicfields/dynamicfields#index
+                                                     GET    /dynamicfields/:id(.:format)                                  refinery/dynamicfields/dynamicfields#show
+                                                     GET    /dynamicform_fields(.:format)                                 refinery/dynamicform_fields#index
+                                                     POST   /dynamicform_fields(.:format)                                 refinery/dynamicform_fields#create
+                                                     GET    /dynamicform_fields/new(.:format)                             refinery/dynamicform_fields#new
+                                                     GET    /dynamicform_fields/:id/edit(.:format)                        refinery/dynamicform_fields#edit
+                                                     GET    /dynamicform_fields/:id(.:format)                             refinery/dynamicform_fields#show
+                                                     PUT    /dynamicform_fields/:id(.:format)                             refinery/dynamicform_fields#update
+                                                     DELETE /dynamicform_fields/:id(.:format)                             refinery/dynamicform_fields#destroy
+                                                     GET    /dynamicform_values(.:format)                                 refinery/dynamicform_values#index
+                                                     POST   /dynamicform_values(.:format)                                 refinery/dynamicform_values#create
+                                                     GET    /dynamicform_values/new(.:format)                             refinery/dynamicform_values#new
+                                                     GET    /dynamicform_values/:id/edit(.:format)                        refinery/dynamicform_values#edit
+                                                     GET    /dynamicform_values/:id(.:format)                             refinery/dynamicform_values#show
+                                                     PUT    /dynamicform_values/:id(.:format)                             refinery/dynamicform_values#update
+                                                     DELETE /dynamicform_values/:id(.:format)                             refinery/dynamicform_values#destroy
+                                                     GET    /dynamicform_associations(.:format)                           refinery/dynamicform_associations#index
+                                                     POST   /dynamicform_associations(.:format)                           refinery/dynamicform_associations#create
+                                                     GET    /dynamicform_associations/new(.:format)                       refinery/dynamicform_associations#new
+                                                     GET    /dynamicform_associations/:id/edit(.:format)                  refinery/dynamicform_associations#edit
+                                                     GET    /dynamicform_associations/:id(.:format)                       refinery/dynamicform_associations#show
+                                                     PUT    /dynamicform_associations/:id(.:format)                       refinery/dynamicform_associations#update
+                                                     DELETE /dynamicform_associations/:id(.:format)                       refinery/dynamicform_associations#destroy
+                                                     POST   /refinery/dynamicfields/update_positions(.:format)            refinery/dynamicfields/admin/dynamicfields#update_positions
+                                                     GET    /refinery/dynamicfields(.:format)                             refinery/dynamicfields/admin/dynamicfields#index
+                                                     POST   /refinery/dynamicfields(.:format)                             refinery/dynamicfields/admin/dynamicfields#create
+                                                     GET    /refinery/dynamicfields/new(.:format)                         refinery/dynamicfields/admin/dynamicfields#new
+                                                     GET    /refinery/dynamicfields/:id/edit(.:format)                    refinery/dynamicfields/admin/dynamicfields#edit
+                                                     PUT    /refinery/dynamicfields/:id(.:format)                         refinery/dynamicfields/admin/dynamicfields#update
+                                                     DELETE /refinery/dynamicfields/:id(.:format)                         refinery/dynamicfields/admin/dynamicfields#destroy
+                                                     GET    /dynamicfields(.:format)                                      refinery/dynamicfields/dynamicfields#index
+                                                     GET    /dynamicfields/:id(.:format)                                  refinery/dynamicfields/dynamicfields#show
+                                                     GET    /dynamicform_fields(.:format)                                 refinery/dynamicform_fields#index
+                                                     POST   /dynamicform_fields(.:format)                                 refinery/dynamicform_fields#create
+                                                     GET    /dynamicform_fields/new(.:format)                             refinery/dynamicform_fields#new
+                                                     GET    /dynamicform_fields/:id/edit(.:format)                        refinery/dynamicform_fields#edit
+                                                     GET    /dynamicform_fields/:id(.:format)                             refinery/dynamicform_fields#show
+                                                     PUT    /dynamicform_fields/:id(.:format)                             refinery/dynamicform_fields#update
+                                                     DELETE /dynamicform_fields/:id(.:format)                             refinery/dynamicform_fields#destroy
+                                                     GET    /dynamicform_values(.:format)                                 refinery/dynamicform_values#index
+                                                     POST   /dynamicform_values(.:format)                                 refinery/dynamicform_values#create
+                                                     GET    /dynamicform_values/new(.:format)                             refinery/dynamicform_values#new
+                                                     GET    /dynamicform_values/:id/edit(.:format)                        refinery/dynamicform_values#edit
+                                                     GET    /dynamicform_values/:id(.:format)                             refinery/dynamicform_values#show
+                                                     PUT    /dynamicform_values/:id(.:format)                             refinery/dynamicform_values#update
+                                                     DELETE /dynamicform_values/:id(.:format)                             refinery/dynamicform_values#destroy
+                                                     GET    /dynamicform_associations(.:format)                           refinery/dynamicform_associations#index
+                                                     POST   /dynamicform_associations(.:format)                           refinery/dynamicform_associations#create
+                                                     GET    /dynamicform_associations/new(.:format)                       refinery/dynamicform_associations#new
+                                                     GET    /dynamicform_associations/:id/edit(.:format)                  refinery/dynamicform_associations#edit
+                                                     GET    /dynamicform_associations/:id(.:format)                       refinery/dynamicform_associations#show
+                                                     PUT    /dynamicform_associations/:id(.:format)                       refinery/dynamicform_associations#update
+                                                     DELETE /dynamicform_associations/:id(.:format)                       refinery/dynamicform_associations#destroy
+                                                     POST   /refinery/dynamicfields/update_positions(.:format)            refinery/dynamicfields/admin/dynamicfields#update_positions
+                                                     GET    /refinery/dynamicfields(.:format)                             refinery/dynamicfields/admin/dynamicfields#index
+                                                     POST   /refinery/dynamicfields(.:format)                             refinery/dynamicfields/admin/dynamicfields#create
+                                                     GET    /refinery/dynamicfields/new(.:format)                         refinery/dynamicfields/admin/dynamicfields#new
+                                                     GET    /refinery/dynamicfields/:id/edit(.:format)                    refinery/dynamicfields/admin/dynamicfields#edit
+                                                     PUT    /refinery/dynamicfields/:id(.:format)                         refinery/dynamicfields/admin/dynamicfields#update
+                                                     DELETE /refinery/dynamicfields/:id(.:format)                         refinery/dynamicfields/admin/dynamicfields#destroy

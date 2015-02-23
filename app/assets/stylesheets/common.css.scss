@@ -23,7 +23,7 @@
   min-height: 29px;
   height: 29px;
 }
-.new_student, .edit_student{
+form{
   textarea{
     height: 50px;
     max-height: 100px;
@@ -58,4 +58,7 @@
 }
 .pull-right-nc{
   float: right;
+}
+.small-font{
+  font-size: 10px;
 }

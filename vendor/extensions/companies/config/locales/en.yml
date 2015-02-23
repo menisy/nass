@@ -1,0 +1,59 @@
+en:
+  refinery:
+    plugins:
+      contact_people:
+        title: Contact People
+      companies:
+        title: Companies
+    companies:
+      admin:
+        contact_people:
+          actions:
+            create_new: Add New Contact Person
+            reorder: Reorder Contact People
+            reorder_done: Done Reordering Contact People
+          records:
+            title: Contact People
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Contact People yet. Click "Add New Contact
+              Person" to add your first contact person.
+          contact_person:
+            view_live_html: View this contact person live <br/><em>(opens in a new
+              window)</em>
+            edit: Edit this contact person
+            delete: Remove this contact person forever
+        companies:
+          actions:
+            create_new: Add New Company
+            reorder: Reorder Companies
+            reorder_done: Done Reordering Companies
+          records:
+            title: Companies
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Companies yet. Click "Add New Company" to add
+              your first company.
+          company:
+            view_live_html: View this company live <br/><em>(opens in a new window)</em>
+            edit: Edit this company
+            delete: Remove this company forever
+      contact_people:
+        show:
+          other: Other Contact People
+      companies:
+        show:
+          other: Other Companies
+  activerecord:
+    attributes:
+      refinery/companies/contact_person:
+        name: Name
+        email: Email
+        mobile: Mobile
+        land_line: Land Line
+        position: Position
+      refinery/companies/company:
+        company_name: Company Name
+        field: Field
+        main_address: Main Address
+        nob_egypt: Nob Egypt
+        nob_abroad: Nob Abroad
+        logo: Logo

@@ -23,10 +23,21 @@ en:
   signed_in_already: 'You are already signed in, if you wish to register with a different account please sign out first'
   logged_in_as: 'Logged in as'
   logout: 'Logout'
+  for_students: 'for students'
+  for_companies: 'for companies'
   reg_success: 'Your registration was successful, you can sign in using your email and password'
   reg_fail: 'Please insert the correct values in the highlighted fields'
+  please_specify: '(Please Specify Countries if Available)'
+  register: 'Register'
+  student: 'Student'
+  company: 'Company'
   helpers:
     label:
+      company:
+        field: 'Field of Specialization'
+        main_address: 'Main Branch Address'
+        nob_egypt: 'Number of Branches in Egypt'
+        nob_abroad: 'Number of Branches outside Egypt'
       student:
         email: 'Email'
         password: 'Password'

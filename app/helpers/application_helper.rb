@@ -12,8 +12,16 @@ module ApplicationHelper
     presenter
   end
 
+  def someone_signed_in?
+    employer_signed_in? || student_signed_in?
+  end
+
+  def current_person
+    current_student || current_employer
+  end
+
   def locale_switcher
-    unless params[:controller] == 'registrations' && params[:action] == 'create'
+    unless params[:controller] == 'registrations' && ['create', 'emp_create'].include?(params[:action])
       if I18n.locale.to_s == 'en'
         #Globalize.with_locale('ar') { link_to 'عربي', refinery.url_for( locale: 'ar'), class: 'lcl' }
         link_to 'عربي', refinery.url_for(:locale => 'ar'), class: 'lcl'

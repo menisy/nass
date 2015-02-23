@@ -14,6 +14,16 @@ $(document).ready ->
 
   if($('.sii').text().trim() == 'true')
     $("li:contains('Registration')").hide()
+
+  
+  $('input[type="radio"]').on 'click', ->
+    selectedVal = "";
+    selected = $(".sign-in-type input[type='radio']:checked");
+    if (selected.length > 0)
+      selectedVal = selected.val()
+      $('#sign-in-form').html($('#'+selectedVal+'-form').html())
+    return
+  
     
 
   #$('#right_side_body').prepend($('#search-form').html())

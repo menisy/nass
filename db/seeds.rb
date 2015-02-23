@@ -32,3 +32,6 @@ Refinery::Dynamicfields::Engine.load_seed
 
 # Added by Refinery CMS PersonalInfos extension
 Refinery::PersonalInfos::Engine.load_seed
+
+# Added by Refinery CMS Companies extension
+Refinery::Companies::Engine.load_seed

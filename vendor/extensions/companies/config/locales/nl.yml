@@ -1,0 +1,60 @@
+nl:
+  refinery:
+    plugins:
+      contact_people:
+        title: Contact People
+      companies:
+        title: Companies
+    companies:
+      admin:
+        contact_people:
+          actions:
+            create_new: Nieuwe Contact Person toevoegen
+            reorder: De volgorde van de Contact People wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Contact Person-volgorde
+          records:
+            title: Contact People
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Contact People. Druk op 'Nieuwe Contact
+              Person toevoegen' om de eerste toe te voegen.
+          contact_person:
+            view_live_html: Deze contact person op de website bekijken <br/><em>(opent
+              in een nieuw venster)</em>
+            edit: Bewerk deze contact person
+            delete: Deze contact person definitief verwijderen
+        companies:
+          actions:
+            create_new: Nieuwe Company toevoegen
+            reorder: De volgorde van de Companies wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Company-volgorde
+          records:
+            title: Companies
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Companies. Druk op 'Nieuwe Company toevoegen'
+              om de eerste toe te voegen.
+          company:
+            view_live_html: Deze company op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
+            edit: Bewerk deze company
+            delete: Deze company definitief verwijderen
+      contact_people:
+        show:
+          other: Andere Contact People
+      companies:
+        show:
+          other: Andere Companies
+  activerecord:
+    attributes:
+      refinery/companies/contact_person:
+        name: Name
+        email: Email
+        mobile: Mobile
+        land_line: Land Line
+        position: Position
+      refinery/companies/company:
+        company_name: Company Name
+        field: Field
+        main_address: Main Address
+        nob_egypt: Nob Egypt
+        nob_abroad: Nob Abroad
+        logo: Logo

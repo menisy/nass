@@ -1,0 +1,51 @@
+<% content_for :body_content_title do %>
+  <%= @contact_person.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @contact_person.name %>
+    </p>
+  </section>
+  <section>
+    <h1>Email</h1>
+    <p>
+      <%=raw @contact_person.email %>
+    </p>
+  </section>
+  <section>
+    <h1>Mobile</h1>
+    <p>
+      <%=raw @contact_person.mobile %>
+    </p>
+  </section>
+  <section>
+    <h1>Land Line</h1>
+    <p>
+      <%=raw @contact_person.land_line %>
+    </p>
+  </section>
+  <section>
+    <h1>Position</h1>
+    <p>
+      <%=raw @contact_person.position %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="contact_people">
+      <% @contact_people.each do |contact_person| %>
+        <li>
+          <%= link_to contact_person.name, refinery.companies_contact_person_path(contact_person) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

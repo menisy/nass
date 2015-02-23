@@ -1,0 +1,11 @@
+<div id="student-form">
+  <%= form_tag session_path(:student), method: :post do %>
+    <%= text_field_tag 'student[email]', nil, placeholder: t(:email) %>
+    <%= password_field_tag 'student[password]', nil, placeholder: t(:password) %>
+    <button class="btn"><%= t(:sign_in) %></button>
+    <%= check_box_tag 'student[remember_me]' %>
+    <%= label_tag 'student[remember_me]', t(:remember_me), class: 'remember' %>
+    <br/>
+    <%= link_to t(:forgot_password), new_password_path(:student) %>
+  <% end %>
+</div>

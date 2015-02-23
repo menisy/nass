@@ -1,0 +1,59 @@
+it:
+  refinery:
+    plugins:
+      contact_people:
+        title: Contact People
+      companies:
+        title: Companies
+    companies:
+      admin:
+        contact_people:
+          actions:
+            create_new: Aggiungi Nuovo Contact Person
+            reorder: Riordina Contact People
+            reorder_done: Termina il Riordino di Contact People
+          records:
+            title: Contact People
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Contact People. Clicca "Aggiungi Nuovo
+              Contact Person" per aggiungere il tuo primo contact person.
+          contact_person:
+            view_live_html: Guarda live questo contact person <br/><em>(apre una nuova
+              finestra)</em>
+            edit: Modifica questo contact person
+            delete: Rimuovi per sempre questo contact person
+        companies:
+          actions:
+            create_new: Aggiungi Nuovo Company
+            reorder: Riordina Companies
+            reorder_done: Termina il Riordino di Companies
+          records:
+            title: Companies
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Companies. Clicca "Aggiungi Nuovo Company"
+              per aggiungere il tuo primo company.
+          company:
+            view_live_html: Guarda live questo company <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo company
+            delete: Rimuovi per sempre questo company
+      contact_people:
+        show:
+          other: Altri Contact People
+      companies:
+        show:
+          other: Altri Companies
+  activerecord:
+    attributes:
+      refinery/companies/contact_person:
+        name: Name
+        email: Email
+        mobile: Mobile
+        land_line: Land Line
+        position: Position
+      refinery/companies/company:
+        company_name: Company Name
+        field: Field
+        main_address: Main Address
+        nob_egypt: Nob Egypt
+        nob_abroad: Nob Abroad
+        logo: Logo

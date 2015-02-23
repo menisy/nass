@@ -17,4 +17,22 @@ class RegistrationsController < ApplicationController
   def update
 
   end
+
+  def emp_create
+    logo = Refinery::Image.create(image: params[:employer][:company_attributes][:logo])
+    params[:employer][:company_attributes][:logo] = logo
+    @employer = Employer.new params[:employer]
+    if @employer.save
+      I18n.locale = params[:lcl]
+      redirect_to "/#{params[:lcl]}", flash: {notice: t(:reg_success)}
+    else
+      I18n.locale = params[:lcl]
+      flash[:error] = t(:reg_fail)
+      render "emp_registration"
+    end
+  end
+
+  def emp_update
+
+  end
 end
