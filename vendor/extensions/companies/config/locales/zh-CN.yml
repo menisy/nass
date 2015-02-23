@@ -1,12 +1,27 @@
 zh-CN:
   refinery:
     plugins:
+      jobs:
+        title: Jobs
       contact_people:
         title: Contact People
       companies:
         title: Companies
     companies:
       admin:
+        jobs:
+          actions:
+            create_new: "建立新的 Job"
+            reorder: "对 Jobs 重新排序"
+            reorder_done: "对 Jobs 的重新排序结束"
+          records:
+            title: Jobs
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Jobs . 点击 "Add New Job" 创建一个job.
+          job:
+            view_live_html: "查看 job 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 job"
+            delete: "永久删除 job"
         contact_people:
           actions:
             create_new: "建立新的 Contact Person"
@@ -34,6 +49,9 @@ zh-CN:
             view_live_html: "查看 company 的最新内容.<br/><em>(新窗口中打开)</em>"
             edit: "编辑 company"
             delete: "永久删除 company"
+      jobs:
+        show:
+          other: "其他 Jobs"
       contact_people:
         show:
           other: "其他 Contact People"
@@ -42,6 +60,21 @@ zh-CN:
           other: "其他 Companies"
   activerecord:
     attributes:
+      refinery/companies/job:
+        name: Name
+        position: Position
+        number: Number
+        joining_date: Joining Date
+        salary_from: Salary From
+        salary_to: Salary To
+        incentive: Incentive
+        days_off: Days Off
+        social_insurance: Social Insurance
+        medical_insurance: Medical Insurance
+        transportation: Transportation
+        job_description: Job Description
+        qualifications: Qualifications
+        work_conditions: Work Conditions
       refinery/companies/contact_person:
         name: Name
         email: Email

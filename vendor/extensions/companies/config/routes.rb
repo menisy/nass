@@ -33,4 +33,21 @@ Refinery::Core::Engine.routes.draw do
     end
   end
 
+
+  # Frontend routes
+  namespace :companies do
+    resources :jobs, :only => [:index, :show]
+  end
+
+  # Admin routes
+  namespace :companies, :path => '' do
+    namespace :admin, :path => "#{Refinery::Core.backend_route}/companies" do
+      resources :jobs, :except => :show do
+        collection do
+          post :update_positions
+        end
+      end
+    end
+  end
+
 end

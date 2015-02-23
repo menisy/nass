@@ -2,12 +2,25 @@ Refinery::PagesController.class_eval do
   before_filter :fetch_home_photos
   before_filter :fetch_news
   before_filter :set_new_user
+  before_filter :set_jobs, only: [:show]
 
   def reg_student
 
   end
 
 protected
+
+  def set_jobs
+    if params[:path] && params[:path].index('job')
+      if employer_signed_in?
+        @jobs = current_employer.company.jobs
+        @job = current_employer.company.jobs.build
+      else
+        @jobs = ::Refinery::Companies::Job.all
+      end
+    end
+  end
+
   def fetch_home_photos
     @home_photos = ::Refinery::HomePhotos::HomePhoto.all
   end

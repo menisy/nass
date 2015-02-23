@@ -5376,7 +5376,7 @@ ul.navbar-nav a {
   color: #fff;
 }#locale{
   position: absolute;
-  right: 0px;
+  left: 200px;
 }#locale a {
   padding: 10px 15px 10px 0px;
 }.lcl {

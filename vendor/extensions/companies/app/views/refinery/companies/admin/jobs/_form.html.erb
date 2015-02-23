@@ -1,0 +1,70 @@
+<%= form_for [refinery, :companies_admin, @job] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @job,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :position -%>
+    <%= f.text_field :position -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :number -%>
+    <%= f.number_field :number -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :joining_date -%>
+    <%= f.date_select :joining_date -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :salary_from -%>
+    <%= f.number_field :salary_from -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :salary_to -%>
+    <%= f.number_field :salary_to -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:incentive, :days_off, :job_description, :qualifications, :work_conditions],
+                :object => "companies/job" -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :social_insurance -%>
+    <%= f.check_box :social_insurance, :checked => @job[:social_insurance] -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :medical_insurance -%>
+    <%= f.check_box :medical_insurance, :checked => @job[:medical_insurance] -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :transportation -%>
+    <%= f.check_box :transportation, :checked => @job[:transportation] -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.jobs.admin.jobs.job'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @job.name) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

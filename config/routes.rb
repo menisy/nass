@@ -18,6 +18,9 @@ BlogArticle::Application.routes.draw do
     root to: "refinery/admin/dashboard#index"
   end
 
+  post 'jobs/' => 'jobs#create'
+  put 'jobs/' => 'jobs#update'
+
 
   post 'registration/' => 'registrations#create'
   put 'registration/' => 'registrations#update'

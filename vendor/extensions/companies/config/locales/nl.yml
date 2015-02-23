@@ -1,12 +1,29 @@
 nl:
   refinery:
     plugins:
+      jobs:
+        title: Jobs
       contact_people:
         title: Contact People
       companies:
         title: Companies
     companies:
       admin:
+        jobs:
+          actions:
+            create_new: Nieuwe Job toevoegen
+            reorder: De volgorde van de Jobs wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Job-volgorde
+          records:
+            title: Jobs
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Jobs. Druk op 'Nieuwe Job toevoegen' om
+              de eerste toe te voegen.
+          job:
+            view_live_html: Deze job op de website bekijken <br/><em>(opent in een
+              nieuw venster)</em>
+            edit: Bewerk deze job
+            delete: Deze job definitief verwijderen
         contact_people:
           actions:
             create_new: Nieuwe Contact Person toevoegen
@@ -37,6 +54,9 @@ nl:
               een nieuw venster)</em>
             edit: Bewerk deze company
             delete: Deze company definitief verwijderen
+      jobs:
+        show:
+          other: Andere Jobs
       contact_people:
         show:
           other: Andere Contact People
@@ -45,6 +65,21 @@ nl:
           other: Andere Companies
   activerecord:
     attributes:
+      refinery/companies/job:
+        name: Name
+        position: Position
+        number: Number
+        joining_date: Joining Date
+        salary_from: Salary From
+        salary_to: Salary To
+        incentive: Incentive
+        days_off: Days Off
+        social_insurance: Social Insurance
+        medical_insurance: Medical Insurance
+        transportation: Transportation
+        job_description: Job Description
+        qualifications: Qualifications
+        work_conditions: Work Conditions
       refinery/companies/contact_person:
         name: Name
         email: Email

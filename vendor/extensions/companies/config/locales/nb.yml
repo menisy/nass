@@ -1,12 +1,29 @@
 nb:
   refinery:
     plugins:
+      jobs:
+        title: Jobs
       contact_people:
         title: Contact People
       companies:
         title: Companies
     companies:
       admin:
+        jobs:
+          actions:
+            create_new: Lag en ny Job
+            reorder: Endre rekkefølgen på Jobs
+            reorder_done: Ferdig å endre rekkefølgen Jobs
+          records:
+            title: Jobs
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Jobs enda. Klikk på "Lag en ny Job" for å legge
+              til din første job.
+          job:
+            view_live_html: Vis hvordan denne job ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne job
+            delete: Fjern denne job permanent
         contact_people:
           actions:
             create_new: Lag en ny Contact Person
@@ -37,6 +54,9 @@ nb:
               i et nytt vindu)</em>
             edit: Rediger denne company
             delete: Fjern denne company permanent
+      jobs:
+        show:
+          other: Andre Jobs
       contact_people:
         show:
           other: Andre Contact People
@@ -45,6 +65,21 @@ nb:
           other: Andre Companies
   activerecord:
     attributes:
+      refinery/companies/job:
+        name: Name
+        position: Position
+        number: Number
+        joining_date: Joining Date
+        salary_from: Salary From
+        salary_to: Salary To
+        incentive: Incentive
+        days_off: Days Off
+        social_insurance: Social Insurance
+        medical_insurance: Medical Insurance
+        transportation: Transportation
+        job_description: Job Description
+        qualifications: Qualifications
+        work_conditions: Work Conditions
       refinery/companies/contact_person:
         name: Name
         email: Email

@@ -1,12 +1,28 @@
 cs:
   refinery:
     plugins:
+      jobs:
+        title: Jobs
       contact_people:
         title: Contact People
       companies:
         title: Companies
     companies:
       admin:
+        jobs:
+          actions:
+            create_new: Přidat Job
+            reorder: "Řadit Jobs"
+            reorder_done: Konec řazení Jobs
+          records:
+            title: Jobs
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Jobs. Zvolte "Přidat Job" pro
+              přidání prvního job.
+          job:
+            view_live_html: Zobrazit náhled job<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit job
+            delete: Smazat job
         contact_people:
           actions:
             create_new: Přidat Contact Person
@@ -36,6 +52,9 @@ cs:
             view_live_html: Zobrazit náhled company<br/><em>(otevře se v novém okně)</em>
             edit: Upravit company
             delete: Smazat company
+      jobs:
+        show:
+          other: Další Jobs
       contact_people:
         show:
           other: Další Contact People
@@ -44,6 +63,21 @@ cs:
           other: Další Companies
   activerecord:
     attributes:
+      refinery/companies/job:
+        name: Name
+        position: Position
+        number: Number
+        joining_date: Joining Date
+        salary_from: Salary From
+        salary_to: Salary To
+        incentive: Incentive
+        days_off: Days Off
+        social_insurance: Social Insurance
+        medical_insurance: Medical Insurance
+        transportation: Transportation
+        job_description: Job Description
+        qualifications: Qualifications
+        work_conditions: Work Conditions
       refinery/companies/contact_person:
         name: Name
         email: Email

@@ -13,6 +13,8 @@ module Refinery
     
       has_many :contact_people, dependent: :destroy
 
+      has_many :jobs, class_name: '::Refinery::Companies::Job', dependent: :destroy
+
       accepts_nested_attributes_for :contact_people 
 
       belongs_to :employer

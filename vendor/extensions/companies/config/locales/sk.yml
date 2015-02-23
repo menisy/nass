@@ -1,12 +1,28 @@
 sk:
   refinery:
     plugins:
+      jobs:
+        title: Jobs
       contact_people:
         title: Contact People
       companies:
         title: Companies
     companies:
       admin:
+        jobs:
+          actions:
+            create_new: Pridať Job
+            reorder: Preusporiadať Jobs
+            reorder_done: Koniec radenia Jobs
+          records:
+            title: Jobs
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Jobs. Kliknite na "Pridať Job" pre
+              pridanie prvého job.
+          job:
+            view_live_html: Zobraziť náhľad job<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť job
+            delete: Zmazať job
         contact_people:
           actions:
             create_new: Pridať Contact Person
@@ -36,6 +52,9 @@ sk:
             view_live_html: Zobraziť náhľad company<br/><em>(otvorí sa v novom okne)</em>
             edit: Upraviť company
             delete: Zmazať company
+      jobs:
+        show:
+          other: Daľšie Jobs
       contact_people:
         show:
           other: Daľšie Contact People
@@ -44,6 +63,21 @@ sk:
           other: Daľšie Companies
   activerecord:
     attributes:
+      refinery/companies/job:
+        name: Name
+        position: Position
+        number: Number
+        joining_date: Joining Date
+        salary_from: Salary From
+        salary_to: Salary To
+        incentive: Incentive
+        days_off: Days Off
+        social_insurance: Social Insurance
+        medical_insurance: Medical Insurance
+        transportation: Transportation
+        job_description: Job Description
+        qualifications: Qualifications
+        work_conditions: Work Conditions
       refinery/companies/contact_person:
         name: Name
         email: Email

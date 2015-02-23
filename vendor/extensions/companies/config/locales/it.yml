@@ -1,12 +1,28 @@
 it:
   refinery:
     plugins:
+      jobs:
+        title: Jobs
       contact_people:
         title: Contact People
       companies:
         title: Companies
     companies:
       admin:
+        jobs:
+          actions:
+            create_new: Aggiungi Nuovo Job
+            reorder: Riordina Jobs
+            reorder_done: Termina il Riordino di Jobs
+          records:
+            title: Jobs
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Jobs. Clicca "Aggiungi Nuovo Job" per
+              aggiungere il tuo primo job.
+          job:
+            view_live_html: Guarda live questo job <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo job
+            delete: Rimuovi per sempre questo job
         contact_people:
           actions:
             create_new: Aggiungi Nuovo Contact Person
@@ -36,6 +52,9 @@ it:
             view_live_html: Guarda live questo company <br/><em>(apre una nuova finestra)</em>
             edit: Modifica questo company
             delete: Rimuovi per sempre questo company
+      jobs:
+        show:
+          other: Altri Jobs
       contact_people:
         show:
           other: Altri Contact People
@@ -44,6 +63,21 @@ it:
           other: Altri Companies
   activerecord:
     attributes:
+      refinery/companies/job:
+        name: Name
+        position: Position
+        number: Number
+        joining_date: Joining Date
+        salary_from: Salary From
+        salary_to: Salary To
+        incentive: Incentive
+        days_off: Days Off
+        social_insurance: Social Insurance
+        medical_insurance: Medical Insurance
+        transportation: Transportation
+        job_description: Job Description
+        qualifications: Qualifications
+        work_conditions: Work Conditions
       refinery/companies/contact_person:
         name: Name
         email: Email

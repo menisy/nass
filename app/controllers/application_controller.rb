@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
   before_filter :load_contact
 
   def employer_url c
-    root_path
+    request.referer
   end
 
   def student_url c
-    root_path
+    request.referer
   end
 
   def user_url c

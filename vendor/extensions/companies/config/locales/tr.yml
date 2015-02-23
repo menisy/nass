@@ -1,12 +1,29 @@
 tr:
   refinery:
     plugins:
+      jobs:
+        title: Jobs
       contact_people:
         title: Contact People
       companies:
         title: Companies
     companies:
       admin:
+        jobs:
+          actions:
+            create_new: Yeni Ekle Job
+            reorder: Tekrar sirala Jobs
+            reorder_done: Tekrar siralama tamamlandiJobs
+          records:
+            title: Jobs
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Jobs yok henuz.  Tikla "Yeni Ekle Job" eklemek
+              senin ilk job.
+          job:
+            view_live_html: Bunu canlu job goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle job
+            delete: Bunu Sil job sonsuza dek
         contact_people:
           actions:
             create_new: Yeni Ekle Contact Person
@@ -37,6 +54,9 @@ tr:
               acar)</em>
             edit: Bunu Duzenle company
             delete: Bunu Sil company sonsuza dek
+      jobs:
+        show:
+          other: Diger Jobs
       contact_people:
         show:
           other: Diger Contact People
@@ -45,6 +65,21 @@ tr:
           other: Diger Companies
   activerecord:
     attributes:
+      refinery/companies/job:
+        name: Name
+        position: Position
+        number: Number
+        joining_date: Joining Date
+        salary_from: Salary From
+        salary_to: Salary To
+        incentive: Incentive
+        days_off: Days Off
+        social_insurance: Social Insurance
+        medical_insurance: Medical Insurance
+        transportation: Transportation
+        job_description: Job Description
+        qualifications: Qualifications
+        work_conditions: Work Conditions
       refinery/companies/contact_person:
         name: Name
         email: Email

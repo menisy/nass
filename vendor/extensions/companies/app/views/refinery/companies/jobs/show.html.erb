@@ -1,0 +1,105 @@
+<% content_for :body_content_title do %>
+  <%= @job.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @job.name %>
+    </p>
+  </section>
+  <section>
+    <h1>Position</h1>
+    <p>
+      <%=raw @job.position %>
+    </p>
+  </section>
+  <section>
+    <h1>Number</h1>
+    <p>
+      <%=raw @job.number %>
+    </p>
+  </section>
+  <section>
+    <h1>Joining Date</h1>
+    <p>
+      <%=raw @job.joining_date %>
+    </p>
+  </section>
+  <section>
+    <h1>Salary From</h1>
+    <p>
+      <%=raw @job.salary_from %>
+    </p>
+  </section>
+  <section>
+    <h1>Salary To</h1>
+    <p>
+      <%=raw @job.salary_to %>
+    </p>
+  </section>
+  <section>
+    <h1>Incentive</h1>
+    <p>
+      <%=raw @job.incentive %>
+    </p>
+  </section>
+  <section>
+    <h1>Days Off</h1>
+    <p>
+      <%=raw @job.days_off %>
+    </p>
+  </section>
+  <section>
+    <h1>Social Insurance</h1>
+    <p>
+      <%=raw @job.social_insurance %>
+    </p>
+  </section>
+  <section>
+    <h1>Medical Insurance</h1>
+    <p>
+      <%=raw @job.medical_insurance %>
+    </p>
+  </section>
+  <section>
+    <h1>Transportation</h1>
+    <p>
+      <%=raw @job.transportation %>
+    </p>
+  </section>
+  <section>
+    <h1>Job Description</h1>
+    <p>
+      <%=raw @job.job_description %>
+    </p>
+  </section>
+  <section>
+    <h1>Qualifications</h1>
+    <p>
+      <%=raw @job.qualifications %>
+    </p>
+  </section>
+  <section>
+    <h1>Work Conditions</h1>
+    <p>
+      <%=raw @job.work_conditions %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="jobs">
+      <% @jobs.each do |job| %>
+        <li>
+          <%= link_to job.name, refinery.companies_job_path(job) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

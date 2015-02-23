@@ -5,7 +5,7 @@
     <% else %>    
         <h2><%= (t :sign_up) + " " + (t :for_companies)%></h2>
 
-        <%= form_for(@employer, :url => '/emp_registration') do |f| %>
+        <%= form_for(@employer, url: '/emp_registration') do |f| %>
 
           <% if flash[:error] %>
             <div class='alert alert-danger error-msg'>

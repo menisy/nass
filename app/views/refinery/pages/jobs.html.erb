@@ -1,0 +1,8 @@
+<% if !someone_signed_in? %>
+  <%= render 'jobs/job_previews' %>
+<% elsif student_signed_in? %>
+  <%= render 'jobs/jobs' %>
+<% elsif employer_signed_in? %>
+  <%= render 'jobs/form' %>
+  <%= render 'jobs/employer_jobs' %>
+<% end %>
