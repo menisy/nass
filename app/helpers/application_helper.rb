@@ -21,7 +21,7 @@ module ApplicationHelper
   end
 
   def locale_switcher
-    unless params[:controller] == 'registrations' && ['create', 'emp_create'].include?(params[:action])
+    unless ['registrations', 'jobs'].include?(params[:controller]) && ['create', 'emp_create'].include?(params[:action])
       if I18n.locale.to_s == 'en'
         #Globalize.with_locale('ar') { link_to 'عربي', refinery.url_for( locale: 'ar'), class: 'lcl' }
         link_to 'عربي', refinery.url_for(:locale => 'ar'), class: 'lcl'
@@ -31,9 +31,9 @@ module ApplicationHelper
       end
     else
       if I18n.locale.to_s == 'en'
-        link_to 'عربي', 'ar/registration', class: 'lcl'
+        link_to 'عربي', 'ar/'+ URI(request.referer).path, class: 'lcl'
       else
-        link_to 'English', 'registration', class: 'lcl'
+        link_to 'English', URI(request.referer).path, class: 'lcl'
       end
     end
   end

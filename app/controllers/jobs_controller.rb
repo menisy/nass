@@ -4,7 +4,7 @@ class JobsController < ApplicationController
   def create
     @job = current_employer.company.jobs.build params[:job]
     @job.company = current_employer.company
-    if @job.save!
+    if @job.save
       redirect_to :back, notice: 'Your job has been posted successfully'
     else
       @jobs = current_employer.company.jobs
