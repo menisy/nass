@@ -1,1 +1,14 @@
-listing job previews
+<h3>Job Listing</h3>
+<% if @jobs && @jobs.count >= 1 %>
+  <% @jobs.each_with_index do |job, i| %>
+    <% next if job.new_record? %>
+    <h4><%= i+1 %> - <%= job.position %></h4>
+    <h6>Job Description</h6>
+    <p><%= job.job_description %></p>
+    <h6>Number needed</h6>
+    <p><%= job.number %></p>
+    <br>
+  <% end %>
+<% else %>
+  <h4>No jobs posted any jobs yet</h4>
+<% end %>
