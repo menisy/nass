@@ -22,6 +22,7 @@ class RegistrationsController < ApplicationController
     logo = Refinery::Image.create(image: params[:employer][:company_attributes][:logo])
     params[:employer][:company_attributes][:logo] = logo
     @employer = Employer.new params[:employer]
+    @company = @employer.company
     if @employer.save
       I18n.locale = params[:lcl]
       redirect_to "/#{params[:lcl]}", flash: {notice: t(:reg_success)}
