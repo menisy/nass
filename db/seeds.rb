@@ -35,3 +35,6 @@ Refinery::PersonalInfos::Engine.load_seed
 
 # Added by Refinery CMS Companies extension
 Refinery::Companies::Engine.load_seed
+
+# Added by Refinery CMS Addresses extension
+Refinery::Addresses::Engine.load_seed

@@ -21,6 +21,8 @@ BlogArticle::Application.routes.draw do
   post 'jobs/' => 'jobs#create'
   put 'jobs/' => 'jobs#update'
 
+  get 'jobs/:id' => 'jobs#show', as: :job_details
+
 
   post 'registration/' => 'registrations#create'
   put 'registration/' => 'registrations#update'
@@ -28,8 +30,7 @@ BlogArticle::Application.routes.draw do
   post 'emp_registration/' => 'registrations#emp_create'
   put 'emp_registration/' => 'registrations#emp_update'
 
-
-
+  get 'export/' => 'exports#download', as: :export
 
   # This line mounts Refinery's routes at the root of your application.
   # This means, any requests to the root URL of your application will go to Refinery::PagesController#home.

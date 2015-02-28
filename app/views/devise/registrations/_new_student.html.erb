@@ -23,8 +23,12 @@
           <%= f.password_field :password_confirmation %></div>
 
           <%= fields_for :personal_info, @student.personal_info do |personal_info_fields| %>
-            <%= personal_info_fields.label :name %> <br/>
-            <%= personal_info_fields.text_field :name %>
+            <%= personal_info_fields.label :first_name %> <br/>
+            <%= personal_info_fields.text_field :first_name %>
+            <br>
+
+            <%= personal_info_fields.label :last_name %> <br/>
+            <%= personal_info_fields.text_field :last_name %>
             <br>
             <%= personal_info_fields.label :nationality %> <br/>
             <%= personal_info_fields.text_field :nationality %>
@@ -44,9 +48,32 @@
             <%= personal_info_fields.label :languages %> <br/>
             <%= personal_info_fields.text_area :languages %>
             <br>
-            <%= personal_info_fields.label :address %> <br/>
-            <%= personal_info_fields.text_area :address %>
-            <br>
+            <%= personal_info_fields.fields_for :address, @student.personal_info.address do |address| %>
+              
+              <h4><%= t :address %></h4>
+              
+              <%= address.label :street_name, I18n.translate('helpers.label.address.street_name') %>
+              <%= address.text_field :street_name %>
+              <br>
+
+              <%= address.label :building_no, I18n.translate('helpers.label.address.building_no') %>
+              <%= address.text_field :building_no %>
+              <br>
+
+              <%= address.label :apart_no, I18n.translate('helpers.label.address.apart_no') %>
+              <%= address.text_field :apart_no %>
+              <br>
+
+              <%= address.label :area, I18n.translate('area')%>
+              <%= address.select(:area_id, @areas.collect {|d| [d.name, d.id] }) %>
+              <br>
+
+              <%= address.label :city , I18n.translate('city')%>
+              <%= address.select(:city_id, @cities.collect {|d| [d.name, d.id] }) %>
+              <br>
+              <br>
+
+            <% end %>
             <%= personal_info_fields.label :degrees %> <br/>
             <%= personal_info_fields.text_area :degrees %>
             <br>

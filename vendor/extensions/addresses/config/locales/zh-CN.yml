@@ -1,0 +1,32 @@
+zh-CN:
+  refinery:
+    plugins:
+      addresses:
+        title: Addresses
+    addresses:
+      admin:
+        addresses:
+          actions:
+            create_new: 建立新的 Address
+            reorder: 对 Addresses 重新排序
+            reorder_done: 对 Addresses 的重新排序结束
+          records:
+            title: Addresses
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Addresses yet. Click "Add New Address" to add your first address.
+            no_items_yet: 目前没有 Addresses . 点击 "Add New Address" 创建一个address.
+          address:
+            view_live_html: 查看 address 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 address
+            delete: 永久删除 address
+      addresses:
+        show:
+          other: 其他 Addresses
+  activerecord:
+    attributes:
+      'refinery/addresses/address':
+        name: Name
+        street_name: Street Name
+        apart_no: Apart No
+        building_no: Building No

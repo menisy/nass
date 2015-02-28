@@ -1,6 +1,20 @@
 cs:
   refinery:
     plugins:
+      areas:
+        title: Areas
+      cities:
+        title: Cities
+      career_levels:
+        title: Career Levels
+      education_levels:
+        title: Education Levels
+      job_types:
+        title: Job Types
+      job_roles:
+        title: Job Roles
+      industries:
+        title: Industries
       jobs:
         title: Jobs
       contact_people:
@@ -9,6 +23,106 @@ cs:
         title: Companies
     companies:
       admin:
+        areas:
+          actions:
+            create_new: Přidat Area
+            reorder: "Řadit Areas"
+            reorder_done: Konec řazení Areas
+          records:
+            title: Areas
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Areas. Zvolte "Přidat Area"
+              pro přidání prvního area.
+          area:
+            view_live_html: Zobrazit náhled area<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit area
+            delete: Smazat area
+        cities:
+          actions:
+            create_new: Přidat City
+            reorder: "Řadit Cities"
+            reorder_done: Konec řazení Cities
+          records:
+            title: Cities
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Cities. Zvolte "Přidat City"
+              pro přidání prvního city.
+          city:
+            view_live_html: Zobrazit náhled city<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit city
+            delete: Smazat city
+        career_levels:
+          actions:
+            create_new: Přidat Career Level
+            reorder: "Řadit Career Levels"
+            reorder_done: Konec řazení Career Levels
+          records:
+            title: Career Levels
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Career Levels. Zvolte "Přidat
+              Career Level" pro přidání prvního career level.
+          career_level:
+            view_live_html: Zobrazit náhled career level<br/><em>(otevře se v novém
+              okně)</em>
+            edit: Upravit career level
+            delete: Smazat career level
+        education_levels:
+          actions:
+            create_new: Přidat Education Level
+            reorder: "Řadit Education Levels"
+            reorder_done: Konec řazení Education Levels
+          records:
+            title: Education Levels
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Education Levels. Zvolte "Přidat
+              Education Level" pro přidání prvního education level.
+          education_level:
+            view_live_html: Zobrazit náhled education level<br/><em>(otevře se v novém
+              okně)</em>
+            edit: Upravit education level
+            delete: Smazat education level
+        job_types:
+          actions:
+            create_new: Přidat Job Type
+            reorder: "Řadit Job Types"
+            reorder_done: Konec řazení Job Types
+          records:
+            title: Job Types
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Job Types. Zvolte "Přidat Job
+              Type" pro přidání prvního job type.
+          job_type:
+            view_live_html: Zobrazit náhled job type<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit job type
+            delete: Smazat job type
+        job_roles:
+          actions:
+            create_new: Přidat Job Role
+            reorder: "Řadit Job Roles"
+            reorder_done: Konec řazení Job Roles
+          records:
+            title: Job Roles
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Job Roles. Zvolte "Přidat Job
+              Role" pro přidání prvního job role.
+          job_role:
+            view_live_html: Zobrazit náhled job role<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit job role
+            delete: Smazat job role
+        industries:
+          actions:
+            create_new: Přidat Industry
+            reorder: "Řadit Industries"
+            reorder_done: Konec řazení Industries
+          records:
+            title: Industries
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Industries. Zvolte "Přidat
+              Industry" pro přidání prvního industry.
+          industry:
+            view_live_html: Zobrazit náhled industry<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit industry
+            delete: Smazat industry
         jobs:
           actions:
             create_new: Přidat Job
@@ -52,6 +166,27 @@ cs:
             view_live_html: Zobrazit náhled company<br/><em>(otevře se v novém okně)</em>
             edit: Upravit company
             delete: Smazat company
+      areas:
+        show:
+          other: Další Areas
+      cities:
+        show:
+          other: Další Cities
+      career_levels:
+        show:
+          other: Další Career Levels
+      education_levels:
+        show:
+          other: Další Education Levels
+      job_types:
+        show:
+          other: Další Job Types
+      job_roles:
+        show:
+          other: Další Job Roles
+      industries:
+        show:
+          other: Další Industries
       jobs:
         show:
           other: Další Jobs
@@ -63,6 +198,20 @@ cs:
           other: Další Companies
   activerecord:
     attributes:
+      refinery/companies/area:
+        name: Name
+      refinery/companies/city:
+        name: Name
+      refinery/companies/career_level:
+        name: Name
+      refinery/companies/education_level:
+        name: Name
+      refinery/companies/job_type:
+        name: Name
+      refinery/companies/job_role:
+        name: Name
+      refinery/companies/industry:
+        name: Name
       refinery/companies/job:
         name: Name
         position: Position

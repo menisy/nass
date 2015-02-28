@@ -1,6 +1,20 @@
 tr:
   refinery:
     plugins:
+      areas:
+        title: Areas
+      cities:
+        title: Cities
+      career_levels:
+        title: Career Levels
+      education_levels:
+        title: Education Levels
+      job_types:
+        title: Job Types
+      job_roles:
+        title: Job Roles
+      industries:
+        title: Industries
       jobs:
         title: Jobs
       contact_people:
@@ -9,6 +23,111 @@ tr:
         title: Companies
     companies:
       admin:
+        areas:
+          actions:
+            create_new: Yeni Ekle Area
+            reorder: Tekrar sirala Areas
+            reorder_done: Tekrar siralama tamamlandiAreas
+          records:
+            title: Areas
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Areas yok henuz.  Tikla "Yeni Ekle Area" eklemek
+              senin ilk area.
+          area:
+            view_live_html: Bunu canlu area goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle area
+            delete: Bunu Sil area sonsuza dek
+        cities:
+          actions:
+            create_new: Yeni Ekle City
+            reorder: Tekrar sirala Cities
+            reorder_done: Tekrar siralama tamamlandiCities
+          records:
+            title: Cities
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Cities yok henuz.  Tikla "Yeni Ekle City" eklemek
+              senin ilk city.
+          city:
+            view_live_html: Bunu canlu city goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle city
+            delete: Bunu Sil city sonsuza dek
+        career_levels:
+          actions:
+            create_new: Yeni Ekle Career Level
+            reorder: Tekrar sirala Career Levels
+            reorder_done: Tekrar siralama tamamlandiCareer Levels
+          records:
+            title: Career Levels
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Career Levels yok henuz.  Tikla "Yeni Ekle
+              Career Level" eklemek senin ilk career level.
+          career_level:
+            view_live_html: Bunu canlu career level goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle career level
+            delete: Bunu Sil career level sonsuza dek
+        education_levels:
+          actions:
+            create_new: Yeni Ekle Education Level
+            reorder: Tekrar sirala Education Levels
+            reorder_done: Tekrar siralama tamamlandiEducation Levels
+          records:
+            title: Education Levels
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Education Levels yok henuz.  Tikla "Yeni Ekle
+              Education Level" eklemek senin ilk education level.
+          education_level:
+            view_live_html: Bunu canlu education level goruntule <br/><em>(yeni bir
+              pencerede acar)</em>
+            edit: Bunu Duzenle education level
+            delete: Bunu Sil education level sonsuza dek
+        job_types:
+          actions:
+            create_new: Yeni Ekle Job Type
+            reorder: Tekrar sirala Job Types
+            reorder_done: Tekrar siralama tamamlandiJob Types
+          records:
+            title: Job Types
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Job Types yok henuz.  Tikla "Yeni Ekle Job
+              Type" eklemek senin ilk job type.
+          job_type:
+            view_live_html: Bunu canlu job type goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle job type
+            delete: Bunu Sil job type sonsuza dek
+        job_roles:
+          actions:
+            create_new: Yeni Ekle Job Role
+            reorder: Tekrar sirala Job Roles
+            reorder_done: Tekrar siralama tamamlandiJob Roles
+          records:
+            title: Job Roles
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Job Roles yok henuz.  Tikla "Yeni Ekle Job
+              Role" eklemek senin ilk job role.
+          job_role:
+            view_live_html: Bunu canlu job role goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle job role
+            delete: Bunu Sil job role sonsuza dek
+        industries:
+          actions:
+            create_new: Yeni Ekle Industry
+            reorder: Tekrar sirala Industries
+            reorder_done: Tekrar siralama tamamlandiIndustries
+          records:
+            title: Industries
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Industries yok henuz.  Tikla "Yeni Ekle Industry"
+              eklemek senin ilk industry.
+          industry:
+            view_live_html: Bunu canlu industry goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle industry
+            delete: Bunu Sil industry sonsuza dek
         jobs:
           actions:
             create_new: Yeni Ekle Job
@@ -54,6 +173,27 @@ tr:
               acar)</em>
             edit: Bunu Duzenle company
             delete: Bunu Sil company sonsuza dek
+      areas:
+        show:
+          other: Diger Areas
+      cities:
+        show:
+          other: Diger Cities
+      career_levels:
+        show:
+          other: Diger Career Levels
+      education_levels:
+        show:
+          other: Diger Education Levels
+      job_types:
+        show:
+          other: Diger Job Types
+      job_roles:
+        show:
+          other: Diger Job Roles
+      industries:
+        show:
+          other: Diger Industries
       jobs:
         show:
           other: Diger Jobs
@@ -65,6 +205,20 @@ tr:
           other: Diger Companies
   activerecord:
     attributes:
+      refinery/companies/area:
+        name: Name
+      refinery/companies/city:
+        name: Name
+      refinery/companies/career_level:
+        name: Name
+      refinery/companies/education_level:
+        name: Name
+      refinery/companies/job_type:
+        name: Name
+      refinery/companies/job_role:
+        name: Name
+      refinery/companies/industry:
+        name: Name
       refinery/companies/job:
         name: Name
         position: Position

@@ -5,3 +5,6 @@
   <%= render 'actions' %>
 </aside>
 <%= render '/refinery/admin/make_sortable', :tree => false if !searching? and ::Refinery::PersonalInfos::Admin::PersonalInfosController.sortable? and ::Refinery::PersonalInfos::PersonalInfo.many? %>
+
+
+<%= link_to 'Export to Excel', '/export.xlsx', class: 'btn btn-success' %>

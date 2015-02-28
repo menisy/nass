@@ -5563,7 +5563,7 @@ ul.navbar-nav a {
 }.no-padd {
   padding: 0px !important;
 }
-.col-sm-3, p, h1, h2, h3, h4, h5, h6, form{
+.col-sm-3, p, h1, h2, h3, h4, h5, h6, form, table{
   direction: rtl;
 }
 .sign-in-upper{

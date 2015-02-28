@@ -1,0 +1,30 @@
+nb:
+  refinery:
+    plugins:
+      addresses:
+        title: Addresses
+    addresses:
+      admin:
+        addresses:
+          actions:
+            create_new: Lag en ny Address
+            reorder: Endre rekkefølgen på Addresses
+            reorder_done: Ferdig å endre rekkefølgen Addresses
+          records:
+            title: Addresses
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Addresses enda. Klikk på "Lag en ny Address" for å legge til din første address.
+          address:
+            view_live_html: Vis hvordan denne address ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne address
+            delete: Fjern denne address permanent
+      addresses:
+        show:
+          other: Andre Addresses
+  activerecord:
+    attributes:
+      'refinery/addresses/address':
+        name: Name
+        street_name: Street Name
+        apart_no: Apart No
+        building_no: Building No

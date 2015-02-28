@@ -1,0 +1,30 @@
+it:
+  refinery:
+    plugins:
+      addresses:
+        title: Addresses
+    addresses:
+      admin:
+        addresses:
+          actions:
+            create_new: Aggiungi Nuovo Address
+            reorder: Riordina Addresses
+            reorder_done: Termina il Riordino di Addresses
+          records:
+            title: Addresses
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Addresses. Clicca "Aggiungi Nuovo Address" per aggiungere il tuo primo address.
+          address:
+            view_live_html: Guarda live questo address <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo address
+            delete: Rimuovi per sempre questo address
+      addresses:
+        show:
+          other: Altri Addresses
+  activerecord:
+    attributes:
+      'refinery/addresses/address':
+        name: Name
+        street_name: Street Name
+        apart_no: Apart No
+        building_no: Building No

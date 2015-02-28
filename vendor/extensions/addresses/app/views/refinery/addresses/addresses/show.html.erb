@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @address.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @address.name %>
+    </p>
+  </section>
+  <section>
+    <h1>Street Name</h1>
+    <p>
+      <%=raw @address.street_name %>
+    </p>
+  </section>
+  <section>
+    <h1>Apart No</h1>
+    <p>
+      <%=raw @address.apart_no %>
+    </p>
+  </section>
+  <section>
+    <h1>Building No</h1>
+    <p>
+      <%=raw @address.building_no %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="addresses">
+      <% @addresses.each do |address| %>
+        <li>
+          <%= link_to address.name, refinery.addresses_address_path(address) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

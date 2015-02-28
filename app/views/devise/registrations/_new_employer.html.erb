@@ -28,15 +28,44 @@
             <div><%= company_fields.label :company_name %><br />
             <%= company_fields.text_field :company_name %></div>
 
-            <div><%= company_fields.label :field, I18n.translate('helpers.label.company.field')%><br />
-            <%= company_fields.text_field :field %></div>
+            <div>
+              <%= company_fields.label :industry, I18n.translate('helpers.label.company.field') -%>
+              <br>
+              <%= company_fields.select(:industry_id, @industries.collect {|d| [d.name, d.id] })%>
+            </div>
+              
+            <br>
 
             <%= company_fields.label :logo -%>
             <%= company_fields.file_field(:logo, accept: 'image/png,image/jpeg') %>
             <br>
 
-            <div><%= company_fields.label :main_address %><br />
-            <%= company_fields.text_area :main_address %></div>
+            <%= company_fields.fields_for :address, @company.address do |address| %>
+              
+              <h4><%= t :address %></h4>
+              
+              <%= address.label :street_name, I18n.translate('helpers.label.address.street_name') %>
+              <%= address.text_field :street_name %>
+              <br>
+
+              <%= address.label :building_no, I18n.translate('helpers.label.address.building_no') %>
+              <%= address.text_field :building_no %>
+              <br>
+
+              <%= address.label :apart_no, I18n.translate('helpers.label.address.apart_no') %>
+              <%= address.text_field :apart_no %>
+              <br>
+
+              <%= address.label :area, I18n.translate('area')%>
+              <%= address.select(:area_id, @areas.collect {|d| [d.name, d.id] }) %>
+              <br>
+
+              <%= address.label :city , I18n.translate('city')%>
+              <%= address.select(:city_id, @cities.collect {|d| [d.name, d.id] }) %>
+              <br>
+              <br>
+
+            <% end %>
 
             <div><%= company_fields.label :nob_egypt, I18n.translate('helpers.label.company.nob_egypt') %><br />
             <%= company_fields.text_field :nob_egypt %></div>
@@ -48,8 +77,11 @@
             <% @company.contact_people.each_with_index do |contact_person, i| %>
               <h4>Contact Person <%= i+1 %> Details</h4>
               <%= company_fields.fields_for :contact_people, contact_person do |contact_person_fields| %>
-                <%= contact_person_fields.label :name %> <br/>
-                <%= contact_person_fields.text_field :name %>
+                <%= contact_person_fields.label :first_name %> <br/>
+                <%= contact_person_fields.text_field :first_name %>
+                <br>
+                <%= contact_person_fields.label :last_name %> <br/>
+                <%= contact_person_fields.text_field :last_name %>
                 <br>
                 <%= contact_person_fields.label :email %> <br/>
                 <%= contact_person_fields.email_field :email %>

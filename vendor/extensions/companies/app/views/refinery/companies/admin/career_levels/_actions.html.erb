@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Companies::Admin::CareerLevelsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.companies_admin_career_levels_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_companies_admin_career_level_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Companies::Admin::CareerLevelsController.sortable? && ::Refinery::Companies::CareerLevel.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Career Levels"),
+                 refinery.companies_admin_career_levels_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Career Levels"),
+                 refinery.companies_admin_career_levels_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

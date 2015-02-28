@@ -3,11 +3,11 @@ module Refinery
     class Company < Refinery::Core::BaseModel
       self.table_name = 'refinery_companies'
 
-      attr_accessible :company_name, :field, :main_address, :nob_egypt, :nob_abroad, :employer_id, :logo_id, :position, :contact_people_attributes, :logo
+      attr_accessible :company_name, :main_address, :industry_id, :industry, :nob_egypt, :nob_abroad, :employer_id, :logo_id, :position, :contact_people_attributes, :address_attributes, :address, :logo
 
       validates :company_name, presence: true, uniqueness: true
 
-      validates :field, :main_address, :nob_egypt, :nob_abroad, :logo_id, presence: true
+      validates :industry_id,:nob_egypt, :nob_abroad, :logo_id, presence: true
 
       belongs_to :logo, :class_name => '::Refinery::Image'
     
@@ -18,6 +18,12 @@ module Refinery
       accepts_nested_attributes_for :contact_people 
 
       belongs_to :employer
+
+      belongs_to :industry
+
+      has_one :address, class_name: '::Refinery::Addresses::Address'
+
+      accepts_nested_attributes_for :address
     end
   end
 end

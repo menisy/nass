@@ -9,6 +9,10 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+gem 'axlsx', '~> 2.0'
+gem "axlsx_rails"
+gem 'to_xls-rails'
+
 gem 'refinerycms-dynamicfields', :git => 'https://github.com/jfalameda/refinerycms-dynamicfields.git'
 
 gem 'mysql2'
@@ -64,3 +68,4 @@ gem 'refinerycms-home_photos', :path => 'vendor/extensions'
 
 gem 'refinerycms-personal_infos', :path => 'vendor/extensions'
 gem 'refinerycms-companies', :path => 'vendor/extensions'
+gem 'refinerycms-addresses', :path => 'vendor/extensions'

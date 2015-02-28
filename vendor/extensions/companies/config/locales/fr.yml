@@ -1,6 +1,20 @@
 fr:
   refinery:
     plugins:
+      areas:
+        title: Areas
+      cities:
+        title: Cities
+      career_levels:
+        title: Career Levels
+      education_levels:
+        title: Education Levels
+      job_types:
+        title: Job Types
+      job_roles:
+        title: Job Roles
+      industries:
+        title: Industries
       jobs:
         title: Jobs
       contact_people:
@@ -9,6 +23,108 @@ fr:
         title: Companies
     companies:
       admin:
+        areas:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Area
+            reorder: Réordonner les Areas
+            reorder_done: Fin de réordonnancement des Areas
+          records:
+            title: Areas
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Area. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Area" pour créer votre premi(er/ère) area.
+          area:
+            view_live_html: Voir ce(t/tte) area <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) area
+            delete: Supprimer définitivement ce(t/tte) area
+        cities:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) City
+            reorder: Réordonner les Cities
+            reorder_done: Fin de réordonnancement des Cities
+          records:
+            title: Cities
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) City. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) City" pour créer votre premi(er/ère) city.
+          city:
+            view_live_html: Voir ce(t/tte) city <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) city
+            delete: Supprimer définitivement ce(t/tte) city
+        career_levels:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Career Level
+            reorder: Réordonner les Career Levels
+            reorder_done: Fin de réordonnancement des Career Levels
+          records:
+            title: Career Levels
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Career Level. Cliquer sur
+              "Créer un(e) nouve(au/l/lle) Career Level" pour créer votre premi(er/ère)
+              career level.
+          career_level:
+            view_live_html: Voir ce(t/tte) career level <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) career level
+            delete: Supprimer définitivement ce(t/tte) career level
+        education_levels:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Education Level
+            reorder: Réordonner les Education Levels
+            reorder_done: Fin de réordonnancement des Education Levels
+          records:
+            title: Education Levels
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Education Level. Cliquer
+              sur "Créer un(e) nouve(au/l/lle) Education Level" pour créer votre premi(er/ère)
+              education level.
+          education_level:
+            view_live_html: Voir ce(t/tte) education level <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) education level
+            delete: Supprimer définitivement ce(t/tte) education level
+        job_types:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Job Type
+            reorder: Réordonner les Job Types
+            reorder_done: Fin de réordonnancement des Job Types
+          records:
+            title: Job Types
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Job Type. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Job Type" pour créer votre premi(er/ère) job type.
+          job_type:
+            view_live_html: Voir ce(t/tte) job type <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) job type
+            delete: Supprimer définitivement ce(t/tte) job type
+        job_roles:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Job Role
+            reorder: Réordonner les Job Roles
+            reorder_done: Fin de réordonnancement des Job Roles
+          records:
+            title: Job Roles
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Job Role. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Job Role" pour créer votre premi(er/ère) job role.
+          job_role:
+            view_live_html: Voir ce(t/tte) job role <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) job role
+            delete: Supprimer définitivement ce(t/tte) job role
+        industries:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Industry
+            reorder: Réordonner les Industries
+            reorder_done: Fin de réordonnancement des Industries
+          records:
+            title: Industries
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Industry. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Industry" pour créer votre premi(er/ère) industry.
+          industry:
+            view_live_html: Voir ce(t/tte) industry <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) industry
+            delete: Supprimer définitivement ce(t/tte) industry
         jobs:
           actions:
             create_new: Créer un(e) nouve(au/l/lle) Job
@@ -53,6 +169,27 @@ fr:
             view_live_html: Voir ce(t/tte) company <br/><em>(Ouvre une nouvelle fenêtre)</em>
             edit: Modifier ce(t/tte) company
             delete: Supprimer définitivement ce(t/tte) company
+      areas:
+        show:
+          other: Autres Areas
+      cities:
+        show:
+          other: Autres Cities
+      career_levels:
+        show:
+          other: Autres Career Levels
+      education_levels:
+        show:
+          other: Autres Education Levels
+      job_types:
+        show:
+          other: Autres Job Types
+      job_roles:
+        show:
+          other: Autres Job Roles
+      industries:
+        show:
+          other: Autres Industries
       jobs:
         show:
           other: Autres Jobs
@@ -64,6 +201,20 @@ fr:
           other: Autres Companies
   activerecord:
     attributes:
+      refinery/companies/area:
+        name: Name
+      refinery/companies/city:
+        name: Name
+      refinery/companies/career_level:
+        name: Name
+      refinery/companies/education_level:
+        name: Name
+      refinery/companies/job_type:
+        name: Name
+      refinery/companies/job_role:
+        name: Name
+      refinery/companies/industry:
+        name: Name
       refinery/companies/job:
         name: Name
         position: Position

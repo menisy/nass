@@ -1,6 +1,20 @@
 zh-CN:
   refinery:
     plugins:
+      areas:
+        title: Areas
+      cities:
+        title: Cities
+      career_levels:
+        title: Career Levels
+      education_levels:
+        title: Education Levels
+      job_types:
+        title: Job Types
+      job_roles:
+        title: Job Roles
+      industries:
+        title: Industries
       jobs:
         title: Jobs
       contact_people:
@@ -9,6 +23,99 @@ zh-CN:
         title: Companies
     companies:
       admin:
+        areas:
+          actions:
+            create_new: "建立新的 Area"
+            reorder: "对 Areas 重新排序"
+            reorder_done: "对 Areas 的重新排序结束"
+          records:
+            title: Areas
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Areas . 点击 "Add New Area" 创建一个area.
+          area:
+            view_live_html: "查看 area 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 area"
+            delete: "永久删除 area"
+        cities:
+          actions:
+            create_new: "建立新的 City"
+            reorder: "对 Cities 重新排序"
+            reorder_done: "对 Cities 的重新排序结束"
+          records:
+            title: Cities
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Cities . 点击 "Add New City" 创建一个city.
+          city:
+            view_live_html: "查看 city 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 city"
+            delete: "永久删除 city"
+        career_levels:
+          actions:
+            create_new: "建立新的 Career Level"
+            reorder: "对 Career Levels 重新排序"
+            reorder_done: "对 Career Levels 的重新排序结束"
+          records:
+            title: Career Levels
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Career Levels . 点击 "Add New Career Level" 创建一个career
+              level.
+          career_level:
+            view_live_html: "查看 career level 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 career level"
+            delete: "永久删除 career level"
+        education_levels:
+          actions:
+            create_new: "建立新的 Education Level"
+            reorder: "对 Education Levels 重新排序"
+            reorder_done: "对 Education Levels 的重新排序结束"
+          records:
+            title: Education Levels
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Education Levels . 点击 "Add New Education Level" 创建一个education
+              level.
+          education_level:
+            view_live_html: "查看 education level 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 education level"
+            delete: "永久删除 education level"
+        job_types:
+          actions:
+            create_new: "建立新的 Job Type"
+            reorder: "对 Job Types 重新排序"
+            reorder_done: "对 Job Types 的重新排序结束"
+          records:
+            title: Job Types
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Job Types . 点击 "Add New Job Type" 创建一个job type.
+          job_type:
+            view_live_html: "查看 job type 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 job type"
+            delete: "永久删除 job type"
+        job_roles:
+          actions:
+            create_new: "建立新的 Job Role"
+            reorder: "对 Job Roles 重新排序"
+            reorder_done: "对 Job Roles 的重新排序结束"
+          records:
+            title: Job Roles
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Job Roles . 点击 "Add New Job Role" 创建一个job role.
+          job_role:
+            view_live_html: "查看 job role 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 job role"
+            delete: "永久删除 job role"
+        industries:
+          actions:
+            create_new: "建立新的 Industry"
+            reorder: "对 Industries 重新排序"
+            reorder_done: "对 Industries 的重新排序结束"
+          records:
+            title: Industries
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Industries . 点击 "Add New Industry" 创建一个industry.
+          industry:
+            view_live_html: "查看 industry 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 industry"
+            delete: "永久删除 industry"
         jobs:
           actions:
             create_new: "建立新的 Job"
@@ -49,6 +156,27 @@ zh-CN:
             view_live_html: "查看 company 的最新内容.<br/><em>(新窗口中打开)</em>"
             edit: "编辑 company"
             delete: "永久删除 company"
+      areas:
+        show:
+          other: "其他 Areas"
+      cities:
+        show:
+          other: "其他 Cities"
+      career_levels:
+        show:
+          other: "其他 Career Levels"
+      education_levels:
+        show:
+          other: "其他 Education Levels"
+      job_types:
+        show:
+          other: "其他 Job Types"
+      job_roles:
+        show:
+          other: "其他 Job Roles"
+      industries:
+        show:
+          other: "其他 Industries"
       jobs:
         show:
           other: "其他 Jobs"
@@ -60,6 +188,20 @@ zh-CN:
           other: "其他 Companies"
   activerecord:
     attributes:
+      refinery/companies/area:
+        name: Name
+      refinery/companies/city:
+        name: Name
+      refinery/companies/career_level:
+        name: Name
+      refinery/companies/education_level:
+        name: Name
+      refinery/companies/job_type:
+        name: Name
+      refinery/companies/job_role:
+        name: Name
+      refinery/companies/industry:
+        name: Name
       refinery/companies/job:
         name: Name
         position: Position

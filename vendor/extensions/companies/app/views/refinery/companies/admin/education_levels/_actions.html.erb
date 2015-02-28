@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Companies::Admin::EducationLevelsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.companies_admin_education_levels_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_companies_admin_education_level_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Companies::Admin::EducationLevelsController.sortable? && ::Refinery::Companies::EducationLevel.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Education Levels"),
+                 refinery.companies_admin_education_levels_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Education Levels"),
+                 refinery.companies_admin_education_levels_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

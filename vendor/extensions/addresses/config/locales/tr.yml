@@ -1,0 +1,30 @@
+tr:
+  refinery:
+    plugins:
+      addresses:
+        title: Addresses
+    addresses:
+      admin:
+        addresses:
+          actions:
+            create_new: Yeni Ekle Address
+            reorder: Tekrar sirala Addresses
+            reorder_done: Tekrar siralama tamamlandiAddresses
+          records:
+            title: Addresses
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Addresses yok henuz.  Tikla "Yeni Ekle Address" eklemek senin ilk address.
+          address:
+            view_live_html: Bunu canlu address goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle address
+            delete: Bunu Sil address sonsuza dek
+      addresses:
+        show:
+          other: Diger Addresses
+  activerecord:
+    attributes:
+      'refinery/addresses/address':
+        name: Name
+        street_name: Street Name
+        apart_no: Apart No
+        building_no: Building No

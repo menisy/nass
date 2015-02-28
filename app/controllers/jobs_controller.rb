@@ -1,5 +1,7 @@
 class JobsController < ApplicationController
   before_filter :authenticate_employer!, only: [:create, :update]
+
+  before_filter :authenticate_student!, only: [:show]
   
   def create
     @job = current_employer.company.jobs.build params[:job]
@@ -15,5 +17,10 @@ class JobsController < ApplicationController
 
   def update
 
+  end
+
+  def show
+    @job = ::Refinery::Companies::Job.find params[:id]
+    render 'jobs/job_details'
   end
 end

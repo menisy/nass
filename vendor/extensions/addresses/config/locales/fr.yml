@@ -1,0 +1,30 @@
+fr:
+  refinery:
+    plugins:
+      addresses:
+        title: Addresses
+    addresses:
+      admin:
+        addresses:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Address
+            reorder: Réordonner les Addresses
+            reorder_done: Fin de réordonnancement des Addresses
+          records:
+            title: Addresses
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Address. Cliquer sur "Créer un(e) nouve(au/l/lle) Address" pour créer votre premi(er/ère) address.'
+          address:
+            view_live_html: Voir ce(t/tte) address <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) address
+            delete: Supprimer définitivement ce(t/tte) address
+      addresses:
+        show:
+          other: Autres Addresses
+  activerecord:
+    attributes:
+      'refinery/addresses/address':
+        name: Name
+        street_name: Street Name
+        apart_no: Apart No
+        building_no: Building No

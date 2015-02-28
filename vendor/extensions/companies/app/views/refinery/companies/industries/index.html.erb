@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="industries">
+    <% @industries.each do |industry| %>
+      <li>
+        <%= link_to industry.name, refinery.companies_industry_path(industry) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

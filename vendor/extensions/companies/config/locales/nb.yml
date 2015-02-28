@@ -1,6 +1,20 @@
 nb:
   refinery:
     plugins:
+      areas:
+        title: Areas
+      cities:
+        title: Cities
+      career_levels:
+        title: Career Levels
+      education_levels:
+        title: Education Levels
+      job_types:
+        title: Job Types
+      job_roles:
+        title: Job Roles
+      industries:
+        title: Industries
       jobs:
         title: Jobs
       contact_people:
@@ -9,6 +23,111 @@ nb:
         title: Companies
     companies:
       admin:
+        areas:
+          actions:
+            create_new: Lag en ny Area
+            reorder: Endre rekkefølgen på Areas
+            reorder_done: Ferdig å endre rekkefølgen Areas
+          records:
+            title: Areas
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Areas enda. Klikk på "Lag en ny Area" for å
+              legge til din første area.
+          area:
+            view_live_html: Vis hvordan denne area ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne area
+            delete: Fjern denne area permanent
+        cities:
+          actions:
+            create_new: Lag en ny City
+            reorder: Endre rekkefølgen på Cities
+            reorder_done: Ferdig å endre rekkefølgen Cities
+          records:
+            title: Cities
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Cities enda. Klikk på "Lag en ny City" for
+              å legge til din første city.
+          city:
+            view_live_html: Vis hvordan denne city ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne city
+            delete: Fjern denne city permanent
+        career_levels:
+          actions:
+            create_new: Lag en ny Career Level
+            reorder: Endre rekkefølgen på Career Levels
+            reorder_done: Ferdig å endre rekkefølgen Career Levels
+          records:
+            title: Career Levels
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Career Levels enda. Klikk på "Lag en ny Career
+              Level" for å legge til din første career level.
+          career_level:
+            view_live_html: Vis hvordan denne career level ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne career level
+            delete: Fjern denne career level permanent
+        education_levels:
+          actions:
+            create_new: Lag en ny Education Level
+            reorder: Endre rekkefølgen på Education Levels
+            reorder_done: Ferdig å endre rekkefølgen Education Levels
+          records:
+            title: Education Levels
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Education Levels enda. Klikk på "Lag en ny
+              Education Level" for å legge til din første education level.
+          education_level:
+            view_live_html: Vis hvordan denne education level ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne education level
+            delete: Fjern denne education level permanent
+        job_types:
+          actions:
+            create_new: Lag en ny Job Type
+            reorder: Endre rekkefølgen på Job Types
+            reorder_done: Ferdig å endre rekkefølgen Job Types
+          records:
+            title: Job Types
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Job Types enda. Klikk på "Lag en ny Job Type"
+              for å legge til din første job type.
+          job_type:
+            view_live_html: Vis hvordan denne job type ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne job type
+            delete: Fjern denne job type permanent
+        job_roles:
+          actions:
+            create_new: Lag en ny Job Role
+            reorder: Endre rekkefølgen på Job Roles
+            reorder_done: Ferdig å endre rekkefølgen Job Roles
+          records:
+            title: Job Roles
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Job Roles enda. Klikk på "Lag en ny Job Role"
+              for å legge til din første job role.
+          job_role:
+            view_live_html: Vis hvordan denne job role ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne job role
+            delete: Fjern denne job role permanent
+        industries:
+          actions:
+            create_new: Lag en ny Industry
+            reorder: Endre rekkefølgen på Industries
+            reorder_done: Ferdig å endre rekkefølgen Industries
+          records:
+            title: Industries
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Industries enda. Klikk på "Lag en ny Industry"
+              for å legge til din første industry.
+          industry:
+            view_live_html: Vis hvordan denne industry ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne industry
+            delete: Fjern denne industry permanent
         jobs:
           actions:
             create_new: Lag en ny Job
@@ -54,6 +173,27 @@ nb:
               i et nytt vindu)</em>
             edit: Rediger denne company
             delete: Fjern denne company permanent
+      areas:
+        show:
+          other: Andre Areas
+      cities:
+        show:
+          other: Andre Cities
+      career_levels:
+        show:
+          other: Andre Career Levels
+      education_levels:
+        show:
+          other: Andre Education Levels
+      job_types:
+        show:
+          other: Andre Job Types
+      job_roles:
+        show:
+          other: Andre Job Roles
+      industries:
+        show:
+          other: Andre Industries
       jobs:
         show:
           other: Andre Jobs
@@ -65,6 +205,20 @@ nb:
           other: Andre Companies
   activerecord:
     attributes:
+      refinery/companies/area:
+        name: Name
+      refinery/companies/city:
+        name: Name
+      refinery/companies/career_level:
+        name: Name
+      refinery/companies/education_level:
+        name: Name
+      refinery/companies/job_type:
+        name: Name
+      refinery/companies/job_role:
+        name: Name
+      refinery/companies/industry:
+        name: Name
       refinery/companies/job:
         name: Name
         position: Position

@@ -1,6 +1,20 @@
 nl:
   refinery:
     plugins:
+      areas:
+        title: Areas
+      cities:
+        title: Cities
+      career_levels:
+        title: Career Levels
+      education_levels:
+        title: Education Levels
+      job_types:
+        title: Job Types
+      job_roles:
+        title: Job Roles
+      industries:
+        title: Industries
       jobs:
         title: Jobs
       contact_people:
@@ -9,6 +23,111 @@ nl:
         title: Companies
     companies:
       admin:
+        areas:
+          actions:
+            create_new: Nieuwe Area toevoegen
+            reorder: De volgorde van de Areas wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Area-volgorde
+          records:
+            title: Areas
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Areas. Druk op 'Nieuwe Area toevoegen'
+              om de eerste toe te voegen.
+          area:
+            view_live_html: Deze area op de website bekijken <br/><em>(opent in een
+              nieuw venster)</em>
+            edit: Bewerk deze area
+            delete: Deze area definitief verwijderen
+        cities:
+          actions:
+            create_new: Nieuwe City toevoegen
+            reorder: De volgorde van de Cities wijzigen
+            reorder_done: Klaar met het wijzingen van de van de City-volgorde
+          records:
+            title: Cities
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Cities. Druk op 'Nieuwe City toevoegen'
+              om de eerste toe te voegen.
+          city:
+            view_live_html: Deze city op de website bekijken <br/><em>(opent in een
+              nieuw venster)</em>
+            edit: Bewerk deze city
+            delete: Deze city definitief verwijderen
+        career_levels:
+          actions:
+            create_new: Nieuwe Career Level toevoegen
+            reorder: De volgorde van de Career Levels wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Career Level-volgorde
+          records:
+            title: Career Levels
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Career Levels. Druk op 'Nieuwe Career Level
+              toevoegen' om de eerste toe te voegen.
+          career_level:
+            view_live_html: Deze career level op de website bekijken <br/><em>(opent
+              in een nieuw venster)</em>
+            edit: Bewerk deze career level
+            delete: Deze career level definitief verwijderen
+        education_levels:
+          actions:
+            create_new: Nieuwe Education Level toevoegen
+            reorder: De volgorde van de Education Levels wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Education Level-volgorde
+          records:
+            title: Education Levels
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Education Levels. Druk op 'Nieuwe Education
+              Level toevoegen' om de eerste toe te voegen.
+          education_level:
+            view_live_html: Deze education level op de website bekijken <br/><em>(opent
+              in een nieuw venster)</em>
+            edit: Bewerk deze education level
+            delete: Deze education level definitief verwijderen
+        job_types:
+          actions:
+            create_new: Nieuwe Job Type toevoegen
+            reorder: De volgorde van de Job Types wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Job Type-volgorde
+          records:
+            title: Job Types
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Job Types. Druk op 'Nieuwe Job Type toevoegen'
+              om de eerste toe te voegen.
+          job_type:
+            view_live_html: Deze job type op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
+            edit: Bewerk deze job type
+            delete: Deze job type definitief verwijderen
+        job_roles:
+          actions:
+            create_new: Nieuwe Job Role toevoegen
+            reorder: De volgorde van de Job Roles wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Job Role-volgorde
+          records:
+            title: Job Roles
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Job Roles. Druk op 'Nieuwe Job Role toevoegen'
+              om de eerste toe te voegen.
+          job_role:
+            view_live_html: Deze job role op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
+            edit: Bewerk deze job role
+            delete: Deze job role definitief verwijderen
+        industries:
+          actions:
+            create_new: Nieuwe Industry toevoegen
+            reorder: De volgorde van de Industries wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Industry-volgorde
+          records:
+            title: Industries
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Industries. Druk op 'Nieuwe Industry toevoegen'
+              om de eerste toe te voegen.
+          industry:
+            view_live_html: Deze industry op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
+            edit: Bewerk deze industry
+            delete: Deze industry definitief verwijderen
         jobs:
           actions:
             create_new: Nieuwe Job toevoegen
@@ -54,6 +173,27 @@ nl:
               een nieuw venster)</em>
             edit: Bewerk deze company
             delete: Deze company definitief verwijderen
+      areas:
+        show:
+          other: Andere Areas
+      cities:
+        show:
+          other: Andere Cities
+      career_levels:
+        show:
+          other: Andere Career Levels
+      education_levels:
+        show:
+          other: Andere Education Levels
+      job_types:
+        show:
+          other: Andere Job Types
+      job_roles:
+        show:
+          other: Andere Job Roles
+      industries:
+        show:
+          other: Andere Industries
       jobs:
         show:
           other: Andere Jobs
@@ -65,6 +205,20 @@ nl:
           other: Andere Companies
   activerecord:
     attributes:
+      refinery/companies/area:
+        name: Name
+      refinery/companies/city:
+        name: Name
+      refinery/companies/career_level:
+        name: Name
+      refinery/companies/education_level:
+        name: Name
+      refinery/companies/job_type:
+        name: Name
+      refinery/companies/job_role:
+        name: Name
+      refinery/companies/industry:
+        name: Name
       refinery/companies/job:
         name: Name
         position: Position

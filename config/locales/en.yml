@@ -31,6 +31,14 @@ en:
   register: 'Register'
   student: 'Student'
   company: 'Company'
+  job_title: 'Job Title'
+  job_description: 'Job Description'
+  location: 'Location'
+  date_posted: 'Date Posted'
+  job_listing: 'Job Listing'
+  address: 'Address'
+  city: 'City'
+  area: 'Area'
   helpers:
     label:
       company:
@@ -44,6 +52,8 @@ en:
         password_confirmation: 'Password confirmation'
       personal_info:
         name: 'Name'
+        first_name: 'First Name'
+        last_name: 'Last Name'
         nationality: 'Nationality'
         dob: 'Date of Birth'
         pob: 'Place of Birth'
@@ -55,3 +65,7 @@ en:
         degrees: 'Degrees'
         skills: 'Skills'
         skilled_jobs: 'Skilled Jobs'
+      address:
+        street_name: 'Street Name'
+        building_no: 'Building Number'
+        apart_no: 'Apartment Number'

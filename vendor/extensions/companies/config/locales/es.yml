@@ -1,6 +1,20 @@
 es:
   refinery:
     plugins:
+      areas:
+        title: Areas
+      cities:
+        title: Cities
+      career_levels:
+        title: Career Levels
+      education_levels:
+        title: Education Levels
+      job_types:
+        title: Job Types
+      job_roles:
+        title: Job Roles
+      industries:
+        title: Industries
       jobs:
         title: Jobs
       contact_people:
@@ -9,6 +23,111 @@ es:
         title: Companies
     companies:
       admin:
+        areas:
+          actions:
+            create_new: Crear nuevo area
+            reorder: Reordenar areas
+            reorder_done: Reordenación de areas completada
+          records:
+            title: Areas
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay areas todavía. Pulsa en "Crear nuevo Area" para crear
+              tu primer area.
+          area:
+            view_live_html: Ver este area como abierto al público <br/><em>(abre en
+              ventana nueva)</em>
+            edit: Editar este area
+            delete: Borrar este area para siempre
+        cities:
+          actions:
+            create_new: Crear nuevo city
+            reorder: Reordenar cities
+            reorder_done: Reordenación de cities completada
+          records:
+            title: Cities
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay cities todavía. Pulsa en "Crear nuevo City" para
+              crear tu primer city.
+          city:
+            view_live_html: Ver este city como abierto al público <br/><em>(abre en
+              ventana nueva)</em>
+            edit: Editar este city
+            delete: Borrar este city para siempre
+        career_levels:
+          actions:
+            create_new: Crear nuevo career level
+            reorder: Reordenar career levels
+            reorder_done: Reordenación de career levels completada
+          records:
+            title: Career Levels
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay career levels todavía. Pulsa en "Crear nuevo Career
+              Level" para crear tu primer career level.
+          career_level:
+            view_live_html: Ver este career level como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este career level
+            delete: Borrar este career level para siempre
+        education_levels:
+          actions:
+            create_new: Crear nuevo education level
+            reorder: Reordenar education levels
+            reorder_done: Reordenación de education levels completada
+          records:
+            title: Education Levels
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay education levels todavía. Pulsa en "Crear nuevo Education
+              Level" para crear tu primer education level.
+          education_level:
+            view_live_html: Ver este education level como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este education level
+            delete: Borrar este education level para siempre
+        job_types:
+          actions:
+            create_new: Crear nuevo job type
+            reorder: Reordenar job types
+            reorder_done: Reordenación de job types completada
+          records:
+            title: Job Types
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay job types todavía. Pulsa en "Crear nuevo Job Type"
+              para crear tu primer job type.
+          job_type:
+            view_live_html: Ver este job type como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este job type
+            delete: Borrar este job type para siempre
+        job_roles:
+          actions:
+            create_new: Crear nuevo job role
+            reorder: Reordenar job roles
+            reorder_done: Reordenación de job roles completada
+          records:
+            title: Job Roles
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay job roles todavía. Pulsa en "Crear nuevo Job Role"
+              para crear tu primer job role.
+          job_role:
+            view_live_html: Ver este job role como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este job role
+            delete: Borrar este job role para siempre
+        industries:
+          actions:
+            create_new: Crear nuevo industry
+            reorder: Reordenar industries
+            reorder_done: Reordenación de industries completada
+          records:
+            title: Industries
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay industries todavía. Pulsa en "Crear nuevo Industry"
+              para crear tu primer industry.
+          industry:
+            view_live_html: Ver este industry como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este industry
+            delete: Borrar este industry para siempre
         jobs:
           actions:
             create_new: Crear nuevo job
@@ -54,6 +173,27 @@ es:
               en ventana nueva)</em>
             edit: Editar este company
             delete: Borrar este company para siempre
+      areas:
+        show:
+          other: Otros areas
+      cities:
+        show:
+          other: Otros cities
+      career_levels:
+        show:
+          other: Otros career levels
+      education_levels:
+        show:
+          other: Otros education levels
+      job_types:
+        show:
+          other: Otros job types
+      job_roles:
+        show:
+          other: Otros job roles
+      industries:
+        show:
+          other: Otros industries
       jobs:
         show:
           other: Otros jobs
@@ -65,6 +205,20 @@ es:
           other: Otros companies
   activerecord:
     attributes:
+      refinery/companies/area:
+        name: Name
+      refinery/companies/city:
+        name: Name
+      refinery/companies/career_level:
+        name: Name
+      refinery/companies/education_level:
+        name: Name
+      refinery/companies/job_type:
+        name: Name
+      refinery/companies/job_role:
+        name: Name
+      refinery/companies/industry:
+        name: Name
       refinery/companies/job:
         name: Name
         position: Position

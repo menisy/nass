@@ -1,0 +1,27 @@
+<% content_for :body_content_title do %>
+  <%= @job_role.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @job_role.name %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="job_roles">
+      <% @job_roles.each do |job_role| %>
+        <li>
+          <%= link_to job_role.name, refinery.companies_job_role_path(job_role) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

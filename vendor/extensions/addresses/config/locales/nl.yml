@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      addresses:
+        title: Addresses
+    addresses:
+      admin:
+        addresses:
+          actions:
+            create_new: Nieuwe Address toevoegen
+            reorder: De volgorde van de Addresses wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Address-volgorde
+          records:
+            title: Addresses
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Addresses. Druk op 'Nieuwe Address toevoegen' om de eerste toe te voegen.
+          address:
+            view_live_html: Deze address op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze address
+            delete: Deze address definitief verwijderen
+      addresses:
+        show:
+          other: Andere Addresses
+  activerecord:
+    attributes:
+      'refinery/addresses/address':
+        name: Name
+        street_name: Street Name
+        apart_no: Apart No
+        building_no: Building No

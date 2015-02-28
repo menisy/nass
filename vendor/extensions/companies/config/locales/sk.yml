@@ -1,6 +1,20 @@
 sk:
   refinery:
     plugins:
+      areas:
+        title: Areas
+      cities:
+        title: Cities
+      career_levels:
+        title: Career Levels
+      education_levels:
+        title: Education Levels
+      job_types:
+        title: Job Types
+      job_roles:
+        title: Job Roles
+      industries:
+        title: Industries
       jobs:
         title: Jobs
       contact_people:
@@ -9,6 +23,106 @@ sk:
         title: Companies
     companies:
       admin:
+        areas:
+          actions:
+            create_new: Pridať Area
+            reorder: Preusporiadať Areas
+            reorder_done: Koniec radenia Areas
+          records:
+            title: Areas
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Areas. Kliknite na "Pridať Area"
+              pre pridanie prvého area.
+          area:
+            view_live_html: Zobraziť náhľad area<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť area
+            delete: Zmazať area
+        cities:
+          actions:
+            create_new: Pridať City
+            reorder: Preusporiadať Cities
+            reorder_done: Koniec radenia Cities
+          records:
+            title: Cities
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Cities. Kliknite na "Pridať City"
+              pre pridanie prvého city.
+          city:
+            view_live_html: Zobraziť náhľad city<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť city
+            delete: Zmazať city
+        career_levels:
+          actions:
+            create_new: Pridať Career Level
+            reorder: Preusporiadať Career Levels
+            reorder_done: Koniec radenia Career Levels
+          records:
+            title: Career Levels
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Career Levels. Kliknite na "Pridať
+              Career Level" pre pridanie prvého career level.
+          career_level:
+            view_live_html: Zobraziť náhľad career level<br/><em>(otvorí sa v novom
+              okne)</em>
+            edit: Upraviť career level
+            delete: Zmazať career level
+        education_levels:
+          actions:
+            create_new: Pridať Education Level
+            reorder: Preusporiadať Education Levels
+            reorder_done: Koniec radenia Education Levels
+          records:
+            title: Education Levels
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Education Levels. Kliknite na "Pridať
+              Education Level" pre pridanie prvého education level.
+          education_level:
+            view_live_html: Zobraziť náhľad education level<br/><em>(otvorí sa v novom
+              okne)</em>
+            edit: Upraviť education level
+            delete: Zmazať education level
+        job_types:
+          actions:
+            create_new: Pridať Job Type
+            reorder: Preusporiadať Job Types
+            reorder_done: Koniec radenia Job Types
+          records:
+            title: Job Types
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Job Types. Kliknite na "Pridať Job
+              Type" pre pridanie prvého job type.
+          job_type:
+            view_live_html: Zobraziť náhľad job type<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť job type
+            delete: Zmazať job type
+        job_roles:
+          actions:
+            create_new: Pridať Job Role
+            reorder: Preusporiadať Job Roles
+            reorder_done: Koniec radenia Job Roles
+          records:
+            title: Job Roles
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Job Roles. Kliknite na "Pridať Job
+              Role" pre pridanie prvého job role.
+          job_role:
+            view_live_html: Zobraziť náhľad job role<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť job role
+            delete: Zmazať job role
+        industries:
+          actions:
+            create_new: Pridať Industry
+            reorder: Preusporiadať Industries
+            reorder_done: Koniec radenia Industries
+          records:
+            title: Industries
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Industries. Kliknite na "Pridať
+              Industry" pre pridanie prvého industry.
+          industry:
+            view_live_html: Zobraziť náhľad industry<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť industry
+            delete: Zmazať industry
         jobs:
           actions:
             create_new: Pridať Job
@@ -52,6 +166,27 @@ sk:
             view_live_html: Zobraziť náhľad company<br/><em>(otvorí sa v novom okne)</em>
             edit: Upraviť company
             delete: Zmazať company
+      areas:
+        show:
+          other: Daľšie Areas
+      cities:
+        show:
+          other: Daľšie Cities
+      career_levels:
+        show:
+          other: Daľšie Career Levels
+      education_levels:
+        show:
+          other: Daľšie Education Levels
+      job_types:
+        show:
+          other: Daľšie Job Types
+      job_roles:
+        show:
+          other: Daľšie Job Roles
+      industries:
+        show:
+          other: Daľšie Industries
       jobs:
         show:
           other: Daľšie Jobs
@@ -63,6 +198,20 @@ sk:
           other: Daľšie Companies
   activerecord:
     attributes:
+      refinery/companies/area:
+        name: Name
+      refinery/companies/city:
+        name: Name
+      refinery/companies/career_level:
+        name: Name
+      refinery/companies/education_level:
+        name: Name
+      refinery/companies/job_type:
+        name: Name
+      refinery/companies/job_role:
+        name: Name
+      refinery/companies/industry:
+        name: Name
       refinery/companies/job:
         name: Name
         position: Position

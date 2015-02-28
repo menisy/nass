@@ -6,6 +6,8 @@ class Employer < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :company_attributes
+
+  attr_accessor :address
   # attr_accessible :title, :body
 
   has_one :personal_info, dependent: :destroy
@@ -15,6 +17,7 @@ class Employer < ActiveRecord::Base
   accepts_nested_attributes_for :personal_info
 
   accepts_nested_attributes_for :company
+
 
   def name
     email.split('@')[0]

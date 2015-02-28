@@ -12,13 +12,23 @@
   </div>
 
   <div>
-    <%= f.label :position %><br />
-    <%= f.text_field :position %>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
   </div>
 
   <div>
     <%= f.label :number %><br />
     <%= f.text_field :number %>
+  </div>
+
+  <div>
+    <%= f.label :city -%>
+    <%= f.select(:city_id, @cities.collect {|d| [d.name, d.id] })%>
+  </div>
+
+  <div>
+    <%= f.label :area -%>
+    <%= f.select(:area_id, @areas.collect {|d| [d.name, d.id] })%>
   </div>
 
   <div>

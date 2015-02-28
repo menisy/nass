@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="career_levels">
+    <% @career_levels.each do |career_level| %>
+      <li>
+        <%= link_to career_level.name, refinery.companies_career_level_path(career_level) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Companies::Admin::JobTypesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.companies_admin_job_types_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_companies_admin_job_type_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Companies::Admin::JobTypesController.sortable? && ::Refinery::Companies::JobType.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Job Types"),
+                 refinery.companies_admin_job_types_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Job Types"),
+                 refinery.companies_admin_job_types_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

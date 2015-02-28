@@ -43,6 +43,8 @@ GIT
 PATH
   remote: vendor/extensions
   specs:
+    refinerycms-addresses (1.0)
+      refinerycms-core (~> 2.1.3)
     refinerycms-companies (1.0)
       refinerycms-core (~> 2.1.3)
     refinerycms-home_photos (1.0)
@@ -87,6 +89,13 @@ GEM
     awesome_nested_set (2.1.6)
       activerecord (>= 3.0.0)
     awesome_print (1.2.0)
+    axlsx (2.0.1)
+      htmlentities (~> 4.3.1)
+      nokogiri (>= 1.4.1)
+      rubyzip (~> 1.0.0)
+    axlsx_rails (0.3.0)
+      axlsx (>= 2.0.1)
+      rails (>= 3.1)
     babosa (0.3.11)
     bcrypt (3.1.7)
     bootstrap-sass (3.2.0.2)
@@ -150,6 +159,7 @@ GEM
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
     hike (1.2.3)
+    htmlentities (4.3.3)
     i18n (0.6.11)
     inflecto (0.0.2)
     ipaddress (0.8.0)
@@ -219,6 +229,8 @@ GEM
       refinerycms-core (~> 2.1.1)
     routing-filter (0.3.1)
       actionpack
+    ruby-ole (1.2.11.8)
+    rubyzip (1.0.0)
     sass (3.2.19)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -226,6 +238,8 @@ GEM
       tilt (~> 1.3)
     seo_meta (1.4.0)
       railties (>= 3.0.0)
+    spreadsheet (1.0.1)
+      ruby-ole (>= 1.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -238,6 +252,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
+    to_xls-rails (1.3.1)
+      spreadsheet (>= 0.8.5)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -260,6 +276,8 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   awesome_print
+  axlsx (~> 2.0)
+  axlsx_rails
   bootstrap-sass (~> 3.2.0)
   coffee-rails (~> 3.2.1)
   devise
@@ -268,6 +286,7 @@ DEPENDENCIES
   mysql2
   owlcarousel-rails
   rails (~> 3.2)
+  refinerycms-addresses!
   refinerycms-companies!
   refinerycms-dashboard!
   refinerycms-dynamicfields!
@@ -281,6 +300,7 @@ DEPENDENCIES
   sass-rails
   sqlite3
   therubyracer (= 0.11.3)
+  to_xls-rails
   truncate_html
   uglifier (>= 1.0.3)
   unicorn

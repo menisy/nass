@@ -1,0 +1,27 @@
+<% content_for :body_content_title do %>
+  <%= @education_level.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @education_level.name %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="education_levels">
+      <% @education_levels.each do |education_level| %>
+        <li>
+          <%= link_to education_level.name, refinery.companies_education_level_path(education_level) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

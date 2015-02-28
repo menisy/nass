@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :load_contact
+  before_filter :load_cities_and_areas
+  before_filter :load_industries
 
   def employer_url c
     request.referer
@@ -28,6 +30,21 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def authenticate_admin
+    authenticate_user! && current_user.roles.map(&:title).include?('Superuser') &&
+      current_user.roles.map(&:title).include?('Refinery')
+  end
+
+  def load_cities_and_areas
+    @cities = ::Refinery::Companies::City.all
+    @areas = ::Refinery::Companies::Area.all
+  end
+
+  def load_industries
+    @industries = ::Refinery::Companies::Industry.all
+  end
+
   def load_contact
     @contact = ::Refinery::PagePart.find_by_title "contact"
   end

@@ -1,0 +1,17 @@
+<%= form_for [refinery, :companies_admin, @job_role] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @job_role,
+              :include_object_name => true %>
+
+  <%= render '/refinery/admin/locale_picker',
+              :current_locale => Globalize.locale %>
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest' -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.job_roles.admin.job_roles.job_role'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @job_role.name) -%>
+<% end -%>

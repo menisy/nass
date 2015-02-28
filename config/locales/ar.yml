@@ -27,6 +27,14 @@ ar:
   register: 'Register'
   student: 'طالب'
   company: 'شركة'
+  job_title: 'المسمى الوظيفي'
+  job_description: 'مهام الوظيفة'
+  location: 'المكان'
+  date_posted: 'تاريخ الاعلان'
+  job_listing: 'الوظائف المطلوبة'
+  address: 'العنوان'
+  city: 'المدينة'
+  area: 'المنطقة'
   helpers:
     label:
       company:
@@ -40,6 +48,8 @@ ar:
         password_confirmation: 'تأكيد كلمة المرور'
       personal_info:
         name: 'الاسم'
+        first_name: 'الاسم الاول'
+        last_name: 'اسم العائلة'
         nationality: 'الجنسية'
         dob: 'تاريخ الميلاد' 
         pob: 'مكان الميلاد'
@@ -51,3 +61,7 @@ ar:
         degrees: 'المؤهلات العلمية'
         skills: 'الدورات والورش التدريبية'
         skilled_jobs: 'الوظائف المهنية'
+      address:
+        street_name: 'اسم الشارع'
+        building_no: 'رقم المبنى'
+        apart_no: 'رقم الشقة'
