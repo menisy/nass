@@ -10,11 +10,11 @@ class Employer < ActiveRecord::Base
   attr_accessor :address
   # attr_accessible :title, :body
 
-  has_one :personal_info, dependent: :destroy
+  #has_one :personal_info, dependent: :destroy
 
   has_one :company, class_name: '::Refinery::Companies::Company', dependent: :destroy
 
-  accepts_nested_attributes_for :personal_info
+  #accepts_nested_attributes_for :personal_info
 
   accepts_nested_attributes_for :company
 
