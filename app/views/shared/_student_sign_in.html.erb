@@ -1,6 +1,7 @@
 <div id="student-form">
   <%= form_tag session_path(:student), method: :post do %>
     <%= text_field_tag 'student[email]', nil, placeholder: t(:email) %>
+    <br>
     <%= password_field_tag 'student[password]', nil, placeholder: t(:password) %>
     <button class="btn"><%= t(:sign_in) %></button>
     <br>

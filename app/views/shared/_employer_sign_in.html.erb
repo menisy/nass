@@ -1,6 +1,7 @@
 <div id="employer-form">
   <%= form_tag session_path(:employer), method: :post do %>
     <%= text_field_tag 'employer[email]', nil, placeholder: t(:email) %>
+    <br>
     <%= password_field_tag 'employer[password]', nil, placeholder: t(:password) %>
     <button class="btn"><%= t(:sign_in) %></button>
     <br>

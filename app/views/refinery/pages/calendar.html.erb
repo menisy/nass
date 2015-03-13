@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="row no-mrg">
   <div class="col-sm-9 calendar nomrg">
 
@@ -11,4 +11,35 @@
     <%= render partial: 'shared/video' %>
   </div>
 
+</div> -->
+
+<div class="row no-mrg">
+  <div class="col-sm-9 nomrg">
+    <h3><%= month_name(Date.today.month) %></h3>
+    <table class="calendar">
+      <tr>
+        <% start = Date.today.at_beginning_of_month.wday %>
+        <% for i in start...(start + 7) do %>
+          <th>
+            <%= week_day(i%7) %>
+          </th>
+        <% end %>
+      </tr>
+      <tr>
+      <% range = Date.today.at_beginning_of_month..Date.today.at_end_of_month %>
+      <% for i in range do %>
+        <% if (i.day-1) % 7 == 0 %>
+          </tr>
+          <tr>
+        <% end -%>
+        <td class="day-cell"><span><%= local_number i.day %></span></td>
+      <% end -%>
+      </tr>
+    </table>
+  </div>
+  <div class="col-sm-3">
+    <%= render partial: 'shared/contact_us' %>
+    <%= render partial: 'shared/media_links' %>
+    <%= render partial: 'shared/video' %>
+  </div>
 </div>

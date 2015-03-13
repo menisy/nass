@@ -20,7 +20,7 @@ $grey: #f7f7f7;
 #header-container{
   width: 890px;
   position: fixed;
-  height: 160px;
+  height: 170px;
   background-color: #fff;
   z-index: 100;
 }
@@ -48,7 +48,7 @@ $grey: #f7f7f7;
   padding: 0px;
   min-width: 100px;
 }
-.dropdown-menu > li > a:hover,.dropdown-menu > li > a:focus{
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
   background-color: inherit;
   background-image: none;
 }
@@ -59,7 +59,7 @@ $grey: #f7f7f7;
 }
 
 #main-content{
-  margin-top: 195px;
+  margin-top: 220px;
 }
 
 #main-container{
@@ -119,10 +119,10 @@ $grey: #f7f7f7;
 #logo{
 
   display: inline-block;
-  height: 150px;
-
+  height: 170px;
+  margin-left: -10px;
   img{
-    height: 150px;
+    height: 170px;
   }
 
 }
@@ -153,14 +153,15 @@ ul.navbar-nav{
 }
 
 #forms{
-  margin: 20px 0px 5px 0px;
+  margin: 10px 0px 5px 0px;
   background-color: #f5f5f5;
   padding: 10px;
 
   form input[type="text"], form input[type="password"]{
     margin: 5px 5px 5px 0px;
     width: 200px;
-    padding: 3px;
+    height: 22px;
+    border: none;
     background-color: #c5c5c5;
     color: #000;
     border-radius: 3px;
@@ -168,11 +169,18 @@ ul.navbar-nav{
   .remember{
     font-size: 12px;
   }
+  .btn{
+    padding: 3px 12px;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 3px;
+    background-color: $dark-green;
+    color: #fff;
+  }
 }
 
 #top-container{
-  margin-bottom: 10px;
-  height: 140px;
+  height: 170px;
 }
 
 #footer{
@@ -387,4 +395,26 @@ p{
 
 .no-padd{
   padding: 0px !important;
+}
+table.calendar{
+  th, td{
+    min-width: 90px;
+  }
+  th{
+    background-color: $dark-green;
+    color: #fff;
+    padding: 5px 0px;
+    border: 1px solid $dark-green;
+    text-align: center;
+  }
+  td{
+    span{
+      display: block;
+      margin-bottom: -20px;
+    }
+    border: 1px solid #000;
+    width: 30px;
+    padding: 40px 30px 0px 5px;
+    height: 80px;
+  }
 }

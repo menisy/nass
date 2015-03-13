@@ -1,6 +1,17 @@
 /* Default error colouring */
 @import url(owl.carousel.css);
 @import url(owl.theme.css);
+$navbar-default-bg: #1d8653;
+$navbar-default-height: 45px;
+
+$navbar-default-color: #fff;
+$navbar-default-link-color: #fff;
+$navbar-default-link-active-color: #000;
+$navbar-border-radius: 0px;
+
+$dark-green: #1c7a48;
+$grey: #f7f7f7;
+
 article, nav, header, footer, aside, hgroup, section {
   display: block;
 }div.fieldWithErrors {
@@ -5299,7 +5310,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 #header-container {
   width: 890px;
   position: fixed;
-  height: 160px;
+  height: 170px;
   background-color: #fff;
   z-index: 100;
 }.navbar-default {
@@ -5325,7 +5336,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   padding-top: 13px !important;
   padding-bottom: 10px !important;
 }#main-content {
-  margin-top: 195px;
+  margin-top: 220px;
 }#main-container {
   width: 920px;
 }#search-form {
@@ -5365,10 +5376,10 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   margin: auto;
 }#logo {
   display: inline-block;
-  height: 150px;
+  height: 170px;
 }
 #logo img {
-  height: 150px;
+  height: 170px;
 }ul.navbar-nav {
   margin-top: -1px;
 }
@@ -5387,23 +5398,31 @@ ul.navbar-nav a {
   background-color: transparent !important;
   color: #ccc !important;
 }#forms {
-  margin: 20px 0px 5px 0px;
+  margin: 10px 0px 5px 0px;
   background-color: #f5f5f5;
   padding: 10px;
 }
 #forms form input[type="text"], #forms form input[type="password"] {
-  margin: 5px 0px 5px 5px;
-  width: 200px;
-  padding: 3px;
-  background-color: #c5c5c5;
-  color: #000;
-  border-radius: 3px;
+  margin: 5px 5px 5px 0px;
+    width: 200px;
+    height: 22px;
+    border: none;
+    background-color: #c5c5c5;
+    color: #000;
+    border-radius: 3px;
+}
+#forms .btn{
+    padding: 3px 12px;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 3px;
+    background-color: $dark-green;
+    color: #fff;
 }
 #forms .remember {
   font-size: 12px;
 }#top-container {
-  margin-bottom: 10px;
-  height: 140px;
+  height: 170px;
 }#footer {
   margin-top: 50px;
 }
@@ -5568,5 +5587,28 @@ ul.navbar-nav a {
 }
 .sign-in-upper{
   direction: rtl;
+}
+table.calendar{
+  float: right;
+  th, td{
+    min-width: 90px;
+  }
+  th{
+    background-color: $dark-green;
+    color: #fff;
+    padding: 5px 0px;
+    border: 1px solid $dark-green;
+    text-align: center;
+  }
+  td{
+    span{
+      display: block;
+      margin-bottom: -20px;
+    }
+    border: 1px solid #000;
+    width: 30px;
+    padding: 40px 5px 0px 30px;
+    height: 80px;
+  }
 }
 
