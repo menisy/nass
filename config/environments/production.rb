@@ -13,8 +13,8 @@ BlogArticle::Application.configure do
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
-  config.assets.js_compressor = Uglifier.new(mangle: false)
-  
+  #config.assets.js_compressor = Uglifier.new(mangle: false)
+
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = true
@@ -22,11 +22,11 @@ BlogArticle::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  config.assets.precompile += ['refinery/refinery.css', 
-    'admin.js', 
-    'wymeditor/lang/en.js', 
-    'refinery/wymeditor.js', 
-    'refinery/refinery.js', 
+  config.assets.precompile += ['refinery/refinery.css',
+    'admin.js',
+    'wymeditor/lang/en.js',
+    'refinery/wymeditor.js',
+    'refinery/refinery.js',
     'wymeditor/skins/refinery/skin.js',
     'refinery/formatting.css',
     'refinery/theme.css']

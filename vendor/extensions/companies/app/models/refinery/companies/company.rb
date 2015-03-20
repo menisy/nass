@@ -10,12 +10,12 @@ module Refinery
       validates :industry_id,:nob_egypt, :nob_abroad, :logo_id, presence: true
 
       belongs_to :logo, :class_name => '::Refinery::Image'
-    
+
       has_many :contact_people, dependent: :destroy
 
       has_many :jobs, class_name: '::Refinery::Companies::Job', dependent: :destroy
 
-      accepts_nested_attributes_for :contact_people 
+      accepts_nested_attributes_for :contact_people
 
       belongs_to :employer
 
