@@ -5,27 +5,24 @@ class ApplicationController < ActionController::Base
   before_filter :load_cities_and_areas
   before_filter :load_industries
 
-  def employer_url c
-    request.referer
-  end
+  # def employer_url c
+  #   '/'
+  # end
 
-  def student_url c
-    request.referer
-  end
+  # def student_url c
+  #   root_path
+  # end
 
-  def user_url c
-    '/refinery'
-  end
+  # def user_url c
+  #   '/refinery'
+  # end
 
   def after_sign_in_path_for(resource)
     # check for the class of the object to determine what type it is
-    case resource.class
-    when User
-      users_root_path
-    when Student
-      students_root_path
-    when Employer
-      employers_root_path
+    if resource.class == User
+      refinery.admin_root_path
+    else
+      root_path
     end
   end
 

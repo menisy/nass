@@ -47,6 +47,7 @@ cancel_employer_registration GET    /employers/cancel(.:format)        devise/re
                              PUT    /registration(.:format)            registrations#update
             emp_registration POST   /emp_registration(.:format)        registrations#emp_create
                              PUT    /emp_registration(.:format)        registrations#emp_update
+                      export GET    /export(.:format)                  exports#download
                     refinery        /                                  Refinery::Core::Engine
 
 Routes for Refinery::Core::Engine:
