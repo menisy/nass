@@ -3,7 +3,7 @@
     <%= text_field_tag 'employer[email]', nil, placeholder: t(:email) %>
     <br>
     <%= password_field_tag 'employer[password]', nil, placeholder: t(:password) %>
-    <button class="btn"><%= t(:sign_in) %></button>
+    <button class="btn pull-right"><%= t(:sign_in) %></button>
     <br>
     <%= check_box_tag 'employer[remember_me]' %>
     <%= label_tag 'employer[remember_me]', t(:remember_me), class: 'remember' %>
