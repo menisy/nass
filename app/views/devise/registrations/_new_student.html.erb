@@ -2,8 +2,8 @@
   <div class="col-sm-9">
     <% if someone_signed_in? %>
       <h3><%= t :signed_in_already %></h3>
-    <% else %>    
-        <h2><%= (t :sign_up) + " " + (t :for_students)%></h2>
+    <% else %>
+        <h2><%= (t :sign_up) + " " + (t :for_indivisuals)%></h2>
 
         <%= form_for(@student, :url => '/registration') do |f| %>
 
@@ -49,9 +49,9 @@
             <%= personal_info_fields.text_area :languages %>
             <br>
             <%= personal_info_fields.fields_for :address, @student.personal_info.address do |address| %>
-              
+
               <h4><%= t :address %></h4>
-              
+
               <%= address.label :street_name, I18n.translate('helpers.label.address.street_name') %>
               <%= address.text_field :street_name %>
               <br>

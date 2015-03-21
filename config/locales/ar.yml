@@ -25,7 +25,7 @@ ar:
   logout: 'تسجيل خروج'
   indivisual: 'افراد'
   for_students: 'للطلاب'
-  for_indivisuals: 'للافراد'
+  for_indivisuals: 'للأفراد'
   for_companies: 'للشركات'
   reg_success: 'تم تسجيل عضويتك بنجاح، يمكنك الآن تسجيل الدخول'
   reg_fail: 'الرجاء إدخال معلومات صحيحة'
