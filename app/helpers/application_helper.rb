@@ -65,6 +65,10 @@ def local_number number
   end
 end
 
+def lcl
+  I18n.locale.to_s
+end
+
   # def locale_switcher
   #     if I18n.locale.to_s == 'en'
   #       link_to 'عربي', refinery.url_for(params.merge(:locale => 'ar')), class: 'lcl'

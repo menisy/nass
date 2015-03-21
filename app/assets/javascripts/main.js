@@ -49,6 +49,8 @@ $(document).ready(function() {
   }), function() {
     $(this).find(".dropdown-menu").fadeOut(100);
   });
+
+
 });
 
 $(window).resize(function() {

@@ -8,6 +8,9 @@ en:
   contact_us: 'Contact us'
   partners: 'Partners'
   departments: 'Departments'
+  login_details: 'Login Details'
+  company_details: 'Company Details'
+  contact_person: 'Contact Person'
   sign_up: 'Sign up'
   male: 'Male'
   female: 'Female'
@@ -24,6 +27,7 @@ en:
   logged_in_as: 'Logged in as'
   logout: 'Logout'
   for_students: 'for students'
+  for_indivisuals: 'for indivisuals'
   for_companies: 'for companies'
   reg_success: 'Your registration was successful, you can sign in using your email and password'
   reg_fail: 'Please insert the correct values in the highlighted fields'
@@ -61,10 +65,32 @@ en:
   helpers:
     label:
       company:
+        name: 'Company Name'
+        logo: 'Logo'
         field: 'Field of Specialization'
         main_address: 'Main Branch Address'
         nob_egypt: 'Number of Branches in Egypt'
         nob_abroad: 'Number of Branches outside Egypt'
+      employer:
+        name: 'Name'
+        email: 'Email'
+        password: 'Password'
+        password_confirmation: 'Password confirmation'
+        first_name: 'First Name'
+        father_name: 'Second Name'
+        last_name: 'Last Name'
+        address: 'Address'
+        company:
+          contact_person:
+            name: 'Name'
+            email: 'Email'
+            password: 'Password'
+            password_confirmation: 'Password confirmation'
+            first_name: 'First Name'
+            father_name: 'Second Name'
+            mobile: 'Mobile Numbe'
+            land_line: 'Land line number'
+            position: 'Position'
       student:
         email: 'Email'
         password: 'Password'
@@ -72,6 +98,7 @@ en:
       personal_info:
         name: 'Name'
         first_name: 'First Name'
+        father_name: 'Second Name'
         last_name: 'Last Name'
         nationality: 'Nationality'
         dob: 'Date of Birth'

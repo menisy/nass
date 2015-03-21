@@ -23,3 +23,16 @@
     = render 'refinery/footer'
   .sii.hidden
     = someone_signed_in?
+  #reg-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} &times;
+          %h4#myModalLabel.modal-title
+            = t :sign_up
+        .modal-body.center
+          = link_to (t(:sign_up)+" "+(t(:for_indivisuals))), "/#{lcl}/registration/students", class: 'btn btn-success'
+          = link_to (t(:sign_up)+" "+(t(:for_companies))), "/#{lcl}/registration/companies", class: 'btn btn-info'
+
+
