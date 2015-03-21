@@ -1,5 +1,6 @@
 module ApplicationHelper
 
+
   def navigation_menu
     #presenter = Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self)
     # presenter.css = "navbar-inner"
@@ -21,23 +22,10 @@ module ApplicationHelper
   end
 
   def locale_switcher
-    unless ['registrations', 'jobs'].include?(params[:controller])
-      if I18n.locale.to_s == 'en'
-        #Globalize.with_locale('ar') { link_to 'عربي', refinery.url_for( locale: 'ar'), class: 'lcl' }
-        link_to 'عربي', refinery.url_for(:locale => 'ar'), class: 'lcl'
-      else
-        #Globalize.with_locale('en') { link_to 'English', refinery.url_for(locale: 'en'), class: 'lcl' }
-        link_to 'English'.upcase, refinery.url_for(:locale => 'en'), class: 'lcl'
-      end
+    if I18n.locale.to_s == 'en'
+      link_to 'عربي', main_app.switch_locale_path(lcl: 'ar'), class: 'lcl'
     else
-      path = URI(request.referer).path
-      path.gsub!('/ar/', '')
-      path.gsub!('/en/', '')
-      if I18n.locale.to_s == 'en'
-        link_to 'عربي', 'ar/'+ path, class: 'lcl'
-      else
-        link_to 'English', path, class: 'lcl'
-      end
+      link_to 'English', main_app.switch_locale_path(lcl: 'en'), class: 'lcl'
     end
   end
 

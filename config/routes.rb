@@ -1,5 +1,8 @@
 BlogArticle::Application.routes.draw do
 
+  get 'registration/students' => 'registrations#students', as: :students_reg
+  get 'registration/companies' => 'registrations#employers', as: :employers_reg
+
   devise_for :employers
 
   devise_for :students
@@ -18,11 +21,12 @@ BlogArticle::Application.routes.draw do
     root to: "refinery/admin/dashboard#index"
   end
 
+  get '/switch/:lcl' => 'locals#switch', as: :switch_locale
+
   post 'jobs/' => 'jobs#create'
   put 'jobs/' => 'jobs#update'
 
   get 'jobs/:id' => 'jobs#show', as: :job_details
-
 
   post 'registration/' => 'registrations#create'
   put 'registration/' => 'registrations#update'

@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   before_filter :load_cities_and_areas
   before_filter :load_industries
 
+  before_filter :set_local
+
   # def employer_url c
   #   '/'
   # end
@@ -16,6 +18,10 @@ class ApplicationController < ActionController::Base
   # def user_url c
   #   '/refinery'
   # end
+
+  def set_local
+    I18n.locale = session[:lcl] || 'en'
+  end
 
   def after_sign_in_path_for(resource)
     # check for the class of the object to determine what type it is

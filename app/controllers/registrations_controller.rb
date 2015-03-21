@@ -14,6 +14,17 @@ class RegistrationsController < ApplicationController
     end
   end
 
+  def students
+    @student = Student.new
+    @student.build_personal_info
+  end
+
+  def employers
+    @employer = Employer.new
+    @company = @employer.build_company
+    2.times{ @company.contact_people.build }
+  end
+
   def update
 
   end
@@ -31,6 +42,8 @@ class RegistrationsController < ApplicationController
       flash[:error] = t(:reg_fail)
       render "emp_registration"
     end
+  rescue Exception
+    redirect_to employers_reg_path
   end
 
   def emp_update
