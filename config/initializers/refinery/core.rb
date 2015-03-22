@@ -44,8 +44,8 @@ Refinery::Core.configure do |config|
   # config.wymeditor_whitelist_tags = {}
 
   # Register extra javascript for backend
-  # config.register_javascript "prototype-rails"
+  config.register_javascript "backend/script"
 
   # Register extra stylesheet for backend (optional options)
-  # config.register_stylesheet "custom", :media => 'screen'
+  config.register_stylesheet "backend/custom", :media => 'screen'
 end

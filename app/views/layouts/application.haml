@@ -9,15 +9,13 @@
     = javascript_include_tag 'application'
     = csrf_meta_tag
     %title NASS Academy
-
 %body
   .container#main-container
     - if flash[:notice]
       %div.alert.alert-success
         = flash[:notice]
 
-    - unless devise_controller?
-      = render 'refinery/header'
+    = render 'refinery/header'
     #main-content
       = yield
     = render 'refinery/footer'
@@ -32,7 +30,7 @@
           %h4#myModalLabel.modal-title
             = t :sign_up
         .modal-body.center
-          = link_to (t(:sign_up)+" "+(t(:for_indivisuals))), main_app.students_reg_path, class: 'btn btn-success'
-          = link_to (t(:sign_up)+" "+(t(:for_companies))), main_app.employers_reg_path, class: 'btn btn-info'
+          = link_to (t(:sign_up)+" "+(t(:for_individuals))), main_app.students_reg_path(locale: I18n.locale), class: 'btn btn-success'
+          = link_to (t(:sign_up)+" "+(t(:for_companies))), main_app.employers_reg_path(locale: I18n.locale), class: 'btn btn-info'
 
 

@@ -3,7 +3,7 @@
     <% if someone_signed_in? %>
       <h3><%= t :signed_in_already %></h3>
     <% else %>
-        <h2><%= (t :sign_up) + " " + (t :for_indivisuals)%></h2>
+        <h2><%= (t :sign_up) + " " + (t :for_individuals)%></h2>
 
         <%= form_for(@student, :url => '/registration') do |f| %>
 

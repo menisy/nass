@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :load_cities_and_areas
   before_filter :load_industries
 
+
   before_filter :set_local
 
   # def employer_url c
@@ -19,8 +20,19 @@ class ApplicationController < ActionController::Base
   #   '/refinery'
   # end
 
+
   def set_local
+
     I18n.locale = session[:lcl] || 'en'
+
+  end
+
+  def opposite_locale locale
+    if locale.to_s == 'en'
+      'ar'
+    else
+      'en'
+    end
   end
 
   def after_sign_in_path_for(resource)

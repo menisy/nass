@@ -12,7 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require bootstrap.min
+//= require hoverIntent
+//= require main
+//= require superfish
+//= require supersubs
 //= require owl.carousel
 
 /*
