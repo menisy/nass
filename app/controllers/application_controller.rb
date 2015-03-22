@@ -23,16 +23,8 @@ class ApplicationController < ActionController::Base
 
   def set_local
 
-    I18n.locale = session[:lcl] || 'en'
-
-  end
-
-  def opposite_locale locale
-    if locale.to_s == 'en'
-      'ar'
-    else
-      'en'
-    end
+    I18n.locale = session[:lcl] || :ar
+    Globalize.locale = session[:lcl] || :ar
   end
 
   def after_sign_in_path_for(resource)
