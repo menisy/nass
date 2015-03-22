@@ -2,6 +2,8 @@ BlogArticle::Application.routes.draw do
 
   get 'registration/students' => 'registrations#students', as: :students_reg
   get 'registration/companies' => 'registrations#employers', as: :employers_reg
+  get ':lcl/registration/students' => 'registrations#students', as: :students_reg
+  get ':lcl/registration/companies' => 'registrations#employers', as: :employers_reg
 
   devise_for :employers
 
