@@ -16,7 +16,8 @@ class RegistrationsController < ApplicationController
 
   def students
     @student = Student.new
-    @student.build_personal_info
+    pers = @student.build_personal_info
+    pers.build_address
   end
 
   def employers
@@ -34,7 +35,7 @@ class RegistrationsController < ApplicationController
     params[:employer][:company_attributes][:logo] = logo
     @employer = Employer.new params[:employer]
     @company = @employer.company
-    if @employer.save!
+    if @employer.save
       I18n.locale = params[:lcl]
       redirect_to "/#{params[:lcl]}", flash: {notice: t(:reg_success)}
     else
@@ -42,8 +43,6 @@ class RegistrationsController < ApplicationController
       flash[:error] = t(:reg_fail)
       render "emp_registration"
     end
-  rescue Exception
-    redirect_to employers_reg_path
   end
 
   def emp_update

@@ -88,3 +88,6 @@ form{
 input.parsley-error, select.parsley-error, textarea.parsley-error{
   border: 1px solid #BB0E13;
 }
+.parsley-errors-list{
+  display: inline-block;
+}

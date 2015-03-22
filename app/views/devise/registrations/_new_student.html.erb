@@ -10,6 +10,11 @@
           <% if flash[:error] %>
             <div class='alert alert-danger error-msg'>
               <%= flash[:error] %>
+              <br>
+              <% @student.errors.full_messages.each do |message| %>
+                <%= message %>
+                <br>
+              <% end %>
             </div>
           <% end %>
 
