@@ -23,6 +23,7 @@ en:
   employers: 'Companies'
   password: 'Password'
   students: 'Individuals'
+  users: 'Users'
   signin_title: '%{resource} sign in'
   forgot_password: 'Forgot password?'
   remember_me: 'Remember me'
