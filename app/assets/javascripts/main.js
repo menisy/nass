@@ -51,6 +51,19 @@ $(document).ready(function() {
   });
 
 
+  var lcl = $('.current_lcl').html().trim();
+  if(lcl == 'ar'){
+    window.ParsleyValidator.setLocale('ar');
+  }else{
+    window.ParsleyValidator.setLocale('en');
+  }
+  if($('form.emp_reg').length > 0){
+    $('form.emp_reg').parsley();
+  }
+  if($('form.student_reg').length > 0){
+    $('form.student_reg').parsley();
+  }
+
 });
 
 $(window).resize(function() {

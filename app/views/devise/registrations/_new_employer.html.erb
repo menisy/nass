@@ -5,7 +5,7 @@
     <% else %>
         <h2><%= (t :sign_up) + " " + (t :for_companies)%></h2>
 
-        <%= form_for(@employer, url: '/emp_registration') do |f| %>
+        <%= form_for(@employer, url: '/emp_registration', html:{class: 'emp_reg'}) do |f| %>
 
           <% if flash[:error] %>
             <div class='alert alert-danger error-msg'>
@@ -15,29 +15,29 @@
 
           <h4><%= t(:login_details) %></h4>
           <div><%= f.label :email %><br />
-          <%= f.email_field :email %></div>
+          <%= f.email_field :email, required: true %> </div>
 
           <div><%= f.label :password %><br />
-          <%= f.password_field :password %></div>
+          <%= f.password_field :password, required: true, class: 'password-field' %> </div>
 
           <div><%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation %></div>
+          <%= f.password_field :password_confirmation, required: true, data:{:'parsley-equalto'=> '.password-field'} %> </div>
 
           <%= f.fields_for :company, @company do |company_fields| %>
             <h4><%= t(:company_details) %></h4>
             <div><%= company_fields.label :company_name, t('helpers.label.company.name') %><br />
-            <%= company_fields.text_field :company_name %></div>
+            <%= company_fields.text_field :company_name, required: true %> </div>
 
             <div>
               <%= company_fields.label :industry, t('helpers.label.company.field') -%>
               <br>
-              <%= company_fields.select(:industry_id, @industries.collect {|d| [d.name, d.id] })%>
+              <%= company_fields.select(:industry_id, @industries.collect {|d| [d.name, d.id] }, required: true)%>
             </div>
 
             <br>
 
             <%= company_fields.label :logo, t('helpers.label.company.logo') -%>
-            <%= company_fields.file_field(:logo, accept: 'image/png,image/jpeg') %>
+            <%= company_fields.file_field(:logo, accept: 'image/png,image/jpeg', required: true) %>
             <br>
 
             <%= company_fields.fields_for :address, @company.address do |address| %>
@@ -45,55 +45,55 @@
               <h4><%= t :address %></h4>
 
               <%= address.label :street_name, t('helpers.label.address.street_name') %>
-              <%= address.text_field :street_name %>
+              <%= address.text_field :street_name, required: true %>
               <br>
 
               <%= address.label :building_no, t('helpers.label.address.building_no') %>
-              <%= address.text_field :building_no %>
+              <%= address.text_field :building_no, required: true %>
               <br>
 
               <%= address.label :apart_no, t('helpers.label.address.apart_no') %>
-              <%= address.text_field :apart_no %>
+              <%= address.text_field :apart_no, required: true %>
               <br>
 
               <%= address.label :area, t('area')%>
-              <%= address.select(:area_id, @areas.collect {|d| [d.name, d.id] }) %>
+              <%= address.select(:area_id, @areas.collect {|d| [d.name, d.id] }, required: true) %>
               <br>
 
               <%= address.label :city , t('city')%>
-              <%= address.select(:city_id, @cities.collect {|d| [d.name, d.id] }) %>
+              <%= address.select(:city_id, @cities.collect {|d| [d.name, d.id] }, required: true) %>
               <br>
               <br>
 
             <% end %>
 
             <div><%= company_fields.label :nob_egypt, t('helpers.label.company.nob_egypt') %><br />
-            <%= company_fields.text_field :nob_egypt %></div>
+            <%= company_fields.text_field :nob_egypt, required: true %> </div>
 
             <div><%= company_fields.label :nob_abroad, t('helpers.label.company.nob_abroad') %><br />
             <span class="small-font"><%= t(:please_specify) %></span><br><br>
-            <%= company_fields.text_area :nob_abroad %></div>
+            <%= company_fields.text_area :nob_abroad, required: true %> </div>
 
             <% @company.contact_people.each_with_index do |contact_person, i| %>
               <h4><%= t(:contact_person) %> <%= i+1 %></h4>
               <%= company_fields.fields_for :contact_people, contact_person do |contact_person_fields| %>
                 <%= contact_person_fields.label :first_name, t('helpers.label.employer.company.contact_person.first_name') %> <br/>
-                <%= contact_person_fields.text_field :first_name %>
+                <%= contact_person_fields.text_field :first_name, required: true %>
                 <br>
                 <%= contact_person_fields.label :last_name, t('helpers.label.employer.company.contact_person.last_name') %> <br/>
-                <%= contact_person_fields.text_field :last_name %>
+                <%= contact_person_fields.text_field :last_name, required: true %>
                 <br>
                 <%= contact_person_fields.label :email, t('helpers.label.employer.company.contact_person.email') %> <br/>
-                <%= contact_person_fields.email_field :email %>
+                <%= contact_person_fields.email_field :email, required: true %>
                 <br>
                 <%= contact_person_fields.label :mobile, t('helpers.label.employer.company.contact_person.mobile') %> <br/>
-                <%= contact_person_fields.text_field :mobile %>
+                <%= contact_person_fields.text_field :mobile, required: true %>
                 <br>
                 <%= contact_person_fields.label :land_line, t('helpers.label.employer.company.contact_person.land_line') %> <br/>
-                <%= contact_person_fields.text_field :land_line %>
+                <%= contact_person_fields.text_field :land_line, required: true %>
                 <br>
                 <%= contact_person_fields.label :position, t('helpers.label.employer.company.contact_person.position') %> <br/>
-                <%= contact_person_fields.text_field :position %>
+                <%= contact_person_fields.text_field :position, required: true %>
                 <br>
               <% end %>
             <% end %>

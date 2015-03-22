@@ -18,6 +18,8 @@
 //= require superfish
 //= require supersubs
 //= require owl.carousel
+//= require parsley.ar
+//= require parsley
 
 /*
 $(document).ready(function(){

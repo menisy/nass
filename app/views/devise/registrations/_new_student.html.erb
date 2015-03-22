@@ -5,7 +5,7 @@
     <% else %>
         <h2><%= (t :sign_up) + " " + (t :for_individuals)%></h2>
 
-        <%= form_for(@student, :url => '/registration') do |f| %>
+        <%= form_for(@student, :url => '/registration', html:{ class: 'student_reg'}) do |f| %>
 
           <% if flash[:error] %>
             <div class='alert alert-danger error-msg'>
@@ -14,74 +14,74 @@
           <% end %>
 
           <div><%= f.label :email %><br />
-          <%= f.email_field :email %></div>
+          <%= f.email_field :email, required: true %></div>
 
           <div><%= f.label :password %><br />
-          <%= f.password_field :password %></div>
+          <%= f.password_field :password, required: true, class: 'password-field' %></div>
 
           <div><%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation %></div>
+          <%= f.password_field :password_confirmation, required: true, data:{:'parsley-equalto'=> '.password-field'}%></div>
 
           <%= fields_for :personal_info, @student.personal_info do |personal_info_fields| %>
             <%= personal_info_fields.label :first_name %> <br/>
-            <%= personal_info_fields.text_field :first_name %>
+            <%= personal_info_fields.text_field :first_name, required: true %>
             <br>
 
             <%= personal_info_fields.label :last_name %> <br/>
-            <%= personal_info_fields.text_field :last_name %>
+            <%= personal_info_fields.text_field :last_name, required: true %>
             <br>
             <%= personal_info_fields.label :nationality %> <br/>
-            <%= personal_info_fields.text_field :nationality %>
+            <%= personal_info_fields.text_field :nationality, required: true %>
             <br>
             <%= personal_info_fields.label :dob %> <br/>
-            <%= personal_info_fields.date_select :dob, start_year: 1920 %>
+            <%= personal_info_fields.date_select :dob, start_year: 1920, required: true %>
             <br>
             <%= personal_info_fields.label :pob %> <br/>
-            <%= personal_info_fields.text_field :pob %>
+            <%= personal_info_fields.text_field :pob, required: true %>
             <br>
             <%= personal_info_fields.label :gender %> <br/>
-            <%= personal_info_fields.select :gender, [[(t :male), 1], [(t :female), 2]] %>
+            <%= personal_info_fields.select :gender, [[(t :male), 1], [(t :female), 2]], required: true %>
             <br>
             <%= personal_info_fields.label :maritual_status %> <br/>
-            <%= personal_info_fields.select :maritual_status, [[(t :single), 1], [(t :married), 2], [(t :divorced), 3], [(t :widowed), 4]]%>
+            <%= personal_info_fields.select :maritual_status, [[(t :single), 1], [(t :married), 2], [(t :divorced), 3], [(t :widowed), 4]], required: true%>
             <br>
             <%= personal_info_fields.label :languages %> <br/>
-            <%= personal_info_fields.text_area :languages %>
+            <%= personal_info_fields.text_area :languages, required: true %>
             <br>
             <%= personal_info_fields.fields_for :address, @student.personal_info.address do |address| %>
 
               <h4><%= t :address %></h4>
 
               <%= address.label :street_name, I18n.translate('helpers.label.address.street_name') %>
-              <%= address.text_field :street_name %>
+              <%= address.text_field :street_name, required: true %>
               <br>
 
               <%= address.label :building_no, I18n.translate('helpers.label.address.building_no') %>
-              <%= address.text_field :building_no %>
+              <%= address.text_field :building_no, required: true %>
               <br>
 
               <%= address.label :apart_no, I18n.translate('helpers.label.address.apart_no') %>
-              <%= address.text_field :apart_no %>
+              <%= address.text_field :apart_no, required: true %>
               <br>
 
               <%= address.label :area, I18n.translate('area')%>
-              <%= address.select(:area_id, @areas.collect {|d| [d.name, d.id] }) %>
+              <%= address.select(:area_id, @areas.collect {|d| [d.name, d.id] }, required: true) %>
               <br>
 
               <%= address.label :city , I18n.translate('city')%>
-              <%= address.select(:city_id, @cities.collect {|d| [d.name, d.id] }) %>
+              <%= address.select(:city_id, @cities.collect {|d| [d.name, d.id] }, required: true) %>
               <br>
               <br>
 
             <% end %>
             <%= personal_info_fields.label :degrees %> <br/>
-            <%= personal_info_fields.text_area :degrees %>
+            <%= personal_info_fields.text_area :degrees, required: true %>
             <br>
             <%= personal_info_fields.label :skills %> <br/>
-            <%= personal_info_fields.text_area :skills %>
+            <%= personal_info_fields.text_area :skills, required: true %>
             <br>
             <%= personal_info_fields.label :skilled_jobs %> <br/>
-            <%= personal_info_fields.text_area :skilled_jobs %>
+            <%= personal_info_fields.text_area :skilled_jobs, required: true %>
 
           <% end %>
 

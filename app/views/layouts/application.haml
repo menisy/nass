@@ -21,6 +21,8 @@
     = render 'refinery/footer'
   .sii.hidden
     = someone_signed_in?
+    .current_lcl
+      = I18n.locale.to_s
   #reg-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
     .modal-dialog
       .modal-content
