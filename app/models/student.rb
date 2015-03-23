@@ -10,6 +10,8 @@ class Student < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_one :personal_info, class_name: '::Refinery::PersonalInfos::PersonalInfo', dependent: :destroy
+  has_many :job_applications
+
 
   accepts_nested_attributes_for :personal_info
 
@@ -19,5 +21,9 @@ class Student < ActiveRecord::Base
     else
       email
     end
+  end
+
+  def applied_to?(job)
+    self.job_applications.where(job_id: job.id).present?
   end
 end

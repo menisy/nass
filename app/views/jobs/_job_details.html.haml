@@ -1,0 +1,78 @@
+.row
+  .col-sm-4
+    %b
+      = t :job_title
+    %br
+    = job.title
+    %br
+    %b
+      = t :job_description
+    %br
+    = job.job_description
+    %br
+    %b
+      = t :joining_date
+    %br
+    = job.joining_date
+    %br
+    %b
+      = t :salary_from_and_to
+    %br
+    = job.salary_from
+    \-
+    = job.salary_to
+    %br
+    %b
+      = t :incentive
+    %br
+    = job.incentive
+    %br
+    %b
+      = t :days_off
+    %br
+    = job.days_off
+    %br
+  .col-sm-4
+    %b
+      = t :job_title
+    %br
+    = job.title
+    %br
+    %b
+      = t :job_description
+    %br
+    = job.job_description
+    %br
+    %b
+      = t :joining_date
+    %br
+    = job.joining_date
+    %br
+    %b
+      = t :salary_from_and_to
+    %br
+    = job.salary_from
+    \-
+    = job.salary_to
+    %br
+    %b
+      = t :incentive
+    %br
+    = job.incentive
+    %br
+    %b
+      = t :days_off
+    %br
+    = job.days_off
+    %br
+.row
+  .col-sm-12
+    - if student_signed_in?
+      - unless current_student.applied_to?(job)
+        = link_to t(:apply), job_apply_path(job), remote: true, class: 'btn btn-success pull-right'
+      - else
+        %p.pull-right
+          = t :applied_already
+    - elsif employer_signed_in?
+      %p.pull-right
+        = t :number_applied, number: job.job_applications.count

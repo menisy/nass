@@ -36,6 +36,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authenticate!
+    authenticate_employer unless (student_signed_in? || employer_signed_in?)
+  end
+
   private
 
   def authenticate_admin

@@ -62,7 +62,7 @@
               <br>
 
               <%= address.label :area, t('area')%>
-              <%= address.select(:area_id, @areas.collect {|d| [d.name, d.id] }, required: true) %>
+              <%= address.text_field, required: true %>
               <br>
 
               <%= address.label :city , t('city')%>

@@ -36,7 +36,7 @@ ar:
   register: 'تسحيل العضوية'
   student: 'طالب'
   company: 'شركة'
-  job_title: 'المسمى الوظيفي'
+  job_title: 'المهنة'
   job_description: 'مهام الوظيفة'
   location: 'المكان'
   date_posted: 'تاريخ الاعلان'

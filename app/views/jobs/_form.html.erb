@@ -1,5 +1,5 @@
 <h3>Post new Job</h3>
-<%= form_for(@job, url: '/jobs') do |f| %>
+<%= form_for(@job, url: '/jobs', html:{class: 'job_form'}) do |f| %>
   <% if flash[:error] %>
     <div class='alert alert-danger error-msg'>
       <%= flash[:error] %>
@@ -8,52 +8,52 @@
 
   <div>
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: true %>
   </div>
 
   <div>
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, required: true %>
   </div>
 
   <div>
     <%= f.label :number %><br />
-    <%= f.text_field :number %>
+    <%= f.text_field :number, required: true %>
   </div>
 
   <div>
     <%= f.label :city -%>
-    <%= f.select(:city_id, @cities.collect {|d| [d.name, d.id] })%>
+    <%= f.select(:city_id, @cities.collect {|d| [d.name, d.id] }, required: true)%>
   </div>
 
   <div>
     <%= f.label :area -%>
-    <%= f.select(:area_id, @areas.collect {|d| [d.name, d.id] })%>
+    <%= f.text_field :area, required: true%>
   </div>
 
   <div>
     <%= f.label :joining_date %><br />
-    <%= f.date_select :joining_date %>
+    <%= f.date_select :joining_date, required: true %>
   </div>
 
   <div>
     <%= f.label :salary_from %><br />
-    <%= f.text_field :salary_from %>
+    <%= f.text_field :salary_from, required: true %>
   </div>
 
   <div>
     <%= f.label :salary_to %><br />
-    <%= f.text_field :salary_to %>
+    <%= f.text_field :salary_to, required: true %>
   </div>
 
   <div>
     <%= f.label :incentive %><br />
-    <%= f.text_area :incentive %>
+    <%= f.text_area :incentive, required: true %>
   </div>
 
   <div>
     <%= f.label :days_off %><br />
-    <%= f.text_area :days_off %>
+    <%= f.text_area :days_off, required: true %>
   </div>
 
   <div>
@@ -73,17 +73,17 @@
 
   <div>
     <%= f.label :job_description %><br />
-    <%= f.text_area :job_description %>
+    <%= f.text_area :job_description, required: true %>
   </div>
 
   <div>
     <%= f.label :qualifications %><br />
-    <%= f.text_area :qualifications %>
+    <%= f.text_area :qualifications, required: true %>
   </div>
   <%= f.hidden_field :company_id, value: current_employer.company.id %>
   <div>
     <%= f.label :work_conditions %><br />
-    <%= f.text_area :work_conditions %>
+    <%= f.text_area :work_conditions, required: true %>
   </div>
 
   <%= f.submit 'Post Job', class: 'btn btn-success' %>

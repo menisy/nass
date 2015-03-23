@@ -63,6 +63,9 @@ $(document).ready(function() {
   if($('form.student_reg').length > 0){
     $('form.student_reg').parsley();
   }
+  if($('form.job_form').length > 0){
+    $('form.job_form').parsley();
+  }
 
 });
 

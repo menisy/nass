@@ -26,7 +26,11 @@ BlogArticle::Application.routes.draw do
   post 'jobs/' => 'jobs#create'
   put 'jobs/' => 'jobs#update'
 
+
   get 'jobs/:id' => 'jobs#show', as: :job_details
+  get 'jobs/' => 'jobs#index'
+
+  get 'jobs/:id/apply' => 'jobs#apply', as: :job_apply
 
   post 'registration/' => 'registrations#create'
   put 'registration/' => 'registrations#update'

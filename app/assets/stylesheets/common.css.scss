@@ -91,3 +91,11 @@ input.parsley-error, select.parsley-error, textarea.parsley-error{
 .parsley-errors-list{
   display: inline-block;
 }
+table.jobs{
+  th{
+    background-color: $dark-green;
+    color: #fff;
+    padding: 5px 0px;
+    border: 1px solid $dark-green;
+  }
+}

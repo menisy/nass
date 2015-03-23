@@ -2,10 +2,10 @@ module Refinery
   module Companies
     class Job < Refinery::Core::BaseModel
 
-      attr_accessible :name, :title, :area_id, :city_id,:number, :joining_date, :salary_from, :salary_to, :incentive, :days_off, :social_insurance, :medical_insurance, :transportation, :job_description, :qualifications, :work_conditions, :position, :company_id
+      attr_accessible :name, :title, :area, :city_id, :number, :joining_date, :salary_from, :salary_to, :incentive, :days_off, :social_insurance, :medical_insurance, :transportation, :job_description, :qualifications, :work_conditions, :position, :company_id
 
-      validates :name, :title, :area_id, :city_id, :number, :joining_date, :salary_from, :salary_to, :incentive, :days_off, :job_description, :qualifications, :work_conditions, presence: true
-    
+      validates :name, :title, :area, :city_id, :number, :joining_date, :salary_from, :salary_to, :incentive, :days_off, :job_description, :qualifications, :work_conditions, presence: true
+
       belongs_to :company
 
       belongs_to :industry
@@ -20,7 +20,7 @@ module Refinery
 
       belongs_to :city
 
-      belongs_to :area
+      has_many :job_applications
     end
   end
 end
