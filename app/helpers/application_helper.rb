@@ -36,7 +36,7 @@ module ApplicationHelper
 
   def month_name(month)
     months = %w(January February March April May June July August September October November December)
-    (t months[month].downcase.to_sym).titleize
+    (t months[month-1].downcase.to_sym).titleize
   end
 
 ARABIC_NUMBERS = %w(٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩)
