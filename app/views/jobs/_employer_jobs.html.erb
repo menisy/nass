@@ -15,7 +15,7 @@
         <tr>
           <td><%= i+1 %></td>
           <td><%= job.title %></td>
-          <td><%= job.city.try(:name) %> - <%= job.area.try(:name) %></td>
+          <td><%= job.city.try(:name) %> - <%= job.area %></td>
           <td><%= job.created_at.to_date %></td>
         </tr>
       <% end %>
