@@ -14,7 +14,7 @@
         <% next if job.new_record? %>
         <tr>
           <td><%= i+1 %></td>
-          <td><%= job.title %></td>
+          <td><%= link_to job.title, main_app.job_details_path(id: job.id), remote: true %></td>
           <td><%= job.city.try(:name) %> - <%= job.area %></td>
           <td><%= job.created_at.to_date %></td>
         </tr>
@@ -24,3 +24,19 @@
     <% end %>
   </tbody>
 </table>
+<div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="job-modal" role="dialog" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+          <%= t :job_details %>
+        </h4>
+      </div>
+      <div class="modal-body center">
+      </div>
+    </div>
+  </div>
+</div>
