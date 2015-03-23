@@ -1,6 +1,8 @@
 nl:
   refinery:
     plugins:
+      job_applications:
+        title: Job Applications
       areas:
         title: Areas
       cities:
@@ -23,6 +25,21 @@ nl:
         title: Companies
     companies:
       admin:
+        job_applications:
+          actions:
+            create_new: Nieuwe Job Application toevoegen
+            reorder: De volgorde van de Job Applications wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Job Application-volgorde
+          records:
+            title: Job Applications
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Job Applications. Druk op 'Nieuwe Job Application
+              toevoegen' om de eerste toe te voegen.
+          job_application:
+            view_live_html: Deze job application op de website bekijken <br/><em>(opent
+              in een nieuw venster)</em>
+            edit: Bewerk deze job application
+            delete: Deze job application definitief verwijderen
         areas:
           actions:
             create_new: Nieuwe Area toevoegen
@@ -173,6 +190,9 @@ nl:
               een nieuw venster)</em>
             edit: Bewerk deze company
             delete: Deze company definitief verwijderen
+      job_applications:
+        show:
+          other: Andere Job Applications
       areas:
         show:
           other: Andere Areas
@@ -205,6 +225,8 @@ nl:
           other: Andere Companies
   activerecord:
     attributes:
+      refinery/companies/job_application:
+        status: Status
       refinery/companies/area:
         name: Name
       refinery/companies/city:

@@ -5603,7 +5603,18 @@ table.calendar{
   td{
     span{
       display: block;
-      margin-bottom: -20px;
+      bottom: -10px;
+      position: relative;
+    }
+    div.day{
+      max-width: 80px;
+      max-height: 45px;
+      overflow: hidden;
+      position: absolute;
+      margin-top: -40px;
+    }
+    label{
+      font-size: 12px;
     }
     border: 1px solid #000;
     width: 30px;

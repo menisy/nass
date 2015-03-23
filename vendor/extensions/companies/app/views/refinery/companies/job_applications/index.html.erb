@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="job_applications">
+    <% @job_applications.each do |job_application| %>
+      <li>
+        <%= link_to job_application, refinery.companies_job_application_path(job_application) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

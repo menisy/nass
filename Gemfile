@@ -71,3 +71,5 @@ gem 'refinerycms-home_photos', :path => 'vendor/extensions'
 gem 'refinerycms-personal_infos', :path => 'vendor/extensions'
 gem 'refinerycms-companies', :path => 'vendor/extensions'
 gem 'refinerycms-addresses', :path => 'vendor/extensions'
+
+gem 'refinerycms-events', :path => 'vendor/extensions'

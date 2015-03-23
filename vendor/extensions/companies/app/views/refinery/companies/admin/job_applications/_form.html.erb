@@ -1,0 +1,15 @@
+<%= form_for [refinery, :companies_admin, @job_application] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @job_application,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :status -%>
+    <%= f.number_field :status -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.job_applications.admin.job_applications.job_application'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete') -%>
+<% end -%>

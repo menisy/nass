@@ -50,6 +50,16 @@ $(document).ready(function() {
     $(this).find(".dropdown-menu").fadeOut(100);
   });
 
+  $(document).on('click', '.day-cell.pointer', function(e){
+    var dsc = $(this).find('.event-preview').html();
+    var title = $(this).find('.full-title').html();
+    var link = $(this).find('.event-link').html();
+    var eventModal = $('#event-modal');
+    eventModal.find('.modal-title').html(title);
+    eventModal.find('.modal-body').html(dsc+link);
+    eventModal.modal();
+  });
+
 
   var lcl = $('.current_lcl').html().trim();
   if(lcl == 'ar'){

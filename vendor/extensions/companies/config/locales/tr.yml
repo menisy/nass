@@ -1,6 +1,8 @@
 tr:
   refinery:
     plugins:
+      job_applications:
+        title: Job Applications
       areas:
         title: Areas
       cities:
@@ -23,6 +25,21 @@ tr:
         title: Companies
     companies:
       admin:
+        job_applications:
+          actions:
+            create_new: Yeni Ekle Job Application
+            reorder: Tekrar sirala Job Applications
+            reorder_done: Tekrar siralama tamamlandiJob Applications
+          records:
+            title: Job Applications
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Job Applications yok henuz.  Tikla "Yeni Ekle
+              Job Application" eklemek senin ilk job application.
+          job_application:
+            view_live_html: Bunu canlu job application goruntule <br/><em>(yeni bir
+              pencerede acar)</em>
+            edit: Bunu Duzenle job application
+            delete: Bunu Sil job application sonsuza dek
         areas:
           actions:
             create_new: Yeni Ekle Area
@@ -173,6 +190,9 @@ tr:
               acar)</em>
             edit: Bunu Duzenle company
             delete: Bunu Sil company sonsuza dek
+      job_applications:
+        show:
+          other: Diger Job Applications
       areas:
         show:
           other: Diger Areas
@@ -205,6 +225,8 @@ tr:
           other: Diger Companies
   activerecord:
     attributes:
+      refinery/companies/job_application:
+        status: Status
       refinery/companies/area:
         name: Name
       refinery/companies/city:

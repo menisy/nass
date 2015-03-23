@@ -10,7 +10,7 @@ class Student < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_one :personal_info, class_name: '::Refinery::PersonalInfos::PersonalInfo', dependent: :destroy
-  has_many :job_applications
+  has_many :job_applications, class_name: '::Refinery::Companies::JobApplication', dependent: :destroy
 
 
   accepts_nested_attributes_for :personal_info

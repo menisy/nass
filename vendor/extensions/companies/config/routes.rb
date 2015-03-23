@@ -169,4 +169,21 @@ Refinery::Core::Engine.routes.draw do
     end
   end
 
+
+  # Frontend routes
+  namespace :companies do
+    resources :job_applications, :only => [:index, :show]
+  end
+
+  # Admin routes
+  namespace :companies, :path => '' do
+    namespace :admin, :path => "#{Refinery::Core.backend_route}/companies" do
+      resources :job_applications, :except => :show do
+        collection do
+          post :update_positions
+        end
+      end
+    end
+  end
+
 end

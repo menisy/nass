@@ -1,6 +1,8 @@
 fr:
   refinery:
     plugins:
+      job_applications:
+        title: Job Applications
       areas:
         title: Areas
       cities:
@@ -23,6 +25,22 @@ fr:
         title: Companies
     companies:
       admin:
+        job_applications:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Job Application
+            reorder: Réordonner les Job Applications
+            reorder_done: Fin de réordonnancement des Job Applications
+          records:
+            title: Job Applications
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Job Application. Cliquer
+              sur "Créer un(e) nouve(au/l/lle) Job Application" pour créer votre premi(er/ère)
+              job application.
+          job_application:
+            view_live_html: Voir ce(t/tte) job application <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) job application
+            delete: Supprimer définitivement ce(t/tte) job application
         areas:
           actions:
             create_new: Créer un(e) nouve(au/l/lle) Area
@@ -169,6 +187,9 @@ fr:
             view_live_html: Voir ce(t/tte) company <br/><em>(Ouvre une nouvelle fenêtre)</em>
             edit: Modifier ce(t/tte) company
             delete: Supprimer définitivement ce(t/tte) company
+      job_applications:
+        show:
+          other: Autres Job Applications
       areas:
         show:
           other: Autres Areas
@@ -201,6 +222,8 @@ fr:
           other: Autres Companies
   activerecord:
     attributes:
+      refinery/companies/job_application:
+        status: Status
       refinery/companies/area:
         name: Name
       refinery/companies/city:

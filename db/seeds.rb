@@ -38,3 +38,7 @@ Refinery::Companies::Engine.load_seed
 
 # Added by Refinery CMS Addresses extension
 Refinery::Addresses::Engine.load_seed
+
+
+# Added by Refinery CMS Events extension
+Refinery::Events::Engine.load_seed

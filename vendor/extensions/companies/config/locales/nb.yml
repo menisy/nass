@@ -1,6 +1,8 @@
 nb:
   refinery:
     plugins:
+      job_applications:
+        title: Job Applications
       areas:
         title: Areas
       cities:
@@ -23,6 +25,21 @@ nb:
         title: Companies
     companies:
       admin:
+        job_applications:
+          actions:
+            create_new: Lag en ny Job Application
+            reorder: Endre rekkefølgen på Job Applications
+            reorder_done: Ferdig å endre rekkefølgen Job Applications
+          records:
+            title: Job Applications
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Job Applications enda. Klikk på "Lag en ny
+              Job Application" for å legge til din første job application.
+          job_application:
+            view_live_html: Vis hvordan denne job application ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne job application
+            delete: Fjern denne job application permanent
         areas:
           actions:
             create_new: Lag en ny Area
@@ -173,6 +190,9 @@ nb:
               i et nytt vindu)</em>
             edit: Rediger denne company
             delete: Fjern denne company permanent
+      job_applications:
+        show:
+          other: Andre Job Applications
       areas:
         show:
           other: Andre Areas
@@ -205,6 +225,8 @@ nb:
           other: Andre Companies
   activerecord:
     attributes:
+      refinery/companies/job_application:
+        status: Status
       refinery/companies/area:
         name: Name
       refinery/companies/city:

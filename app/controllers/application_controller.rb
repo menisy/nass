@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :load_contact
   before_filter :load_cities_and_areas
   before_filter :load_industries
+  before_filter :load_events
 
 
   before_filter :set_local
@@ -38,6 +39,10 @@ class ApplicationController < ActionController::Base
 
   def authenticate!
     authenticate_employer unless (student_signed_in? || employer_signed_in?)
+  end
+
+  def load_events
+    @events = ::Refinery::Events::Event
   end
 
   private

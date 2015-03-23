@@ -4,6 +4,7 @@
     <% 6.times do %>
       <div class="month">
         <h3><%= month_name(date.month) %></h3>
+        <% month_events = @events.where(:start_date => date.at_beginning_of_month..date.at_end_of_month) %>
         <table class="calendar">
           <tr>
             <% start = date.at_beginning_of_month.wday %>
@@ -20,7 +21,31 @@
               </tr>
               <tr>
             <% end -%>
-            <td class="day-cell"><span><%= local_number i.day %></span></td>
+            <% event = month_events.where(:start_date => i.beginning_of_day..i.end_of_day).first %>
+            <td class="day-cell <%= "light-green pointer" if event %>">
+              <div class="day">
+                <% if event %>
+                  <label class="title">
+                    <%= (event.name*30).truncate(25) %>
+                  </label>
+                  <label class="full-title hide">
+                    <%=  event.name %>
+                  </label>
+                  <div class="event-preview hide">
+                    <%= image_tag event.photo.url %>
+                    <%= raw event.description %>
+                  </div>
+                  <div class="event-link hide">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <%= link_to event.link_title, event.link, class: 'btn btn-success', target: :blank %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <span><%= local_number i.day %></span>
+            </td>
           <% end -%>
           </tr>
         </table>
@@ -32,5 +57,20 @@
     <%= render partial: 'shared/contact_us' %>
     <%= render partial: 'shared/media_links' %>
     <%= render partial: 'shared/video' %>
+  </div>
+</div>
+<div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="event-modal" role="dialog" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header center">
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+        </h4>
+      </div>
+      <div class="modal-body center">
+      </div>
+    </div>
   </div>
 </div>

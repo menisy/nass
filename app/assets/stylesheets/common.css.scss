@@ -99,3 +99,17 @@ table.jobs{
     border: 1px solid $dark-green;
   }
 }
+.light-green{
+  background-color: #76DAA4;
+}
+.pointer{
+  cursor: pointer;
+  div, label{
+    cursor: pointer;
+  }
+}
+#event-modal{
+  img{
+    max-width: 80%;
+  }
+}

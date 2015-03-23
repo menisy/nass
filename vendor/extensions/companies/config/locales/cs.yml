@@ -1,6 +1,8 @@
 cs:
   refinery:
     plugins:
+      job_applications:
+        title: Job Applications
       areas:
         title: Areas
       cities:
@@ -23,6 +25,21 @@ cs:
         title: Companies
     companies:
       admin:
+        job_applications:
+          actions:
+            create_new: Přidat Job Application
+            reorder: "Řadit Job Applications"
+            reorder_done: Konec řazení Job Applications
+          records:
+            title: Job Applications
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Job Applications. Zvolte "Přidat
+              Job Application" pro přidání prvního job application.
+          job_application:
+            view_live_html: Zobrazit náhled job application<br/><em>(otevře se v novém
+              okně)</em>
+            edit: Upravit job application
+            delete: Smazat job application
         areas:
           actions:
             create_new: Přidat Area
@@ -166,6 +183,9 @@ cs:
             view_live_html: Zobrazit náhled company<br/><em>(otevře se v novém okně)</em>
             edit: Upravit company
             delete: Smazat company
+      job_applications:
+        show:
+          other: Další Job Applications
       areas:
         show:
           other: Další Areas
@@ -198,6 +218,8 @@ cs:
           other: Další Companies
   activerecord:
     attributes:
+      refinery/companies/job_application:
+        status: Status
       refinery/companies/area:
         name: Name
       refinery/companies/city:
