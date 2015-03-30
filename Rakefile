@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-BlogArticle::Application.load_tasks
+Nass::Application.load_tasks

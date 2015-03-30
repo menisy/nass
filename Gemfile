@@ -15,6 +15,11 @@ gem 'axlsx', '~> 2.0'
 gem "axlsx_rails"
 gem 'to_xls-rails'
 
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rvm', github: "capistrano/rvm"
+
 gem 'refinerycms-dynamicfields', :git => 'https://github.com/jfalameda/refinerycms-dynamicfields.git'
 
 gem 'mysql2'
