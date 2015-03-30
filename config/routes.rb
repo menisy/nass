@@ -1,4 +1,4 @@
-BlogArticle::Application.routes.draw do
+Nass::Application.routes.draw do
 
   get 'registration/students' => 'registrations#students', as: :students_reg
   get 'registration/companies' => 'registrations#employers', as: :employers_reg

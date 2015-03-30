@@ -56,7 +56,7 @@
 #   end
 
 # end
-set :application, 'blog_article'
+set :application, 'nass'
 set :repo_url, 'git@github.com:menisy/nass.git'
 
 set :deploy_to, '/home/deploy/nass'
