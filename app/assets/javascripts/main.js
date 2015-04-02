@@ -26,12 +26,17 @@ $(document).ready(function() {
   nav_li = $("ul.navbar-nav li.nav-li");
   colors = ["green", "yello", "orange", "red", "blue", "lime", "purple"];
   reversed_colors = colors.slice(0).reverse();
+  var li_count = 0;
   nav_li.each(function(i, j) {
+    li_count++;
     $(j).addClass(colors[i % colors.length]);
     $(j).find('li').each(function(l, k) {
       $(k).addClass(reversed_colors[(l+i+2) % colors.length]);
     });
   });
+  $('ul.nav.navbar-nav').addClass('ul-no-margin');
+  $('ul.nav.navbar-nav').css('width', '100%');
+  nav_li.css('width', 100.0/li_count+'%');
   ul = $("#left_side_body ul");
   theLoc = 275;
   $(".owl-carousel").owlCarousel({

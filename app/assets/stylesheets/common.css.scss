@@ -113,3 +113,16 @@ table.jobs{
     max-width: 80%;
   }
 }
+li.nav-li a{
+  text-align: center;
+}
+.ul-no-margin{
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+#logo{
+  margin-left: -10px;
+}
