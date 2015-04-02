@@ -2,6 +2,12 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  activerecord:
+    attributes:
+      employer:
+        email: 'Email'
+      student:
+        email: 'Email'
   hello: "Hello world"
   news: 'News'
   about_nass: 'About NASS'
@@ -23,7 +29,13 @@ en:
   employers: 'Companies'
   password: 'Password'
   students: 'Individuals'
+  calendar: 'Calendar View'
+  list: 'Events view'
   users: 'Users'
+  no_jobs: 'No jobs posted any jobs yet'
+  no_events: 'No events are available yet'
+  event_name: 'Event'
+  event_date: 'Date'
   signin_title: '%{resource} sign in'
   forgot_password: 'Forgot password?'
   remember_me: 'Remember me'

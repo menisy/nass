@@ -1,0 +1,28 @@
+%div{role: 'tabpanel', class: 'tab-pane fade', id: 'list'}
+  %table.table.table-striped
+    - if @events.all.count >= 1
+      %thead
+        %tr
+          %th= t :event_name
+          %th= t :event_date
+      %tbody
+        - @events.all.each do |event|
+          %tr
+            %td.day-cell.pointer.list-event
+              = event.name
+              %label.full-title.hide
+                = event.name
+                %span.margined.small
+                  = event.start_date
+              .event-preview.hide
+                = image_tag event.photo.url
+                = raw event.description
+              .event-link.hide
+                .row
+                  .col-sm-12
+                    = link_to event.link_title, event.link, class: 'btn btn-success', target: :blank
+            %td
+              = event.start_date
+    - else
+      %h4
+        = t :no_events

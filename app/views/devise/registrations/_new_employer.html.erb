@@ -12,7 +12,7 @@
               <%= flash[:error] %>
               <br>
               <% @employer.errors.full_messages.each do |message| %>
-                <%= message %>
+                <%= message.gsub(/\(مستخدم\)/, '')  %>
                 <br>
               <% end %>
             </div>

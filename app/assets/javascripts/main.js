@@ -20,6 +20,13 @@ $(document).ready(function() {
       $('#sign-in-form').html($('#' + selectedVal + '-form').html());
     }
   });
+
+  //tabs
+  $(function () {
+    $('.tabs a:first').tab('show')
+  })
+
+
   $('#body_content').append($('#search-form').remove());
   $('#right_side_body').append($('#side_body').html());
   $('ul.nav.navbar-nav').children('li').addClass('nav-li');

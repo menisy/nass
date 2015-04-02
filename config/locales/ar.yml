@@ -1,4 +1,10 @@
 ar:
+  activerecord:
+    attributes:
+      employer:
+        email: 'البريد الإلكتروني'
+      student:
+        email: 'البريد الإلكتروني'
   news: 'آخر الأخبار'
   about_nass: 'من نحن؟'
   contact_us: 'تواصل معنا'
@@ -26,6 +32,12 @@ ar:
   signed_in_already: 'أنت بالفعل مسجل، إذا أردت التسجيل مجدداً يُرجى تسجيل الخروج أولاً'
   logged_in_as: 'مسجل دخول'
   logout: 'تسجيل خروج'
+  no_jobs: 'لا يوجد وظائف حالياً'
+  no_events: 'لا يوجد أحداث حالياً'
+  event_name: 'الحدث'
+  event_date: 'التاريخ'
+  calendar: 'عرض النتيجة'
+  list: 'عرض الاحداث'
   individual: 'افراد'
   for_students: 'للطلاب'
   for_individuals: 'للأفراد'

@@ -1,46 +1,26 @@
-.row.no-mrg
+.row.no-mrg.calendar-view
   .col-sm-9.nomrg
-    - date = Date.today
-    - 6.times do
-      .month
-        %h3= month_name(date.month)
-        - month_events = @events.where(:start_date => date.at_beginning_of_month..date.at_end_of_month)
-        %table.calendar
-          %tr
-            - start = date.at_beginning_of_month.wday
-            - for i in start...(start + 7) do
-              %th
-                = week_day(i%7)
-          - month = date.at_beginning_of_month..date.at_end_of_month
-          - month.each_slice(7) do |week|
-            %tr
-              - week.each do |i|
-                - event = month_events.where(:start_date => i.beginning_of_day..i.end_of_day).first
-                %td{:class => "day-cell #{"light-green pointer" if event}"}
-                  .day
-                    - if event
-                      %label.title
-                        = event.name.truncate(30)
-                      %label.full-title.hide
-                        = event.name
-                      .event-preview.hide
-                        = image_tag event.photo.url
-                        = raw event.description
-                      .event-link.hide
-                        .row
-                          .col-sm-12
-                            = link_to event.link_title, event.link, class: 'btn btn-success', target: :blank
-                  %span= local_number i.day
-      - date = date.advance months: 1
+    %div{role: 'tabpanel', class: 'tabs'}
+      %ul.nav.nav-tabs
+        %li{:role => "presentation"}
+          %a{"aria-controls" => "calendar", "data-toggle" => "tab", :href => "#calendar", :role => "tab"}
+            = t :calendar
+        %li{:role => "presentation"}
+          %a{"aria-controls" => "list", "data-toggle" => "tab", :href => "#list", :role => "tab"}
+            = t :list
+
+      .tab-content
+        = render partial: 'shared/calendar_pane'
+        = render partial: 'shared/list_pane'
   .col-sm-3
     = render partial: 'shared/contact_us'
     = render partial: 'shared/media_links'
     = render partial: 'shared/video'
-#event-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header.center
-        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-          %span{"aria-hidden" => "true"} &times;
-        %h4#myModalLabel.modal-title
-      .modal-body.center
+  #event-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog
+      .modal-content
+        .modal-header.center
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} &times;
+          %h4#myModalLabel.modal-title
+        .modal-body.center
