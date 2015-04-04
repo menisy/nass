@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter :load_events
   before_filter :load_education_levels
   before_filter :load_schools
+  before_filter :load_subscriptions
 
 
   before_filter :set_local
@@ -25,7 +26,6 @@ class ApplicationController < ActionController::Base
 
 
   def set_local
-
     I18n.locale = session[:lcl] || :ar
     Globalize.locale = session[:lcl] || :ar
   end
@@ -40,7 +40,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate!
-    authenticate_employer unless (student_signed_in? || employer_signed_in?)
+    authenticate_employer! unless (student_signed_in? || employer_signed_in?)
   end
 
   def load_events
@@ -71,6 +71,10 @@ class ApplicationController < ActionController::Base
 
   def load_industries
     @industries = ::Refinery::Companies::Industry.all
+  end
+
+  def load_subscriptions
+    @subscriptions = ::Refinery::Companies::Subscription.all
   end
 
   def load_contact

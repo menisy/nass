@@ -2,7 +2,7 @@ module Refinery
   module Schools
     class CourseClass < Refinery::Core::BaseModel
 
-      attr_accessible :name, :code, :visible, :start_date, :end_date, :status, :position
+      attr_accessible :name, :code, :visible, :start_date, :end_date, :status, :position, :course_id
 
       translates :name
 

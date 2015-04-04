@@ -1,6 +1,8 @@
 nb:
   refinery:
     plugins:
+      subscriptions:
+        title: Subscriptions
       partners:
         title: Partners
       job_applications:
@@ -27,6 +29,21 @@ nb:
         title: Companies
     companies:
       admin:
+        subscriptions:
+          actions:
+            create_new: Lag en ny Subscription
+            reorder: Endre rekkefølgen på Subscriptions
+            reorder_done: Ferdig å endre rekkefølgen Subscriptions
+          records:
+            title: Subscriptions
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Subscriptions enda. Klikk på "Lag en ny Subscription"
+              for å legge til din første subscription.
+          subscription:
+            view_live_html: Vis hvordan denne subscription ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne subscription
+            delete: Fjern denne subscription permanent
         partners:
           actions:
             create_new: Lag en ny Partner
@@ -207,6 +224,9 @@ nb:
               i et nytt vindu)</em>
             edit: Rediger denne company
             delete: Fjern denne company permanent
+      subscriptions:
+        show:
+          other: Andre Subscriptions
       partners:
         show:
           other: Andre Partners
@@ -245,6 +265,9 @@ nb:
           other: Andre Companies
   activerecord:
     attributes:
+      refinery/companies/subscription:
+        name: Name
+        level: Level
       refinery/companies/partner:
         name: Name
         description: Description

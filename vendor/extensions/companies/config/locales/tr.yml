@@ -1,6 +1,8 @@
 tr:
   refinery:
     plugins:
+      subscriptions:
+        title: Subscriptions
       partners:
         title: Partners
       job_applications:
@@ -27,6 +29,21 @@ tr:
         title: Companies
     companies:
       admin:
+        subscriptions:
+          actions:
+            create_new: Yeni Ekle Subscription
+            reorder: Tekrar sirala Subscriptions
+            reorder_done: Tekrar siralama tamamlandiSubscriptions
+          records:
+            title: Subscriptions
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Subscriptions yok henuz.  Tikla "Yeni Ekle
+              Subscription" eklemek senin ilk subscription.
+          subscription:
+            view_live_html: Bunu canlu subscription goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle subscription
+            delete: Bunu Sil subscription sonsuza dek
         partners:
           actions:
             create_new: Yeni Ekle Partner
@@ -207,6 +224,9 @@ tr:
               acar)</em>
             edit: Bunu Duzenle company
             delete: Bunu Sil company sonsuza dek
+      subscriptions:
+        show:
+          other: Diger Subscriptions
       partners:
         show:
           other: Diger Partners
@@ -245,6 +265,9 @@ tr:
           other: Diger Companies
   activerecord:
     attributes:
+      refinery/companies/subscription:
+        name: Name
+        level: Level
       refinery/companies/partner:
         name: Name
         description: Description

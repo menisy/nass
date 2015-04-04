@@ -3,7 +3,7 @@ module Refinery
     class Company < Refinery::Core::BaseModel
       self.table_name = 'refinery_companies'
 
-      attr_accessible :company_name, :main_address, :industry_id, :industry, :nob_egypt, :nob_abroad, :employer_id, :logo_id, :position, :contact_people_attributes, :address_attributes, :address, :logo
+      attr_accessible :company_name, :subscription_id, :main_address, :industry_id, :industry, :nob_egypt, :nob_abroad, :employer_id, :logo_id, :position, :contact_people_attributes, :address_attributes, :address, :logo, :field
 
       validates :company_name, presence: true, uniqueness: true
 
@@ -20,6 +20,8 @@ module Refinery
       belongs_to :employer
 
       belongs_to :industry
+
+      belongs_to :subscription
 
       has_one :address, class_name: '::Refinery::Addresses::Address'
 

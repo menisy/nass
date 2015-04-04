@@ -2,7 +2,7 @@ module Refinery
   module Schools
     class Program < Refinery::Core::BaseModel
 
-      attr_accessible :name, :description, :visible, :position
+      attr_accessible :name, :description, :visible, :position, :school_id
 
       translates :name, :description
 

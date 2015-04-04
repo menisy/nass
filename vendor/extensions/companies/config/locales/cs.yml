@@ -1,6 +1,8 @@
 cs:
   refinery:
     plugins:
+      subscriptions:
+        title: Subscriptions
       partners:
         title: Partners
       job_applications:
@@ -27,6 +29,21 @@ cs:
         title: Companies
     companies:
       admin:
+        subscriptions:
+          actions:
+            create_new: Přidat Subscription
+            reorder: "Řadit Subscriptions"
+            reorder_done: Konec řazení Subscriptions
+          records:
+            title: Subscriptions
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Subscriptions. Zvolte "Přidat
+              Subscription" pro přidání prvního subscription.
+          subscription:
+            view_live_html: Zobrazit náhled subscription<br/><em>(otevře se v novém
+              okně)</em>
+            edit: Upravit subscription
+            delete: Smazat subscription
         partners:
           actions:
             create_new: Přidat Partner
@@ -199,6 +216,9 @@ cs:
             view_live_html: Zobrazit náhled company<br/><em>(otevře se v novém okně)</em>
             edit: Upravit company
             delete: Smazat company
+      subscriptions:
+        show:
+          other: Další Subscriptions
       partners:
         show:
           other: Další Partners
@@ -237,6 +257,9 @@ cs:
           other: Další Companies
   activerecord:
     attributes:
+      refinery/companies/subscription:
+        name: Name
+        level: Level
       refinery/companies/partner:
         name: Name
         description: Description

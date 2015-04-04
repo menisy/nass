@@ -11,13 +11,15 @@
   </div>
 
   <div class='field'>
-    <%= f.label :description -%>
-    <%= f.text_field :description -%>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:description],
+                :object => "schools/course" -%>
   </div>
 
   <div class='field'>
     <%= f.label :program -%>
-    <%= f.select :program_id, @programs.collect{|i| [i.name, i.id]} -%>
+    <%= f.select :program_id, ::Refinery::Schools::Program.visible.collect{|i| [i.name, i.id]} -%>
   </div>
 
   <div class='field'>

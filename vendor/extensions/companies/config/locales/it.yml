@@ -1,6 +1,8 @@
 it:
   refinery:
     plugins:
+      subscriptions:
+        title: Subscriptions
       partners:
         title: Partners
       job_applications:
@@ -27,6 +29,21 @@ it:
         title: Companies
     companies:
       admin:
+        subscriptions:
+          actions:
+            create_new: Aggiungi Nuovo Subscription
+            reorder: Riordina Subscriptions
+            reorder_done: Termina il Riordino di Subscriptions
+          records:
+            title: Subscriptions
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Subscriptions. Clicca "Aggiungi Nuovo
+              Subscription" per aggiungere il tuo primo subscription.
+          subscription:
+            view_live_html: Guarda live questo subscription <br/><em>(apre una nuova
+              finestra)</em>
+            edit: Modifica questo subscription
+            delete: Rimuovi per sempre questo subscription
         partners:
           actions:
             create_new: Aggiungi Nuovo Partner
@@ -199,6 +216,9 @@ it:
             view_live_html: Guarda live questo company <br/><em>(apre una nuova finestra)</em>
             edit: Modifica questo company
             delete: Rimuovi per sempre questo company
+      subscriptions:
+        show:
+          other: Altri Subscriptions
       partners:
         show:
           other: Altri Partners
@@ -237,6 +257,9 @@ it:
           other: Altri Companies
   activerecord:
     attributes:
+      refinery/companies/subscription:
+        name: Name
+        level: Level
       refinery/companies/partner:
         name: Name
         description: Description

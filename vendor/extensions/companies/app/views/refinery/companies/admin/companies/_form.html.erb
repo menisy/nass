@@ -14,9 +14,19 @@
   </div>
 
   <div class='field'>
+    <%= f.label :subscription -%>
+    <%= f.select :subscription_id, ::Refinery::Companies::Subscription.all.collect{|i| [i.name, i.id]} -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :industry -%>
+    <%= f.select :industry_id, ::Refinery::Companies::Industry.all.collect{|i| [i.name, i.id]} -%>
+  </div>
+
+  <div class='field'>
     <%= render '/refinery/admin/wysiwyg',
                 :f => f,
-                :fields => [:main_address, :nob_egypt, :nob_abroad],
+                :fields => [:nob_egypt, :nob_abroad],
                 :object => "companies/company" -%>
   </div>
 

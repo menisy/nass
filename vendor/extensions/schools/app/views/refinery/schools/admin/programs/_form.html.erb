@@ -19,7 +19,7 @@
 
   <div class='field'>
     <%= f.label :school -%>
-    <%= f.select :school_id, @schools.collect{|i| [i.name, i.id]} -%>
+    <%= f.select :school_id, ::Refinery::Schools::School.visible.collect{|i| [i.name, i.id]} -%>
   </div>
 
   <div class='field'>

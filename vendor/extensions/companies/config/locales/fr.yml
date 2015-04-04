@@ -1,6 +1,8 @@
 fr:
   refinery:
     plugins:
+      subscriptions:
+        title: Subscriptions
       partners:
         title: Partners
       job_applications:
@@ -27,6 +29,22 @@ fr:
         title: Companies
     companies:
       admin:
+        subscriptions:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Subscription
+            reorder: Réordonner les Subscriptions
+            reorder_done: Fin de réordonnancement des Subscriptions
+          records:
+            title: Subscriptions
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Subscription. Cliquer sur
+              "Créer un(e) nouve(au/l/lle) Subscription" pour créer votre premi(er/ère)
+              subscription.
+          subscription:
+            view_live_html: Voir ce(t/tte) subscription <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) subscription
+            delete: Supprimer définitivement ce(t/tte) subscription
         partners:
           actions:
             create_new: Créer un(e) nouve(au/l/lle) Partner
@@ -203,6 +221,9 @@ fr:
             view_live_html: Voir ce(t/tte) company <br/><em>(Ouvre une nouvelle fenêtre)</em>
             edit: Modifier ce(t/tte) company
             delete: Supprimer définitivement ce(t/tte) company
+      subscriptions:
+        show:
+          other: Autres Subscriptions
       partners:
         show:
           other: Autres Partners
@@ -241,6 +262,9 @@ fr:
           other: Autres Companies
   activerecord:
     attributes:
+      refinery/companies/subscription:
+        name: Name
+        level: Level
       refinery/companies/partner:
         name: Name
         description: Description
