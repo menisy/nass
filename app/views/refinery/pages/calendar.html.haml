@@ -3,11 +3,11 @@
     %div{role: 'tabpanel', class: 'tabs'}
       %ul.nav.nav-tabs
         %li{:role => "presentation"}
-          %a{"aria-controls" => "calendar", "data-toggle" => "tab", :href => "#calendar", :role => "tab"}
-            = t :calendar
-        %li{:role => "presentation"}
           %a{"aria-controls" => "list", "data-toggle" => "tab", :href => "#list", :role => "tab"}
             = t :list
+        %li{:role => "presentation"}
+          %a{"aria-controls" => "calendar", "data-toggle" => "tab", :href => "#calendar", :role => "tab"}
+            = t :calendar
 
       .tab-content
         = render partial: 'shared/calendar_pane'
