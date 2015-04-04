@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   before_filter :load_education_levels
   before_filter :load_schools
   before_filter :load_subscriptions
+  before_filter :load_candidates
 
 
   before_filter :set_local
@@ -75,6 +76,11 @@ class ApplicationController < ActionController::Base
 
   def load_subscriptions
     @subscriptions = ::Refinery::Companies::Subscription.all
+  end
+
+  def load_candidates
+    infos = ::Refinery::PersonalInfos::PersonalInfo
+    @candidates = infos.nass_graduate + infos.not_nass_graduate
   end
 
   def load_contact

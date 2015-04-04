@@ -44,6 +44,9 @@
             <%= personal_info_fields.label :pob %> <br/>
             <%= personal_info_fields.text_field :pob, required: true %>
             <br>
+            <%= personal_info_fields.label :mobile %> <br/>
+            <%= personal_info_fields.text_field :mobile, required: true %>
+            <br>
             <%= personal_info_fields.label :gender %> <br/>
             <%= personal_info_fields.select :gender, [[(t :male), 1], [(t :female), 2]], required: true %>
             <br>
@@ -74,7 +77,7 @@
               <br>
 
               <%= address.label :city , I18n.translate('city')%>
-              <%= address.select(:city_id, @cities.collect {|d| [d.name, d.id] }, required: true) %>
+              <%= address.text_field :city, required: true %>
               <br>
               <br>
 

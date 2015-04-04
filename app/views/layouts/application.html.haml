@@ -22,6 +22,7 @@
     = render 'refinery/footer'
   .sii.hidden
     = someone_signed_in?
+    .employer_sign_in{data: {signed: employer_signed_in? ? '1' : '0'}}
     .current_lcl
       = I18n.locale.to_s
   #reg-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}

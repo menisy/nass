@@ -9,7 +9,10 @@ $(document).ready(function() {
     $('.alert-success').delay(8000).fadeOut(800);
   }
   if ($('.sii').text().trim() === 'true') {
-    $("li:contains('Registration')").hide();
+    $("li:contains('Registration')").remove();
+  }
+  if ($('.employer_sign_in').data('signed') == '0'){
+    $("li:contains('Candidates')").remove();
   }
   $('input[type="radio"]').on('click', function() {
     var selected, selectedVal;

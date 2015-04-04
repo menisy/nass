@@ -7,11 +7,11 @@ module Refinery
                       :city_id, :area
 
       #validates :name, :presence => true, :uniqueness => true
-      belongs_to :city
+      belongs_to :city, class_name: '::Refinery::Companies::City'
 
-      belongs_to :personal_info
+      belongs_to :personal_info, class_name: '::Refinery::PersonalInfos::PersonalInfo'
 
-      belongs_to :company
+      belongs_to :company, class_name: '::Refinery::Companies::Company'
     end
   end
 end

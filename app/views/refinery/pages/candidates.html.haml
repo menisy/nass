@@ -1,0 +1,28 @@
+.row.no-mrg
+  .col-sm-9
+    %h3= t :candidate_listing
+    %table.table.table-striped
+      - if @candidates && @candidates.count >= 1
+        %thead
+          %tr.small
+            %th #
+            %th.col-sm-3= t :name
+            %th.col-sm-2= t :education_level
+            %th= t :city
+            %th= t :skills
+            %th= t :nass_graduate
+        %tbody
+          - @candidates.each_with_index do |candidate, i|
+            %tr
+              %td= local_number i+1
+              %td= candidate.name
+              %td= candidate.education_level.try(:name)
+              %td= candidate.city.try(:name)
+              %td= candidate.skills
+              %td.center= "✓" if candidate.nass_graduate
+      - else
+        %h4= t :no_candidates
+  .col-sm-3
+    = render partial: 'shared/contact_us'
+    = render partial: 'shared/media_links'
+    = render partial: 'shared/video'

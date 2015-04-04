@@ -1,5 +1,5 @@
 .row.no-mrg
-  .col-sm-9.courses
+  .col-sm-9.schools
     %h1= t :courses
     - @schools.each do |school|
       %a{name: school.name.downcase, class: 'anchor'}
@@ -8,7 +8,7 @@
         %h4= program.name
         - program.courses.visible.each_with_index do |course, i|
           %p
-            = "#{i+1} - #{course.name}"
+            = "#{local_number(i+1)} - #{course.name}"
   .col-sm-3
     %span.green-title= t :schools
     .horz-divider

@@ -4,8 +4,13 @@
               :include_object_name => true %>
 
   <div class='field'>
-    <%= f.label :name -%>
-    <%= f.text_field :name, :class => 'larger widest' -%>
+    <%= f.label :first_name -%>
+    <%= f.text_field :first_name, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :last_name -%>
+    <%= f.text_field :last_name, :class => 'larger widest' -%>
   </div>
 
   <div class='field'>
@@ -24,8 +29,23 @@
   </div>
 
   <div class='field'>
+    <%= f.label :mobile -%>
+    <%= f.text_field :mobile -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :nass_graduate -%>
+    <%= f.check_box :nass_graduate, :checked => @personal_info[:nass_graduate] -%>
+  </div>
+
+  <div class='field'>
     <%= f.label :gender -%>
-    <%= f.number_field :gender -%>
+    <%= f.select :gender, [[(t :male), 1], [(t :female), 2]] %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :education_level -%>
+    <%= f.select :education_level_id, ::Refinery::Companies::EducationLevel.all.collect{|i| [i.name, i.id]} -%>
   </div>
 
   <div class='field'>
@@ -36,9 +56,38 @@
   <div class='field'>
     <%= render '/refinery/admin/wysiwyg',
                 :f => f,
-                :fields => [:languages, :address, :degrees, :skills, :skilled_jobs],
+                :fields => [:languages, :degrees, :skills, :skilled_jobs],
                 :object => "personal_infos/personal_info" -%>
   </div>
+
+  <% @personal_info.build_address unless @personal_info.address %>
+
+  <%= f.fields_for :address, @personal_info.address do |address| %>
+
+              <h4><%= t :address %></h4>
+
+              <%= address.label :street_name, I18n.translate('helpers.label.address.street_name') %>
+              <%= address.text_field :street_name, required: true %>
+              <br>
+
+              <%= address.label :building_no, I18n.translate('helpers.label.address.building_no') %>
+              <%= address.text_field :building_no, required: true %>
+              <br>
+
+              <%= address.label :apart_no, I18n.translate('helpers.label.address.apart_no') %>
+              <%= address.text_field :apart_no, required: true %>
+              <br>
+
+              <%= address.label :area, I18n.translate('area')%>
+              <%= address.text_field :area, required: true %>
+              <br>
+
+              <%= address.label :city , I18n.translate('city')%>
+              <%= address.select(:city_id, ::Refinery::Companies::City.all.collect {|d| [d.name, d.id] }, required: true) %>
+              <br>
+              <br>
+
+            <% end %>
 
   <div class='field'>
     <%= f.label :email -%>

@@ -3,7 +3,7 @@ class JobsController < ApplicationController
 
   before_filter :authenticate_student!, only: [:apply]
 
-  before_filter :authenticate!
+  before_filter :authenticate!, except: [:index, :show]
 
   def index
     if employer_signed_in?
