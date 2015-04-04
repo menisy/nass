@@ -5,6 +5,12 @@ module Refinery
 
       attr_accessible :name, :description, :photo_id, :logo_id, :visible, :position
 
+      translates :name, :description
+
+      class Translation
+        attr_accessible :locale
+      end
+
       validates :name, :presence => true, :uniqueness => true
 
       belongs_to :photo, :class_name => '::Refinery::Image'
@@ -13,7 +19,7 @@ module Refinery
 
       has_many :programs
 
-      has_and_belongs_to_many :partners, class_name: '::Refinery::Companies::Partner', join_table: :school_partners
+      has_and_belongs_to_many :partners, class_name: '::Refinery::Companies::Partner', join_table: :school_partners, foreign_key: :school_id
 
       scope :visible, -> { where(visible: true) }
 

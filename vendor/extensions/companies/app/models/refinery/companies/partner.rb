@@ -12,7 +12,7 @@ module Refinery
 
       validates :name, :presence => true, :uniqueness => true
 
-      has_and_belongs_to_many :schools, class_name: '::Refinery::Schools::School', join_table: :school_partners
+      has_and_belongs_to_many :schools, class_name: '::Refinery::Schools::School', join_table: :school_partners, foreign_key: :partner_id
     end
   end
 end
