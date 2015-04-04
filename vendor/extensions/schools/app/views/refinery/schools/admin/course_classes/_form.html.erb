@@ -1,0 +1,47 @@
+<%= form_for [refinery, :schools_admin, @course_class] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @course_class,
+              :include_object_name => true %>
+
+  <%= render '/refinery/admin/locale_picker',
+              :current_locale => Globalize.locale %>
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :code -%>
+    <%= f.text_field :code -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :visible -%>
+    <%= f.check_box :visible, :checked => @course_class[:visible] -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :start_date -%>
+    <%= f.date_select :start_date -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :end_date -%>
+    <%= f.text_field :end_date -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :course -%>
+    <%= f.select :course_id, @courses.collect{|i| [i.name, i.id]} -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :status -%>
+    <%= f.number_field :status -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.course_classes.admin.course_classes.course_class'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @course_class.name) -%>
+<% end -%>

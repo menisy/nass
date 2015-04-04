@@ -1,6 +1,8 @@
 es:
   refinery:
     plugins:
+      partners:
+        title: Partners
       job_applications:
         title: Job Applications
       areas:
@@ -25,6 +27,21 @@ es:
         title: Companies
     companies:
       admin:
+        partners:
+          actions:
+            create_new: Crear nuevo partner
+            reorder: Reordenar partners
+            reorder_done: Reordenación de partners completada
+          records:
+            title: Partners
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay partners todavía. Pulsa en "Crear nuevo Partner"
+              para crear tu primer partner.
+          partner:
+            view_live_html: Ver este partner como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este partner
+            delete: Borrar este partner para siempre
         job_applications:
           actions:
             create_new: Crear nuevo job application
@@ -190,6 +207,9 @@ es:
               en ventana nueva)</em>
             edit: Editar este company
             delete: Borrar este company para siempre
+      partners:
+        show:
+          other: Otros partners
       job_applications:
         show:
           other: Otros job applications
@@ -225,6 +245,10 @@ es:
           other: Otros companies
   activerecord:
     attributes:
+      refinery/companies/partner:
+        name: Name
+        description: Description
+        website: Website
       refinery/companies/job_application:
         status: Status
       refinery/companies/area:

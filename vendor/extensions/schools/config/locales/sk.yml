@@ -1,0 +1,105 @@
+sk:
+  refinery:
+    plugins:
+      course_classes:
+        title: Course Classes
+      courses:
+        title: Courses
+      programs:
+        title: Programs
+      schools:
+        title: Schools
+    schools:
+      admin:
+        course_classes:
+          actions:
+            create_new: Pridať Course Class
+            reorder: Preusporiadať Course Classes
+            reorder_done: Koniec radenia Course Classes
+          records:
+            title: Course Classes
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Course Classes. Kliknite na "Pridať
+              Course Class" pre pridanie prvého course class.
+          course_class:
+            view_live_html: Zobraziť náhľad course class<br/><em>(otvorí sa v novom
+              okne)</em>
+            edit: Upraviť course class
+            delete: Zmazať course class
+        courses:
+          actions:
+            create_new: Pridať Course
+            reorder: Preusporiadať Courses
+            reorder_done: Koniec radenia Courses
+          records:
+            title: Courses
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Courses. Kliknite na "Pridať Course"
+              pre pridanie prvého course.
+          course:
+            view_live_html: Zobraziť náhľad course<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť course
+            delete: Zmazať course
+        programs:
+          actions:
+            create_new: Pridať Program
+            reorder: Preusporiadať Programs
+            reorder_done: Koniec radenia Programs
+          records:
+            title: Programs
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Programs. Kliknite na "Pridať Program"
+              pre pridanie prvého program.
+          program:
+            view_live_html: Zobraziť náhľad program<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť program
+            delete: Zmazať program
+        schools:
+          actions:
+            create_new: Pridať School
+            reorder: Preusporiadať Schools
+            reorder_done: Koniec radenia Schools
+          records:
+            title: Schools
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Schools. Kliknite na "Pridať School"
+              pre pridanie prvého school.
+          school:
+            view_live_html: Zobraziť náhľad school<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť school
+            delete: Zmazať school
+      course_classes:
+        show:
+          other: Daľšie Course Classes
+      courses:
+        show:
+          other: Daľšie Courses
+      programs:
+        show:
+          other: Daľšie Programs
+      schools:
+        show:
+          other: Daľšie Schools
+  activerecord:
+    attributes:
+      refinery/schools/course_class:
+        name: Name
+        code: Code
+        visible: Visible
+        start_date: Start Date
+        end_date: End Date
+        status: Status
+      refinery/schools/course:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/program:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/school:
+        name: Name
+        description: Description
+        photo: Photo
+        logo: Logo
+        visible: Visible

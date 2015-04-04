@@ -79,8 +79,8 @@
               <br>
 
             <% end %>
-            <%= personal_info_fields.label :degrees %> <br/>
-            <%= personal_info_fields.text_area :degrees, required: true %>
+            <%= personal_info_fields.label :education_level %> <br/>
+            <%= personal_info_fields.select :education_level_id, @education_levels.collect{|d| [d.name, d.id]} ,required: true %>
             <br>
             <%= personal_info_fields.label :skills %> <br/>
             <%= personal_info_fields.text_area :skills, required: true %>

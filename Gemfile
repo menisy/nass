@@ -79,3 +79,4 @@ gem 'refinerycms-companies', :path => 'vendor/extensions'
 gem 'refinerycms-addresses', :path => 'vendor/extensions'
 
 gem 'refinerycms-events', :path => 'vendor/extensions'
+gem 'refinerycms-schools', :path => 'vendor/extensions'

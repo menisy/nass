@@ -42,3 +42,6 @@ Refinery::Addresses::Engine.load_seed
 
 # Added by Refinery CMS Events extension
 Refinery::Events::Engine.load_seed
+
+# Added by Refinery CMS Schools extension
+Refinery::Schools::Engine.load_seed

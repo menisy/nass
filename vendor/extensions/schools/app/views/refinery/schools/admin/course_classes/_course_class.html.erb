@@ -1,0 +1,28 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(course_class) -%>">
+  <span class='title'>
+    <%= course_class.name %>
+
+    <% if Refinery::I18n.frontend_locales.many? %>
+      <span class='preview'>
+        <% course_class.translations.each do |translation| %>
+          <% if translation.name.present? %>
+            <%= link_to refinery_icon_tag("flags/#{translation.locale}.png", :size => '16x11'),
+                         refinery.edit_schools_admin_course_class_path(course_class, :switch_locale => translation.locale),
+                         :class => 'locale' %>
+          <% end %>
+        <% end %>
+      </span>
+    <% end %>
+
+  </span>
+  <span class='actions'>
+    
+    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_schools_admin_course_class_path(course_class),
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), refinery.schools_admin_course_class_path(course_class),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :confirm => t('message', :scope => 'refinery.admin.delete', :title => course_class.name),
+        :method => :delete %>
+  </span>
+</li>

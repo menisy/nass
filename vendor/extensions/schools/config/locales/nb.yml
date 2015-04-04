@@ -1,0 +1,108 @@
+nb:
+  refinery:
+    plugins:
+      course_classes:
+        title: Course Classes
+      courses:
+        title: Courses
+      programs:
+        title: Programs
+      schools:
+        title: Schools
+    schools:
+      admin:
+        course_classes:
+          actions:
+            create_new: Lag en ny Course Class
+            reorder: Endre rekkefølgen på Course Classes
+            reorder_done: Ferdig å endre rekkefølgen Course Classes
+          records:
+            title: Course Classes
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Course Classes enda. Klikk på "Lag en ny Course
+              Class" for å legge til din første course class.
+          course_class:
+            view_live_html: Vis hvordan denne course class ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne course class
+            delete: Fjern denne course class permanent
+        courses:
+          actions:
+            create_new: Lag en ny Course
+            reorder: Endre rekkefølgen på Courses
+            reorder_done: Ferdig å endre rekkefølgen Courses
+          records:
+            title: Courses
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Courses enda. Klikk på "Lag en ny Course" for
+              å legge til din første course.
+          course:
+            view_live_html: Vis hvordan denne course ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne course
+            delete: Fjern denne course permanent
+        programs:
+          actions:
+            create_new: Lag en ny Program
+            reorder: Endre rekkefølgen på Programs
+            reorder_done: Ferdig å endre rekkefølgen Programs
+          records:
+            title: Programs
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Programs enda. Klikk på "Lag en ny Program"
+              for å legge til din første program.
+          program:
+            view_live_html: Vis hvordan denne program ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne program
+            delete: Fjern denne program permanent
+        schools:
+          actions:
+            create_new: Lag en ny School
+            reorder: Endre rekkefølgen på Schools
+            reorder_done: Ferdig å endre rekkefølgen Schools
+          records:
+            title: Schools
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Schools enda. Klikk på "Lag en ny School" for
+              å legge til din første school.
+          school:
+            view_live_html: Vis hvordan denne school ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne school
+            delete: Fjern denne school permanent
+      course_classes:
+        show:
+          other: Andre Course Classes
+      courses:
+        show:
+          other: Andre Courses
+      programs:
+        show:
+          other: Andre Programs
+      schools:
+        show:
+          other: Andre Schools
+  activerecord:
+    attributes:
+      refinery/schools/course_class:
+        name: Name
+        code: Code
+        visible: Visible
+        start_date: Start Date
+        end_date: End Date
+        status: Status
+      refinery/schools/course:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/program:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/school:
+        name: Name
+        description: Description
+        photo: Photo
+        logo: Logo
+        visible: Visible

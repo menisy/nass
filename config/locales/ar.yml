@@ -10,6 +10,7 @@ ar:
   contact_us: 'تواصل معنا'
   partners: 'شركاؤنا'
   departments: 'الأقسام'
+  schools: 'المدارس'
   sign_up: 'تسجيل العضوية'
   login_details: 'بيانات تسجيل الدخول'
   company_details: 'بيانات الشركة'
@@ -107,6 +108,7 @@ ar:
         password_confirmation: 'تأكيد كلمة المرور'
       personal_info:
         name: 'الاسم'
+        education_level: 'المؤهل'
         first_name: 'الاسم الاول'
         father_name: 'اسم الأب'
         last_name: 'اسم العائلة'

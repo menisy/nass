@@ -186,4 +186,16 @@ Refinery::Core::Engine.routes.draw do
     end
   end
 
+
+  # Admin routes
+  namespace :companies, :path => '' do
+    namespace :admin, :path => "#{Refinery::Core.backend_route}/companies" do
+      resources :partners, :except => :show do
+        collection do
+          post :update_positions
+        end
+      end
+    end
+  end
+
 end

@@ -1,0 +1,108 @@
+es:
+  refinery:
+    plugins:
+      course_classes:
+        title: Course Classes
+      courses:
+        title: Courses
+      programs:
+        title: Programs
+      schools:
+        title: Schools
+    schools:
+      admin:
+        course_classes:
+          actions:
+            create_new: Crear nuevo course class
+            reorder: Reordenar course classes
+            reorder_done: Reordenación de course classes completada
+          records:
+            title: Course Classes
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay course classes todavía. Pulsa en "Crear nuevo Course
+              Class" para crear tu primer course class.
+          course_class:
+            view_live_html: Ver este course class como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este course class
+            delete: Borrar este course class para siempre
+        courses:
+          actions:
+            create_new: Crear nuevo course
+            reorder: Reordenar courses
+            reorder_done: Reordenación de courses completada
+          records:
+            title: Courses
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay courses todavía. Pulsa en "Crear nuevo Course" para
+              crear tu primer course.
+          course:
+            view_live_html: Ver este course como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este course
+            delete: Borrar este course para siempre
+        programs:
+          actions:
+            create_new: Crear nuevo program
+            reorder: Reordenar programs
+            reorder_done: Reordenación de programs completada
+          records:
+            title: Programs
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay programs todavía. Pulsa en "Crear nuevo Program"
+              para crear tu primer program.
+          program:
+            view_live_html: Ver este program como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este program
+            delete: Borrar este program para siempre
+        schools:
+          actions:
+            create_new: Crear nuevo school
+            reorder: Reordenar schools
+            reorder_done: Reordenación de schools completada
+          records:
+            title: Schools
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay schools todavía. Pulsa en "Crear nuevo School" para
+              crear tu primer school.
+          school:
+            view_live_html: Ver este school como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este school
+            delete: Borrar este school para siempre
+      course_classes:
+        show:
+          other: Otros course classes
+      courses:
+        show:
+          other: Otros courses
+      programs:
+        show:
+          other: Otros programs
+      schools:
+        show:
+          other: Otros schools
+  activerecord:
+    attributes:
+      refinery/schools/course_class:
+        name: Name
+        code: Code
+        visible: Visible
+        start_date: Start Date
+        end_date: End Date
+        status: Status
+      refinery/schools/course:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/program:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/school:
+        name: Name
+        description: Description
+        photo: Photo
+        logo: Logo
+        visible: Visible

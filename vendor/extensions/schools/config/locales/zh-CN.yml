@@ -1,0 +1,101 @@
+zh-CN:
+  refinery:
+    plugins:
+      course_classes:
+        title: Course Classes
+      courses:
+        title: Courses
+      programs:
+        title: Programs
+      schools:
+        title: Schools
+    schools:
+      admin:
+        course_classes:
+          actions:
+            create_new: "建立新的 Course Class"
+            reorder: "对 Course Classes 重新排序"
+            reorder_done: "对 Course Classes 的重新排序结束"
+          records:
+            title: Course Classes
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Course Classes . 点击 "Add New Course Class" 创建一个course
+              class.
+          course_class:
+            view_live_html: "查看 course class 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 course class"
+            delete: "永久删除 course class"
+        courses:
+          actions:
+            create_new: "建立新的 Course"
+            reorder: "对 Courses 重新排序"
+            reorder_done: "对 Courses 的重新排序结束"
+          records:
+            title: Courses
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Courses . 点击 "Add New Course" 创建一个course.
+          course:
+            view_live_html: "查看 course 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 course"
+            delete: "永久删除 course"
+        programs:
+          actions:
+            create_new: "建立新的 Program"
+            reorder: "对 Programs 重新排序"
+            reorder_done: "对 Programs 的重新排序结束"
+          records:
+            title: Programs
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Programs . 点击 "Add New Program" 创建一个program.
+          program:
+            view_live_html: "查看 program 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 program"
+            delete: "永久删除 program"
+        schools:
+          actions:
+            create_new: "建立新的 School"
+            reorder: "对 Schools 重新排序"
+            reorder_done: "对 Schools 的重新排序结束"
+          records:
+            title: Schools
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Schools . 点击 "Add New School" 创建一个school.
+          school:
+            view_live_html: "查看 school 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 school"
+            delete: "永久删除 school"
+      course_classes:
+        show:
+          other: "其他 Course Classes"
+      courses:
+        show:
+          other: "其他 Courses"
+      programs:
+        show:
+          other: "其他 Programs"
+      schools:
+        show:
+          other: "其他 Schools"
+  activerecord:
+    attributes:
+      refinery/schools/course_class:
+        name: Name
+        code: Code
+        visible: Visible
+        start_date: Start Date
+        end_date: End Date
+        status: Status
+      refinery/schools/course:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/program:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/school:
+        name: Name
+        description: Description
+        photo: Photo
+        logo: Logo
+        visible: Visible

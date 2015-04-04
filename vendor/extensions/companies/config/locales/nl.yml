@@ -1,6 +1,8 @@
 nl:
   refinery:
     plugins:
+      partners:
+        title: Partners
       job_applications:
         title: Job Applications
       areas:
@@ -25,6 +27,21 @@ nl:
         title: Companies
     companies:
       admin:
+        partners:
+          actions:
+            create_new: Nieuwe Partner toevoegen
+            reorder: De volgorde van de Partners wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Partner-volgorde
+          records:
+            title: Partners
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Partners. Druk op 'Nieuwe Partner toevoegen'
+              om de eerste toe te voegen.
+          partner:
+            view_live_html: Deze partner op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
+            edit: Bewerk deze partner
+            delete: Deze partner definitief verwijderen
         job_applications:
           actions:
             create_new: Nieuwe Job Application toevoegen
@@ -190,6 +207,9 @@ nl:
               een nieuw venster)</em>
             edit: Bewerk deze company
             delete: Deze company definitief verwijderen
+      partners:
+        show:
+          other: Andere Partners
       job_applications:
         show:
           other: Andere Job Applications
@@ -225,6 +245,10 @@ nl:
           other: Andere Companies
   activerecord:
     attributes:
+      refinery/companies/partner:
+        name: Name
+        description: Description
+        website: Website
       refinery/companies/job_application:
         status: Status
       refinery/companies/area:

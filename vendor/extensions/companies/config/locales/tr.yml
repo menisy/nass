@@ -1,6 +1,8 @@
 tr:
   refinery:
     plugins:
+      partners:
+        title: Partners
       job_applications:
         title: Job Applications
       areas:
@@ -25,6 +27,21 @@ tr:
         title: Companies
     companies:
       admin:
+        partners:
+          actions:
+            create_new: Yeni Ekle Partner
+            reorder: Tekrar sirala Partners
+            reorder_done: Tekrar siralama tamamlandiPartners
+          records:
+            title: Partners
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Partners yok henuz.  Tikla "Yeni Ekle Partner"
+              eklemek senin ilk partner.
+          partner:
+            view_live_html: Bunu canlu partner goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle partner
+            delete: Bunu Sil partner sonsuza dek
         job_applications:
           actions:
             create_new: Yeni Ekle Job Application
@@ -190,6 +207,9 @@ tr:
               acar)</em>
             edit: Bunu Duzenle company
             delete: Bunu Sil company sonsuza dek
+      partners:
+        show:
+          other: Diger Partners
       job_applications:
         show:
           other: Diger Job Applications
@@ -225,6 +245,10 @@ tr:
           other: Diger Companies
   activerecord:
     attributes:
+      refinery/companies/partner:
+        name: Name
+        description: Description
+        website: Website
       refinery/companies/job_application:
         status: Status
       refinery/companies/area:

@@ -1,0 +1,105 @@
+it:
+  refinery:
+    plugins:
+      course_classes:
+        title: Course Classes
+      courses:
+        title: Courses
+      programs:
+        title: Programs
+      schools:
+        title: Schools
+    schools:
+      admin:
+        course_classes:
+          actions:
+            create_new: Aggiungi Nuovo Course Class
+            reorder: Riordina Course Classes
+            reorder_done: Termina il Riordino di Course Classes
+          records:
+            title: Course Classes
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Course Classes. Clicca "Aggiungi Nuovo
+              Course Class" per aggiungere il tuo primo course class.
+          course_class:
+            view_live_html: Guarda live questo course class <br/><em>(apre una nuova
+              finestra)</em>
+            edit: Modifica questo course class
+            delete: Rimuovi per sempre questo course class
+        courses:
+          actions:
+            create_new: Aggiungi Nuovo Course
+            reorder: Riordina Courses
+            reorder_done: Termina il Riordino di Courses
+          records:
+            title: Courses
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Courses. Clicca "Aggiungi Nuovo Course"
+              per aggiungere il tuo primo course.
+          course:
+            view_live_html: Guarda live questo course <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo course
+            delete: Rimuovi per sempre questo course
+        programs:
+          actions:
+            create_new: Aggiungi Nuovo Program
+            reorder: Riordina Programs
+            reorder_done: Termina il Riordino di Programs
+          records:
+            title: Programs
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Programs. Clicca "Aggiungi Nuovo Program"
+              per aggiungere il tuo primo program.
+          program:
+            view_live_html: Guarda live questo program <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo program
+            delete: Rimuovi per sempre questo program
+        schools:
+          actions:
+            create_new: Aggiungi Nuovo School
+            reorder: Riordina Schools
+            reorder_done: Termina il Riordino di Schools
+          records:
+            title: Schools
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Schools. Clicca "Aggiungi Nuovo School"
+              per aggiungere il tuo primo school.
+          school:
+            view_live_html: Guarda live questo school <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo school
+            delete: Rimuovi per sempre questo school
+      course_classes:
+        show:
+          other: Altri Course Classes
+      courses:
+        show:
+          other: Altri Courses
+      programs:
+        show:
+          other: Altri Programs
+      schools:
+        show:
+          other: Altri Schools
+  activerecord:
+    attributes:
+      refinery/schools/course_class:
+        name: Name
+        code: Code
+        visible: Visible
+        start_date: Start Date
+        end_date: End Date
+        status: Status
+      refinery/schools/course:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/program:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/school:
+        name: Name
+        description: Description
+        photo: Photo
+        logo: Logo
+        visible: Visible

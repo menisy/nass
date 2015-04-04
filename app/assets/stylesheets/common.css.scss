@@ -135,3 +135,16 @@ li.nav-li a{
 span.margined{
   margin: 0px 10px 0px 10px;
 }
+.full-width{
+  width: 100%;
+}
+.schools ul li{
+  max-width: 80px;
+  overflow: hidden;
+}
+a.anchor{
+  display: block;
+  position: relative;
+  top: -210px;
+  visibility: hidden;
+}

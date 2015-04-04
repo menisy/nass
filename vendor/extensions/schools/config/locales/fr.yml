@@ -1,0 +1,106 @@
+fr:
+  refinery:
+    plugins:
+      course_classes:
+        title: Course Classes
+      courses:
+        title: Courses
+      programs:
+        title: Programs
+      schools:
+        title: Schools
+    schools:
+      admin:
+        course_classes:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Course Class
+            reorder: Réordonner les Course Classes
+            reorder_done: Fin de réordonnancement des Course Classes
+          records:
+            title: Course Classes
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Course Class. Cliquer sur
+              "Créer un(e) nouve(au/l/lle) Course Class" pour créer votre premi(er/ère)
+              course class.
+          course_class:
+            view_live_html: Voir ce(t/tte) course class <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) course class
+            delete: Supprimer définitivement ce(t/tte) course class
+        courses:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Course
+            reorder: Réordonner les Courses
+            reorder_done: Fin de réordonnancement des Courses
+          records:
+            title: Courses
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Course. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Course" pour créer votre premi(er/ère) course.
+          course:
+            view_live_html: Voir ce(t/tte) course <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) course
+            delete: Supprimer définitivement ce(t/tte) course
+        programs:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Program
+            reorder: Réordonner les Programs
+            reorder_done: Fin de réordonnancement des Programs
+          records:
+            title: Programs
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Program. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Program" pour créer votre premi(er/ère) program.
+          program:
+            view_live_html: Voir ce(t/tte) program <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) program
+            delete: Supprimer définitivement ce(t/tte) program
+        schools:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) School
+            reorder: Réordonner les Schools
+            reorder_done: Fin de réordonnancement des Schools
+          records:
+            title: Schools
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) School. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) School" pour créer votre premi(er/ère) school.
+          school:
+            view_live_html: Voir ce(t/tte) school <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) school
+            delete: Supprimer définitivement ce(t/tte) school
+      course_classes:
+        show:
+          other: Autres Course Classes
+      courses:
+        show:
+          other: Autres Courses
+      programs:
+        show:
+          other: Autres Programs
+      schools:
+        show:
+          other: Autres Schools
+  activerecord:
+    attributes:
+      refinery/schools/course_class:
+        name: Name
+        code: Code
+        visible: Visible
+        start_date: Start Date
+        end_date: End Date
+        status: Status
+      refinery/schools/course:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/program:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/school:
+        name: Name
+        description: Description
+        photo: Photo
+        logo: Logo
+        visible: Visible

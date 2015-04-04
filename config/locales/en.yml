@@ -19,6 +19,7 @@ en:
   contact_person: 'Contact Person'
   sign_up: 'Sign up'
   individual: 'Individual'
+  schools: 'Schools'
   male: 'Male'
   female: 'Female'
   single: 'Single'
@@ -123,6 +124,7 @@ en:
         password_confirmation: 'Password confirmation'
       personal_info:
         name: 'Name'
+        education_level: 'Education level'
         first_name: 'First Name'
         father_name: 'Second Name'
         last_name: 'Last Name'

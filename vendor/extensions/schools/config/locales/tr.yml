@@ -1,0 +1,108 @@
+tr:
+  refinery:
+    plugins:
+      course_classes:
+        title: Course Classes
+      courses:
+        title: Courses
+      programs:
+        title: Programs
+      schools:
+        title: Schools
+    schools:
+      admin:
+        course_classes:
+          actions:
+            create_new: Yeni Ekle Course Class
+            reorder: Tekrar sirala Course Classes
+            reorder_done: Tekrar siralama tamamlandiCourse Classes
+          records:
+            title: Course Classes
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Course Classes yok henuz.  Tikla "Yeni Ekle
+              Course Class" eklemek senin ilk course class.
+          course_class:
+            view_live_html: Bunu canlu course class goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle course class
+            delete: Bunu Sil course class sonsuza dek
+        courses:
+          actions:
+            create_new: Yeni Ekle Course
+            reorder: Tekrar sirala Courses
+            reorder_done: Tekrar siralama tamamlandiCourses
+          records:
+            title: Courses
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Courses yok henuz.  Tikla "Yeni Ekle Course"
+              eklemek senin ilk course.
+          course:
+            view_live_html: Bunu canlu course goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle course
+            delete: Bunu Sil course sonsuza dek
+        programs:
+          actions:
+            create_new: Yeni Ekle Program
+            reorder: Tekrar sirala Programs
+            reorder_done: Tekrar siralama tamamlandiPrograms
+          records:
+            title: Programs
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Programs yok henuz.  Tikla "Yeni Ekle Program"
+              eklemek senin ilk program.
+          program:
+            view_live_html: Bunu canlu program goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle program
+            delete: Bunu Sil program sonsuza dek
+        schools:
+          actions:
+            create_new: Yeni Ekle School
+            reorder: Tekrar sirala Schools
+            reorder_done: Tekrar siralama tamamlandiSchools
+          records:
+            title: Schools
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Schools yok henuz.  Tikla "Yeni Ekle School"
+              eklemek senin ilk school.
+          school:
+            view_live_html: Bunu canlu school goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle school
+            delete: Bunu Sil school sonsuza dek
+      course_classes:
+        show:
+          other: Diger Course Classes
+      courses:
+        show:
+          other: Diger Courses
+      programs:
+        show:
+          other: Diger Programs
+      schools:
+        show:
+          other: Diger Schools
+  activerecord:
+    attributes:
+      refinery/schools/course_class:
+        name: Name
+        code: Code
+        visible: Visible
+        start_date: Start Date
+        end_date: End Date
+        status: Status
+      refinery/schools/course:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/program:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/school:
+        name: Name
+        description: Description
+        photo: Photo
+        logo: Logo
+        visible: Visible

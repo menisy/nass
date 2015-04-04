@@ -1,6 +1,8 @@
 cs:
   refinery:
     plugins:
+      partners:
+        title: Partners
       job_applications:
         title: Job Applications
       areas:
@@ -25,6 +27,20 @@ cs:
         title: Companies
     companies:
       admin:
+        partners:
+          actions:
+            create_new: Přidat Partner
+            reorder: "Řadit Partners"
+            reorder_done: Konec řazení Partners
+          records:
+            title: Partners
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Partners. Zvolte "Přidat Partner"
+              pro přidání prvního partner.
+          partner:
+            view_live_html: Zobrazit náhled partner<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit partner
+            delete: Smazat partner
         job_applications:
           actions:
             create_new: Přidat Job Application
@@ -183,6 +199,9 @@ cs:
             view_live_html: Zobrazit náhled company<br/><em>(otevře se v novém okně)</em>
             edit: Upravit company
             delete: Smazat company
+      partners:
+        show:
+          other: Další Partners
       job_applications:
         show:
           other: Další Job Applications
@@ -218,6 +237,10 @@ cs:
           other: Další Companies
   activerecord:
     attributes:
+      refinery/companies/partner:
+        name: Name
+        description: Description
+        website: Website
       refinery/companies/job_application:
         status: Status
       refinery/companies/area:

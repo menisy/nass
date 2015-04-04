@@ -1,0 +1,104 @@
+en:
+  refinery:
+    plugins:
+      course_classes:
+        title: Course Classes
+      courses:
+        title: Courses
+      programs:
+        title: Programs
+      schools:
+        title: Schools
+    schools:
+      admin:
+        course_classes:
+          actions:
+            create_new: Add New Course Class
+            reorder: Reorder Course Classes
+            reorder_done: Done Reordering Course Classes
+          records:
+            title: Course Classes
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Course Classes yet. Click "Add New Course Class"
+              to add your first course class.
+          course_class:
+            view_live_html: View this course class live <br/><em>(opens in a new window)</em>
+            edit: Edit this course class
+            delete: Remove this course class forever
+        courses:
+          actions:
+            create_new: Add New Course
+            reorder: Reorder Courses
+            reorder_done: Done Reordering Courses
+          records:
+            title: Courses
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Courses yet. Click "Add New Course" to add
+              your first course.
+          course:
+            view_live_html: View this course live <br/><em>(opens in a new window)</em>
+            edit: Edit this course
+            delete: Remove this course forever
+        programs:
+          actions:
+            create_new: Add New Program
+            reorder: Reorder Programs
+            reorder_done: Done Reordering Programs
+          records:
+            title: Programs
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Programs yet. Click "Add New Program" to add
+              your first program.
+          program:
+            view_live_html: View this program live <br/><em>(opens in a new window)</em>
+            edit: Edit this program
+            delete: Remove this program forever
+        schools:
+          actions:
+            create_new: Add New School
+            reorder: Reorder Schools
+            reorder_done: Done Reordering Schools
+          records:
+            title: Schools
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Schools yet. Click "Add New School" to add
+              your first school.
+          school:
+            view_live_html: View this school live <br/><em>(opens in a new window)</em>
+            edit: Edit this school
+            delete: Remove this school forever
+      course_classes:
+        show:
+          other: Other Course Classes
+      courses:
+        show:
+          other: Other Courses
+      programs:
+        show:
+          other: Other Programs
+      schools:
+        show:
+          other: Other Schools
+  activerecord:
+    attributes:
+      refinery/schools/course_class:
+        name: Name
+        code: Code
+        visible: Visible
+        start_date: Start Date
+        end_date: End Date
+        status: Status
+      refinery/schools/course:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/program:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/school:
+        name: Name
+        description: Description
+        photo: Photo
+        logo: Logo
+        visible: Visible

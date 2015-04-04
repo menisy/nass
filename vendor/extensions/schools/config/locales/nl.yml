@@ -1,0 +1,108 @@
+nl:
+  refinery:
+    plugins:
+      course_classes:
+        title: Course Classes
+      courses:
+        title: Courses
+      programs:
+        title: Programs
+      schools:
+        title: Schools
+    schools:
+      admin:
+        course_classes:
+          actions:
+            create_new: Nieuwe Course Class toevoegen
+            reorder: De volgorde van de Course Classes wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Course Class-volgorde
+          records:
+            title: Course Classes
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Course Classes. Druk op 'Nieuwe Course
+              Class toevoegen' om de eerste toe te voegen.
+          course_class:
+            view_live_html: Deze course class op de website bekijken <br/><em>(opent
+              in een nieuw venster)</em>
+            edit: Bewerk deze course class
+            delete: Deze course class definitief verwijderen
+        courses:
+          actions:
+            create_new: Nieuwe Course toevoegen
+            reorder: De volgorde van de Courses wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Course-volgorde
+          records:
+            title: Courses
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Courses. Druk op 'Nieuwe Course toevoegen'
+              om de eerste toe te voegen.
+          course:
+            view_live_html: Deze course op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
+            edit: Bewerk deze course
+            delete: Deze course definitief verwijderen
+        programs:
+          actions:
+            create_new: Nieuwe Program toevoegen
+            reorder: De volgorde van de Programs wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Program-volgorde
+          records:
+            title: Programs
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Programs. Druk op 'Nieuwe Program toevoegen'
+              om de eerste toe te voegen.
+          program:
+            view_live_html: Deze program op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
+            edit: Bewerk deze program
+            delete: Deze program definitief verwijderen
+        schools:
+          actions:
+            create_new: Nieuwe School toevoegen
+            reorder: De volgorde van de Schools wijzigen
+            reorder_done: Klaar met het wijzingen van de van de School-volgorde
+          records:
+            title: Schools
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Schools. Druk op 'Nieuwe School toevoegen'
+              om de eerste toe te voegen.
+          school:
+            view_live_html: Deze school op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
+            edit: Bewerk deze school
+            delete: Deze school definitief verwijderen
+      course_classes:
+        show:
+          other: Andere Course Classes
+      courses:
+        show:
+          other: Andere Courses
+      programs:
+        show:
+          other: Andere Programs
+      schools:
+        show:
+          other: Andere Schools
+  activerecord:
+    attributes:
+      refinery/schools/course_class:
+        name: Name
+        code: Code
+        visible: Visible
+        start_date: Start Date
+        end_date: End Date
+        status: Status
+      refinery/schools/course:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/program:
+        name: Name
+        description: Description
+        visible: Visible
+      refinery/schools/school:
+        name: Name
+        description: Description
+        photo: Photo
+        logo: Logo
+        visible: Visible

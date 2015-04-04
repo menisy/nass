@@ -1,6 +1,8 @@
 nb:
   refinery:
     plugins:
+      partners:
+        title: Partners
       job_applications:
         title: Job Applications
       areas:
@@ -25,6 +27,21 @@ nb:
         title: Companies
     companies:
       admin:
+        partners:
+          actions:
+            create_new: Lag en ny Partner
+            reorder: Endre rekkefølgen på Partners
+            reorder_done: Ferdig å endre rekkefølgen Partners
+          records:
+            title: Partners
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Partners enda. Klikk på "Lag en ny Partner"
+              for å legge til din første partner.
+          partner:
+            view_live_html: Vis hvordan denne partner ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne partner
+            delete: Fjern denne partner permanent
         job_applications:
           actions:
             create_new: Lag en ny Job Application
@@ -190,6 +207,9 @@ nb:
               i et nytt vindu)</em>
             edit: Rediger denne company
             delete: Fjern denne company permanent
+      partners:
+        show:
+          other: Andre Partners
       job_applications:
         show:
           other: Andre Job Applications
@@ -225,6 +245,10 @@ nb:
           other: Andre Companies
   activerecord:
     attributes:
+      refinery/companies/partner:
+        name: Name
+        description: Description
+        website: Website
       refinery/companies/job_application:
         status: Status
       refinery/companies/area:

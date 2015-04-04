@@ -1,6 +1,8 @@
 zh-CN:
   refinery:
     plugins:
+      partners:
+        title: Partners
       job_applications:
         title: Job Applications
       areas:
@@ -25,6 +27,19 @@ zh-CN:
         title: Companies
     companies:
       admin:
+        partners:
+          actions:
+            create_new: "建立新的 Partner"
+            reorder: "对 Partners 重新排序"
+            reorder_done: "对 Partners 的重新排序结束"
+          records:
+            title: Partners
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Partners . 点击 "Add New Partner" 创建一个partner.
+          partner:
+            view_live_html: "查看 partner 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 partner"
+            delete: "永久删除 partner"
         job_applications:
           actions:
             create_new: "建立新的 Job Application"
@@ -172,6 +187,9 @@ zh-CN:
             view_live_html: "查看 company 的最新内容.<br/><em>(新窗口中打开)</em>"
             edit: "编辑 company"
             delete: "永久删除 company"
+      partners:
+        show:
+          other: "其他 Partners"
       job_applications:
         show:
           other: "其他 Job Applications"
@@ -207,6 +225,10 @@ zh-CN:
           other: "其他 Companies"
   activerecord:
     attributes:
+      refinery/companies/partner:
+        name: Name
+        description: Description
+        website: Website
       refinery/companies/job_application:
         status: Status
       refinery/companies/area:

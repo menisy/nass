@@ -76,6 +76,10 @@
     <%= f.text_area :job_description, required: true %>
   </div>
 
+  <%= f.label :education_level %> <br/>
+  <%= f.select :education_level_id, @education_levels.collect{|d| [d.name, d.id]} ,required: true %>
+  <br>
+
   <div>
     <%= f.label :qualifications %><br />
     <%= f.text_area :qualifications, required: true %>

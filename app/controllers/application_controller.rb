@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   before_filter :load_cities_and_areas
   before_filter :load_industries
   before_filter :load_events
+  before_filter :load_education_levels
+  before_filter :load_schools
 
 
   before_filter :set_local
@@ -55,6 +57,16 @@ class ApplicationController < ActionController::Base
   def load_cities_and_areas
     @cities = ::Refinery::Companies::City.all
     @areas = ::Refinery::Companies::Area.all
+  end
+
+  def load_education_levels
+    @education_levels = ::Refinery::Companies::EducationLevel.all
+  end
+
+  def load_schools
+    @schools = ::Refinery::Schools::School.visible
+    @programs = ::Refinery::Schools::Program.visible
+    @courses = ::Refinery::Schools::Course.visible
   end
 
   def load_industries
