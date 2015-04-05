@@ -5,6 +5,7 @@
       <div class="carousel-wrapper">
         <div class="owl-carousel">
           <% @home_photos.each do |photo| %>
+            <% next unless photo.photo %>
             <div> <%= image_tag photo.photo.url %> </div>
           <% end %>
         </div>
