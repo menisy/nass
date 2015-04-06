@@ -15,7 +15,8 @@
                 %span.margined.small
                   = event.start_date
               .event-preview.hide
-                = image_tag event.photo.url
+                - if event.photo
+                  = image_tag event.photo.url
                 = raw event.description
               .event-link.hide
                 .row

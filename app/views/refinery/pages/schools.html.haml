@@ -4,7 +4,8 @@
     - @schools.each do |school|
       %a{name: school.name.downcase, class: 'anchor'}
       %h2= school.name
-      = image_tag school.photo.url, class: 'full-width'
+      - if school.photo
+        = image_tag school.photo.url, class: 'full-width'
       %p
         = school.description.html_safe
   .col-sm-3
