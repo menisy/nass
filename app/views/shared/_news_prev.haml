@@ -3,5 +3,5 @@
     .news-item-prev
       %span.pull-left.img-prev= image_tag news.image.url if news.image
       %span.green-title= news.title
-      = raw(truncate_html(news.body, length: 250))
+      = raw(truncate_html(news.body, length: 230))
       = link_to (t :more), news_item_path(news), class: 'more'
