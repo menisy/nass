@@ -31,7 +31,7 @@ $(document).ready(function() {
 
   //more link appended to p
   $('.news-item-prev').each(function(i, j){
-    $(j).find('p').append(j.find('a.more').remove());
+    $(j).find('p').append($(j).find('a.more').remove());
   });
 
 
