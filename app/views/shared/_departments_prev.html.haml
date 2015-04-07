@@ -5,4 +5,4 @@
       %span.pull-left.img-prev= image_tag school.logo.url if school.logo
       %span.green-title= school.name
       = raw(truncate_html(school.description, length: 230))
-      = link_to (t :more), (schools_page.url+"##{school.name}"), class: 'more'
+      = link_to (t :more), (schools_page.url[:path].join('/')+"##{school.name}"), class: 'more'

@@ -1,70 +1,36 @@
 .row
-  .col-sm-4
-    %b
-      = t :job_title
-    %br
-    = job.title
-    %br
-    %b
-      = t :job_description
-    %br
-    = job.job_description
-    %br
-    %b
-      = t :joining_date
-    %br
-    = job.joining_date
-    %br
-    %b
-      = t :salary_from_and_to
-    %br
-    = job.salary_from
-    \-
-    = job.salary_to
-    %br
-    %b
-      = t :incentive
-    %br
-    = job.incentive
-    %br
-    %b
-      = t :days_off
-    %br
-    = job.days_off
-    %br
-  .col-sm-4
-    %b
-      = t :job_title
-    %br
-    = job.title
-    %br
-    %b
-      = t :job_description
-    %br
-    = job.job_description
-    %br
-    %b
-      = t :joining_date
-    %br
-    = job.joining_date
-    %br
-    %b
-      = t :salary_from_and_to
-    %br
-    = job.salary_from
-    \-
-    = job.salary_to
-    %br
-    %b
-      = t :incentive
-    %br
-    = job.incentive
-    %br
-    %b
-      = t :days_off
-    %br
-    = job.days_off
-    %br
+  %b
+    = t :job_title
+  %br
+  = job.title
+  %br
+  %b
+    = t :job_description
+  %br
+  = job.job_description
+  %br
+  %b
+    = t :joining_date
+  %br
+  = job.joining_date
+  %br
+  %b
+    = t :salary_from_and_to
+  %br
+  = job.salary_from
+  \-
+  = job.salary_to
+  %br
+  %b
+    = t :incentive
+  %br
+  = job.incentive
+  %br
+  %b
+    = t :days_off
+  %br
+  = job.days_off
+  %br
 .row
   .col-sm-12
     - if student_signed_in?
