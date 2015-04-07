@@ -23,7 +23,7 @@ $grey: #f7f7f7;
     color: #fff !important;
   }
   &:hover{
-    top: -4px;
+    top: -6px;
   }
 
 }
@@ -153,4 +153,10 @@ a.anchor{
 }
 .navbar-nav li {
   padding: 3px 10px 0px 5px;
+}
+#locale-wrapper{
+  position: relative;
+  #locale{
+    top: -3px;
+  }
 }

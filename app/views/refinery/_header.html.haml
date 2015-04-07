@@ -1,0 +1,45 @@
+#header-container
+  #top-container
+    #logo
+      = link_to refinery.root_path do
+        = image_tag 'logo.png'
+    #forms.pull-right-nc.sign-in-upper
+      - unless someone_signed_in?
+        %label= t(:sign_in)
+        = link_to t(:sign_up), '#', data: {toggle: 'modal', target: '#reg-modal'}, class: 'pull-right'
+        .sign-in-type
+          %input{:checked => "", :name => "group1", :type => "radio", :value => "student"}
+            = t(:individual)
+            %input{:name => "group1", :type => "radio", :value => "employer"}
+              = t(:company)
+              %br
+        .hidden
+          = render 'shared/student_sign_in'
+          = render 'shared/employer_sign_in'
+        #sign-in-form
+          = render 'shared/student_sign_in'
+      - else
+        %p
+          = t(:logged_in_as)
+          %span.grayed= current_person.name
+          - if student_signed_in?
+            = link_to (t :logout), main_app.destroy_student_session_path, method: :delete
+          - elsif employer_signed_in?
+            = link_to (t :logout), main_app.destroy_employer_session_path, method: :delete
+    #locale-wrapper
+      #locale
+        %ul.nav.nav-bar
+          %li
+            = locale_switcher
+  %nav.navbar.navbar-default{:role => "navigation"}
+    .container-fluid.no-padd
+      / Brand and toggle get grouped for better mobile display
+      .navbar-header
+        %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+      / Collect the nav links, forms, and other content for toggling
+      .collapse.navbar-collapse.no-padd
+        = Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html
