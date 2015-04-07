@@ -90,7 +90,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_css_file
-    file = (::Refinery::Resource.find_by_file_mime_type 'text/css').last
+    file = ::Refinery::Resource.find_by_file_mime_type('text/css').last
     @css_file_name = file.file_uid if file
   end
 end
