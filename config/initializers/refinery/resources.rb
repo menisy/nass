@@ -21,6 +21,9 @@ Refinery::Resources.configure do |config|
   # config.dragonfly_insert_before = "ActionDispatch::Callbacks"
   # config.dragonfly_secret = "d8ce24b0eb1f64bfbe0c1c4ba2363cf49f4db11c305e8b9f"
   # config.dragonfly_url_format = "/system/resources/:job/:basename.:format"
-  config.datastore_root_path = "/home/deploy/nass/current/public/system/refinery/resources"
+  unless Rails.env == "development"
+    config.datastore_root_path = "/home/deploy/nass/current/public/system/refinery/resources"
+  else
 
+  end
 end

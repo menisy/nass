@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
   before_filter :load_subscriptions
   before_filter :load_candidates
 
+  before_filter :load_css_file
+
 
   before_filter :set_local
 
@@ -85,5 +87,10 @@ class ApplicationController < ActionController::Base
 
   def load_contact
     @contact = ::Refinery::PagePart.find_by_title "contact"
+  end
+
+  def load_css_file
+    file = ::Refinery::Resource.find_by_file_mime_type 'text/css'
+    @css_file_name = file.file_name if file
   end
 end

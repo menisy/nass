@@ -6,6 +6,8 @@
     - else
       = stylesheet_link_tag 'application_rtl'
     = stylesheet_link_tag 'common'
+    - if @css_file_name
+      = stylesheet_link_tag @css_file_name
     = javascript_include_tag 'application'
     = csrf_meta_tag
     %title NASS Academy
