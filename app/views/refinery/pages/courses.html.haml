@@ -10,7 +10,8 @@
           %p
             = "#{local_number(i+1)} - #{course.name}"
   .col-sm-3
-    %span.green-title= t :schools
-    .horz-divider
-    .schools
-      = render 'shared/school_logos'
+    .schools-wrapper
+      %span.green-title= t :schools
+      .horz-divider
+      .schools
+        = render 'shared/school_logos'
