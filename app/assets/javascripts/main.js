@@ -50,7 +50,7 @@ $(document).ready(function() {
     $(j).addClass(colors[i % colors.length]);
     $(j).find('li').each(function(l, k) {
       $(k).addClass(reversed_colors[(l+i+2) % colors.length]);
-      $(k).find('a').css('min-width', $(k).parents('li.nav-li').width()+'px');
+      $(k).find('a').css('min-width', ($(k).parents('li.nav-li').width()-1)+'px');
     });
   });
 
