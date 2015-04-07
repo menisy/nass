@@ -22,13 +22,11 @@ protected
   end
 
   def set_jobs
-    if params[:path] && params[:path].index('job')
-      if employer_signed_in?
-        @jobs = current_employer.company.jobs.filter(filter)
-        @job = current_employer.company.jobs.build
-      else
-        @jobs = ::Refinery::Companies::Job.filter(filter)
-      end
+    if employer_signed_in?
+      @jobs = current_employer.company.jobs.filter(filter)
+      @job = current_employer.company.jobs.build
+    else
+      @jobs = ::Refinery::Companies::Job.filter(filter)
     end
   end
 
