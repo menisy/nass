@@ -1,0 +1,34 @@
+.row.no-mrg
+  .col-sm-9
+    - if @home_photos
+      .carousel-wrapper
+        .owl-carousel
+          - @home_photos.each do |photo|
+            - next unless photo.photo
+            %div
+              = image_tag photo.photo.url
+    .row.no-mrg
+      .col-xs-8.col-sm-6
+        %div
+          .section-header
+            %h3= t :about_nass
+          = raw(@page.content_for(:about))
+        %div
+          .section-header
+            %h3= t :partners
+          .partners-prev
+            = raw(@page.content_for(:partners))
+      .col-xs-4.col-sm-6
+        %div
+          .section-header
+            %h3= t :news
+          = render partial: 'shared/news_prev'
+        %div
+          .section-header
+            %h3= t :departments
+          = render partial: 'shared/news_prev'
+
+  .col-sm-3
+    = render partial: 'shared/contact_us'
+    = render partial: 'shared/media_links'
+    = render partial: 'shared/video'
