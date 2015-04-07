@@ -23,7 +23,5 @@ Refinery::Resources.configure do |config|
   # config.dragonfly_url_format = "/system/resources/:job/:basename.:format"
   unless Rails.env == "development"
     config.datastore_root_path = "/home/deploy/nass/current/public/system/refinery/resources"
-  else
-
   end
 end
