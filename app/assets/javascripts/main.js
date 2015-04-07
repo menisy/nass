@@ -33,7 +33,15 @@ $(document).ready(function() {
   $('#body_content').append($('#search-form').remove());
   $('#right_side_body').append($('#side_body').html());
   $('ul.nav.navbar-nav').children('li').addClass('nav-li');
+
   nav_li = $("ul.navbar-nav li.nav-li");
+
+  // width of navbar items
+  $('ul.nav.navbar-nav').addClass('ul-no-margin');
+  $('ul.nav.navbar-nav').css('width', '100%');
+  var nav_width = 100.0/nav_li.length;
+  nav_li.css('width', nav_width+'%');
+
   colors = ["green", "yello", "orange", "red", "blue", "lime", "purple"];
   reversed_colors = colors.slice(0).reverse();
   var li_count = 0;
@@ -42,11 +50,12 @@ $(document).ready(function() {
     $(j).addClass(colors[i % colors.length]);
     $(j).find('li').each(function(l, k) {
       $(k).addClass(reversed_colors[(l+i+2) % colors.length]);
+      $(k).css('min-width', $(k).parents('li.nav-li').width()+'px');
     });
   });
-  $('ul.nav.navbar-nav').addClass('ul-no-margin');
-  $('ul.nav.navbar-nav').css('width', '100%');
-  nav_li.css('width', 100.0/li_count+'%');
+
+
+
   ul = $("#left_side_body ul");
   theLoc = 275;
   $(".owl-carousel").owlCarousel({
