@@ -23,6 +23,7 @@ Nass::Application.routes.draw do
 
   get '/switch/:lcl' => 'locals#switch', as: :switch_locale
 
+
   post 'jobs/' => 'jobs#create'
   put 'jobs/' => 'jobs#update'
 

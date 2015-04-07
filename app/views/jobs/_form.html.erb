@@ -17,6 +17,11 @@
   </div>
 
   <div>
+    <%= f.label :industry -%>
+    <%= f.select(:industry_id, @industries.collect {|d| [d.name, d.id] }, required: true)%>
+  </div>
+  <br>
+  <div>
     <%= f.label :number %><br />
     <%= f.text_field :number, required: true %>
   </div>
@@ -25,7 +30,7 @@
     <%= f.label :city -%>
     <%= f.select(:city_id, @cities.collect {|d| [d.name, d.id] }, required: true)%>
   </div>
-
+  <br>
   <div>
     <%= f.label :area -%>
     <%= f.text_field :area, required: true%>
@@ -35,7 +40,7 @@
     <%= f.label :joining_date %><br />
     <%= f.date_select :joining_date, required: true %>
   </div>
-
+  <br>
   <div>
     <%= f.label :salary_from %><br />
     <%= f.text_field :salary_from, required: true %>

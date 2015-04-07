@@ -7,10 +7,10 @@ class JobsController < ApplicationController
 
   def index
     if employer_signed_in?
-      @jobs = current_employer.company.jobs
+      @jobs = current_employer.company.jobs.filter(filter)
       @job = current_employer.company.jobs.build
     else
-      @jobs = ::Refinery::Companies::Job.all
+      @jobs = ::Refinery::Companies::Job.filter(filter)
     end
   end
 
@@ -42,8 +42,6 @@ class JobsController < ApplicationController
   rescue Exception
   end
 
-  layout nil, only: [:show]
-
   def show
     @job = ::Refinery::Companies::Job.find params[:id]
     respond_to do |format|
@@ -51,5 +49,11 @@ class JobsController < ApplicationController
      format.js
 
     end
+  end
+
+private
+
+  def filter
+    params[:filter] ? params[:filter] : {}
   end
 end

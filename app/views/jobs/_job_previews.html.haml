@@ -16,19 +16,10 @@
           - next if job.new_record?
           %tr
             %td= i+1
-            %td= link_to job.title, main_app.job_details_path(id: job.id), remote: true
+            %td= job.title
             %td= job.industry.try(:name)
             %td= job.city.try(:name)
             %td= job.education_level.try(:name)
             %td= job.created_at.to_date
     - else
       %h4= t :no_jobs
-#job-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-          %span{"aria-hidden" => "true"} &times;
-        %h4#myModalLabel.modal-title
-          = t :job_details
-      .modal-body.rtl

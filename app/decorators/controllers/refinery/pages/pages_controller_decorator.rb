@@ -24,10 +24,10 @@ protected
   def set_jobs
     if params[:path] && params[:path].index('job')
       if employer_signed_in?
-        @jobs = current_employer.company.jobs
+        @jobs = current_employer.company.jobs.filter(filter)
         @job = current_employer.company.jobs.build
       else
-        @jobs = ::Refinery::Companies::Job.all
+        @jobs = ::Refinery::Companies::Job.filter(filter)
       end
     end
   end
@@ -50,6 +50,12 @@ protected
       @company.build_address
       2.times {@company.contact_people.build}
     end
+  end
+
+private
+
+  def filter
+    params[:filter] ? params[:filter] : {}
   end
 
 end
