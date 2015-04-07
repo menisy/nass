@@ -29,6 +29,11 @@ $(document).ready(function() {
     $('.tabs a:first').tab('show')
   })
 
+  //more link appended to p
+  $('.news-item-prev').each(function(i, j){
+    $(j).find('p').append(j.find('a.more').remove());
+  });
+
 
   $('#body_content').append($('#search-form').remove());
   $('#right_side_body').append($('#side_body').html());
