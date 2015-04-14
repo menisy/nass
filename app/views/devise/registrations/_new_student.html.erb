@@ -76,8 +76,8 @@
               <%= address.text_field :area, required: true %>
               <br>
 
-              <%= address.label :city , I18n.translate('city')%>
-              <%= address.text_field :city, required: true %>
+              <%= address.label :city , t('city')%>
+              <%= address.select(:city_id, @cities.collect {|d| [d.name, d.id] }, required: true) %>
               <br>
               <br>
 
