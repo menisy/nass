@@ -1,6 +1,7 @@
 /* Default error colouring */
 @import url(owl.carousel.css);
 @import url(owl.theme.css);
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
 $navbar-default-bg: #1d8653;
 $navbar-default-height: 45px;
 
@@ -29,6 +30,7 @@ article, nav, header, footer, aside, hgroup, section {
     - http://sonspring.com/journal/removing-dotted-links
   */
 }
+
 a img {
   border: 0px none;
 }
@@ -73,7 +75,10 @@ Clearfix docs
 }.font-size-large {
   font-size: 1.25em;
 }html {
-  font-family: sans-serif;
+  //font-family: 'Droid Arabic Kufi', serif;
+  // font-family: sans-serif;
+  font-family: helvetica-bd, Tahoma;
+  color: #222;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }body {
@@ -708,7 +713,7 @@ th {
   font-size: 10px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;

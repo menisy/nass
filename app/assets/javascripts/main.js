@@ -108,9 +108,9 @@ $(document).ready(function() {
 
 });
 
-$(window).resize(function() {
-  window.scrollTo(0, 0);
-});
+// $(window).resize(function() {
+//   window.scrollTo(0, 0);
+// });
 
 $(window).load(function() {
   $('#side_body').remove;

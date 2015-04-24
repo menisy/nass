@@ -1,3 +1,6 @@
+%p.center.alert.alert-info
+  = t(:sign_up_to_apply_html, link: link_to(t(:sign_up_now), main_app.students_reg_path))
+
 %h3= t :job_listing
 = render 'jobs/jobs_filter'
 %br

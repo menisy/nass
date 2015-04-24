@@ -166,9 +166,15 @@ a.anchor{
 .news-item-prev p{
   width: 98%;
 }
+.news-item-prev{
+  .img-prev{
+    text-align: center;
+  }
+}
 .schools-wrapper{
   position: fixed;
 }
 a.green, input.green{
   color: #fff;
 }
+
