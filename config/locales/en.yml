@@ -147,6 +147,7 @@ en:
         mobile: 'Mobile Number'
         education_level: 'Education level'
         first_name: 'First Name'
+        middle_name: 'Middle Name'
         father_name: 'Second Name'
         last_name: 'Last Name'
         nationality: 'Nationality'

@@ -138,6 +138,7 @@ ar:
         mobile: 'المحمول'
         education_level: 'المؤهل'
         first_name: 'الاسم الاول'
+        middle_name: 'اسم الأب'
         father_name: 'اسم الأب'
         last_name: 'اسم العائلة'
         nationality: 'الجنسية'

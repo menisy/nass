@@ -14,9 +14,9 @@ module Refinery
       accepts_nested_attributes_for :address
 
 
-      attr_accessible :first_name, :last_name, :nass_graduate, :address_attributes, :address, :first_name, :last_name, :nationality, :dob, :pob, :gender, :maritual_status, :languages, :address, :email, :skills, :skilled_jobs, :position, :user_id, :student_id, :employer_id, :education_level_id, :mobile
+      attr_accessible :first_name, :last_name, :middle_name, :nass_graduate, :address_attributes, :address, :first_name, :last_name, :nationality, :dob, :pob, :gender, :maritual_status, :languages, :address, :email, :skills, :skilled_jobs, :position, :user_id, :student_id, :employer_id, :education_level_id, :mobile
 
-      validates :first_name, :last_name, :nationality,:dob, :pob, :gender, :maritual_status, :languages, :address, :email, :skills, :skilled_jobs,
+      validates :first_name, :last_name, :middle_name, :nationality,:dob, :pob, :gender, :maritual_status, :languages, :address, :email, :skills, :skilled_jobs,
         presence: true
 
       scope :nass_graduate, -> { where(nass_graduate: true)}
@@ -28,6 +28,14 @@ module Refinery
 
       def city
         address.try(:city)
+      end
+
+      def gender_string
+        ["-","Male", "Female"][gender]
+      end
+
+      def maritual_status_string
+        ["-","single", "married", "divorced", "widowed"][maritual_status]
       end
     end
   end

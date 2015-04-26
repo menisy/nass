@@ -1,7 +1,28 @@
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "Students") do |sheet|
-  sheet.add_row ["ID", "First Name","Last Name","Registration Date"]
+  sheet.add_row ["ID", "First Name", "Middle Name","Last Name", "Nationality", "DOB",
+   "Place of birth", "Email" ,"Mobile", "Gender", "Education Level", "Maritual Status",
+   "Languages", "Skills", "Skilled Jobs", "Address","NASS graduate" ,"Registration Date"]
   @students.each do |student|
-    sheet.add_row [student.id, student.first_name,student.last_name,student.created_at.to_date]
+    sheet.add_row [
+     student.id,
+     student.first_name,
+     student.middle_name,
+     student.last_name,
+     student.nationality,
+     student.dob.to_date,
+     student.pob,
+     student.email,
+     student.mobile,
+     student.gender_string,
+     student.education_level.name,
+     student.maritual_status_string,
+     student.languages,
+     student.skills,
+     student.skilled_jobs,
+     student.address.full,
+     student.nass_graduate,
+     student.created_at.to_date
+   ]
   end
 end

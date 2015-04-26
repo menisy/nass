@@ -12,6 +12,11 @@ module Refinery
       belongs_to :personal_info, class_name: '::Refinery::PersonalInfos::PersonalInfo'
 
       belongs_to :company, class_name: '::Refinery::Companies::Company'
+
+      def full
+        "#{apart_no}, #{building_no}, #{street_name}, #{area}, #{city.name}"
+      end
+
     end
   end
 end
