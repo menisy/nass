@@ -14,7 +14,7 @@ module Refinery
       belongs_to :company, class_name: '::Refinery::Companies::Company'
 
       def full
-        "#{apart_no}, #{building_no}, #{street_name}, #{area}, #{city.name}"
+        "#{apart_no}, #{building_no}, #{street_name}, #{area}, #{city.try(:name)}"
       end
 
     end
