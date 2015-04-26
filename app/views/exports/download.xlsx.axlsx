@@ -10,7 +10,7 @@ wb.add_worksheet(name: "Students") do |sheet|
      student.middle_name,
      student.last_name,
      student.nationality,
-     student.dob.to_date,
+     student.dob.strftime("%d/%m/%Y"),
      student.pob,
      student.email,
      student.mobile,
@@ -20,7 +20,7 @@ wb.add_worksheet(name: "Students") do |sheet|
      student.languages,
      student.skills,
      student.skilled_jobs,
-     student.address.full,
+     student.address.try(:full),
      student.nass_graduate,
      student.created_at.to_date
    ]

@@ -23,7 +23,7 @@ module Refinery
       scope :not_nass_graduate, -> { where(nass_graduate: false)}
 
       def name
-        first_name.to_s + ' ' + last_name.to_s
+        first_name.to_s + ' ' + middle_name.to_s + ' ' + last_name.to_s
       end
 
       def city
