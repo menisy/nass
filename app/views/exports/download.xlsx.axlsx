@@ -15,7 +15,7 @@ wb.add_worksheet(name: "Students") do |sheet|
      student.email,
      student.mobile,
      student.gender_string,
-     student.education_level.name,
+     student.education_level.try :name,
      student.maritual_status_string,
      student.languages,
      student.skills,
