@@ -1,6 +1,8 @@
 class JobsController < ApplicationController
   before_filter :authenticate_employer!, only: [:create, :update]
 
+  before_filter :authenticate_owner, only: [:edit, :update]
+
   before_filter :authenticate_student!, only: [:apply]
 
   before_filter :authenticate!, except: [:index, :show]
@@ -61,6 +63,15 @@ class JobsController < ApplicationController
   end
 
 private
+
+  def authenticate_owner
+    job = ::Refinery::Companies::Job.find params[:id]
+    if job
+      unless job.company.employer == current_employer
+        render_unauthorized
+      end
+    end
+  end
 
   def filter
     params[:filter] ? params[:filter] : {}

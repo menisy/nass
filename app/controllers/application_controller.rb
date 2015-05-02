@@ -27,6 +27,10 @@ class ApplicationController < ActionController::Base
   #   '/refinery'
   # end
 
+  def render_unauthorized
+    render(file: 'public/401.html', status: :unauthorized, layout: false) and return
+  end
+
 
   def set_local
     I18n.locale = session[:lcl] || :ar
