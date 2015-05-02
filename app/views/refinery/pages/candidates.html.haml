@@ -19,7 +19,7 @@
               %td= candidate.name
               %td= candidate.education_level.try(:name)
               %td= candidate.city.try(:name)
-              %td= candidate.skills
+              %td= raw(truncate_html(candidate.skills, length: 300))
               %td.center= "✓" if candidate.nass_graduate
       - else
         %h4= t :no_candidates
