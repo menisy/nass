@@ -45,6 +45,7 @@
             <%= company_fields.file_field(:logo, accept: 'image/png,image/jpeg', required: true) %>
             <br>
 
+
             <%= company_fields.fields_for :address, @company.address do |address| %>
 
               <h4><%= t :address %></h4>

@@ -6,6 +6,8 @@
       <th><%= t :job_title %></th>
       <th><%= t :location %></th>
       <th class="col-sm-2"><%= t :date_posted %></th>
+      <th>Visible</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +19,10 @@
           <td><%= link_to job.title, main_app.job_details_path(id: job.id), remote: true %></td>
           <td><%= job.city.try(:name) %> - <%= job.area %></td>
           <td><%= job.created_at.to_date %></td>
+
+          <td><%= "✓" if job.visible %></td>
+
+          <td><%= link_to 'Edit', main_app.edit_job_path(job), class: 'btn btn-info' %></td>
         </tr>
       <% end %>
     <% else %>

@@ -23,6 +23,7 @@ class RegistrationsController < ApplicationController
   def employers
     @employer = Employer.new
     @company = @employer.build_company
+    @company.build_address
     2.times{ @company.contact_people.build }
   end
 

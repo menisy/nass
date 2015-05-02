@@ -10,6 +10,7 @@ module Refinery
       belongs_to :education_level, class_name: '::Refinery::Companies::EducationLevel'
 
       has_one :address, class_name: '::Refinery::Addresses::Address'
+      has_one :city, through: :address
 
       accepts_nested_attributes_for :address
 
@@ -21,6 +22,22 @@ module Refinery
 
       scope :nass_graduate, -> { where(nass_graduate: true)}
       scope :not_nass_graduate, -> { where(nass_graduate: false)}
+      scope :list,              -> { order('created_at ASC') }
+
+
+      def self.filter(filter={})
+        result = self.list#.includes(address: [:city])
+        filter.each do |key, value|
+          case key.to_sym
+          when :city_id
+            result = result.joins(:address).where(refinery_addresses: {city_id: value})
+          else
+            result = result.where(key => value) unless value.blank?
+          end
+        end
+        result
+      end
+
 
       def name
         first_name.to_s + ' ' + middle_name.to_s + ' ' + last_name.to_s

@@ -23,9 +23,16 @@ Nass::Application.routes.draw do
 
   get '/switch/:lcl' => 'locals#switch', as: :switch_locale
 
+  resources :jobs
+
+
+  get 'candidates/' => 'candidates#index', as: :candidates
+  get 'candidates/:id' => 'candidates#show', as: :candidate
 
   post 'jobs/' => 'jobs#create'
   put 'jobs/' => 'jobs#update'
+
+  get 'edit_job/:id' => 'jobs#edit', as: :edit_job
 
 
   get 'jobs/:id' => 'jobs#show', as: :job_details
@@ -39,7 +46,16 @@ Nass::Application.routes.draw do
   post 'emp_registration/' => 'registrations#emp_create'
   put 'emp_registration/' => 'registrations#emp_update'
 
-  get 'export/' => 'exports#download', as: :export
+  # get 'export_candidates/' => 'exports#candidates', as: :export
+
+  resources :exports, only: [] do
+    collection do
+      get 'candidates'
+      get 'companies'
+      get 'jobs'
+      get 'job_applications'
+    end
+  end
 
   # This line mounts Refinery's routes at the root of your application.
   # This means, any requests to the root URL of your application will go to Refinery::PagesController#home.

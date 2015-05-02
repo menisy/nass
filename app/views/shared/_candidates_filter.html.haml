@@ -1,0 +1,14 @@
+= form_tag nil, path: main_app.candidates_path, method: :get do
+  .row.no-mrg.filters
+    = fields_for :filter do |f|
+      .col-sm-4
+        = f.collection_select :city_id, @cities, :id, :name, { include_blank: t(:all_city), selected: (params[:filter][:city_id] if params[:filter]) }, class: 'form-control'
+      .col-sm-4
+        = f.collection_select :education_level_id, @education_levels, :id, :name, { include_blank: t(:all_education_level), selected: (params[:filter][:education_level_id] if params[:filter]) }, class: 'form-control'
+      .col-sm-4
+        .row
+          .col-sm-1
+          .col-sm-5
+            = submit_tag t(:filter), class: 'btn green'
+          .col-sm-6
+            = link_to t(:clear), request.path ,class: 'btn btn-danger pull-right'

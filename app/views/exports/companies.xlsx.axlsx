@@ -1,0 +1,23 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Companies") do |sheet|
+  sheet.add_row ["ID", "Name", "Industry","Number of branches (Egypt)", "Number of bracnhes (Abroad)",
+   "Employer email", "Contact 1 email", "Contact 1 mobile" ,"Contact 2 email", "Contact 2 mobile",
+   "Address","Subscription" ,"Registered at"]
+  @companies.each do |company|
+    sheet.add_row [
+     company.id,
+     company.company_name,
+     company.industry.try(:name),
+     strip_tags(company.nob_egypt),
+     strip_tags(company.nob_abroad),
+     company.employer.try(:email),
+     company.contact_people.first.try(:email),
+     company.contact_people.first.try(:mobile),
+     company.contact_people.last.try(:email),
+     company.contact_people.last.try(:mobile),
+     company.address.try(:full),
+     company.subscription.try(:name),
+     company.created_at.strftime("%d/%m/%Y")
+   ]
+  end
+end

@@ -1,0 +1,31 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Jobs") do |sheet|
+  sheet.add_row ["ID", "Title", "Industry", "Company name", "Joining date", "Salary from",
+   "Salary to", "Incentive", "Days off", "Social Insurance" ,"Medical Insurance",
+   "Transportation", "Description", "Working conditions", "Job Role",
+   "Job Type", "Education Level", "City", "Area", "Created At"]
+  @jobs.each do |job|
+    sheet.add_row [
+     job.id,
+     job.title,
+     job.industry.try(:name),
+     job.company.try(:company_name),
+     job.joining_date.strftime("%d/%m/%Y"),
+     job.salary_from,
+     job.salary_to,
+     job.incentive,
+     job.days_off,
+     job.social_insurance,
+     job.medical_insurance,
+     job.transportation,
+     job.job_description,
+     job.work_conditions,
+     job.job_role.try(:name),
+     job.job_type.try(:name),
+     job.education_level.try(:name),
+     job.city.try(:name),
+     job.area,
+     job.created_at.strftime("%d/%m/%Y")
+   ]
+  end
+end

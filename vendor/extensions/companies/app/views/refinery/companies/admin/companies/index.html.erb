@@ -2,6 +2,6 @@
   <%= render 'records' %>
 </section>
 <aside id='actions'>
-  <%= render 'actions' %>
+  <%= render partial: 'actions', locals: {export: true} %>
 </aside>
 <%= render '/refinery/admin/make_sortable', :tree => false if !searching? and ::Refinery::Companies::Admin::CompaniesController.sortable? and ::Refinery::Companies::Company.many? %>

@@ -1,0 +1,14 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Job Applications") do |sheet|
+  sheet.add_row ["Candidate name", "Candidate email","Company name", "Job title", "Status","Created at"]
+  @applications.each do |application|
+    sheet.add_row [
+     application.student.name,
+     application.student.email,
+     application.job.company.company_name,
+     application.job.title,
+     application.status,
+     application.created_at.strftime("%d/%m/%Y %H:%M:%S")
+   ]
+  end
+end

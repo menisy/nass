@@ -15,6 +15,8 @@ module Refinery
 
       has_many :jobs, class_name: '::Refinery::Companies::Job', dependent: :destroy
 
+      has_many :job_applications, through: :jobs
+
       accepts_nested_attributes_for :contact_people
 
       belongs_to :employer

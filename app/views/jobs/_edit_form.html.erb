@@ -1,5 +1,5 @@
-<h3>Post new Job</h3>
-<%= form_for(@job, url: '/jobs', html:{class: 'job_form'}) do |f| %>
+
+<%= form_for(@job, method: :put, html:{class: 'job_form'}) do |f| %>
   <% if flash[:error] %>
     <div class='alert alert-danger error-msg'>
       <%= flash[:error] %>
@@ -29,7 +29,7 @@
       </div>
       <br>
       <div>
-        <%= f.label :number %><br />
+        <%= f.label :number, 'Number of candidates needed' %><br />
         <%= f.text_field :number, required: true %>
       </div>
 
@@ -63,7 +63,6 @@
       </div>
     </div>
     <div class="col-sm-6">
-
       <div>
         <%= f.label :city -%>
         <%= f.select(:city_id, @cities.collect {|d| [d.name, d.id] }, required: true)%>
@@ -71,7 +70,7 @@
       <br>
       <div>
         <%= f.label :area -%>
-        <%= f.text_field :area, required: true %>
+        <%= f.text_field :area, required: true%>
       </div>
       <div>
         <%= f.label :incentive %><br />
@@ -103,7 +102,6 @@
     </div>
   </div>
 
-
-  <%= f.submit 'Post Job', class: 'btn btn-success' %>
+  <%= f.submit 'Update Job', class: 'btn btn-success' %>
 
 <% end %>

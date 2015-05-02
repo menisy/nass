@@ -10,7 +10,7 @@ class JobsController < ApplicationController
       @jobs = current_employer.company.jobs.filter(filter)
       @job = current_employer.company.jobs.build
     else
-      @jobs = ::Refinery::Companies::Job.filter(filter)
+      @jobs = ::Refinery::Companies::Job.visible.filter(filter)
     end
   end
 
@@ -26,8 +26,17 @@ class JobsController < ApplicationController
     end
   end
 
-  def update
+  def edit
+    @job = ::Refinery::Companies::Job.find params[:id]
+  end
 
+  def update
+    @job = ::Refinery::Companies::Job.find params[:id]
+    if @job.update_attributes params[:job]
+      redirect_to main_app.jobs_path, notice: 'Your job has been updated successfully'
+    else
+      render 'jobs/edit'
+    end
   end
 
   def apply

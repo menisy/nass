@@ -1,1 +1,9 @@
 <%= render 'form' %>
+
+
+
+<%= link_to 'Export Jobs to Excel', "/exports/jobs?company_id=#{@company.id}", class: 'btn btn-success' %>
+
+<br>
+
+<%= link_to 'Export Job Applications to Excel', "/exports/job_applications?company_id=#{@company.id}", class: 'btn btn-success' %>

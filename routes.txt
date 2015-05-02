@@ -1,56 +1,101 @@
-        new_employer_session GET    /employers/sign_in(.:format)       devise/sessions#new
-            employer_session POST   /employers/sign_in(.:format)       devise/sessions#create
-    destroy_employer_session DELETE /employers/sign_out(.:format)      devise/sessions#destroy
-           employer_password POST   /employers/password(.:format)      devise/passwords#create
-       new_employer_password GET    /employers/password/new(.:format)  devise/passwords#new
-      edit_employer_password GET    /employers/password/edit(.:format) devise/passwords#edit
-                             PUT    /employers/password(.:format)      devise/passwords#update
-cancel_employer_registration GET    /employers/cancel(.:format)        devise/registrations#cancel
-       employer_registration POST   /employers(.:format)               devise/registrations#create
-   new_employer_registration GET    /employers/sign_up(.:format)       devise/registrations#new
-  edit_employer_registration GET    /employers/edit(.:format)          devise/registrations#edit
-                             PUT    /employers(.:format)               devise/registrations#update
-                             DELETE /employers(.:format)               devise/registrations#destroy
-         new_student_session GET    /students/sign_in(.:format)        devise/sessions#new
-             student_session POST   /students/sign_in(.:format)        devise/sessions#create
-     destroy_student_session DELETE /students/sign_out(.:format)       devise/sessions#destroy
-            student_password POST   /students/password(.:format)       devise/passwords#create
-        new_student_password GET    /students/password/new(.:format)   devise/passwords#new
-       edit_student_password GET    /students/password/edit(.:format)  devise/passwords#edit
-                             PUT    /students/password(.:format)       devise/passwords#update
- cancel_student_registration GET    /students/cancel(.:format)         devise/registrations#cancel
-        student_registration POST   /students(.:format)                devise/registrations#create
-    new_student_registration GET    /students/sign_up(.:format)        devise/registrations#new
-   edit_student_registration GET    /students/edit(.:format)           devise/registrations#edit
-                             PUT    /students(.:format)                devise/registrations#update
-                             DELETE /students(.:format)                devise/registrations#destroy
-            new_user_session GET    /users/sign_in(.:format)           devise/sessions#new
-                user_session POST   /users/sign_in(.:format)           devise/sessions#create
-        destroy_user_session DELETE /users/sign_out(.:format)          devise/sessions#destroy
-               user_password POST   /users/password(.:format)          devise/passwords#create
-           new_user_password GET    /users/password/new(.:format)      devise/passwords#new
-          edit_user_password GET    /users/password/edit(.:format)     devise/passwords#edit
-                             PUT    /users/password(.:format)          devise/passwords#update
-    cancel_user_registration GET    /users/cancel(.:format)            devise/registrations#cancel
-           user_registration POST   /users(.:format)                   devise/registrations#create
-       new_user_registration GET    /users/sign_up(.:format)           devise/registrations#new
-      edit_user_registration GET    /users/edit(.:format)              devise/registrations#edit
-                             PUT    /users(.:format)                   devise/registrations#update
-                             DELETE /users(.:format)                   devise/registrations#destroy
-                        root        /                                  refinery/pages#home
-                        root        /                                  refinery/pages#home
-                        root        /                                  refinery/admin/dashboard#index
-                        jobs POST   /jobs(.:format)                    jobs#create
-                             PUT    /jobs(.:format)                    jobs#update
-                 job_details GET    /jobs/:id(.:format)                jobs#show
-                registration POST   /registration(.:format)            registrations#create
-                             PUT    /registration(.:format)            registrations#update
-            emp_registration POST   /emp_registration(.:format)        registrations#emp_create
-                             PUT    /emp_registration(.:format)        registrations#emp_update
-                      export GET    /export(.:format)                  exports#download
-                    refinery        /                                  Refinery::Core::Engine
+                students_reg GET    /registration/students(.:format)    registrations#students
+               employers_reg GET    /registration/companies(.:format)   registrations#employers
+        new_employer_session GET    /employers/sign_in(.:format)        devise/sessions#new
+            employer_session POST   /employers/sign_in(.:format)        devise/sessions#create
+    destroy_employer_session DELETE /employers/sign_out(.:format)       devise/sessions#destroy
+           employer_password POST   /employers/password(.:format)       devise/passwords#create
+       new_employer_password GET    /employers/password/new(.:format)   devise/passwords#new
+      edit_employer_password GET    /employers/password/edit(.:format)  devise/passwords#edit
+                             PUT    /employers/password(.:format)       devise/passwords#update
+cancel_employer_registration GET    /employers/cancel(.:format)         devise/registrations#cancel
+       employer_registration POST   /employers(.:format)                devise/registrations#create
+   new_employer_registration GET    /employers/sign_up(.:format)        devise/registrations#new
+  edit_employer_registration GET    /employers/edit(.:format)           devise/registrations#edit
+                             PUT    /employers(.:format)                devise/registrations#update
+                             DELETE /employers(.:format)                devise/registrations#destroy
+         new_student_session GET    /students/sign_in(.:format)         devise/sessions#new
+             student_session POST   /students/sign_in(.:format)         devise/sessions#create
+     destroy_student_session DELETE /students/sign_out(.:format)        devise/sessions#destroy
+            student_password POST   /students/password(.:format)        devise/passwords#create
+        new_student_password GET    /students/password/new(.:format)    devise/passwords#new
+       edit_student_password GET    /students/password/edit(.:format)   devise/passwords#edit
+                             PUT    /students/password(.:format)        devise/passwords#update
+ cancel_student_registration GET    /students/cancel(.:format)          devise/registrations#cancel
+        student_registration POST   /students(.:format)                 devise/registrations#create
+    new_student_registration GET    /students/sign_up(.:format)         devise/registrations#new
+   edit_student_registration GET    /students/edit(.:format)            devise/registrations#edit
+                             PUT    /students(.:format)                 devise/registrations#update
+                             DELETE /students(.:format)                 devise/registrations#destroy
+            new_user_session GET    /users/sign_in(.:format)            devise/sessions#new
+                user_session POST   /users/sign_in(.:format)            devise/sessions#create
+        destroy_user_session DELETE /users/sign_out(.:format)           devise/sessions#destroy
+               user_password POST   /users/password(.:format)           devise/passwords#create
+           new_user_password GET    /users/password/new(.:format)       devise/passwords#new
+          edit_user_password GET    /users/password/edit(.:format)      devise/passwords#edit
+                             PUT    /users/password(.:format)           devise/passwords#update
+    cancel_user_registration GET    /users/cancel(.:format)             devise/registrations#cancel
+           user_registration POST   /users(.:format)                    devise/registrations#create
+       new_user_registration GET    /users/sign_up(.:format)            devise/registrations#new
+      edit_user_registration GET    /users/edit(.:format)               devise/registrations#edit
+                             PUT    /users(.:format)                    devise/registrations#update
+                             DELETE /users(.:format)                    devise/registrations#destroy
+                        root        /                                   refinery/pages#home
+                        root        /                                   refinery/pages#home
+                        root        /                                   refinery/admin/dashboard#index
+               switch_locale GET    /switch/:lcl(.:format)              locals#switch
+                        jobs POST   /jobs(.:format)                     jobs#create
+                             PUT    /jobs(.:format)                     jobs#update
+                 job_details GET    /jobs/:id(.:format)                 jobs#show
+                             GET    /jobs(.:format)                     jobs#index
+                   job_apply GET    /jobs/:id/apply(.:format)           jobs#apply
+                registration POST   /registration(.:format)             registrations#create
+                             PUT    /registration(.:format)             registrations#update
+            emp_registration POST   /emp_registration(.:format)         registrations#emp_create
+                             PUT    /emp_registration(.:format)         registrations#emp_update
+          candidates_exports GET    /exports/candidates(.:format)       exports#candidates
+           companies_exports GET    /exports/companies(.:format)        exports#companies
+                jobs_exports GET    /exports/jobs(.:format)             exports#jobs
+    job_applications_exports GET    /exports/job_applications(.:format) exports#job_applications
+                    refinery        /                                   Refinery::Core::Engine
 
 Routes for Refinery::Core::Engine:
+                                     schools_schools GET    /schools(.:format)                                              refinery/schools/schools#index
+                                      schools_school GET    /schools/:id(.:format)                                          refinery/schools/schools#show
+              update_positions_schools_admin_schools POST   /refinery/schools/update_positions(.:format)                    refinery/schools/admin/schools#update_positions
+                               schools_admin_schools GET    /refinery/schools(.:format)                                     refinery/schools/admin/schools#index
+                                                     POST   /refinery/schools(.:format)                                     refinery/schools/admin/schools#create
+                            new_schools_admin_school GET    /refinery/schools/new(.:format)                                 refinery/schools/admin/schools#new
+                           edit_schools_admin_school GET    /refinery/schools/:id/edit(.:format)                            refinery/schools/admin/schools#edit
+                                schools_admin_school PUT    /refinery/schools/:id(.:format)                                 refinery/schools/admin/schools#update
+                                                     DELETE /refinery/schools/:id(.:format)                                 refinery/schools/admin/schools#destroy
+             update_positions_schools_admin_programs POST   /refinery/schools/programs/update_positions(.:format)           refinery/schools/admin/programs#update_positions
+                              schools_admin_programs GET    /refinery/schools/programs(.:format)                            refinery/schools/admin/programs#index
+                                                     POST   /refinery/schools/programs(.:format)                            refinery/schools/admin/programs#create
+                           new_schools_admin_program GET    /refinery/schools/programs/new(.:format)                        refinery/schools/admin/programs#new
+                          edit_schools_admin_program GET    /refinery/schools/programs/:id/edit(.:format)                   refinery/schools/admin/programs#edit
+                               schools_admin_program PUT    /refinery/schools/programs/:id(.:format)                        refinery/schools/admin/programs#update
+                                                     DELETE /refinery/schools/programs/:id(.:format)                        refinery/schools/admin/programs#destroy
+              update_positions_schools_admin_courses POST   /refinery/schools/courses/update_positions(.:format)            refinery/schools/admin/courses#update_positions
+                               schools_admin_courses GET    /refinery/schools/courses(.:format)                             refinery/schools/admin/courses#index
+                                                     POST   /refinery/schools/courses(.:format)                             refinery/schools/admin/courses#create
+                            new_schools_admin_course GET    /refinery/schools/courses/new(.:format)                         refinery/schools/admin/courses#new
+                           edit_schools_admin_course GET    /refinery/schools/courses/:id/edit(.:format)                    refinery/schools/admin/courses#edit
+                                schools_admin_course PUT    /refinery/schools/courses/:id(.:format)                         refinery/schools/admin/courses#update
+                                                     DELETE /refinery/schools/courses/:id(.:format)                         refinery/schools/admin/courses#destroy
+       update_positions_schools_admin_course_classes POST   /refinery/schools/course_classes/update_positions(.:format)     refinery/schools/admin/course_classes#update_positions
+                        schools_admin_course_classes GET    /refinery/schools/course_classes(.:format)                      refinery/schools/admin/course_classes#index
+                                                     POST   /refinery/schools/course_classes(.:format)                      refinery/schools/admin/course_classes#create
+                      new_schools_admin_course_class GET    /refinery/schools/course_classes/new(.:format)                  refinery/schools/admin/course_classes#new
+                     edit_schools_admin_course_class GET    /refinery/schools/course_classes/:id/edit(.:format)             refinery/schools/admin/course_classes#edit
+                          schools_admin_course_class PUT    /refinery/schools/course_classes/:id(.:format)                  refinery/schools/admin/course_classes#update
+                                                     DELETE /refinery/schools/course_classes/:id(.:format)                  refinery/schools/admin/course_classes#destroy
+                update_positions_events_admin_events POST   /refinery/events/update_positions(.:format)                     refinery/events/admin/events#update_positions
+                                 events_admin_events GET    /refinery/events(.:format)                                      refinery/events/admin/events#index
+                                                     POST   /refinery/events(.:format)                                      refinery/events/admin/events#create
+                              new_events_admin_event GET    /refinery/events/new(.:format)                                  refinery/events/admin/events#new
+                             edit_events_admin_event GET    /refinery/events/:id/edit(.:format)                             refinery/events/admin/events#edit
+                                  events_admin_event PUT    /refinery/events/:id(.:format)                                  refinery/events/admin/events#update
+                                                     DELETE /refinery/events/:id(.:format)                                  refinery/events/admin/events#destroy
                                  addresses_addresses GET    /addresses(.:format)                                            refinery/addresses/addresses#index
                                    addresses_address GET    /addresses/:id(.:format)                                        refinery/addresses/addresses#show
           update_positions_addresses_admin_addresses POST   /refinery/addresses/update_positions(.:format)                  refinery/addresses/admin/addresses#update_positions
@@ -150,6 +195,29 @@ Routes for Refinery::Core::Engine:
                            edit_companies_admin_area GET    /refinery/companies/areas/:id/edit(.:format)                    refinery/companies/admin/areas#edit
                                 companies_admin_area PUT    /refinery/companies/areas/:id(.:format)                         refinery/companies/admin/areas#update
                                                      DELETE /refinery/companies/areas/:id(.:format)                         refinery/companies/admin/areas#destroy
+                          companies_job_applications GET    /companies/job_applications(.:format)                           refinery/companies/job_applications#index
+                           companies_job_application GET    /companies/job_applications/:id(.:format)                       refinery/companies/job_applications#show
+   update_positions_companies_admin_job_applications POST   /refinery/companies/job_applications/update_positions(.:format) refinery/companies/admin/job_applications#update_positions
+                    companies_admin_job_applications GET    /refinery/companies/job_applications(.:format)                  refinery/companies/admin/job_applications#index
+                                                     POST   /refinery/companies/job_applications(.:format)                  refinery/companies/admin/job_applications#create
+                 new_companies_admin_job_application GET    /refinery/companies/job_applications/new(.:format)              refinery/companies/admin/job_applications#new
+                edit_companies_admin_job_application GET    /refinery/companies/job_applications/:id/edit(.:format)         refinery/companies/admin/job_applications#edit
+                     companies_admin_job_application PUT    /refinery/companies/job_applications/:id(.:format)              refinery/companies/admin/job_applications#update
+                                                     DELETE /refinery/companies/job_applications/:id(.:format)              refinery/companies/admin/job_applications#destroy
+           update_positions_companies_admin_partners POST   /refinery/companies/partners/update_positions(.:format)         refinery/companies/admin/partners#update_positions
+                            companies_admin_partners GET    /refinery/companies/partners(.:format)                          refinery/companies/admin/partners#index
+                                                     POST   /refinery/companies/partners(.:format)                          refinery/companies/admin/partners#create
+                         new_companies_admin_partner GET    /refinery/companies/partners/new(.:format)                      refinery/companies/admin/partners#new
+                        edit_companies_admin_partner GET    /refinery/companies/partners/:id/edit(.:format)                 refinery/companies/admin/partners#edit
+                             companies_admin_partner PUT    /refinery/companies/partners/:id(.:format)                      refinery/companies/admin/partners#update
+                                                     DELETE /refinery/companies/partners/:id(.:format)                      refinery/companies/admin/partners#destroy
+      update_positions_companies_admin_subscriptions POST   /refinery/companies/subscriptions/update_positions(.:format)    refinery/companies/admin/subscriptions#update_positions
+                       companies_admin_subscriptions GET    /refinery/companies/subscriptions(.:format)                     refinery/companies/admin/subscriptions#index
+                                                     POST   /refinery/companies/subscriptions(.:format)                     refinery/companies/admin/subscriptions#create
+                    new_companies_admin_subscription GET    /refinery/companies/subscriptions/new(.:format)                 refinery/companies/admin/subscriptions#new
+                   edit_companies_admin_subscription GET    /refinery/companies/subscriptions/:id/edit(.:format)            refinery/companies/admin/subscriptions#edit
+                        companies_admin_subscription PUT    /refinery/companies/subscriptions/:id(.:format)                 refinery/companies/admin/subscriptions#update
+                                                     DELETE /refinery/companies/subscriptions/:id(.:format)                 refinery/companies/admin/subscriptions#destroy
 update_positions_personal_infos_admin_personal_infos POST   /refinery/personal_infos/update_positions(.:format)             refinery/personal_infos/admin/personal_infos#update_positions
                  personal_infos_admin_personal_infos GET    /refinery/personal_infos(.:format)                              refinery/personal_infos/admin/personal_infos#index
                                                      POST   /refinery/personal_infos(.:format)                              refinery/personal_infos/admin/personal_infos#create

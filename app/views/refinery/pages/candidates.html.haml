@@ -1,6 +1,7 @@
 .row.no-mrg
   .col-sm-9
     %h3= t :candidate_listing
+    = render partial: 'shared/candidates_filter'
     %table.table.table-striped
       - if @candidates && @candidates.count >= 1
         %thead

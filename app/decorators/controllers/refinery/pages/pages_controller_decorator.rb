@@ -26,7 +26,7 @@ protected
       @jobs = current_employer.company.jobs.filter(filter)
       @job = current_employer.company.jobs.build
     else
-      @jobs = ::Refinery::Companies::Job.filter(filter)
+      @jobs = ::Refinery::Companies::Job.visible.filter(filter)
     end
   end
 
