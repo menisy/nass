@@ -37,6 +37,7 @@ module Refinery
       end
 
       def self.open_spreadsheet(file)
+        require 'roo'
         case File.extname(file.original_filename)
         when ".csv" then Csv.new(file.path, nil, :ignore)
         when ".xls" then Excel.new(file.path, nil, :ignore)
