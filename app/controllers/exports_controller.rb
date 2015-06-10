@@ -3,6 +3,12 @@ class ExportsController < ApplicationController
 
   respond_to :json, :html, :xlsx
 
+
+  def import
+    ::Refinery::PersonalInfos::PersonalInfo.import(params[:file])
+    redirect_to root_url, notice: "People imported."
+  end
+
   def candidates
     @students = ::Refinery::PersonalInfos::PersonalInfo.all
     respond_to do |format|

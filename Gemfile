@@ -24,6 +24,7 @@ gem 'refinerycms-dynamicfields', :git => 'https://github.com/jfalameda/refineryc
 
 gem 'mysql2'
 gem 'devise'
+gem 'roo'
 gem 'devise-i18n'
 gem 'fog'
 gem 'haml-rails'

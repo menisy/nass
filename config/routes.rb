@@ -54,6 +54,7 @@ Nass::Application.routes.draw do
       get 'companies'
       get 'jobs'
       get 'job_applications'
+      post 'import'
     end
   end
 

@@ -259,6 +259,10 @@ GEM
       refinerycms-pages (~> 2.1.0)
     refinerycms-settings (2.1.1)
       refinerycms-core (~> 2.1.1)
+    roo (1.13.2)
+      nokogiri
+      rubyzip
+      spreadsheet (> 0.6.4)
     routing-filter (0.3.1)
       actionpack
     ruby-ole (1.2.11.8)
@@ -342,6 +346,7 @@ DEPENDENCIES
   refinerycms-personal_infos!
   refinerycms-resources!
   refinerycms-schools!
+  roo
   sass-rails
   sqlite3
   therubyracer (= 0.11.3)

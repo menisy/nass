@@ -3,6 +3,10 @@
 </section>
 <aside id='actions'>
   <%= render partial: 'actions', locals: {export: true} %>
+  <%= form_tag import_decorations_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import" %>
+  <% end %>
 </aside>
 <%= render '/refinery/admin/make_sortable', :tree => false if !searching? and ::Refinery::PersonalInfos::Admin::PersonalInfosController.sortable? and ::Refinery::PersonalInfos::PersonalInfo.many? %>
 
