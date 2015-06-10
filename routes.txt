@@ -43,8 +43,18 @@ cancel_employer_registration GET    /employers/cancel(.:format)         devise/r
                         root        /                                   refinery/pages#home
                         root        /                                   refinery/admin/dashboard#index
                switch_locale GET    /switch/:lcl(.:format)              locals#switch
-                        jobs POST   /jobs(.:format)                     jobs#create
+                        jobs GET    /jobs(.:format)                     jobs#index
+                             POST   /jobs(.:format)                     jobs#create
+                     new_job GET    /jobs/new(.:format)                 jobs#new
+                    edit_job GET    /jobs/:id/edit(.:format)            jobs#edit
+                         job GET    /jobs/:id(.:format)                 jobs#show
+                             PUT    /jobs/:id(.:format)                 jobs#update
+                             DELETE /jobs/:id(.:format)                 jobs#destroy
+                  candidates GET    /candidates(.:format)               candidates#index
+                   candidate GET    /candidates/:id(.:format)           candidates#show
+                             POST   /jobs(.:format)                     jobs#create
                              PUT    /jobs(.:format)                     jobs#update
+                    edit_job GET    /edit_job/:id(.:format)             jobs#edit
                  job_details GET    /jobs/:id(.:format)                 jobs#show
                              GET    /jobs(.:format)                     jobs#index
                    job_apply GET    /jobs/:id/apply(.:format)           jobs#apply
@@ -56,6 +66,7 @@ cancel_employer_registration GET    /employers/cancel(.:format)         devise/r
            companies_exports GET    /exports/companies(.:format)        exports#companies
                 jobs_exports GET    /exports/jobs(.:format)             exports#jobs
     job_applications_exports GET    /exports/job_applications(.:format) exports#job_applications
+              import_exports POST   /exports/import(.:format)           exports#import
                     refinery        /                                   Refinery::Core::Engine
 
 Routes for Refinery::Core::Engine:
