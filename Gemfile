@@ -14,7 +14,7 @@ end
 gem 'axlsx', '~> 2.0'
 gem "axlsx_rails"
 gem 'to_xls-rails'
-
+gem "iconv", "~> 1.0.3"
 gem 'capistrano', '~> 3.1.0'
 gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1.1'
