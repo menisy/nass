@@ -3,7 +3,9 @@
     %h1= t :schools
     - @schools.each do |school|
       %a{name: school.name.downcase, class: 'anchor'}
-      %h2= school.name
+      .title-wrapper
+        = image_tag school.logo.url, class: 'school-title-logo pull-left'
+        %h2= school.name
       - if school.photo
         = image_tag school.photo.url, class: 'full-width'
       %p
