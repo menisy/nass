@@ -3,8 +3,9 @@
 </section>
 <aside id='actions'>
   <%= render partial: 'actions', locals: {export: true} %>
+  <h3>Import from Excel</h3>
   <%= form_tag main_app.import_exports_path, multipart: true do %>
-    <%= file_field_tag :file %>
+    <%= file_field_tag :file, required: true %>
     <%= submit_tag "Import" %>
   <% end %>
 </aside>

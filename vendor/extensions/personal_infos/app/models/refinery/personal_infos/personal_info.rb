@@ -32,16 +32,17 @@ module Refinery
           row = Hash[[header, spreadsheet.row(i)].transpose]
           decoration = find_by_id(row["id"]) || new
           decoration.attributes = row.to_hash.slice(*accessible_attributes)
-          decoration.save!
+          decoration.save!(validate: false)
         end
       end
 
       def self.open_spreadsheet(file)
         require 'roo'
+
         case File.extname(file.original_filename)
-        when ".csv" then Csv.new(file.path, nil, :ignore)
-        when ".xls" then Excel.new(file.path, nil, :ignore)
-        when ".xlsx" then Excelx.new(file.path, nil, :ignore)
+        when ".csv" then ::Roo::Csv.new(file.path, nil, :ignore)
+        when ".xls" then ::Roo::Excel.new(file.path, nil, :ignore)
+        when ".xlsx" then ::Roo::Excelx.new(file.path, nil, :ignore)
         else raise "Unknown file type: #{file.original_filename}"
         end
       end

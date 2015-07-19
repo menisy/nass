@@ -6,7 +6,7 @@ class ExportsController < ApplicationController
 
   def import
     ::Refinery::PersonalInfos::PersonalInfo.import(params[:file])
-    redirect_to root_url, notice: "People imported."
+    redirect_to :back, notice: "People imported."
   end
 
   def candidates
