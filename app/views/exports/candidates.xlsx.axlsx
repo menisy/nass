@@ -22,7 +22,7 @@ wb.add_worksheet(name: "Students") do |sheet|
      student.skilled_jobs,
      student.address.try(:full),
      student.nass_graduate,
-     (student.created_at.strftime("%d/%m/%Y") if student.created_at)
+     (student.created_at)
    ]
   end
 end
