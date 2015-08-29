@@ -10,7 +10,7 @@ wb.add_worksheet(name: "Students") do |sheet|
      student.middle_name,
      student.last_name,
      student.nationality,
-     student.dob.strftime("%d/%m/%Y"),
+     student.dob.strftime("%d/%m/%Y") if student.dob,
      student.pob,
      student.email,
      student.mobile,
@@ -22,7 +22,7 @@ wb.add_worksheet(name: "Students") do |sheet|
      student.skilled_jobs,
      student.address.try(:full),
      student.nass_graduate,
-     student.created_at.strftime("%d/%m/%Y")
+     student.created_at.strftime("%d/%m/%Y") if student.created_at
    ]
   end
 end
