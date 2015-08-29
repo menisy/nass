@@ -71,11 +71,11 @@ module Refinery
       end
 
       def gender_string
-        ["-","Male", "Female"][gender]
+        ["-","Male", "Female"][gender || 0]
       end
 
       def maritual_status_string
-        ["-","single", "married", "divorced", "widowed"][maritual_status]
+        ["-","single", "married", "divorced", "widowed"][maritual_status || 0]
       end
     end
   end
