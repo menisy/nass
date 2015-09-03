@@ -8,6 +8,7 @@ $navbar-border-radius: 0px;
 
 $dark-green: #1c7a48;
 $grey: #f7f7f7;
+$dark-grey: #777;
 
 .nav-li{
   a{
@@ -180,4 +181,13 @@ a.green, input.green{
 .school-title-logo{
   width: 50px;
   margin-left: 10px;
+}
+.news-image{
+  max-width: 500px;
+}
+.greyish{
+  color: $dark-grey;
+}
+.padd{
+  margin: 0px 30px;
 }

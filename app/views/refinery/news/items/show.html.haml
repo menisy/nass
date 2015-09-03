@@ -1,0 +1,21 @@
+- content_for :body_content_title, @item.title
+- content_for :body do
+  %article.news_item
+    %h2
+      = @item.title
+    %p
+      %small
+        = t :published
+        = l(@item.publish_date.to_date, :format => :long)
+    %p
+      = image_tag @item.image.url if @item.image
+    - if @item.source.present?
+      %p
+        %small
+          = t :source
+          = @item.source
+    = @item.body.html_safe
+    %p
+      = link_to (t :back_to_index), refinery.news_items_path
+- content_for :side_body, render(:partial => 'recent_posts')
+= render "/refinery/content_page"

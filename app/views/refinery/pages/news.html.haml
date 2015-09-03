@@ -1,0 +1,11 @@
+.row.no-mrg
+  %h1= t :news
+  - if @news
+    - @news.each do |news|
+      .news-item-prev
+        %span.pull-left.img-prev= image_tag news.image.url if news.image
+        %span.green-title= news.title
+        = raw(news.body)
+
+  - else
+    = t :no_news

@@ -28,16 +28,12 @@
           <%= f.password_field :password_confirmation, required: true, data:{:'parsley-equalto'=> '.password-field'}%></div>
 
           <%= fields_for :personal_info, @student.personal_info do |personal_info_fields| %>
-            <%= personal_info_fields.label :first_name %> <br/>
-            <%= personal_info_fields.text_field :first_name, required: true %>
+            <%= personal_info_fields.label :arabic_name %> <br/>
+            <%= personal_info_fields.text_field :arabic_name, required: true %>
             <br>
 
-            <%= personal_info_fields.label :middle_name %> <br/>
-            <%= personal_info_fields.text_field :middle_name, required: true %>
-            <br>
-
-            <%= personal_info_fields.label :last_name %> <br/>
-            <%= personal_info_fields.text_field :last_name, required: true %>
+            <%= personal_info_fields.label :english_name %> <br/>
+            <%= personal_info_fields.text_field :english_name, required: true %>
             <br>
             <%= personal_info_fields.label :nationality %> <br/>
             <%= personal_info_fields.text_field :nationality, required: true %>

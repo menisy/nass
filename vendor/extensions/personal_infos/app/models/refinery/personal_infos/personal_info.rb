@@ -14,25 +14,65 @@ module Refinery
 
       accepts_nested_attributes_for :address
 
+      before_save :normalize_mobile
 
-      attr_accessible :first_name, :last_name, :middle_name, :nass_graduate, :address_attributes, :address, :first_name, :last_name, :nationality, :dob, :pob, :gender, :maritual_status, :languages, :address, :email, :skills, :skilled_jobs, :position, :user_id, :student_id, :employer_id, :education_level_id, :mobile
 
-      validates :first_name, :last_name, :middle_name, :nationality,:dob, :pob, :gender, :maritual_status, :languages, :address, :email, :skills, :skilled_jobs,
+      attr_accessible :arabic_name, :degrees, :english_name, :middle_name,
+      :registration_number, :misc, :nass_graduate, :address_attributes,
+      :address, :first_name, :last_name, :nationality, :dob, :pob, :gender,
+      :maritual_status, :languages, :address, :email, :skills, :skilled_jobs,
+      :position, :user_id, :student_id, :employer_id, :education_level_id, :mobile
+
+      validates :arabic_name, :english_name, :nationality,:dob,
+      :pob, :gender, :maritual_status, :languages, :address, :email, :skills,
+      :skilled_jobs,
         presence: true
+
+      validates :mobile, uniqueness: true
 
       scope :nass_graduate, -> { where(nass_graduate: true)}
       scope :not_nass_graduate, -> { where(nass_graduate: false)}
       scope :list,              -> { order('created_at ASC') }
 
 
+      def normalize_mobile
+        mobile = mobile.to_s
+        if mobile && mobile[0] == '0'
+          mobile[0] = ''
+        end
+      end
+
       def self.import(file)
         spreadsheet = open_spreadsheet(file)
         header = spreadsheet.row(1)
+        header = header.map(&:parameterize).map(&:underscore)
         (2..spreadsheet.last_row).each do |i|
+          logger.error "*"*100
+          logger.error spreadsheet.row(i)
           row = Hash[[header, spreadsheet.row(i)].transpose]
-          decoration = find_by_id(row["id"]) || new
-          decoration.attributes = row.to_hash.slice(*accessible_attributes)
-          decoration.save!(validate: false)
+          logger.error row["mobile"]
+          us = find_by_mobile(row["mobile"].to_s)
+          #(logger.error (us.id.to_s + us.english_name + us.arabic_name)) if us
+          address           = row.delete "address"
+
+          unless row["mobile"].blank?
+            record = find_by_mobile(row["mobile"].to_i.to_s)
+          end
+
+          record = new unless record
+          #record            = find_by_mobile(row["mobile"].to_s) || new
+          record.attributes = row.to_hash.slice(*accessible_attributes)
+          unless address.blank?
+            splitted = address.split ","
+            record.build_address unless record.address
+            record.address.apart_no     = splitted[0]
+            record.address.building_no  = splitted[1]
+            record.address.street_name  = splitted[2]
+            record.address.area         = splitted[3]
+            record.address.city         = ::Refinery::Companies::City.find_by_name(splitted[4])
+          end
+          #record.save!(validate: false)
+          record.save! if record.valid?
         end
       end
 
@@ -63,7 +103,7 @@ module Refinery
 
 
       def name
-        first_name.to_s + ' ' + middle_name.to_s + ' ' + last_name.to_s
+        I18n.current_locale == :en ? english_name : arabic_name
       end
 
       def city

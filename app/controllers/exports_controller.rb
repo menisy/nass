@@ -10,12 +10,22 @@ class ExportsController < ApplicationController
   end
 
   def candidates
-    @students = ::Refinery::PersonalInfos::PersonalInfo.all
+    #@students = ::Refinery::PersonalInfos::PersonalInfo.all
+    exp = params[:export]
+    to = Date.new(exp['to(1i)'].to_i, exp['to(2i)'].to_i, exp['to(3i)'].to_i)
+    from = Date.new(exp['from(1i)'].to_i, exp['from(2i)'].to_i, exp['from(3i)'].to_i)
+    range = " All "
+    if exp[:export_all].to_i.zero?
+      @students = ::Refinery::PersonalInfos::PersonalInfo.where(created_at: from.beginning_of_day..to.end_of_day)
+      range = " from #{from.strftime("%y/%m/%d")} to #{to.strftime("%y/%m/%d")} "
+    else
+      @students = ::Refinery::PersonalInfos::PersonalInfo.all
+    end
     respond_to do |format|
-      format.html {render xlsx: 'candidates.xlsx.axlsx',filename: "students-#{Time.now.strftime("%Y%m%d%H%M%S")}.xlsx", layout: 'excel'}
-      format.xlsx {render xlsx: 'candidates.xlsx.axlsx',filename: "students-#{Time.now.strftime("%Y%m%d%H%M%S")}.xlsx", layout: 'excel'}
+      format.html {render xlsx: 'candidates.xlsx.axlsx',filename: "#{Time.now.strftime("%y%m%d-%H%M%S")}-individuals (#{range}).xlsx", layout: 'excel'}
+      format.xlsx {render xlsx: 'candidates.xlsx.axlsx',filename: "#{Time.now.strftime("%y%m%d-%H%M%S")}-individuals (#{range}).xlsx", layout: 'excel'}
       format.xls {
-        filename = "students-#{Time.now.strftime("%Y%m%d%H%M%S")}.xls"
+        filename = "#{Time.now.strftime("%y%m%d-%H%M%S")}-individuals (#{range}).xls"
         send_data(@students.to_xls, :type => "application/excel; charset=utf-8; header=present", :filename => filename)
       }
     end
@@ -24,10 +34,10 @@ class ExportsController < ApplicationController
   def companies
     @companies = ::Refinery::Companies::Company.all
     respond_to do |format|
-      format.html {render xlsx: 'companies.xlsx.axlsx',filename: "companies-#{Time.now.strftime("%Y%m%d%H%M%S")}.xlsx", layout: 'excel'}
-      format.xlsx {render xlsx: 'companies.xlsx.axlsx',filename: "companies-#{Time.now.strftime("%Y%m%d%H%M%S")}.xlsx", layout: 'excel'}
+      format.html {render xlsx: 'companies.xlsx.axlsx',filename: "#{Time.now.strftime("%y%m%d-%H%M%S")}-companies.xlsx", layout: 'excel'}
+      format.xlsx {render xlsx: 'companies.xlsx.axlsx',filename: "#{Time.now.strftime("%y%m%d-%H%M%S")}-companies.xlsx", layout: 'excel'}
       format.xls {
-        filename = "companies-#{Time.now.strftime("%Y%m%d%H%M%S")}.xls"
+        filename = "#{Time.now.strftime("%y%m%d-%H%M%S")}-companies.xls"
         send_data(@companies.to_xls, :type => "application/excel; charset=utf-8; header=present", :filename => filename)
       }
     end
@@ -41,10 +51,10 @@ class ExportsController < ApplicationController
       ::Refinery::Companies::JobApplication.all
     end
     respond_to do |format|
-      format.html {render xlsx: 'applications.xlsx.axlsx',filename: "applications-#{Time.now.strftime("%Y%m%d%H%M%S")}.xlsx", layout: 'excel'}
-      format.xlsx {render xlsx: 'applications.xlsx.axlsx',filename: "applications-#{Time.now.strftime("%Y%m%d%H%M%S")}.xlsx", layout: 'excel'}
+      format.html {render xlsx: 'applications.xlsx.axlsx',filename: "#{Time.now.strftime("%y%m%d-%H%M%S")}-applications.xlsx", layout: 'excel'}
+      format.xlsx {render xlsx: 'applications.xlsx.axlsx',filename: "#{Time.now.strftime("%y%m%d-%H%M%S")}-applications.xlsx", layout: 'excel'}
       format.xls {
-        filename = "applications-#{Time.now.strftime("%Y%m%d%H%M%S")}.xls"
+        filename = "#{Time.now.strftime("%y%m%d-%H%M%S")}-applications.xls"
         send_data(@applications.to_xls, :type => "application/excel; charset=utf-8; header=present", :filename => filename)
       }
     end
@@ -58,10 +68,10 @@ class ExportsController < ApplicationController
       ::Refinery::Companies::Job.all
     end
     respond_to do |format|
-      format.html {render xlsx: 'jobs.xlsx.axlsx',filename: "jobs-#{Time.now.strftime("%Y%m%d%H%M%S")}.xlsx", layout: 'excel'}
-      format.xlsx {render xlsx: 'jobs.xlsx.axlsx',filename: "jobs-#{Time.now.strftime("%Y%m%d%H%M%S")}.xlsx", layout: 'excel'}
+      format.html {render xlsx: 'jobs.xlsx.axlsx',filename: "#{Time.now.strftime("%y%m%d-%H%M%S")}-jobs.xlsx", layout: 'excel'}
+      format.xlsx {render xlsx: 'jobs.xlsx.axlsx',filename: "#{Time.now.strftime("%y%m%d-%H%M%S")}-jobs.xlsx", layout: 'excel'}
       format.xls {
-        filename = "jobs-#{Time.now.strftime("%Y%m%d%H%M%S")}.xls"
+        filename = "#{Time.now.strftime("%y%m%d-%H%M%S")}-jobs.xls"
         send_data(@jobs.to_xls, :type => "application/excel; charset=utf-8; header=present", :filename => filename)
       }
     end

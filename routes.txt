@@ -62,7 +62,7 @@ cancel_employer_registration GET    /employers/cancel(.:format)         devise/r
                              PUT    /registration(.:format)             registrations#update
             emp_registration POST   /emp_registration(.:format)         registrations#emp_create
                              PUT    /emp_registration(.:format)         registrations#emp_update
-          candidates_exports GET    /exports/candidates(.:format)       exports#candidates
+          candidates_exports POST   /exports/candidates(.:format)       exports#candidates
            companies_exports GET    /exports/companies(.:format)        exports#companies
                 jobs_exports GET    /exports/jobs(.:format)             exports#jobs
     job_applications_exports GET    /exports/job_applications(.:format) exports#job_applications

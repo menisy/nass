@@ -3,6 +3,20 @@
 </section>
 <aside id='actions'>
   <%= render partial: 'actions', locals: {export: true} %>
+
+  <h3>Export to Excel</h3>
+  <%= form_tag main_app.candidates_exports_path, multipart: true do %>
+    <%= label_tag :from %>
+    <%= date_select :export, :from %>
+    <%= label_tag :to %>
+    <%= date_select :export, :to %>
+    <br><br>
+    <%= check_box :export, :export_all %>
+    Export all
+    <br><br>
+    <%= submit_tag "Export" %>
+  <% end %>
+
   <h3>Import from Excel</h3>
   <%= form_tag main_app.import_exports_path, multipart: true do %>
     <%= file_field_tag :file, required: true %>

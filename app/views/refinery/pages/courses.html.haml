@@ -7,8 +7,18 @@
       - school.programs.visible.each do |program|
         %h4= program.name
         - program.courses.visible.each_with_index do |course, i|
-          %p
+          %h5.pointer
+            &nbsp
             = "#{local_number(i+1)} - #{course.name}"
+            .padd.greyish
+              = raw course.description
+          %p
+            %strong
+              = t :offered_classes if course.course_classes.any?
+          %p
+            &nbsp&nbsp&nbsp&nbsp
+            - course.course_classes.each do |klass|
+              = "#{klass.code} - #{klass.name}"
   .col-sm-3
     .schools-wrapper
       %span.green-title= t :schools

@@ -1,0 +1,26 @@
+- content_for :body do
+  = raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) unless params[:page]
+  .row.no-mrg
+    - if @items.any?
+      - @items.each do |item|
+        %article.news_item_truncated
+          %h2= link_to item.title, refinery.news_item_path(item)
+          %p
+            %small
+              = t :published
+              = l(item.publish_date.to_date, :format => :long)
+          .news-image
+            = image_tag item.image.url if item.image
+          %br
+          = truncate  item.body, :length => 200,                                           |
+            :omission => " ... #{link_to (t :more), refinery.news_item_path(item)}", |
+            :preserve_html_tags => true                                                    |
+      = will_paginate @items
+    - else
+      %p
+        %em= t :no_news
+- content_for :body_content_right_prepend do
+  = raw @page.content_for(::Refinery::Pages.default_parts.second.to_sym)
+- end if ::Refinery::Pages.default_parts.many?
+= render '/refinery/news/shared/body_content_right'
+= render "/refinery/content_page"

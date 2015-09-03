@@ -50,7 +50,7 @@ Nass::Application.routes.draw do
 
   resources :exports, only: [] do
     collection do
-      get 'candidates'
+      post 'candidates'
       get 'companies'
       get 'jobs'
       get 'job_applications'
