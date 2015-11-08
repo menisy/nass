@@ -55,11 +55,15 @@ module Refinery
           #(logger.error (us.id.to_s + us.english_name + us.arabic_name)) if us
           address           = row.delete "address"
 
-          #record = find_by_mobile(row["mobile"].to_i.to_s) unless row['mobile'].blank?
+          record = nil
 
-          record = row['mobile'].blank? ? new : find_by_mobile(row["mobile"].to_i.to_s)
+          if row["mobile"].blank?
+            next
+          else
+            record = find_by_mobile(row["mobile"].to_i.to_s)
+          end
 
-          #record = new unless record
+          record = new unless record
           #record            = find_by_mobile(row["mobile"].to_s) || new
           record.attributes = row.to_hash.slice(*accessible_attributes)
           unless address.blank?
